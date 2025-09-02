@@ -1,0 +1,14 @@
+setup.py
+pixloc/__init__.py
+pixloc/download.py
+pixloc/run_7Scenes.py
+pixloc/run_Aachen.py
+pixloc/run_CMU.py
+pixloc/run_Cambridge.py
+pixloc/run_RobotCar.py
+pixloc/settings.py
+pixloc.egg-info/PKG-INFO
+pixloc.egg-info/SOURCES.txt
+pixloc.egg-info/dependency_links.txt
+pixloc.egg-info/requires.txt
+pixloc.egg-info/top_level.txt

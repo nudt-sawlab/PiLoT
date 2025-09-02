@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+
+    <Placemark>
+        <name>France_seq1 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        2.280935586174347,48.860379035452716,0 2.300228653624857,48.84814356566081,0 2.2945615658655263,48.84425236506641,0 2.2752686334570846,48.85648689530953,0 2.280935586174347,48.860379035452716,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>France_seq2 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        2.325327456409212,48.86783757638949,0 2.3496433671315597,48.8600942086767,0 2.346086804147147,48.85523376361808,0 2.3217727148210083,48.862976395961766,0 2.325327456409212,48.86783757638949,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>France_seq3 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        2.1019690894528673,48.812531925029035,0 2.1268931401927915,48.805930605223345,0 2.123851009905212,48.80092137450548,0 2.0989290605552937,48.807522054752894,0 2.1019690894528673,48.812531925029035,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>France_seq4 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        2.558619250486097,49.00613862638729,0 2.5863927300595373,49.007865722647466,0 2.5871632275910623,49.0024922746995,0 2.5593927069490103,49.000765370942275,0 2.558619250486097,49.00613862638729,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>France_seq5 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        2.3414039569662837,48.85969869205853,0 2.3630196812664894,48.85192333137939,0 2.359104502703556,48.847184635193116,0 2.337490226988373,48.85495927456594,0 2.3414039569662837,48.85969869205853,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>France_seq6 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        2.305724750331766,48.8821935204627,0 2.293972838032815,48.86613788848751,0 2.2866049907148844,48.8684839927591,0 2.2983550782052586,48.88454036074834,0 2.305724750331766,48.8821935204627,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>France_seq7 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        7.7520760220780565,48.593289493482,0 7.757288693563717,48.57565430302144,0 7.749307390756649,48.57461555929428,0 7.744092062361117,48.59225036875527,0 7.7520760220780565,48.593289493482,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>France_seq8 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        6.163212623063291,49.11695829993779,0 6.147413245667436,49.130922843685255,0 6.154012969848118,49.1341390654624,0 6.169811592251815,49.12017360920405,0 6.163212623063291,49.11695829993779,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>France_seq9 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -0.5641686887360605,44.834572620968004,0 -0.5860221345321888,44.82477899335508,0 -0.5900660229991443,44.82934697340359,0 -0.5682114688114436,44.83914134584037,0 -0.5641686887360605,44.834572620968004,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>France_seq10 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        5.388814195341113,43.29655402545557,0 5.3911951184768485,43.314667126970484,0 5.3985568451268655,43.314150755192856,0 5.396173768308898,43.296037856780686,0 5.388814195341113,43.29655402545557,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq1 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        11.582044119829623,48.143399428999054,0 11.574079987840408,48.12631171446337,0 11.566385887409666,48.12791815871047,0 11.574347755255783,48.14500644411363,0 11.582044119829623,48.143399428999054,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq2 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        6.078942652784998,50.76514103842031,0 6.080064027551667,50.783051051988416,0 6.088563959421159,50.782836792686325,0 6.087439334212637,50.76492680635238,0 6.078942652784998,50.76514103842031,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq3 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        9.90516411740746,53.522668464490266,0 9.935930071043098,53.522619453159095,0 9.935903932684512,53.51722654562497,0 9.905141886004111,53.5172755342944,0 9.90516411740746,53.522668464490266,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq4 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        11.57211695555028,48.15595960808398,0 11.597244930723697,48.14891725194762,0 11.594129224037195,48.14394072321095,0 11.569003199136274,48.15098236712814,0 11.57211695555028,48.15595960808398,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq5 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        8.569784634779767,50.051906168702516,0 8.580144538090845,50.03552882237922,0 8.572385626600525,50.033493048186315,0 8.562023530125808,50.0498697018132,0 8.569784634779767,50.051906168702516,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq6 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        11.795834927779698,48.390016867251234,0 11.798427499652862,48.371883804277246,0 11.790366534714895,48.37137205358587,0 11.7877711066438,48.389504990523804,0 11.795834927779698,48.390016867251234,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq7 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        13.387625266250414,52.5048240991664,0 13.3713646556406,52.51927559687112,0 13.37865359833982,52.52232829254183,0 13.39491298745939,52.50787579024919,0 13.387625266250414,52.5048240991664,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq8 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        13.397474227214767,52.516857738025536,0 13.383428206605227,52.53309226890718,0 13.391250019123111,52.53560960338205,0 13.405293998222827,52.51937413429642,0 13.397474227214767,52.516857738025536,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq9 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        8.678031541225184,50.10824668862327,0 8.67085316326238,50.12579043716989,0 8.678970953478725,50.12716342110981,0 8.686146575347747,50.10961916973191,0 8.678031541225184,50.10824668862327,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>German_seq10 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        8.721770669300497,49.40862315100483,0 8.694826072487425,49.405419324901395,0 8.693341846850673,49.410728668956345,0 8.720289250230396,49.41393284288458,0 8.721770669300497,49.40862315100483,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq1 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        2.1514293974657863,41.33809336986308,0 2.1593956313936618,41.35491059381081,0 2.1661502761002303,41.35309330604074,0 2.15818251014195,41.33627653003208,0 2.1514293974657863,41.33809336986308,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq2 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        2.171685565563018,41.37728441721043,0 2.15398065269265,41.389657046621785,0 2.158861495352046,41.39361890234181,0 2.1765665823974754,41.38124553172333,0 2.171685565563018,41.37728441721043,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq3 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -0.35924422928957545,39.46509596338095,0 -0.3425592441596733,39.452505617144816,0 -0.3474206209031618,39.44863432685935,0 -0.3641056356889183,39.46122398064742,0 -0.35924422928957545,39.46509596338095,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq4 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -0.3196625078707256,39.463848611972196,0 -0.30902206910448676,39.447726348886164,0 -0.3152258250598294,39.44526556430729,0 -0.32586738617392097,39.461387301197945,0 -0.3196625078707256,39.463848611972196,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq5 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -3.745004286461879,40.445811536346135,0 -3.7216084002843006,40.449114672739874,0 -3.720323651816608,40.443799322038316,0 -3.7437177657487237,40.440496458408234,0 -3.745004286461879,40.445811536346135,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq6 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -3.7016735156128964,40.414465651143566,0 -3.725196589002304,40.41644558119818,0 -3.724423381808123,40.421818416533675,0 -3.7008984550759014,40.41983834657352,0 -3.7016735156128964,40.414465651143566,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq7 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -1.9982847737889202,43.30961810206094,0 -1.975092048716327,43.317745416062735,0 -1.9718920776731101,43.31287456182296,0 -1.995083352637623,43.30474787577605,0 -1.9982847737889202,43.30961810206094,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq8 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -1.9154442075025049,43.32979878221697,0 -1.9005104438044553,43.31630441275165,0 -1.906265396495902,43.31290951261625,0 -1.9211996326670313,43.326403143160924,0 -1.9154442075025049,43.32979878221697,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq9 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -6.071876696423173,37.360557693078924,0 -6.056750731532786,37.3738600139642,0 -6.051737390153521,37.3702279375162,0 -6.066863425178582,37.35692625838425,0 -6.071876696423173,37.360557693078924,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>spain_seq10 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -5.97597103008123,37.378645201459435,0 -5.996213549508415,37.37107746729869,0 -5.99908654820838,37.37597051027789,0 -5.978843067611424,37.38353877615508,0 -5.97597103008123,37.378645201459435,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq1 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        7.632270724506929,46.73534551914999,0 7.6077047662796256,46.74104626301482,0 7.6102153500413445,46.746161723379224,0 7.634783391920135,46.74046046719871,0 7.632270724506929,46.73534551914999,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq2 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        8.559239380322698,47.44459992827026,0 8.548618419766466,47.46156058892935,0 8.555945727568846,47.4636712942971,0 8.566564766823355,47.4467099550002,0 8.559239380322698,47.44459992827026,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq3 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        8.540282351572644,47.367699017810864,0 8.539017028514985,47.3853789699272,0 8.54695699215762,47.38564089264687,0 8.548219669071239,47.36796084484734,0 8.540282351572644,47.367699017810864,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq4 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        7.331610919499008,46.21085994024312,0 7.325808770324133,46.22861273389244,0 7.333395315321638,46.229807141246454,0 7.339195166030707,46.21205393496498,0 7.331610919499008,46.21085994024312,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq5 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        6.569324937780931,46.51293303145892,0 6.557503158414109,46.529504656321905,0 6.564518998528377,46.53188923873304,0 6.576339218974107,46.51531686362704,0 6.569324937780931,46.51293303145892,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq6 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        6.615948398698228,46.52859490854759,0 6.605975392416539,46.5111772045437,0 6.59870447908636,46.51316067715735,0 6.608675472631658,46.53057897310461,0 6.615948398698228,46.52859490854759,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq7 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        6.148113662681921,46.22368834832966,0 6.121821950772402,46.224768325448856,0 6.122280065347957,46.23015567349656,0 6.148574353621065,46.22907565060587,0 6.148113662681921,46.22368834832966,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq8 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        6.108292270081302,46.22991690837563,0 6.091122194473652,46.24300647686725,0 6.0968739962059955,46.24663945463246,0 6.11404392045766,46.23354902310151,0 6.108292270081302,46.22991690837563,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq9 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        7.441100507232471,46.95758588977413,0 7.441611171121985,46.93936885638223,0 7.433730839952227,46.9392650080662,0 7.433217503855229,46.957481974588525,0 7.441100507232471,46.95758588977413,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>switzerland_seq10 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        7.40756675399406,46.999539135273764,0 7.4310095235454146,47.007605504528094,0 7.434554314807985,47.00278246514425,0 7.411113084328768,46.9947168343457,0 7.40756675399406,46.999539135273764,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq1 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -87.61685902245851,41.87561205190197,0 -87.64121499657799,41.87553406216785,0 -87.64124700619108,41.88093793655282,0 -87.61688898017017,41.88101594681931,0 -87.61685902245851,41.87561205190197,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq2 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -87.60797194472673,41.8520620522859,0 -87.63182294078345,41.852153055275004,0 -87.63178705910603,41.85755694346478,0 -87.60793405502538,41.85746594645313,0 -87.60797194472673,41.8520620522859,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq3 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -115.16782104501627,36.121182730958125,0 -115.15243906359068,36.13443104013083,0 -115.14758705086017,36.130722913476596,0 -115.16296906935703,36.117475222630496,0 -115.16782104501627,36.121182730958125,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq4 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -115.0919487653164,36.05586121083134,0 -115.0923455315029,36.037645244819096,0 -115.09900247673465,36.03774066284098,0 -115.09860724292848,36.055956696767424,0 -115.0919487653164,36.05586121083134,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq5 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -73.97852297983701,40.75573129308167,0 -73.99065941591363,40.740351615185844,0 -73.99675271203525,40.74313230554738,0 -73.98461714824121,40.7585126276397,0 -73.97852297983701,40.75573129308167,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq6 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -73.95223446007273,40.76761746882538,0 -73.97322091357412,40.775781170887505,0 -73.96998296825522,40.780592804000825,0 -73.9489954217382,40.77242850602004,0 -73.95223446007273,40.76761746882538,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq7 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -122.39016905943953,37.79409835009808,0 -122.40597604852798,37.78158766882372,0 -122.41078807558996,37.78541628246477,0 -122.39498106475459,37.797927601212756,0 -122.39016905943953,37.79409835009808,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq8 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -122.01226358743324,37.32135142899519,0 -122.01210338795491,37.3391914450946,0 -122.00533061599393,37.33915245798399,0 -122.00549241651227,37.32131247414554,0 -122.01226358743324,37.32135142899519,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq9 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -77.03879175076555,38.88477504454838,0 -77.03931764642181,38.90327300503151,0 -77.03240234325305,38.9033928926522,0 -77.03187823891967,38.884894853202425,0 -77.03879175076555,38.88477504454838,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+    <Placemark>
+        <name>USA_seq10 Rect 1</name>
+        <Polygon>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -77.00388571232821,38.88690683238074,0 -77.02647585690491,38.886647864875876,0 -77.02657815146117,38.89205213382252,0 -77.00398629592314,38.89231116631947,0 -77.00388571232821,38.88690683238074,0
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+
+</Document>
+</kml>

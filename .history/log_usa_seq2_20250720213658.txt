@@ -1,0 +1,3424 @@
+==== 正在运行 USA_seq2@8@sunny@screen16@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 20:42:10 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 20:42:13 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+20:42:15 [SpawnProcess-2] loc 348.03 ms
+20:42:20 [SpawnProcess-1] render: 214.53 ms
+20:42:21 [SpawnProcess-2] loc 40.16 ms
+20:42:26 [SpawnProcess-1] render: 213.40 ms
+20:42:27 [SpawnProcess-2] loc 39.49 ms
+20:42:33 [SpawnProcess-1] render: 230.60 ms
+20:42:33 [SpawnProcess-2] loc 38.14 ms
+20:42:40 [SpawnProcess-1] render: 220.89 ms
+20:42:40 [SpawnProcess-2] loc 40.28 ms
+20:42:47 [SpawnProcess-1] render: 200.22 ms
+20:42:47 [SpawnProcess-2] loc 40.17 ms
+20:42:53 [SpawnProcess-1] render: 225.77 ms
+20:42:53 [SpawnProcess-2] loc 38.89 ms
+20:43:00 [SpawnProcess-1] render: 248.30 ms
+20:43:00 [SpawnProcess-2] loc 39.02 ms
+20:43:08 [SpawnProcess-1] render: 264.99 ms
+20:43:08 [SpawnProcess-2] loc 35.94 ms
+20:43:17 [SpawnProcess-1] render: 260.94 ms
+20:43:17 [SpawnProcess-2] loc 38.88 ms
+20:43:25 [SpawnProcess-1] render: 263.93 ms
+20:43:25 [SpawnProcess-2] loc 39.25 ms
+20:43:32 [SpawnProcess-1] render: 249.00 ms
+20:43:33 [SpawnProcess-2] loc 40.03 ms
+20:43:40 [SpawnProcess-1] render: 236.59 ms
+20:43:40 [SpawnProcess-2] loc 40.60 ms
+20:43:47 [SpawnProcess-1] render: 225.17 ms
+20:43:48 [SpawnProcess-2] loc 36.61 ms
+20:43:54 [SpawnProcess-1] render: 247.87 ms
+20:43:55 [SpawnProcess-2] loc 39.51 ms
+20:44:01 [SpawnProcess-1] render: 222.31 ms
+20:44:01 [SpawnProcess-2] loc 41.13 ms
+20:44:08 [SpawnProcess-1] render: 220.57 ms
+20:44:08 [SpawnProcess-2] loc 38.84 ms
+20:44:15 [SpawnProcess-1] render: 221.71 ms
+20:44:16 [SpawnProcess-2] loc 39.53 ms
+20:44:22 [SpawnProcess-1] render: 244.25 ms
+20:44:23 [SpawnProcess-2] loc 38.57 ms
+20:44:29 [SpawnProcess-1] render: 235.73 ms
+20:44:30 [SpawnProcess-2] loc 38.19 ms
+20:44:37 [SpawnProcess-1] render: 225.67 ms
+20:44:37 [SpawnProcess-2] loc 39.80 ms
+20:44:44 [SpawnProcess-1] render: 269.28 ms
+20:44:45 [SpawnProcess-2] loc 50.42 ms
+20:44:52 [SpawnProcess-1] render: 246.29 ms
+20:44:53 [SpawnProcess-2] loc 37.58 ms
+20:45:01 [SpawnProcess-1] render: 311.06 ms
+20:45:01 [SpawnProcess-2] loc 39.43 ms
+20:45:08 [SpawnProcess-1] render: 261.90 ms
+20:45:09 [SpawnProcess-2] loc 39.30 ms
+20:45:16 [SpawnProcess-1] render: 243.89 ms
+20:45:16 [SpawnProcess-2] loc 37.83 ms
+20:45:23 [SpawnProcess-1] render: 232.17 ms
+20:45:23 [SpawnProcess-2] loc 38.83 ms
+20:45:31 [SpawnProcess-1] render: 253.92 ms
+20:45:31 [SpawnProcess-2] loc 39.37 ms
+20:45:38 [SpawnProcess-1] render: 226.19 ms
+20:45:38 [SpawnProcess-2] loc 40.88 ms
+20:45:45 [SpawnProcess-1] render: 225.17 ms
+20:45:45 [SpawnProcess-2] loc 37.97 ms
+20:45:52 [SpawnProcess-1] render: 220.62 ms
+20:45:52 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 1.476m, 0.111deg, 0.014deg
+Std errors: 0.878m, 0.069deg, 0.014deg
+Percentage of test images localized within:
+	20cm: 0.89%
+	50cm: 6.11%
+	100cm: 25.33%
+	300cm: 91.00%
+	500cm: 99.78%
+	0.2deg: 84.22%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 38.89%
+	0.02deg : 67.22%
+	0.05deg : 97.78%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@sunny@screen16@500 结束 ====
+
+==== 正在运行 USA_seq2@8@sunny@screen8@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 20:46:40 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 20:46:42 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+20:46:45 [SpawnProcess-2] loc 359.41 ms
+20:46:51 [SpawnProcess-1] render: 218.20 ms
+20:46:51 [SpawnProcess-2] loc 42.53 ms
+20:46:57 [SpawnProcess-1] render: 207.61 ms
+20:46:57 [SpawnProcess-2] loc 39.58 ms
+20:47:03 [SpawnProcess-1] render: 222.17 ms
+20:47:04 [SpawnProcess-2] loc 42.07 ms
+20:47:10 [SpawnProcess-1] render: 214.70 ms
+20:47:11 [SpawnProcess-2] loc 40.82 ms
+20:47:17 [SpawnProcess-1] render: 206.00 ms
+20:47:17 [SpawnProcess-2] loc 37.65 ms
+20:47:24 [SpawnProcess-1] render: 196.71 ms
+20:47:24 [SpawnProcess-2] loc 39.11 ms
+20:47:30 [SpawnProcess-1] render: 252.26 ms
+20:47:31 [SpawnProcess-2] loc 40.26 ms
+20:47:39 [SpawnProcess-1] render: 265.69 ms
+20:47:39 [SpawnProcess-2] loc 37.03 ms
+20:47:47 [SpawnProcess-1] render: 260.40 ms
+20:47:48 [SpawnProcess-2] loc 38.22 ms
+20:47:56 [SpawnProcess-1] render: 263.32 ms
+20:47:56 [SpawnProcess-2] loc 39.33 ms
+20:48:03 [SpawnProcess-1] render: 253.72 ms
+20:48:04 [SpawnProcess-2] loc 38.42 ms
+20:48:11 [SpawnProcess-1] render: 240.32 ms
+20:48:11 [SpawnProcess-2] loc 38.96 ms
+20:48:18 [SpawnProcess-1] render: 235.57 ms
+20:48:18 [SpawnProcess-2] loc 37.93 ms
+20:48:25 [SpawnProcess-1] render: 248.27 ms
+20:48:26 [SpawnProcess-2] loc 38.65 ms
+20:48:33 [SpawnProcess-1] render: 223.23 ms
+20:48:33 [SpawnProcess-2] loc 40.10 ms
+20:48:39 [SpawnProcess-1] render: 214.11 ms
+20:48:40 [SpawnProcess-2] loc 41.54 ms
+20:48:46 [SpawnProcess-1] render: 223.83 ms
+20:48:47 [SpawnProcess-2] loc 39.62 ms
+20:48:53 [SpawnProcess-1] render: 226.27 ms
+20:48:53 [SpawnProcess-2] loc 42.52 ms
+20:49:00 [SpawnProcess-1] render: 246.84 ms
+20:49:00 [SpawnProcess-2] loc 50.49 ms
+20:49:07 [SpawnProcess-1] render: 228.01 ms
+20:49:08 [SpawnProcess-2] loc 37.92 ms
+20:49:15 [SpawnProcess-1] render: 267.72 ms
+20:49:15 [SpawnProcess-2] loc 40.19 ms
+20:49:23 [SpawnProcess-1] render: 247.45 ms
+20:49:23 [SpawnProcess-2] loc 36.74 ms
+20:49:31 [SpawnProcess-1] render: 325.16 ms
+20:49:31 [SpawnProcess-2] loc 37.89 ms
+20:49:39 [SpawnProcess-1] render: 250.37 ms
+20:49:39 [SpawnProcess-2] loc 42.39 ms
+20:49:46 [SpawnProcess-1] render: 245.96 ms
+20:49:46 [SpawnProcess-2] loc 39.84 ms
+20:49:53 [SpawnProcess-1] render: 231.11 ms
+20:49:54 [SpawnProcess-2] loc 38.89 ms
+20:50:01 [SpawnProcess-1] render: 247.98 ms
+20:50:01 [SpawnProcess-2] loc 42.58 ms
+20:50:08 [SpawnProcess-1] render: 249.81 ms
+20:50:08 [SpawnProcess-2] loc 40.88 ms
+20:50:14 [SpawnProcess-1] render: 201.65 ms
+20:50:15 [SpawnProcess-2] loc 35.65 ms
+20:50:20 [SpawnProcess-1] render: 169.71 ms
+20:50:20 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.949m, 0.070deg, 0.008deg
+Std errors: 0.496m, 0.039deg, 0.007deg
+Percentage of test images localized within:
+	20cm: 1.22%
+	50cm: 12.89%
+	100cm: 54.44%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 99.33%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 59.44%
+	0.02deg : 91.78%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@sunny@screen8@500 结束 ====
+
+==== 正在运行 USA_seq2@8@foggy@intensity3@200 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 500.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 20:51:04 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 20:51:06 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+20:51:07 [SpawnProcess-2] loc 307.64 ms
+20:51:09 [SpawnProcess-1] render: 83.09 ms
+20:51:09 [SpawnProcess-2] loc 37.51 ms
+20:51:12 [SpawnProcess-1] render: 82.75 ms
+20:51:12 [SpawnProcess-2] loc 37.48 ms
+20:51:15 [SpawnProcess-1] render: 94.37 ms
+20:51:15 [SpawnProcess-2] loc 38.51 ms
+20:51:18 [SpawnProcess-1] render: 103.31 ms
+20:51:18 [SpawnProcess-2] loc 37.58 ms
+20:51:21 [SpawnProcess-1] render: 109.62 ms
+20:51:21 [SpawnProcess-2] loc 36.21 ms
+20:51:24 [SpawnProcess-1] render: 99.77 ms
+20:51:24 [SpawnProcess-2] loc 37.21 ms
+20:51:27 [SpawnProcess-1] render: 95.21 ms
+20:51:27 [SpawnProcess-2] loc 37.16 ms
+20:51:30 [SpawnProcess-1] render: 97.78 ms
+20:51:30 [SpawnProcess-2] loc 37.22 ms
+20:51:33 [SpawnProcess-1] render: 91.99 ms
+20:51:34 [SpawnProcess-2] loc 37.47 ms
+20:51:36 [SpawnProcess-1] render: 96.17 ms
+20:51:36 [SpawnProcess-2] loc 37.97 ms
+20:51:39 [SpawnProcess-1] render: 95.69 ms
+20:51:39 [SpawnProcess-2] loc 39.19 ms
+20:51:42 [SpawnProcess-1] render: 98.66 ms
+20:51:42 [SpawnProcess-2] loc 38.46 ms
+20:51:45 [SpawnProcess-1] render: 97.10 ms
+20:51:45 [SpawnProcess-2] loc 38.36 ms
+20:51:48 [SpawnProcess-1] render: 93.13 ms
+20:51:48 [SpawnProcess-2] loc 37.35 ms
+20:51:51 [SpawnProcess-1] render: 89.87 ms
+20:51:51 [SpawnProcess-2] loc 38.40 ms
+20:51:54 [SpawnProcess-1] render: 91.72 ms
+20:51:54 [SpawnProcess-2] loc 37.64 ms
+20:51:57 [SpawnProcess-1] render: 100.88 ms
+20:51:57 [SpawnProcess-2] loc 36.39 ms
+20:52:00 [SpawnProcess-1] render: 92.85 ms
+20:52:00 [SpawnProcess-2] loc 36.52 ms
+20:52:02 [SpawnProcess-1] render: 93.45 ms
+20:52:02 [SpawnProcess-2] loc 38.01 ms
+20:52:05 [SpawnProcess-1] render: 97.02 ms
+20:52:05 [SpawnProcess-2] loc 37.81 ms
+20:52:08 [SpawnProcess-1] render: 99.96 ms
+20:52:09 [SpawnProcess-2] loc 37.37 ms
+20:52:12 [SpawnProcess-1] render: 98.11 ms
+20:52:12 [SpawnProcess-2] loc 36.96 ms
+20:52:15 [SpawnProcess-1] render: 96.16 ms
+20:52:15 [SpawnProcess-2] loc 37.91 ms
+20:52:18 [SpawnProcess-1] render: 93.67 ms
+20:52:18 [SpawnProcess-2] loc 37.22 ms
+20:52:21 [SpawnProcess-1] render: 94.57 ms
+20:52:21 [SpawnProcess-2] loc 36.74 ms
+20:52:23 [SpawnProcess-1] render: 94.04 ms
+20:52:24 [SpawnProcess-2] loc 35.85 ms
+20:52:26 [SpawnProcess-1] render: 91.80 ms
+20:52:26 [SpawnProcess-2] loc 36.82 ms
+20:52:29 [SpawnProcess-1] render: 92.53 ms
+20:52:29 [SpawnProcess-2] loc 36.87 ms
+20:52:32 [SpawnProcess-1] render: 89.36 ms
+20:52:32 [SpawnProcess-2] loc 36.74 ms
+20:52:35 [SpawnProcess-1] render: 88.14 ms
+20:52:35 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.520m, 0.040deg, 0.006deg
+Std errors: 0.202m, 0.025deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 3.78%
+	50cm: 46.33%
+	100cm: 97.89%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 80.33%
+	0.02deg : 97.89%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@foggy@intensity3@200 结束 ====
+
+==== 正在运行 USA_seq2@8@night@intensity3@200 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 500.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 20:53:12 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 20:53:13 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+20:53:14 [SpawnProcess-2] loc 301.77 ms
+20:53:17 [SpawnProcess-1] render: 89.55 ms
+20:53:17 [SpawnProcess-2] loc 39.54 ms
+20:53:20 [SpawnProcess-1] render: 94.29 ms
+20:53:20 [SpawnProcess-2] loc 36.78 ms
+20:53:23 [SpawnProcess-1] render: 100.55 ms
+20:53:23 [SpawnProcess-2] loc 37.67 ms
+20:53:26 [SpawnProcess-1] render: 116.37 ms
+20:53:26 [SpawnProcess-2] loc 36.68 ms
+20:53:30 [SpawnProcess-1] render: 115.41 ms
+20:53:30 [SpawnProcess-2] loc 36.81 ms
+20:53:33 [SpawnProcess-1] render: 99.51 ms
+20:53:33 [SpawnProcess-2] loc 35.88 ms
+20:53:36 [SpawnProcess-1] render: 95.69 ms
+20:53:36 [SpawnProcess-2] loc 36.53 ms
+20:53:39 [SpawnProcess-1] render: 97.78 ms
+20:53:39 [SpawnProcess-2] loc 36.42 ms
+20:53:42 [SpawnProcess-1] render: 92.96 ms
+20:53:42 [SpawnProcess-2] loc 37.03 ms
+20:53:45 [SpawnProcess-1] render: 96.00 ms
+20:53:45 [SpawnProcess-2] loc 38.09 ms
+20:53:48 [SpawnProcess-1] render: 96.75 ms
+20:53:48 [SpawnProcess-2] loc 37.76 ms
+20:53:51 [SpawnProcess-1] render: 96.85 ms
+20:53:51 [SpawnProcess-2] loc 36.25 ms
+20:53:54 [SpawnProcess-1] render: 95.04 ms
+20:53:54 [SpawnProcess-2] loc 36.88 ms
+20:53:57 [SpawnProcess-1] render: 92.39 ms
+20:53:57 [SpawnProcess-2] loc 37.18 ms
+20:54:00 [SpawnProcess-1] render: 90.29 ms
+20:54:00 [SpawnProcess-2] loc 39.97 ms
+20:54:03 [SpawnProcess-1] render: 93.17 ms
+20:54:03 [SpawnProcess-2] loc 36.77 ms
+20:54:06 [SpawnProcess-1] render: 93.52 ms
+20:54:06 [SpawnProcess-2] loc 37.39 ms
+20:54:08 [SpawnProcess-1] render: 91.59 ms
+20:54:09 [SpawnProcess-2] loc 37.68 ms
+20:54:11 [SpawnProcess-1] render: 93.54 ms
+20:54:11 [SpawnProcess-2] loc 37.54 ms
+20:54:14 [SpawnProcess-1] render: 99.34 ms
+20:54:14 [SpawnProcess-2] loc 36.46 ms
+20:54:17 [SpawnProcess-1] render: 99.87 ms
+20:54:17 [SpawnProcess-2] loc 36.51 ms
+20:54:20 [SpawnProcess-1] render: 101.18 ms
+20:54:21 [SpawnProcess-2] loc 36.28 ms
+20:54:24 [SpawnProcess-1] render: 100.97 ms
+20:54:24 [SpawnProcess-2] loc 36.61 ms
+20:54:27 [SpawnProcess-1] render: 97.60 ms
+20:54:27 [SpawnProcess-2] loc 37.80 ms
+20:54:29 [SpawnProcess-1] render: 95.44 ms
+20:54:30 [SpawnProcess-2] loc 37.28 ms
+20:54:32 [SpawnProcess-1] render: 95.06 ms
+20:54:33 [SpawnProcess-2] loc 36.97 ms
+20:54:35 [SpawnProcess-1] render: 92.33 ms
+20:54:35 [SpawnProcess-2] loc 36.15 ms
+20:54:38 [SpawnProcess-1] render: 96.15 ms
+20:54:38 [SpawnProcess-2] loc 39.52 ms
+20:54:41 [SpawnProcess-1] render: 89.65 ms
+20:54:41 [SpawnProcess-2] loc 37.93 ms
+20:54:44 [SpawnProcess-1] render: 88.27 ms
+20:54:44 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.629m, 0.060deg, 0.008deg
+Std errors: 0.252m, 0.034deg, 0.008deg
+Percentage of test images localized within:
+	20cm: 1.67%
+	50cm: 30.11%
+	100cm: 91.44%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 99.89%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 60.56%
+	0.02deg : 89.67%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@night@intensity3@200 结束 ====
+
+==== 正在运行 USA_seq2@8@sunny@200 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 500.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 20:55:30 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 20:55:32 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+20:55:33 [SpawnProcess-2] loc 308.21 ms
+20:55:35 [SpawnProcess-1] render: 81.74 ms
+20:55:35 [SpawnProcess-2] loc 38.53 ms
+20:55:38 [SpawnProcess-1] render: 87.20 ms
+20:55:38 [SpawnProcess-2] loc 37.48 ms
+20:55:41 [SpawnProcess-1] render: 104.82 ms
+20:55:41 [SpawnProcess-2] loc 38.65 ms
+20:55:44 [SpawnProcess-1] render: 104.58 ms
+20:55:44 [SpawnProcess-2] loc 36.68 ms
+20:55:47 [SpawnProcess-1] render: 109.14 ms
+20:55:47 [SpawnProcess-2] loc 36.18 ms
+20:55:50 [SpawnProcess-1] render: 100.01 ms
+20:55:50 [SpawnProcess-2] loc 37.49 ms
+20:55:53 [SpawnProcess-1] render: 94.13 ms
+20:55:54 [SpawnProcess-2] loc 37.38 ms
+20:55:56 [SpawnProcess-1] render: 95.98 ms
+20:55:57 [SpawnProcess-2] loc 35.75 ms
+20:56:00 [SpawnProcess-1] render: 92.11 ms
+20:56:00 [SpawnProcess-2] loc 37.59 ms
+20:56:03 [SpawnProcess-1] render: 96.41 ms
+20:56:03 [SpawnProcess-2] loc 37.62 ms
+20:56:06 [SpawnProcess-1] render: 95.89 ms
+20:56:06 [SpawnProcess-2] loc 37.32 ms
+20:56:09 [SpawnProcess-1] render: 97.10 ms
+20:56:09 [SpawnProcess-2] loc 37.54 ms
+20:56:12 [SpawnProcess-1] render: 100.46 ms
+20:56:12 [SpawnProcess-2] loc 38.62 ms
+20:56:15 [SpawnProcess-1] render: 97.98 ms
+20:56:15 [SpawnProcess-2] loc 39.49 ms
+20:56:18 [SpawnProcess-1] render: 101.61 ms
+20:56:18 [SpawnProcess-2] loc 37.96 ms
+20:56:20 [SpawnProcess-1] render: 92.82 ms
+20:56:21 [SpawnProcess-2] loc 37.40 ms
+20:56:23 [SpawnProcess-1] render: 101.07 ms
+20:56:23 [SpawnProcess-2] loc 36.82 ms
+20:56:26 [SpawnProcess-1] render: 91.40 ms
+20:56:26 [SpawnProcess-2] loc 37.80 ms
+20:56:29 [SpawnProcess-1] render: 94.17 ms
+20:56:29 [SpawnProcess-2] loc 37.83 ms
+20:56:32 [SpawnProcess-1] render: 103.90 ms
+20:56:32 [SpawnProcess-2] loc 37.35 ms
+20:56:35 [SpawnProcess-1] render: 101.61 ms
+20:56:35 [SpawnProcess-2] loc 37.27 ms
+20:56:38 [SpawnProcess-1] render: 97.81 ms
+20:56:38 [SpawnProcess-2] loc 36.81 ms
+20:56:41 [SpawnProcess-1] render: 100.90 ms
+20:56:41 [SpawnProcess-2] loc 37.09 ms
+20:56:44 [SpawnProcess-1] render: 98.72 ms
+20:56:44 [SpawnProcess-2] loc 37.74 ms
+20:56:47 [SpawnProcess-1] render: 94.66 ms
+20:56:47 [SpawnProcess-2] loc 37.09 ms
+20:56:50 [SpawnProcess-1] render: 95.91 ms
+20:56:50 [SpawnProcess-2] loc 37.16 ms
+20:56:53 [SpawnProcess-1] render: 89.83 ms
+20:56:53 [SpawnProcess-2] loc 37.53 ms
+20:56:56 [SpawnProcess-1] render: 92.79 ms
+20:56:56 [SpawnProcess-2] loc 37.98 ms
+20:56:58 [SpawnProcess-1] render: 94.24 ms
+20:56:59 [SpawnProcess-2] loc 37.36 ms
+20:57:01 [SpawnProcess-1] render: 85.00 ms
+20:57:01 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.508m, 0.040deg, 0.005deg
+Std errors: 0.202m, 0.025deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 4.11%
+	50cm: 48.56%
+	100cm: 98.33%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 81.89%
+	0.02deg : 98.22%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@sunny@200 结束 ====
+
+==== 正在运行 USA_seq2@8@cloudy@200 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 500.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 20:57:46 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 20:57:48 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+20:57:49 [SpawnProcess-2] loc 306.21 ms
+20:57:52 [SpawnProcess-1] render: 89.97 ms
+20:57:52 [SpawnProcess-2] loc 37.53 ms
+20:57:55 [SpawnProcess-1] render: 92.64 ms
+20:57:55 [SpawnProcess-2] loc 37.29 ms
+20:57:58 [SpawnProcess-1] render: 101.64 ms
+20:57:58 [SpawnProcess-2] loc 37.56 ms
+20:58:01 [SpawnProcess-1] render: 116.62 ms
+20:58:01 [SpawnProcess-2] loc 36.33 ms
+20:58:05 [SpawnProcess-1] render: 124.81 ms
+20:58:05 [SpawnProcess-2] loc 36.09 ms
+20:58:08 [SpawnProcess-1] render: 100.19 ms
+20:58:08 [SpawnProcess-2] loc 36.81 ms
+20:58:11 [SpawnProcess-1] render: 96.32 ms
+20:58:11 [SpawnProcess-2] loc 36.87 ms
+20:58:14 [SpawnProcess-1] render: 97.39 ms
+20:58:14 [SpawnProcess-2] loc 37.12 ms
+20:58:17 [SpawnProcess-1] render: 92.16 ms
+20:58:17 [SpawnProcess-2] loc 37.86 ms
+20:58:20 [SpawnProcess-1] render: 96.01 ms
+20:58:20 [SpawnProcess-2] loc 37.23 ms
+20:58:23 [SpawnProcess-1] render: 97.25 ms
+20:58:24 [SpawnProcess-2] loc 37.90 ms
+20:58:26 [SpawnProcess-1] render: 98.86 ms
+20:58:27 [SpawnProcess-2] loc 37.41 ms
+20:58:29 [SpawnProcess-1] render: 94.96 ms
+20:58:29 [SpawnProcess-2] loc 38.27 ms
+20:58:32 [SpawnProcess-1] render: 96.05 ms
+20:58:32 [SpawnProcess-2] loc 37.89 ms
+20:58:35 [SpawnProcess-1] render: 90.33 ms
+20:58:35 [SpawnProcess-2] loc 37.66 ms
+20:58:38 [SpawnProcess-1] render: 90.31 ms
+20:58:38 [SpawnProcess-2] loc 37.54 ms
+20:58:41 [SpawnProcess-1] render: 90.82 ms
+20:58:41 [SpawnProcess-2] loc 40.23 ms
+20:58:43 [SpawnProcess-1] render: 95.54 ms
+20:58:44 [SpawnProcess-2] loc 38.05 ms
+20:58:46 [SpawnProcess-1] render: 92.68 ms
+20:58:46 [SpawnProcess-2] loc 38.00 ms
+20:58:49 [SpawnProcess-1] render: 97.72 ms
+20:58:49 [SpawnProcess-2] loc 39.06 ms
+20:58:52 [SpawnProcess-1] render: 102.09 ms
+20:58:52 [SpawnProcess-2] loc 38.62 ms
+20:58:56 [SpawnProcess-1] render: 98.37 ms
+20:58:56 [SpawnProcess-2] loc 36.81 ms
+20:58:59 [SpawnProcess-1] render: 97.96 ms
+20:58:59 [SpawnProcess-2] loc 37.14 ms
+20:59:02 [SpawnProcess-1] render: 98.18 ms
+20:59:02 [SpawnProcess-2] loc 38.39 ms
+20:59:04 [SpawnProcess-1] render: 97.44 ms
+20:59:05 [SpawnProcess-2] loc 37.13 ms
+20:59:07 [SpawnProcess-1] render: 92.75 ms
+20:59:07 [SpawnProcess-2] loc 39.83 ms
+20:59:10 [SpawnProcess-1] render: 90.98 ms
+20:59:10 [SpawnProcess-2] loc 36.41 ms
+20:59:13 [SpawnProcess-1] render: 96.57 ms
+20:59:13 [SpawnProcess-2] loc 38.34 ms
+20:59:16 [SpawnProcess-1] render: 91.71 ms
+20:59:16 [SpawnProcess-2] loc 37.72 ms
+20:59:19 [SpawnProcess-1] render: 87.36 ms
+20:59:19 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.499m, 0.039deg, 0.005deg
+Std errors: 0.199m, 0.023deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 4.00%
+	50cm: 50.22%
+	100cm: 98.89%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 79.67%
+	0.02deg : 98.44%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@cloudy@200 结束 ====
+
+==== 正在运行 USA_seq2@8@sunset@200 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 500.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:00:04 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:00:06 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:00:07 [SpawnProcess-2] loc 307.62 ms
+21:00:09 [SpawnProcess-1] render: 81.96 ms
+21:00:09 [SpawnProcess-2] loc 39.46 ms
+21:00:12 [SpawnProcess-1] render: 87.17 ms
+21:00:12 [SpawnProcess-2] loc 37.83 ms
+21:00:15 [SpawnProcess-1] render: 106.16 ms
+21:00:15 [SpawnProcess-2] loc 37.65 ms
+21:00:18 [SpawnProcess-1] render: 106.27 ms
+21:00:18 [SpawnProcess-2] loc 37.08 ms
+21:00:21 [SpawnProcess-1] render: 111.28 ms
+21:00:21 [SpawnProcess-2] loc 36.59 ms
+21:00:24 [SpawnProcess-1] render: 99.73 ms
+21:00:24 [SpawnProcess-2] loc 36.19 ms
+21:00:28 [SpawnProcess-1] render: 96.19 ms
+21:00:28 [SpawnProcess-2] loc 36.73 ms
+21:00:31 [SpawnProcess-1] render: 95.96 ms
+21:00:31 [SpawnProcess-2] loc 34.70 ms
+21:00:34 [SpawnProcess-1] render: 93.29 ms
+21:00:34 [SpawnProcess-2] loc 38.17 ms
+21:00:37 [SpawnProcess-1] render: 94.88 ms
+21:00:37 [SpawnProcess-2] loc 37.10 ms
+21:00:40 [SpawnProcess-1] render: 95.21 ms
+21:00:40 [SpawnProcess-2] loc 37.21 ms
+21:00:43 [SpawnProcess-1] render: 97.50 ms
+21:00:43 [SpawnProcess-2] loc 36.64 ms
+21:00:46 [SpawnProcess-1] render: 94.39 ms
+21:00:46 [SpawnProcess-2] loc 37.13 ms
+21:00:49 [SpawnProcess-1] render: 91.51 ms
+21:00:49 [SpawnProcess-2] loc 36.78 ms
+21:00:51 [SpawnProcess-1] render: 97.43 ms
+21:00:52 [SpawnProcess-2] loc 36.96 ms
+21:00:54 [SpawnProcess-1] render: 90.87 ms
+21:00:54 [SpawnProcess-2] loc 41.82 ms
+21:00:57 [SpawnProcess-1] render: 104.28 ms
+21:00:57 [SpawnProcess-2] loc 37.33 ms
+21:01:00 [SpawnProcess-1] render: 94.13 ms
+21:01:00 [SpawnProcess-2] loc 37.17 ms
+21:01:03 [SpawnProcess-1] render: 95.37 ms
+21:01:03 [SpawnProcess-2] loc 36.59 ms
+21:01:06 [SpawnProcess-1] render: 98.63 ms
+21:01:06 [SpawnProcess-2] loc 37.48 ms
+21:01:09 [SpawnProcess-1] render: 100.42 ms
+21:01:09 [SpawnProcess-2] loc 35.33 ms
+21:01:12 [SpawnProcess-1] render: 100.34 ms
+21:01:12 [SpawnProcess-2] loc 36.45 ms
+21:01:15 [SpawnProcess-1] render: 97.98 ms
+21:01:15 [SpawnProcess-2] loc 37.61 ms
+21:01:18 [SpawnProcess-1] render: 96.02 ms
+21:01:18 [SpawnProcess-2] loc 37.12 ms
+21:01:21 [SpawnProcess-1] render: 97.10 ms
+21:01:21 [SpawnProcess-2] loc 36.82 ms
+21:01:24 [SpawnProcess-1] render: 94.33 ms
+21:01:24 [SpawnProcess-2] loc 36.38 ms
+21:01:27 [SpawnProcess-1] render: 91.13 ms
+21:01:27 [SpawnProcess-2] loc 37.48 ms
+21:01:30 [SpawnProcess-1] render: 93.07 ms
+21:01:30 [SpawnProcess-2] loc 36.81 ms
+21:01:32 [SpawnProcess-1] render: 92.60 ms
+21:01:33 [SpawnProcess-2] loc 36.82 ms
+21:01:35 [SpawnProcess-1] render: 87.42 ms
+21:01:35 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.526m, 0.041deg, 0.005deg
+Std errors: 0.207m, 0.024deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 3.78%
+	50cm: 45.89%
+	100cm: 98.22%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 99.89%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 79.00%
+	0.02deg : 98.44%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@sunset@200 结束 ====
+
+==== 正在运行 USA_seq2@8@foggy@intensity3@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:02:19 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:02:21 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:02:24 [SpawnProcess-2] loc 318.52 ms
+21:02:28 [SpawnProcess-1] render: 184.93 ms
+21:02:29 [SpawnProcess-2] loc 37.14 ms
+21:02:34 [SpawnProcess-1] render: 189.96 ms
+21:02:34 [SpawnProcess-2] loc 36.28 ms
+21:02:39 [SpawnProcess-1] render: 195.38 ms
+21:02:39 [SpawnProcess-2] loc 35.60 ms
+21:02:45 [SpawnProcess-1] render: 193.24 ms
+21:02:45 [SpawnProcess-2] loc 37.17 ms
+21:02:51 [SpawnProcess-1] render: 173.86 ms
+21:02:51 [SpawnProcess-2] loc 35.89 ms
+21:02:57 [SpawnProcess-1] render: 177.82 ms
+21:02:57 [SpawnProcess-2] loc 35.67 ms
+21:03:02 [SpawnProcess-1] render: 216.87 ms
+21:03:02 [SpawnProcess-2] loc 34.23 ms
+21:03:09 [SpawnProcess-1] render: 229.29 ms
+21:03:09 [SpawnProcess-2] loc 35.11 ms
+21:03:17 [SpawnProcess-1] render: 226.10 ms
+21:03:17 [SpawnProcess-2] loc 36.52 ms
+21:03:24 [SpawnProcess-1] render: 227.52 ms
+21:03:24 [SpawnProcess-2] loc 35.94 ms
+21:03:30 [SpawnProcess-1] render: 220.78 ms
+21:03:31 [SpawnProcess-2] loc 36.13 ms
+21:03:37 [SpawnProcess-1] render: 214.44 ms
+21:03:37 [SpawnProcess-2] loc 35.99 ms
+21:03:43 [SpawnProcess-1] render: 197.87 ms
+21:03:43 [SpawnProcess-2] loc 35.21 ms
+21:03:49 [SpawnProcess-1] render: 193.79 ms
+21:03:50 [SpawnProcess-2] loc 35.55 ms
+21:03:55 [SpawnProcess-1] render: 191.48 ms
+21:03:56 [SpawnProcess-2] loc 35.80 ms
+21:04:01 [SpawnProcess-1] render: 190.01 ms
+21:04:02 [SpawnProcess-2] loc 35.91 ms
+21:04:07 [SpawnProcess-1] render: 192.47 ms
+21:04:08 [SpawnProcess-2] loc 36.60 ms
+21:04:13 [SpawnProcess-1] render: 196.21 ms
+21:04:14 [SpawnProcess-2] loc 37.72 ms
+21:04:19 [SpawnProcess-1] render: 214.06 ms
+21:04:20 [SpawnProcess-2] loc 39.36 ms
+21:04:26 [SpawnProcess-1] render: 201.50 ms
+21:04:26 [SpawnProcess-2] loc 38.08 ms
+21:04:32 [SpawnProcess-1] render: 231.58 ms
+21:04:33 [SpawnProcess-2] loc 36.33 ms
+21:04:39 [SpawnProcess-1] render: 209.27 ms
+21:04:40 [SpawnProcess-2] loc 34.39 ms
+21:04:46 [SpawnProcess-1] render: 270.22 ms
+21:04:47 [SpawnProcess-2] loc 35.91 ms
+21:04:53 [SpawnProcess-1] render: 219.21 ms
+21:04:53 [SpawnProcess-2] loc 36.69 ms
+21:04:59 [SpawnProcess-1] render: 210.32 ms
+21:05:00 [SpawnProcess-2] loc 35.60 ms
+21:05:05 [SpawnProcess-1] render: 199.10 ms
+21:05:06 [SpawnProcess-2] loc 36.69 ms
+21:05:12 [SpawnProcess-1] render: 213.29 ms
+21:05:12 [SpawnProcess-2] loc 36.80 ms
+21:05:18 [SpawnProcess-1] render: 197.74 ms
+21:05:18 [SpawnProcess-2] loc 36.84 ms
+21:05:24 [SpawnProcess-1] render: 199.13 ms
+21:05:24 [SpawnProcess-2] loc 35.14 ms
+21:05:30 [SpawnProcess-1] render: 165.07 ms
+21:05:30 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.612m, 0.041deg, 0.006deg
+Std errors: 0.308m, 0.024deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 3.56%
+	50cm: 33.44%
+	100cm: 85.89%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 76.00%
+	0.02deg : 97.44%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@foggy@intensity3@500 结束 ====
+
+==== 正在运行 USA_seq2@8@night@intensity3@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:06:08 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:06:09 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:06:12 [SpawnProcess-2] loc 315.29 ms
+21:06:18 [SpawnProcess-1] render: 214.74 ms
+21:06:18 [SpawnProcess-2] loc 36.74 ms
+21:06:23 [SpawnProcess-1] render: 188.00 ms
+21:06:23 [SpawnProcess-2] loc 36.21 ms
+21:06:29 [SpawnProcess-1] render: 197.28 ms
+21:06:29 [SpawnProcess-2] loc 36.70 ms
+21:06:35 [SpawnProcess-1] render: 204.21 ms
+21:06:35 [SpawnProcess-2] loc 37.66 ms
+21:06:41 [SpawnProcess-1] render: 184.62 ms
+21:06:41 [SpawnProcess-2] loc 36.25 ms
+21:06:47 [SpawnProcess-1] render: 180.37 ms
+21:06:47 [SpawnProcess-2] loc 36.48 ms
+21:06:52 [SpawnProcess-1] render: 221.20 ms
+21:06:53 [SpawnProcess-2] loc 34.73 ms
+21:06:59 [SpawnProcess-1] render: 233.88 ms
+21:07:00 [SpawnProcess-2] loc 34.37 ms
+21:07:07 [SpawnProcess-1] render: 230.04 ms
+21:07:07 [SpawnProcess-2] loc 35.78 ms
+21:07:14 [SpawnProcess-1] render: 230.06 ms
+21:07:15 [SpawnProcess-2] loc 36.07 ms
+21:07:21 [SpawnProcess-1] render: 222.26 ms
+21:07:21 [SpawnProcess-2] loc 37.45 ms
+21:07:27 [SpawnProcess-1] render: 207.91 ms
+21:07:28 [SpawnProcess-2] loc 37.55 ms
+21:07:34 [SpawnProcess-1] render: 202.85 ms
+21:07:34 [SpawnProcess-2] loc 36.88 ms
+21:07:40 [SpawnProcess-1] render: 208.21 ms
+21:07:40 [SpawnProcess-2] loc 36.14 ms
+21:07:46 [SpawnProcess-1] render: 190.34 ms
+21:07:46 [SpawnProcess-2] loc 36.45 ms
+21:07:52 [SpawnProcess-1] render: 186.05 ms
+21:07:52 [SpawnProcess-2] loc 37.56 ms
+21:07:58 [SpawnProcess-1] render: 193.54 ms
+21:07:58 [SpawnProcess-2] loc 36.56 ms
+21:08:04 [SpawnProcess-1] render: 194.16 ms
+21:08:04 [SpawnProcess-2] loc 36.33 ms
+21:08:10 [SpawnProcess-1] render: 210.65 ms
+21:08:10 [SpawnProcess-2] loc 38.08 ms
+21:08:16 [SpawnProcess-1] render: 200.39 ms
+21:08:16 [SpawnProcess-2] loc 37.38 ms
+21:08:23 [SpawnProcess-1] render: 234.40 ms
+21:08:23 [SpawnProcess-2] loc 37.43 ms
+21:08:30 [SpawnProcess-1] render: 212.75 ms
+21:08:30 [SpawnProcess-2] loc 34.65 ms
+21:08:37 [SpawnProcess-1] render: 270.28 ms
+21:08:37 [SpawnProcess-2] loc 37.35 ms
+21:08:43 [SpawnProcess-1] render: 218.48 ms
+21:08:44 [SpawnProcess-2] loc 38.59 ms
+21:08:50 [SpawnProcess-1] render: 249.33 ms
+21:08:50 [SpawnProcess-2] loc 36.32 ms
+21:08:56 [SpawnProcess-1] render: 203.01 ms
+21:08:56 [SpawnProcess-2] loc 35.16 ms
+21:09:03 [SpawnProcess-1] render: 213.58 ms
+21:09:03 [SpawnProcess-2] loc 37.82 ms
+21:09:09 [SpawnProcess-1] render: 202.41 ms
+21:09:09 [SpawnProcess-2] loc 37.23 ms
+21:09:15 [SpawnProcess-1] render: 200.50 ms
+21:09:15 [SpawnProcess-2] loc 36.66 ms
+21:09:21 [SpawnProcess-1] render: 166.40 ms
+21:09:21 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.700m, 0.054deg, 0.007deg
+Std errors: 0.383m, 0.031deg, 0.006deg
+Percentage of test images localized within:
+	20cm: 2.67%
+	50cm: 24.44%
+	100cm: 76.67%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 99.78%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 67.11%
+	0.02deg : 93.78%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@night@intensity3@500 结束 ====
+
+==== 正在运行 USA_seq2@8@sunny@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:10:07 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:10:08 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:10:11 [SpawnProcess-2] loc 305.36 ms
+21:10:15 [SpawnProcess-1] render: 191.57 ms
+21:10:16 [SpawnProcess-2] loc 38.21 ms
+21:10:21 [SpawnProcess-1] render: 185.53 ms
+21:10:21 [SpawnProcess-2] loc 37.48 ms
+21:10:26 [SpawnProcess-1] render: 196.72 ms
+21:10:27 [SpawnProcess-2] loc 36.54 ms
+21:10:32 [SpawnProcess-1] render: 190.62 ms
+21:10:33 [SpawnProcess-2] loc 36.31 ms
+21:10:38 [SpawnProcess-1] render: 182.68 ms
+21:10:38 [SpawnProcess-2] loc 36.97 ms
+21:10:44 [SpawnProcess-1] render: 178.15 ms
+21:10:44 [SpawnProcess-2] loc 35.47 ms
+21:10:50 [SpawnProcess-1] render: 223.83 ms
+21:10:50 [SpawnProcess-2] loc 33.94 ms
+21:10:56 [SpawnProcess-1] render: 233.29 ms
+21:10:57 [SpawnProcess-2] loc 35.45 ms
+21:11:04 [SpawnProcess-1] render: 225.48 ms
+21:11:04 [SpawnProcess-2] loc 35.73 ms
+21:11:11 [SpawnProcess-1] render: 224.53 ms
+21:11:11 [SpawnProcess-2] loc 36.62 ms
+21:11:18 [SpawnProcess-1] render: 220.81 ms
+21:11:18 [SpawnProcess-2] loc 36.81 ms
+21:11:24 [SpawnProcess-1] render: 215.54 ms
+21:11:25 [SpawnProcess-2] loc 36.25 ms
+21:11:31 [SpawnProcess-1] render: 202.13 ms
+21:11:31 [SpawnProcess-2] loc 35.71 ms
+21:11:37 [SpawnProcess-1] render: 207.18 ms
+21:11:37 [SpawnProcess-2] loc 36.87 ms
+21:11:43 [SpawnProcess-1] render: 192.70 ms
+21:11:43 [SpawnProcess-2] loc 36.55 ms
+21:11:49 [SpawnProcess-1] render: 191.09 ms
+21:11:49 [SpawnProcess-2] loc 37.79 ms
+21:11:55 [SpawnProcess-1] render: 193.29 ms
+21:11:55 [SpawnProcess-2] loc 37.40 ms
+21:12:01 [SpawnProcess-1] render: 198.04 ms
+21:12:01 [SpawnProcess-2] loc 37.82 ms
+21:12:07 [SpawnProcess-1] render: 242.66 ms
+21:12:07 [SpawnProcess-2] loc 37.24 ms
+21:12:13 [SpawnProcess-1] render: 200.59 ms
+21:12:13 [SpawnProcess-2] loc 36.93 ms
+21:12:20 [SpawnProcess-1] render: 237.09 ms
+21:12:20 [SpawnProcess-2] loc 36.41 ms
+21:12:27 [SpawnProcess-1] render: 217.09 ms
+21:12:27 [SpawnProcess-2] loc 34.07 ms
+21:12:34 [SpawnProcess-1] render: 274.67 ms
+21:12:34 [SpawnProcess-2] loc 37.02 ms
+21:12:41 [SpawnProcess-1] render: 218.32 ms
+21:12:41 [SpawnProcess-2] loc 38.39 ms
+21:12:47 [SpawnProcess-1] render: 219.03 ms
+21:12:47 [SpawnProcess-2] loc 36.27 ms
+21:12:53 [SpawnProcess-1] render: 203.28 ms
+21:12:54 [SpawnProcess-2] loc 35.71 ms
+21:13:00 [SpawnProcess-1] render: 215.14 ms
+21:13:00 [SpawnProcess-2] loc 36.50 ms
+21:13:06 [SpawnProcess-1] render: 207.24 ms
+21:13:07 [SpawnProcess-2] loc 36.60 ms
+21:13:12 [SpawnProcess-1] render: 201.12 ms
+21:13:13 [SpawnProcess-2] loc 36.00 ms
+21:13:18 [SpawnProcess-1] render: 172.14 ms
+21:13:18 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.601m, 0.040deg, 0.005deg
+Std errors: 0.315m, 0.024deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 3.78%
+	50cm: 37.00%
+	100cm: 87.11%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 80.22%
+	0.02deg : 98.56%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@sunny@500 结束 ====
+
+==== 正在运行 USA_seq2@8@cloudy@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:14:04 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:14:06 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:14:08 [SpawnProcess-2] loc 306.66 ms
+21:14:12 [SpawnProcess-1] render: 201.87 ms
+21:14:13 [SpawnProcess-2] loc 38.21 ms
+21:14:18 [SpawnProcess-1] render: 184.78 ms
+21:14:18 [SpawnProcess-2] loc 36.62 ms
+21:14:23 [SpawnProcess-1] render: 193.50 ms
+21:14:24 [SpawnProcess-2] loc 36.16 ms
+21:14:29 [SpawnProcess-1] render: 190.88 ms
+21:14:29 [SpawnProcess-2] loc 36.68 ms
+21:14:35 [SpawnProcess-1] render: 183.35 ms
+21:14:35 [SpawnProcess-2] loc 35.86 ms
+21:14:41 [SpawnProcess-1] render: 184.43 ms
+21:14:41 [SpawnProcess-2] loc 36.48 ms
+21:14:46 [SpawnProcess-1] render: 216.37 ms
+21:14:46 [SpawnProcess-2] loc 34.65 ms
+21:14:53 [SpawnProcess-1] render: 233.22 ms
+21:14:53 [SpawnProcess-2] loc 34.28 ms
+21:15:01 [SpawnProcess-1] render: 222.58 ms
+21:15:01 [SpawnProcess-2] loc 36.07 ms
+21:15:08 [SpawnProcess-1] render: 224.74 ms
+21:15:08 [SpawnProcess-2] loc 35.80 ms
+21:15:14 [SpawnProcess-1] render: 222.29 ms
+21:15:15 [SpawnProcess-2] loc 36.12 ms
+21:15:21 [SpawnProcess-1] render: 208.42 ms
+21:15:21 [SpawnProcess-2] loc 36.81 ms
+21:15:27 [SpawnProcess-1] render: 200.77 ms
+21:15:28 [SpawnProcess-2] loc 36.34 ms
+21:15:33 [SpawnProcess-1] render: 208.69 ms
+21:15:34 [SpawnProcess-2] loc 36.90 ms
+21:15:39 [SpawnProcess-1] render: 192.60 ms
+21:15:40 [SpawnProcess-2] loc 36.31 ms
+21:15:45 [SpawnProcess-1] render: 187.53 ms
+21:15:46 [SpawnProcess-2] loc 36.79 ms
+21:15:51 [SpawnProcess-1] render: 195.06 ms
+21:15:51 [SpawnProcess-2] loc 36.21 ms
+21:15:57 [SpawnProcess-1] render: 196.31 ms
+21:15:58 [SpawnProcess-2] loc 37.06 ms
+21:16:03 [SpawnProcess-1] render: 218.12 ms
+21:16:04 [SpawnProcess-2] loc 36.78 ms
+21:16:10 [SpawnProcess-1] render: 199.36 ms
+21:16:10 [SpawnProcess-2] loc 37.07 ms
+21:16:16 [SpawnProcess-1] render: 235.67 ms
+21:16:16 [SpawnProcess-2] loc 37.00 ms
+21:16:23 [SpawnProcess-1] render: 212.21 ms
+21:16:23 [SpawnProcess-2] loc 34.74 ms
+21:16:30 [SpawnProcess-1] render: 270.42 ms
+21:16:30 [SpawnProcess-2] loc 37.61 ms
+21:16:37 [SpawnProcess-1] render: 216.55 ms
+21:16:37 [SpawnProcess-2] loc 38.07 ms
+21:16:43 [SpawnProcess-1] render: 217.39 ms
+21:16:43 [SpawnProcess-2] loc 37.00 ms
+21:16:49 [SpawnProcess-1] render: 205.96 ms
+21:16:50 [SpawnProcess-2] loc 34.69 ms
+21:16:56 [SpawnProcess-1] render: 231.95 ms
+21:16:56 [SpawnProcess-2] loc 37.98 ms
+21:17:02 [SpawnProcess-1] render: 198.06 ms
+21:17:03 [SpawnProcess-2] loc 37.30 ms
+21:17:08 [SpawnProcess-1] render: 197.02 ms
+21:17:09 [SpawnProcess-2] loc 36.04 ms
+21:17:14 [SpawnProcess-1] render: 170.26 ms
+21:17:14 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.589m, 0.038deg, 0.006deg
+Std errors: 0.311m, 0.024deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 5.33%
+	50cm: 37.44%
+	100cm: 88.44%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 78.56%
+	0.02deg : 98.44%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@cloudy@500 结束 ====
+
+==== 正在运行 USA_seq2@8@sunset@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:18:00 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:18:02 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:18:04 [SpawnProcess-2] loc 309.16 ms
+21:18:09 [SpawnProcess-1] render: 194.37 ms
+21:18:09 [SpawnProcess-2] loc 38.02 ms
+21:18:14 [SpawnProcess-1] render: 184.72 ms
+21:18:14 [SpawnProcess-2] loc 37.19 ms
+21:18:19 [SpawnProcess-1] render: 198.94 ms
+21:18:20 [SpawnProcess-2] loc 36.74 ms
+21:18:25 [SpawnProcess-1] render: 186.68 ms
+21:18:26 [SpawnProcess-2] loc 36.60 ms
+21:18:31 [SpawnProcess-1] render: 176.95 ms
+21:18:31 [SpawnProcess-2] loc 35.30 ms
+21:18:37 [SpawnProcess-1] render: 180.97 ms
+21:18:37 [SpawnProcess-2] loc 35.95 ms
+21:18:43 [SpawnProcess-1] render: 222.05 ms
+21:18:43 [SpawnProcess-2] loc 35.00 ms
+21:18:50 [SpawnProcess-1] render: 233.35 ms
+21:18:50 [SpawnProcess-2] loc 35.25 ms
+21:18:57 [SpawnProcess-1] render: 222.00 ms
+21:18:58 [SpawnProcess-2] loc 36.43 ms
+21:19:04 [SpawnProcess-1] render: 226.58 ms
+21:19:05 [SpawnProcess-2] loc 36.06 ms
+21:19:11 [SpawnProcess-1] render: 218.85 ms
+21:19:11 [SpawnProcess-2] loc 36.11 ms
+21:19:18 [SpawnProcess-1] render: 208.10 ms
+21:19:18 [SpawnProcess-2] loc 36.56 ms
+21:19:24 [SpawnProcess-1] render: 198.46 ms
+21:19:24 [SpawnProcess-2] loc 35.55 ms
+21:19:30 [SpawnProcess-1] render: 214.93 ms
+21:19:30 [SpawnProcess-2] loc 36.60 ms
+21:19:36 [SpawnProcess-1] render: 193.94 ms
+21:19:36 [SpawnProcess-2] loc 36.98 ms
+21:19:42 [SpawnProcess-1] render: 186.90 ms
+21:19:42 [SpawnProcess-2] loc 36.72 ms
+21:19:48 [SpawnProcess-1] render: 196.25 ms
+21:19:48 [SpawnProcess-2] loc 35.62 ms
+21:19:54 [SpawnProcess-1] render: 199.79 ms
+21:19:54 [SpawnProcess-2] loc 36.92 ms
+21:20:00 [SpawnProcess-1] render: 230.18 ms
+21:20:00 [SpawnProcess-2] loc 36.35 ms
+21:20:06 [SpawnProcess-1] render: 199.74 ms
+21:20:06 [SpawnProcess-2] loc 37.08 ms
+21:20:13 [SpawnProcess-1] render: 229.72 ms
+21:20:13 [SpawnProcess-2] loc 36.97 ms
+21:20:20 [SpawnProcess-1] render: 213.25 ms
+21:20:20 [SpawnProcess-2] loc 34.57 ms
+21:20:27 [SpawnProcess-1] render: 270.42 ms
+21:20:27 [SpawnProcess-2] loc 37.28 ms
+21:20:33 [SpawnProcess-1] render: 216.90 ms
+21:20:34 [SpawnProcess-2] loc 37.49 ms
+21:20:40 [SpawnProcess-1] render: 218.77 ms
+21:20:40 [SpawnProcess-2] loc 36.13 ms
+21:20:46 [SpawnProcess-1] render: 202.21 ms
+21:20:46 [SpawnProcess-2] loc 36.69 ms
+21:20:53 [SpawnProcess-1] render: 212.26 ms
+21:20:53 [SpawnProcess-2] loc 36.59 ms
+21:20:59 [SpawnProcess-1] render: 202.02 ms
+21:20:59 [SpawnProcess-2] loc 35.93 ms
+21:21:05 [SpawnProcess-1] render: 199.70 ms
+21:21:05 [SpawnProcess-2] loc 35.79 ms
+21:21:11 [SpawnProcess-1] render: 171.62 ms
+21:21:11 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.586m, 0.040deg, 0.005deg
+Std errors: 0.301m, 0.024deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 3.89%
+	50cm: 36.00%
+	100cm: 89.00%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 80.56%
+	0.02deg : 99.11%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@sunset@500 结束 ====
+
+==== 正在运行 USA_seq2@8@foggy@intensity2@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:21:55 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:21:56 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:21:59 [SpawnProcess-2] loc 302.99 ms
+21:22:04 [SpawnProcess-1] render: 191.42 ms
+21:22:04 [SpawnProcess-2] loc 37.49 ms
+21:22:09 [SpawnProcess-1] render: 191.56 ms
+21:22:10 [SpawnProcess-2] loc 36.30 ms
+21:22:15 [SpawnProcess-1] render: 196.21 ms
+21:22:15 [SpawnProcess-2] loc 36.04 ms
+21:22:21 [SpawnProcess-1] render: 193.21 ms
+21:22:21 [SpawnProcess-2] loc 37.60 ms
+21:22:27 [SpawnProcess-1] render: 186.09 ms
+21:22:27 [SpawnProcess-2] loc 35.15 ms
+21:22:33 [SpawnProcess-1] render: 176.06 ms
+21:22:33 [SpawnProcess-2] loc 35.97 ms
+21:22:38 [SpawnProcess-1] render: 222.64 ms
+21:22:39 [SpawnProcess-2] loc 33.67 ms
+21:22:45 [SpawnProcess-1] render: 232.86 ms
+21:22:46 [SpawnProcess-2] loc 34.35 ms
+21:22:53 [SpawnProcess-1] render: 228.19 ms
+21:22:53 [SpawnProcess-2] loc 36.23 ms
+21:23:00 [SpawnProcess-1] render: 231.33 ms
+21:23:01 [SpawnProcess-2] loc 36.01 ms
+21:23:07 [SpawnProcess-1] render: 220.41 ms
+21:23:07 [SpawnProcess-2] loc 36.55 ms
+21:23:13 [SpawnProcess-1] render: 207.61 ms
+21:23:14 [SpawnProcess-2] loc 36.50 ms
+21:23:20 [SpawnProcess-1] render: 198.26 ms
+21:23:20 [SpawnProcess-2] loc 36.28 ms
+21:23:26 [SpawnProcess-1] render: 194.63 ms
+21:23:26 [SpawnProcess-2] loc 40.77 ms
+21:23:32 [SpawnProcess-1] render: 190.97 ms
+21:23:32 [SpawnProcess-2] loc 36.42 ms
+21:23:38 [SpawnProcess-1] render: 189.23 ms
+21:23:38 [SpawnProcess-2] loc 36.79 ms
+21:23:44 [SpawnProcess-1] render: 193.84 ms
+21:23:44 [SpawnProcess-2] loc 36.52 ms
+21:23:50 [SpawnProcess-1] render: 203.07 ms
+21:23:50 [SpawnProcess-2] loc 36.23 ms
+21:23:56 [SpawnProcess-1] render: 217.09 ms
+21:23:56 [SpawnProcess-2] loc 35.61 ms
+21:24:02 [SpawnProcess-1] render: 203.83 ms
+21:24:03 [SpawnProcess-2] loc 37.27 ms
+21:24:09 [SpawnProcess-1] render: 238.48 ms
+21:24:09 [SpawnProcess-2] loc 36.48 ms
+21:24:16 [SpawnProcess-1] render: 214.58 ms
+21:24:16 [SpawnProcess-2] loc 34.35 ms
+21:24:23 [SpawnProcess-1] render: 274.08 ms
+21:24:23 [SpawnProcess-2] loc 35.22 ms
+21:24:30 [SpawnProcess-1] render: 221.16 ms
+21:24:30 [SpawnProcess-2] loc 37.38 ms
+21:24:36 [SpawnProcess-1] render: 217.19 ms
+21:24:37 [SpawnProcess-2] loc 36.29 ms
+21:24:43 [SpawnProcess-1] render: 206.23 ms
+21:24:43 [SpawnProcess-2] loc 35.87 ms
+21:24:49 [SpawnProcess-1] render: 214.70 ms
+21:24:50 [SpawnProcess-2] loc 36.81 ms
+21:24:56 [SpawnProcess-1] render: 216.78 ms
+21:24:56 [SpawnProcess-2] loc 35.97 ms
+21:25:02 [SpawnProcess-1] render: 213.97 ms
+21:25:02 [SpawnProcess-2] loc 36.39 ms
+21:25:08 [SpawnProcess-1] render: 174.11 ms
+21:25:08 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.569m, 0.038deg, 0.005deg
+Std errors: 0.303m, 0.023deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 5.22%
+	50cm: 41.78%
+	100cm: 88.78%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 81.33%
+	0.02deg : 98.67%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@foggy@intensity2@500 结束 ====
+
+==== 正在运行 USA_seq2@8@night@intensity2@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:25:48 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:25:50 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:25:53 [SpawnProcess-2] loc 313.68 ms
+21:25:58 [SpawnProcess-1] render: 186.93 ms
+21:25:58 [SpawnProcess-2] loc 38.44 ms
+21:26:03 [SpawnProcess-1] render: 182.52 ms
+21:26:03 [SpawnProcess-2] loc 37.48 ms
+21:26:09 [SpawnProcess-1] render: 197.40 ms
+21:26:09 [SpawnProcess-2] loc 36.19 ms
+21:26:15 [SpawnProcess-1] render: 188.29 ms
+21:26:15 [SpawnProcess-2] loc 37.82 ms
+21:26:21 [SpawnProcess-1] render: 182.65 ms
+21:26:21 [SpawnProcess-2] loc 36.02 ms
+21:26:26 [SpawnProcess-1] render: 175.30 ms
+21:26:27 [SpawnProcess-2] loc 34.57 ms
+21:26:32 [SpawnProcess-1] render: 223.78 ms
+21:26:32 [SpawnProcess-2] loc 34.06 ms
+21:26:39 [SpawnProcess-1] render: 230.46 ms
+21:26:39 [SpawnProcess-2] loc 34.83 ms
+21:26:46 [SpawnProcess-1] render: 227.61 ms
+21:26:47 [SpawnProcess-2] loc 39.21 ms
+21:26:54 [SpawnProcess-1] render: 227.23 ms
+21:26:54 [SpawnProcess-2] loc 36.06 ms
+21:27:00 [SpawnProcess-1] render: 219.07 ms
+21:27:00 [SpawnProcess-2] loc 38.06 ms
+21:27:07 [SpawnProcess-1] render: 245.07 ms
+21:27:07 [SpawnProcess-2] loc 36.21 ms
+21:27:13 [SpawnProcess-1] render: 199.91 ms
+21:27:13 [SpawnProcess-2] loc 35.93 ms
+21:27:19 [SpawnProcess-1] render: 214.22 ms
+21:27:19 [SpawnProcess-2] loc 48.85 ms
+21:27:25 [SpawnProcess-1] render: 190.12 ms
+21:27:26 [SpawnProcess-2] loc 36.81 ms
+21:27:31 [SpawnProcess-1] render: 194.90 ms
+21:27:31 [SpawnProcess-2] loc 36.99 ms
+21:27:37 [SpawnProcess-1] render: 197.42 ms
+21:27:37 [SpawnProcess-2] loc 36.51 ms
+21:27:43 [SpawnProcess-1] render: 199.10 ms
+21:27:43 [SpawnProcess-2] loc 37.22 ms
+21:27:49 [SpawnProcess-1] render: 211.66 ms
+21:27:49 [SpawnProcess-2] loc 36.00 ms
+21:27:55 [SpawnProcess-1] render: 197.75 ms
+21:27:56 [SpawnProcess-2] loc 37.11 ms
+21:28:02 [SpawnProcess-1] render: 233.98 ms
+21:28:02 [SpawnProcess-2] loc 37.08 ms
+21:28:09 [SpawnProcess-1] render: 211.42 ms
+21:28:09 [SpawnProcess-2] loc 34.27 ms
+21:28:16 [SpawnProcess-1] render: 271.94 ms
+21:28:16 [SpawnProcess-2] loc 36.50 ms
+21:28:23 [SpawnProcess-1] render: 222.66 ms
+21:28:23 [SpawnProcess-2] loc 38.98 ms
+21:28:29 [SpawnProcess-1] render: 214.67 ms
+21:28:29 [SpawnProcess-2] loc 36.46 ms
+21:28:35 [SpawnProcess-1] render: 200.56 ms
+21:28:35 [SpawnProcess-2] loc 35.46 ms
+21:28:42 [SpawnProcess-1] render: 212.00 ms
+21:28:42 [SpawnProcess-2] loc 37.82 ms
+21:28:48 [SpawnProcess-1] render: 202.45 ms
+21:28:48 [SpawnProcess-2] loc 36.43 ms
+21:28:54 [SpawnProcess-1] render: 199.60 ms
+21:28:54 [SpawnProcess-2] loc 36.07 ms
+21:29:00 [SpawnProcess-1] render: 166.51 ms
+21:29:00 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.657m, 0.047deg, 0.006deg
+Std errors: 0.365m, 0.028deg, 0.006deg
+Percentage of test images localized within:
+	20cm: 2.56%
+	50cm: 29.89%
+	100cm: 77.22%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 99.89%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 72.22%
+	0.02deg : 94.56%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@night@intensity2@500 结束 ====
+
+==== 正在运行 USA_seq2@8@foggy@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:29:45 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:29:47 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:29:49 [SpawnProcess-2] loc 317.77 ms
+21:29:54 [SpawnProcess-1] render: 186.78 ms
+21:29:54 [SpawnProcess-2] loc 37.63 ms
+21:30:00 [SpawnProcess-1] render: 185.67 ms
+21:30:00 [SpawnProcess-2] loc 36.73 ms
+21:30:05 [SpawnProcess-1] render: 197.90 ms
+21:30:05 [SpawnProcess-2] loc 37.49 ms
+21:30:11 [SpawnProcess-1] render: 188.61 ms
+21:30:11 [SpawnProcess-2] loc 37.47 ms
+21:30:17 [SpawnProcess-1] render: 179.43 ms
+21:30:17 [SpawnProcess-2] loc 36.87 ms
+21:30:23 [SpawnProcess-1] render: 177.10 ms
+21:30:23 [SpawnProcess-2] loc 37.13 ms
+21:30:28 [SpawnProcess-1] render: 223.25 ms
+21:30:29 [SpawnProcess-2] loc 34.18 ms
+21:30:35 [SpawnProcess-1] render: 233.90 ms
+21:30:36 [SpawnProcess-2] loc 34.88 ms
+21:30:43 [SpawnProcess-1] render: 224.52 ms
+21:30:43 [SpawnProcess-2] loc 36.51 ms
+21:30:50 [SpawnProcess-1] render: 226.94 ms
+21:30:51 [SpawnProcess-2] loc 35.43 ms
+21:30:57 [SpawnProcess-1] render: 221.09 ms
+21:30:57 [SpawnProcess-2] loc 37.36 ms
+21:31:03 [SpawnProcess-1] render: 214.81 ms
+21:31:04 [SpawnProcess-2] loc 37.59 ms
+21:31:10 [SpawnProcess-1] render: 200.98 ms
+21:31:10 [SpawnProcess-2] loc 36.64 ms
+21:31:16 [SpawnProcess-1] render: 192.11 ms
+21:31:16 [SpawnProcess-2] loc 37.00 ms
+21:31:22 [SpawnProcess-1] render: 189.31 ms
+21:31:22 [SpawnProcess-2] loc 35.83 ms
+21:31:28 [SpawnProcess-1] render: 186.24 ms
+21:31:28 [SpawnProcess-2] loc 36.38 ms
+21:31:34 [SpawnProcess-1] render: 195.45 ms
+21:31:34 [SpawnProcess-2] loc 36.33 ms
+21:31:40 [SpawnProcess-1] render: 208.76 ms
+21:31:40 [SpawnProcess-2] loc 37.08 ms
+21:31:46 [SpawnProcess-1] render: 211.40 ms
+21:31:46 [SpawnProcess-2] loc 37.22 ms
+21:31:52 [SpawnProcess-1] render: 196.38 ms
+21:31:52 [SpawnProcess-2] loc 36.25 ms
+21:31:58 [SpawnProcess-1] render: 231.29 ms
+21:31:59 [SpawnProcess-2] loc 36.55 ms
+21:32:06 [SpawnProcess-1] render: 212.80 ms
+21:32:06 [SpawnProcess-2] loc 34.71 ms
+21:32:13 [SpawnProcess-1] render: 273.15 ms
+21:32:13 [SpawnProcess-2] loc 37.32 ms
+21:32:19 [SpawnProcess-1] render: 216.85 ms
+21:32:20 [SpawnProcess-2] loc 37.80 ms
+21:32:26 [SpawnProcess-1] render: 213.86 ms
+21:32:26 [SpawnProcess-2] loc 35.49 ms
+21:32:32 [SpawnProcess-1] render: 200.13 ms
+21:32:32 [SpawnProcess-2] loc 36.13 ms
+21:32:38 [SpawnProcess-1] render: 212.62 ms
+21:32:39 [SpawnProcess-2] loc 36.81 ms
+21:32:45 [SpawnProcess-1] render: 200.59 ms
+21:32:45 [SpawnProcess-2] loc 36.16 ms
+21:32:51 [SpawnProcess-1] render: 198.88 ms
+21:32:51 [SpawnProcess-2] loc 35.84 ms
+21:32:56 [SpawnProcess-1] render: 170.77 ms
+21:32:56 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.566m, 0.037deg, 0.005deg
+Std errors: 0.294m, 0.023deg, 0.005deg
+Percentage of test images localized within:
+	20cm: 4.33%
+	50cm: 38.67%
+	100cm: 88.56%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 82.33%
+	0.02deg : 98.89%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@foggy@500 结束 ====
+
+==== 正在运行 USA_seq2@8@night@intensity@500 ====
+euler : [10.0, 0.0, 281.3096633649805]
+trans : [-87.621232, 41.860991999999996, 800.0]
+--- FPVLoc localization
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+conf:
+{'checkpoint': '/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt',
+ 'duplicate_optimizer_per_scale': True,
+ 'extractor': {'align_data_to_pretrain': False,
+               'compute_uncertainty': True,
+               'decoder': 'UnetDecoder',
+               'decoder_channels': [128, 64, 32],
+               'encoder': 'mobileone_s0',
+               'encoder_depth': 3,
+               'name': 'unet_fusion',
+               'normalize_key': False,
+               'num_output_layer': 3,
+               'output_dim': [32, 32, 32],
+               'pretrained_weights': 'imagenet',
+               'train_box': False,
+               'train_mask': False,
+               'trainable': True},
+ 'features': {'conf': None},
+ 'init_target_offset': None,
+ 'name': 'two_view_refiner',
+ 'normalize_features': True,
+ 'optimizer': {'bound_confidence': True,
+               'damping': {'type': 'constant'},
+               'jacobi_scaling': False,
+               'lambda_': 0.01,
+               'learned_damping': True,
+               'loss_fn': 'scaled_barron(0, 0.1)',
+               'name': 'learned_optimizer',
+               'no_conditions': True,
+               'num_iters': 3,
+               'pad': 1,
+               'ratio': 3.75,
+               'sqrt_diag_damping': False,
+               'verbose': False},
+ 'refinement': {'average_observations': False,
+                'do_pose_approximation': True,
+                'multiscale': [4, 1],
+                'normalize_descriptors': True,
+                'num_dbs': 3,
+                'point_selection': 'all'},
+ 'scales': [1, 2, 4],
+ 'success_thresh': 3}
+[osgEarth]* FAILED to create a terrain engine for this map
+[07/20/2025 21:33:40 pixloc.pixlib.utils.experiments INFO] Loading checkpoint model@mapscape@512_384@fourier.ckpt
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter optimizer.dampingnet.const.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.a.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.W_q.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.0.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.0.Ws.1.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.a.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.W_q.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.0.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.1.Ws.1.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.a.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.W_q.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.0.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] Drop parameter GATs.2.Ws.1.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] No param optimizer.0.dampingnet.const.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] No param optimizer.1.dampingnet.const.
+[07/20/2025 21:33:42 pixloc.pixlib.utils.experiments INFO] No param optimizer.2.dampingnet.const.
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:771: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  euler_angles = torch.tensor(euler_angles).to(device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:775: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t_c2w, device=device, dtype=torch.float32)  # (3,)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1163: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  render_T = torch.tensor(render_T, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:1164: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  mkpts_r = torch.tensor(mkpts_r, device=device)
+/home/ubuntu/Documents/code/github/FPV/FPV-Test-512-cuda/pixloc/utils/get_depth.py:162: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  depth = torch.tensor(depth).to(device)
+[W BatchLinearAlgebra.cpp:1615] Warning: torch.cholesky is deprecated in favor of torch.linalg.cholesky and will be removed in a future PyTorch release.
+L = torch.cholesky(A)
+should be replaced with
+L = torch.linalg.cholesky(A)
+and
+U = torch.cholesky(A, upper=True)
+should be replaced with
+U = torch.linalg.cholesky(A).mH().
+This transform will produce equivalent results for all valid (symmetric positive definite) inputs. (function operator())
+21:33:44 [SpawnProcess-2] loc 314.15 ms
+21:33:49 [SpawnProcess-1] render: 187.41 ms
+21:33:49 [SpawnProcess-2] loc 37.51 ms
+21:33:54 [SpawnProcess-1] render: 185.84 ms
+21:33:54 [SpawnProcess-2] loc 36.22 ms
+21:34:00 [SpawnProcess-1] render: 198.43 ms
+21:34:00 [SpawnProcess-2] loc 36.86 ms
+21:34:06 [SpawnProcess-1] render: 188.16 ms
+21:34:06 [SpawnProcess-2] loc 35.39 ms
+21:34:12 [SpawnProcess-1] render: 182.98 ms
+21:34:12 [SpawnProcess-2] loc 35.84 ms
+21:34:17 [SpawnProcess-1] render: 177.00 ms
+21:34:18 [SpawnProcess-2] loc 36.59 ms
+21:34:23 [SpawnProcess-1] render: 217.69 ms
+21:34:23 [SpawnProcess-2] loc 34.70 ms
+21:34:30 [SpawnProcess-1] render: 234.33 ms
+21:34:30 [SpawnProcess-2] loc 35.17 ms
+21:34:38 [SpawnProcess-1] render: 222.94 ms
+21:34:38 [SpawnProcess-2] loc 36.99 ms
+21:34:45 [SpawnProcess-1] render: 228.29 ms
+21:34:45 [SpawnProcess-2] loc 34.85 ms
+21:34:51 [SpawnProcess-1] render: 218.37 ms
+21:34:52 [SpawnProcess-2] loc 36.22 ms
+21:34:58 [SpawnProcess-1] render: 209.74 ms
+21:34:58 [SpawnProcess-2] loc 37.27 ms
+21:35:04 [SpawnProcess-1] render: 198.19 ms
+21:35:04 [SpawnProcess-2] loc 36.50 ms
+21:35:10 [SpawnProcess-1] render: 194.94 ms
+21:35:11 [SpawnProcess-2] loc 37.89 ms
+21:35:16 [SpawnProcess-1] render: 192.03 ms
+21:35:17 [SpawnProcess-2] loc 36.29 ms
+21:35:22 [SpawnProcess-1] render: 180.85 ms
+21:35:22 [SpawnProcess-2] loc 37.92 ms
+21:35:28 [SpawnProcess-1] render: 192.26 ms
+21:35:28 [SpawnProcess-2] loc 37.15 ms
+21:35:34 [SpawnProcess-1] render: 196.81 ms
+21:35:34 [SpawnProcess-2] loc 36.88 ms
+21:35:40 [SpawnProcess-1] render: 206.72 ms
+21:35:40 [SpawnProcess-2] loc 36.14 ms
+21:35:46 [SpawnProcess-1] render: 199.56 ms
+21:35:47 [SpawnProcess-2] loc 37.63 ms
+21:35:53 [SpawnProcess-1] render: 232.64 ms
+21:35:53 [SpawnProcess-2] loc 35.86 ms
+21:36:00 [SpawnProcess-1] render: 213.61 ms
+21:36:00 [SpawnProcess-2] loc 34.85 ms
+21:36:07 [SpawnProcess-1] render: 275.36 ms
+21:36:07 [SpawnProcess-2] loc 36.97 ms
+21:36:14 [SpawnProcess-1] render: 218.99 ms
+21:36:14 [SpawnProcess-2] loc 38.96 ms
+21:36:20 [SpawnProcess-1] render: 217.98 ms
+21:36:20 [SpawnProcess-2] loc 37.16 ms
+21:36:26 [SpawnProcess-1] render: 203.22 ms
+21:36:26 [SpawnProcess-2] loc 36.13 ms
+21:36:33 [SpawnProcess-1] render: 212.28 ms
+21:36:33 [SpawnProcess-2] loc 36.59 ms
+21:36:39 [SpawnProcess-1] render: 201.63 ms
+21:36:39 [SpawnProcess-2] loc 36.17 ms
+21:36:45 [SpawnProcess-1] render: 200.10 ms
+21:36:45 [SpawnProcess-2] loc 36.00 ms
+21:36:51 [SpawnProcess-1] render: 171.98 ms
+21:36:51 [SpawnProcess-2] Localization process done
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Median errors: 0.616m, 0.042deg, 0.006deg
+Std errors: 0.330m, 0.025deg, 0.006deg
+Percentage of test images localized within:
+	20cm: 3.89%
+	50cm: 34.33%
+	100cm: 85.22%
+	300cm: 100.00%
+	500cm: 100.00%
+	0.2deg: 100.00%
+	0.5deg: 100.00%
+	1.0deg: 100.00%
+	3.0deg: 100.00%
+	5.0deg: 100.00%
+	0.01deg : 73.89%
+	0.02deg : 97.56%
+	0.05deg : 100.00%
+	0.10deg : 100.00%
+	0.20deg : 100.00%
+[W CudaIPCTypes.cpp:15] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+[W CUDAGuardImpl.h:46] Warning: CUDA warning: driver shutting down (function uncheckedGetDevice)
+[W CUDAGuardImpl.h:62] Warning: CUDA warning: invalid device ordinal (function uncheckedSetDevice)
+==== raft 运行 USA_seq2@8@night@intensity@500 结束 ====
+

@@ -1,0 +1,24 @@
+params:
+  #
+  TITLE: "German_seq"  # 输出文件的基础名称
+  IDX: 1                  # 用于文件命名的索引
+  # 起始点（经度, 纬度, 高程），100+550 计算后为 650
+  ABS_INIT: [13.391269, 52.506350, 13.375009, 52.520802]
+  HEIGHT_INIT: 250    # 50+200
+  # 姿态角（单位：度）
+  PITCH_RANGE: [50, 70] 
+
+  # 轨迹生成参数
+  NUM_POINTS: 3000       # 轨迹点数量
+  TOTAL_LENGTH: 5000      # 飞行总距离（单位：米），用于 x 方向
+  N: 10                   # 绕圈因子
+
+  # 输出路径（请根据实际情况修改）
+  TRAJECTORY_OUTPUT_DIR: "D:/GoogleEarth/project/German/trajectory/"
+  POSE_OUTPUT_DIR: "D:/GoogleEarth/project/German/pose/"
+
+  # 正弦曲线生成轨迹时的参数（用于 y 和 z 的偏移）
+  A: 100                  # y 方向正弦幅值（单位：米）
+  B: 50                   # z 方向正弦幅值（单位：米）
+
+  ROLL: 0

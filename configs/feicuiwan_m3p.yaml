@@ -1,0 +1,105 @@
+default_paths:
+  query_images: "images/images_upright/"
+  reference_images: "images/images_upright/"
+  reference_sfm: "sfm_superpoint+superglue/"
+  query_list: "*_time_queries_with_intrinsics.txt"
+  global_descriptors: "aachen_tf-netvlad.h5"
+  retrieval_pairs: "pairs-query-netvlad50.txt"
+  results: "pixloc_Aachen.txt"
+
+render_config:
+  model_path: "http://localhost:8078/Scene/Production_6.json"
+  init_rot: [49.71794737193199,0, -90]   
+  init_trans: [112.99659 ,28.29123, 112.671]
+  # render_camera: [960, 540, 689.475, 689.45,478.75, 268.35] 
+  outputs: "outputs/citystars"
+default_confs:
+  from_render_test:
+    checkpoint: "/mnt/sda/MapScape/Pretrained_model/model@mapscape@512@Fourier.ckpt"
+    refinement:  
+      num_dbs: 3
+      multiscale: [4, 1]
+      point_selection: "all"
+      normalize_descriptors: true
+      average_observations: false
+      do_pose_approximation: true
+    optimizer:
+      ratio: 3.75
+      num_iters: 3
+      pad: 1
+      lambda_: 0.01
+      verbose: false
+      loss_fn: scaled_barron(0, 0.1)
+      no_conditions: true
+      jacobi_scaling: false
+      sqrt_diag_damping: false
+      name: learned_optimizer
+      bound_confidence: true
+      learned_damping: true
+      damping:
+        type: constant
+    init_target_offset: null
+    success_thresh: 3
+    name: two_view_refiner
+    normalize_features: true
+    duplicate_optimizer_per_scale: true
+    features: 
+      conf:
+    scales: [1, 2, 4]
+    extractor:
+      name: unet_fusion
+      # num_head: 1
+      num_output_layer: 3 # 4 # 3
+      output_dim: [32, 32, 32] # [31, 31, 31] # [15, 15, 15] # [15, 15, 15, 15] # [16, 16, 16, 16] # [16, 16, 16]
+      encoder: mobileone_s0 # 'mobileone_s0' # mobileone_s1 # mobilenet_v2 tu-mobilevit_xs 
+      encoder_depth: 3 # 4 # 3 # 5
+      decoder: UnetDecoder
+      decoder_channels: [128, 64, 32] # [128, 64, 32, 16] # [128, 64, 32] # [256, 128, 64, 32, 16]
+      align_data_to_pretrain: false # false # true
+      pretrained_weights: 'imagenet'
+      train_mask: false # true # false
+      normalize_key: false # true # false
+      train_box: false # true
+      compute_uncertainty: true
+      trainable: true # false # true
+    
+  cam_query:
+    max_size: 512  #960
+    model: "PINHOLE"
+    width: 1920
+    height: 1080
+    params: [1354.4,1354.3,968.9,533.9 ]
+
+    # width: 1920
+    # height: 1080
+    # params: [1333.5,1333,958.6,536.0]
+    # width: 512
+    # height: 288
+    # params: [355.6, 355.467,255.626, 142.93]
+
+    distortion: [
+    0.0076,
+            0,
+            0,
+            0,
+            -0.0015 ]       # k6
+    # raw_query_camera: [3840,
+    #             2160,
+    #             1900.0,
+    #             1088.7,
+    #             3840,
+    #             2160,
+    #             2689.5,
+    #             2687.5]
+
+  dataset_path: "/mnt/sda/MapScape/query"
+  dataset_name: "DJI_20241113180128_0042_D"
+  output_name: "DJI_20241113180128_0042_D"
+  use_kf: false
+  padding: True
+  refine:
+    origin: [0,0,0]
+    dis_thes: 10
+    R_thes: 20
+    mul: 0.001
+  num_init_pose: 64

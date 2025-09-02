@@ -1,0 +1,23 @@
+params:
+  #
+  TITLE: "Switzerland_seq"  # 输出文件的基础名称
+  # 起始点（经度, 纬度, 高程），100+550 计算后为 650
+  ABS_INIT: [6.086954, 46.222290, 6.136031, 46.255877]
+  HEIGHT_INIT:  700   #400+300 [300, 500, 700]
+  # 姿态角（单位：度）
+  PITCH_RANGE: [30, 50]   # [0, 30] , [30, 45], [45, 70]
+ 
+  # 轨迹生成参数
+  NUM_POINTS: 3000       # 轨迹点数量
+  TOTAL_LENGTH: 5000      # 飞行总距离（单位：米），用于 x 方向
+  N: 6                   # 绕圈因子
+
+  # 输出路径（请根据实际情况修改）
+  POSE_OUTPUT_DIR: "/mnt/sda/MapScape/pose/"
+  TRAJECTORY_OUTPUT_DIR: "/mnt/sda/MapScape/trajectory/"
+
+  # 正弦曲线生成轨迹时的参数（用于 y 和 z 的偏移）
+  A: 100                  # y 方向正弦幅值（单位：米）
+  B: 50                   # z 方向正弦幅值（单位：米）
+
+  ROLL: 0

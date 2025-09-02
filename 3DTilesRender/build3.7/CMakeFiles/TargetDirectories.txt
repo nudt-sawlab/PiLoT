@@ -1,0 +1,7 @@
+/home/ubuntu/Documents/code/pixloc/3DTilesRender/build/CMakeFiles/ModelRenderScene.dir
+/home/ubuntu/Documents/code/pixloc/3DTilesRender/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/Documents/code/pixloc/3DTilesRender/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/Documents/code/pixloc/3DTilesRender/build/CMakeFiles/list_install_components.dir
+/home/ubuntu/Documents/code/pixloc/3DTilesRender/build/CMakeFiles/install.dir
+/home/ubuntu/Documents/code/pixloc/3DTilesRender/build/CMakeFiles/install/local.dir
+/home/ubuntu/Documents/code/pixloc/3DTilesRender/build/CMakeFiles/install/strip.dir

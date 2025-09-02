@@ -1,0 +1,216 @@
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+from transform import wgs84tocgcs2000_batch
+from matplotlib import rcParams
+import seaborn as sns
+import pandas as pd
+
+# Set LaTeX rendering for text
+rcParams['text.usetex'] = True
+rcParams['font.family'] = 'serif'
+rcParams['font.serif'] = ['Times New Roman']
+rcParams['axes.labelweight'] = 'normal'
+rcParams['axes.titlesize'] = 14
+rcParams['axes.labelsize'] = 12
+rcParams['xtick.labelsize'] = 10
+rcParams['ytick.labelsize'] = 10
+rcParams['legend.fontsize'] = 10
+
+def transform_points(points, scale, R, t):
+    return scale * (R @ points.T).T + t
+
+def umeyama_alignment(src, dst):
+    mu_src, mu_dst = src.mean(0), dst.mean(0)
+    src_centered, dst_centered = src - mu_src, dst - mu_dst
+    cov = dst_centered.T @ src_centered / src.shape[0]
+    U, D, Vt = np.linalg.svd(cov)
+    R = U @ Vt
+    if np.linalg.det(R) < 0:
+        U[:, -1] *= -1
+        R = U @ Vt
+    scale = np.trace(np.diag(D)) / ((src_centered ** 2).sum() / src.shape[0])
+    t = mu_dst - scale * R @ mu_src
+    return scale, R, t
+
+methods = ["GT", "FPVLoc", "Render2loc", "Pixloc", "ORB@per30", "Render2loc@raft"]
+methods_label = ["FPVLoc", "Render2loc", "Pixloc", "ORB@per30", "Render2loc@raft"]
+
+methods_name = {
+    "GT": "GT",
+    "FPVLoc": "GeoPixel",
+    "Render2loc": "Render2Loc",
+    "Pixloc": "PixLoc",
+    "ORB@per30": "Render2ORB",
+    "Render2loc@raft": "Render2RAFT"
+}
+
+# Optimized color palette for publication (ColorBrewer-inspired, accessible)
+method_colors = [
+    "#4B4B4B",  # GT - Dark gray
+    "#1B9E77",  # GeoPixel - Teal
+    "#D95F02",  # Render2Loc - Orange
+    "#7570B3",  # PixLoc - Purple
+    "#E7298A",  # Render2ORB - Magenta
+    "#66A61E",  # Render2RAFT - Green
+]
+
+data_root = "/mnt/sda/MapScape/query/estimation/result_images"
+seq_list = sorted([f for f in os.listdir(os.path.join(data_root, "GT")) if f.endswith(".txt")])
+outputs = os.path.join(data_root, "outputs")
+os.makedirs(outputs, exist_ok=True)
+
+speed_bins = [0.5, 1, 2, 5]
+angle_bins = [0, 0.2, 1, 5]
+
+LOG_MIN_POSERR = 1e-1
+LOG_MIN_ANGERR = 1e-3
+
+pos_err_per_bin = {m: [[] for _ in range(len(speed_bins)-1)] for m in methods}
+ang_err_per_bin = {m: [[] for _ in range(len(angle_bins)-1)] for m in methods}
+
+for seq in seq_list:
+    gt_file = os.path.join(data_root, "GT", seq)
+    with open(gt_file) as f:
+        gt_data = [l.strip().split() for l in f if len(l.strip().split()) >= 7]
+    gt_xyz = wgs84tocgcs2000_batch([tuple(map(float, d[1:4])) for d in gt_data], 4547)
+    gt_angles = np.array([tuple(map(float, [d[5], d[6] if float(d[6]) >= 0 else float(d[6]) + 360])) for d in gt_data])
+    gt_speed = np.linalg.norm(gt_xyz[1:] - gt_xyz[:-1], axis=1)
+    gt_speed = np.concatenate([[gt_speed[0]], gt_speed])
+    gt_angspeed = np.linalg.norm(gt_angles[1:] - gt_angles[:-1], axis=1)
+    gt_angspeed = np.concatenate([[gt_angspeed[0]], gt_angspeed])
+    for m_idx, method in enumerate(methods):
+        method_file = os.path.join(data_root, method, seq)
+        if not os.path.exists(method_file): continue
+        with open(method_file) as f:
+            est_data = [l.strip().split() for l in f if len(l.strip().split()) >= 7]
+        est_xyz_list = wgs84tocgcs2000_batch([tuple(map(float, d[1:4])) for d in est_data], 4547)
+        est_frameidx, est_xyz, est_angles = [], [], []
+        est_xyz = np.ones_like(gt_xyz) * 10
+        est_angles = np.ones_like(gt_angles) * 10
+        est_frameidx = np.arange(len(est_angles))
+        temp_frameidx = []
+        for d, xyz in zip(est_data, est_xyz_list):
+            frame_idx = int(d[0].split('_')[0]) if '_' in d[0] else None
+            if frame_idx is None: continue
+            temp_frameidx.append(frame_idx)
+            est_xyz[frame_idx] = xyz
+            pitch, yaw = float(d[5]), float(d[6])
+            if yaw < 0: yaw += 360
+            est_angles[frame_idx] = ((pitch, yaw))
+            
+        if 'ORB' in method:
+            timestamps = np.array(est_frameidx)
+            scale, R, t = umeyama_alignment(np.array(est_xyz[temp_frameidx]), np.array(gt_xyz[temp_frameidx]))
+            est_xyz = transform_points(np.array(est_xyz), scale, R, t)
+        if len(est_frameidx) < 2: continue
+        est_xyz = np.array(est_xyz)
+        est_angles = np.array(est_angles)
+        est_frameidx = np.array(est_frameidx)
+        gt_xyz_valid = gt_xyz[est_frameidx]
+        gt_angles_valid = gt_angles[est_frameidx]
+        v = gt_speed[est_frameidx]
+        av = gt_angspeed[est_frameidx]
+        pos_err = np.linalg.norm(est_xyz[1:] - gt_xyz_valid[1:], axis=1)
+        pos_err = np.clip(pos_err, None, 10)
+        ang_err = np.linalg.norm(est_angles[1:] - gt_angles_valid[1:], axis=1)
+        ang_err = np.clip(ang_err, None, 10)
+        speed_idx = np.digitize(v[1:], bins=speed_bins) - 1
+        angle_idx = np.digitize(av[1:], bins=angle_bins) - 1
+        for i in range(len(pos_err)):
+            if 0 <= speed_idx[i] < len(speed_bins)-1:
+                pos_err_per_bin[method][speed_idx[i]].append(pos_err[i])
+            if 0 <= angle_idx[i] < len(angle_bins)-1:
+                ang_err_per_bin[method][angle_idx[i]].append(ang_err[i])
+
+def nice_labels(bins, var_latex, unit):
+    return [
+        rf"${bins[i]}\leq {var_latex} < {bins[i+1]}$ ({unit})"
+        if i < len(bins) - 2 else
+        rf"${bins[i]}\leq {var_latex}\leq {bins[i+1]}$ ({unit})"
+        for i in range(len(bins) - 1)
+    ]
+
+def grouped_box_plot(ax, data_dict, methods, method_colors, bins, ylabel, log_min, legend_loc):
+    plot_data, plot_labels, plot_method = [], [], []
+
+    for m_idx, method in enumerate(methods):
+        for bin_idx in range(len(bins)-1):
+            vals = np.array(data_dict[method][bin_idx])
+            vals = vals[vals <= 5]
+            if len(vals) > 1:
+                plot_data.extend(np.log10(vals))
+                plot_labels.extend([f"{bins[bin_idx]}~{bins[bin_idx+1]}"]*len(vals))
+                plot_method.extend([methods_name[method]]*len(vals))
+
+    df = pd.DataFrame({
+        "log_err": plot_data,
+        "speed_bin": plot_labels,
+        "method": plot_method,
+    })
+
+    # Box plot with refined aesthetics
+    sns.boxplot(
+        x="speed_bin", y="log_err", hue="method", data=df,
+        palette=method_colors,
+        fliersize=0,
+        linewidth=1.2,
+        dodge=True,
+        ax=ax,
+        medianprops=dict(color="black", linewidth=1.5),
+        boxprops=dict(edgecolor="black", linewidth=1.0),
+        whiskerprops=dict(color="black", linewidth=1.0),
+        capprops=dict(color="black", linewidth=1.0)
+    )
+
+    # Strip plot for data points
+    sns.stripplot(
+        x="speed_bin", y="log_err", hue="method", data=df,
+        dodge=True, jitter=0.1, marker="o",
+        alpha=0.1, size=2,
+        palette=method_colors, ax=ax
+    )
+
+    # Remove top and right spines
+    sns.despine(ax=ax)
+
+    # Subtle grid
+    ax.grid(axis='y', linestyle='--', alpha=0.2)
+
+    # Labels and titles
+    if "Pos" in ylabel:
+        xvar_latex, xunit = "v", r"m/frame"
+        ax.set_xticklabels(nice_labels(bins, xvar_latex, xunit), fontsize=10)
+        ax.set_xlabel(r"Speed $v$ (m/frame)", fontsize=12)
+        ax.set_ylabel(r"$\log_{10}(||\Delta \mathbf{p}||)$ (m)", fontsize=12)
+        ax.set_title(r"Position Error vs. Speed", fontsize=14)
+    else:
+        xvar_latex, xunit = r"\omega", r"deg/frame"
+        ax.set_xticklabels(nice_labels(bins, xvar_latex, xunit), fontsize=10)
+        ax.set_xlabel(r"Angular Speed $\omega$ (deg/frame)", fontsize=12)
+        ax.set_ylabel(r"$\log_{10}(\Delta \theta)$ (deg)", fontsize=12)
+        ax.set_title(r"Angle Error vs. Angular Speed", fontsize=14)
+
+    ax.set_ylim(np.log10(log_min), None)
+    ax.tick_params(labelsize=10)
+    plt.setp(ax.get_xticklabels(), rotation=0)
+    
+    # Compact legend
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles[:len(methods)], labels[:len(methods)], loc=legend_loc, 
+              frameon=True, edgecolor='black', framealpha=0.9, 
+              bbox_to_anchor=(1.0, 1.0), ncol=1)
+
+# Plot position error
+fig1, ax1 = plt.subplots(figsize=(7, 4.5))  # Adjusted for two-column format
+grouped_box_plot(ax1, pos_err_per_bin, methods, method_colors, speed_bins, "Position Error (m)", LOG_MIN_POSERR, "upper right")
+plt.tight_layout()
+plt.savefig(f"{outputs}/box_poserr_vs_speed.pdf", dpi=600, bbox_inches='tight', transparent=True)
+
+# Plot angle error
+fig2, ax2 = plt.subplots(figsize=(7, 4.5))
+grouped_box_plot(ax2, ang_err_per_bin, methods, method_colors, angle_bins, "Angle Error (deg)", LOG_MIN_ANGERR, "upper right")
+plt.tight_layout()
+plt.savefig(f"{outputs}/box_angerr_vs_angspeed.pdf", dpi=600, bbox_inches='tight', transparent=True)
+
+print("✅ Publication-quality box plots saved as PDF.")

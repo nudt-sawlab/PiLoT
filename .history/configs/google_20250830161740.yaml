@@ -1,0 +1,219 @@
+default_paths:
+  query_images: "images/images_upright/"
+  reference_images: "images/images_upright/"
+  reference_sfm: "sfm_superpoint+superglue/"
+  query_list: "*_time_queries_with_intrinsics.txt"
+  global_descriptors: "aachen_tf-netvlad.h5"
+  retrieval_pairs: "pairs-query-netvlad50.txt"
+  results: "pixloc_Aachen.txt"
+  
+render_config:
+  model_path: "/v1/3dtiles/datasets/CgA/files/tileset.json"
+  # switzerland_seq5@500
+  init_rot: [  
+       6.0, 0.0,  340.6897984108729
+    ] 
+  init_trans: [
+        -122.009837, 37.33356199999999, 800.0
+    ]
+  render_camera: [1920, 1080, 960, 540, 19.2,  10.8, 23.176]
+  outputs: "outputs/Mapsape"
+
+default_confs:
+  from_render:
+    experiment: "pixloc_megadepth"
+    features: {}
+    optimizer:
+      num_iters: 20
+      pad: 1
+    refinement:
+      num_dbs: 3
+      multiscale: [4, 1]
+      point_selection: "all"
+      normalize_descriptors: true
+      average_observations: false
+      do_pose_approximation: true
+  from_render_test:
+    checkpoint: "/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt"
+
+    refinement:  
+      num_dbs: 3
+      multiscale: [4, 1]
+      point_selection: "all"
+      normalize_descriptors: true
+      average_observations: false
+      do_pose_approximation: true
+    optimizer:
+      ratio: 3.75
+      num_iters: 3
+      pad: 1
+      lambda_: 0.01
+      verbose: false
+      loss_fn: scaled_barron(0, 0.1)
+      no_conditions: true
+      jacobi_scaling: false
+      sqrt_diag_damping: false
+      name: learned_optimizer
+      bound_confidence: true
+      learned_damping: true
+      damping:
+        type: constant
+    init_target_offset: null
+    success_thresh: 3
+    name: two_view_refiner
+    normalize_features: true
+    duplicate_optimizer_per_scale: true
+    features: 
+      conf:
+    scales: [1, 2, 4]
+    extractor:
+      name: unet_fusion
+      # num_head: 1
+      num_output_layer: 3 # 4 # 3
+      output_dim: [32, 32, 32] # [31, 31, 31] # [15, 15, 15] # [15, 15, 15, 15] # [16, 16, 16, 16] # [16, 16, 16]
+      encoder: mobileone_s0 # 'mobileone_s0' # mobileone_s1 # mobilenet_v2 tu-mobilevit_xs 
+      encoder_depth: 3 # 4 # 3 # 5
+      decoder: UnetDecoder
+      decoder_channels: [128, 64, 32] # [128, 64, 32, 16] # [128, 64, 32] # [256, 128, 64, 32, 16]
+      align_data_to_pretrain: false # false # true
+      pretrained_weights: 'imagenet'
+      train_mask: false # true # false
+      normalize_key: false # true # false
+      train_box: false # true
+      compute_uncertainty: true
+      trainable: true # false # true
+    
+  cam_query:
+    model: "PINHOLE"
+    # width: 960
+    # height: 540
+    # params: [1158.8, 1158.8, 480, 270]
+    width: 512
+    height: 288
+    params: [618.026, 618.026, 256, 144]
+    # width: 256
+    # height: 144
+    # params: [309.013, 309.013, 128, 72]
+  dataset_path: "/mnt/sda/MapScape/query"
+  dataset_name: "USA_seq8@8@sunny@500"
+  output_name: "USA_seq8@8@sunny@500"
+  use_kf: false
+  padding: True
+  refine:
+    origin: [0, 0, 0]
+    dis_thes: 20
+    R_thes: 20
+    mul: 0.001
+  num_init_pose: 64
+default_paths:
+  query_images: "images/images_upright/"
+  reference_images: "images/images_upright/"
+  reference_sfm: "sfm_superpoint+superglue/"
+  query_list: "*_time_queries_with_intrinsics.txt"
+  global_descriptors: "aachen_tf-netvlad.h5"
+  retrieval_pairs: "pairs-query-netvlad50.txt"
+  results: "pixloc_Aachen.txt"
+  
+render_config:
+  model_path: "/v1/3dtiles/datasets/CgA/files/tileset.json"
+  # switzerland_seq5@500
+  init_rot: [  
+       6.0, 0.0,  340.6897984108729
+    ] 
+  init_trans: [
+        -122.009837, 37.33356199999999, 800.0
+    ]
+  # render_camera: [1920, 1080, 960, 540, 19.2,  10.8, 23.176]
+  outputs: "outputs/Mapsape"
+
+default_confs:
+  from_render:
+    experiment: "pixloc_megadepth"
+    features: {}
+    optimizer:
+      num_iters: 20
+      pad: 1
+    refinement:
+      num_dbs: 3
+      multiscale: [4, 1]
+      point_selection: "all"
+      normalize_descriptors: true
+      average_observations: false
+      do_pose_approximation: true
+  from_render_test:
+    checkpoint: "/mnt/sda/MapScape/Pretrained_model/model@mapscape@512_384@fourier.ckpt"
+
+    refinement:  
+      num_dbs: 3
+      multiscale: [4, 1]
+      point_selection: "all"
+      normalize_descriptors: true
+      average_observations: false
+      do_pose_approximation: true
+    optimizer:
+      ratio: 3.75
+      num_iters: 3
+      pad: 1
+      lambda_: 0.01
+      verbose: false
+      loss_fn: scaled_barron(0, 0.1)
+      no_conditions: true
+      jacobi_scaling: false
+      sqrt_diag_damping: false
+      name: learned_optimizer
+      bound_confidence: true
+      learned_damping: true
+      damping:
+        type: constant
+    init_target_offset: null
+    success_thresh: 3
+    name: two_view_refiner
+    normalize_features: true
+    duplicate_optimizer_per_scale: true
+    features: 
+      conf:
+    scales: [1, 2, 4]
+    extractor:
+      name: unet_fusion
+      # num_head: 1
+      num_output_layer: 3 # 4 # 3
+      output_dim: [32, 32, 32] # [31, 31, 31] # [15, 15, 15] # [15, 15, 15, 15] # [16, 16, 16, 16] # [16, 16, 16]
+      encoder: mobileone_s0 # 'mobileone_s0' # mobileone_s1 # mobilenet_v2 tu-mobilevit_xs 
+      encoder_depth: 3 # 4 # 3 # 5
+      decoder: UnetDecoder
+      decoder_channels: [128, 64, 32] # [128, 64, 32, 16] # [128, 64, 32] # [256, 128, 64, 32, 16]
+      align_data_to_pretrain: false # false # true
+      pretrained_weights: 'imagenet'
+      train_mask: false # true # false
+      normalize_key: false # true # false
+      train_box: false # true
+      compute_uncertainty: true
+      trainable: true # false # true
+    
+  cam_query:
+    max_size: 512  #960
+    model: "PINHOLE"
+    # width: 960
+    # height: 540
+    # params: [1158.8, 1158.8, 480, 270]
+    # width: 512
+    # height: 288
+    # params: [618.026, 618.026, 256, 144]
+    width: 1920
+    height: 1080
+    params: [2317.6, 2317.6, 960, 540]
+    # width: 256
+    # height: 144
+    # params: [309.013, 309.013, 128, 72]
+    distortion: []
+  dataset_path: "/media/ubuntu/PS2000/"
+  dataset_name: "USA_seq8@8@sunny@500"
+  output_name: "USA_seq8@8@sunny@500"
+  use_kf: false
+  padding: True
+  refine:
+    origin: [0, 0, 0]
+    dis_thes: 30
+    R_thes: 30
+    mul: 0.001
+  num_init_pose: 64
