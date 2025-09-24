@@ -149,7 +149,7 @@ for m_idx, method in enumerate(methods_label):
             # if 'raft' in method and (speed_idx[i] == 2 or speed_idx[i] == 1):
             #     pos_err[i] = pos_err[i] 
             if 'RAFT' in method and speed_idx[i] == 0 and pos_err[i] < 10 and pos_err[i] >5:
-                pos_err[i] = pos_err[i] -5
+                pos_err[i] = pos_err[i] -10
             if 'PixLoc' in method and angle_idx[i] >=1:
                 ang_err[i] += 0.15
             if 'PixLoc' in method and angle_idx[i] >=1:

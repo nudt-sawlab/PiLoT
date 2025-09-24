@@ -24,8 +24,8 @@ def umeyama_alignment(src, dst):
     scale = np.trace(np.diag(D)) / ((src_centered ** 2).sum() / src.shape[0])
     t = mu_dst - scale * R @ mu_src
     return scale, R, t
-methods = ["GT", "GeoPixel", "Render2Loc", "PixLoc", "Render2RAFT", "Render2ORB"]
-methods_label = ["GeoPixel", "Render2Loc", "PixLoc", "Render2RAFT", "Render2ORB"]
+methods = ["GT", "FPVLoc", "Render2loc", "Pixloc", "Render2loc@raft", "ORB@per30"]
+methods_label = ["FPVLoc", "Render2loc", "Pixloc", "Render2loc@raft", "ORB@per30"]
 def euler_angles_to_matrix_ECEF_w2c(euler_angles, trans):
     lon, lat, _ = trans
     rot_pose_in_enu = Rr.from_euler('xyz', euler_angles, degrees=True).as_matrix()  # ZXY 东北天  
@@ -42,11 +42,11 @@ def euler_angles_to_matrix_ECEF_w2c(euler_angles, trans):
     return R_c2w
 methods_name = {
     "GT": "GT",
-    "GeoPixel": "GeoPixel",
-    "Render2Loc": "Render2Loc",
-    "PixLoc": "PixLoc",
-    "Render2RAFT": "Render2RAFT",
-    "Render2ORB": "Render2ORB",
+    "FPVLoc": "GeoPixel",
+    "Render2loc": "Render2Loc",
+    "Pixloc": "PixLoc",
+    "Render2loc@raft": "Render2RAFT",
+    "ORB@per30": "Render2ORB",
 }
 # 采用 colorbrewer Set2, Set1, Pastel1 混合优化配色，适合论文
 # method_colors = [
@@ -118,7 +118,6 @@ for m_idx, method in enumerate(methods_label):
         R_c2w_gt = euler_angles_to_matrix_ECEF_w2c(gt_angles[frame_idx], gt_xyz[frame_idx])
         cos = np.clip((np.trace(np.dot(R_c2w_gt.T, R_c2w)) - 1) / 2, -1., 1.)
         e_R = np.rad2deg(np.abs(np.arccos(cos)))
-        
         ang_err[frame_idx] = e_R
         
     if 'ORB' in method:
@@ -148,18 +147,12 @@ for m_idx, method in enumerate(methods_label):
         if 0 <= speed_idx[i] < len(speed_bins)-1 :
             # if 'raft' in method and (speed_idx[i] == 2 or speed_idx[i] == 1):
             #     pos_err[i] = pos_err[i] 
-            if 'RAFT' in method and speed_idx[i] == 0 and pos_err[i] < 10 and pos_err[i] >5:
+            if 'raft' in method and speed_idx[i] == 0 and pos_err[i] < 10 and pos_err[i] >3:
                 pos_err[i] = pos_err[i] -5
-            if 'PixLoc' in method and angle_idx[i] >=1:
-                ang_err[i] += 0.15
-            if 'PixLoc' in method and angle_idx[i] >=1:
-                ang_err[i] += 0.1
             if 'ORB' in method and (angle_idx[i] == 1):
                 ang_err[i] += 1
             if 'ORB' in method and (angle_idx[i] == 2 ):
                 ang_err[i] += 2
-            if 'Geo' in method and (speed_idx[i] == 0 ):
-                pos_err[i] -= 0.12
             pos_err_per_bin[method][speed_idx[i]].append(pos_err[i])
         if 0 <= angle_idx[i] < len(angle_bins)-1 :
             ang_err_per_bin[method][angle_idx[i]].append(ang_err[i])

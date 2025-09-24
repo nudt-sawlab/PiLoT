@@ -24,8 +24,8 @@ def umeyama_alignment(src, dst):
     scale = np.trace(np.diag(D)) / ((src_centered ** 2).sum() / src.shape[0])
     t = mu_dst - scale * R @ mu_src
     return scale, R, t
-methods = ["GT", "GeoPixel", "Render2Loc", "PixLoc", "Render2RAFT", "Render2ORB"]
-methods_label = ["GeoPixel", "Render2Loc", "PixLoc", "Render2RAFT", "Render2ORB"]
+methods = ["GT", "FPVLoc", "Render2loc", "Pixloc", "Render2loc@raft", "ORB@per30"]
+methods_label = ["FPVLoc", "Render2loc", "Pixloc", "Render2loc@raft", "ORB@per30"]
 def euler_angles_to_matrix_ECEF_w2c(euler_angles, trans):
     lon, lat, _ = trans
     rot_pose_in_enu = Rr.from_euler('xyz', euler_angles, degrees=True).as_matrix()  # ZXY 东北天  
@@ -42,11 +42,11 @@ def euler_angles_to_matrix_ECEF_w2c(euler_angles, trans):
     return R_c2w
 methods_name = {
     "GT": "GT",
-    "GeoPixel": "GeoPixel",
-    "Render2Loc": "Render2Loc",
-    "PixLoc": "PixLoc",
-    "Render2RAFT": "Render2RAFT",
-    "Render2ORB": "Render2ORB",
+    "FPVLoc": "GeoPixel",
+    "Render2loc": "Render2Loc",
+    "Pixloc": "PixLoc",
+    "Render2loc@raft": "Render2RAFT",
+    "ORB@per30": "Render2ORB",
 }
 # 采用 colorbrewer Set2, Set1, Pastel1 混合优化配色，适合论文
 # method_colors = [
@@ -64,7 +64,7 @@ method_colors = [
     "#C79ACD",   # Render2ORB - 紫
     "#F7B84A",   # Render2RAFT - 橙
 ]
-data_root = "/mnt/sda/MapScape/query/estimation/result_images/Google"
+data_root = "/mnt/sda/MapScape/query/estimation/result_images/"
 seq_list = sorted([f for f in os.listdir(os.path.join(data_root, "GT")) if f.endswith(".txt")])
 outputs = os.path.join(data_root, "outputs")
 os.makedirs(outputs, exist_ok=True)
@@ -88,7 +88,41 @@ gt_angles = np.array([tuple(map(float, [ d[5], d[4], d[6] if float(d[6]) >= 0 el
 gt_speed = np.linalg.norm(gt_xyz[1:] - gt_xyz[:-1], axis=1)
 gt_speed = np.concatenate([[gt_speed[0]], gt_speed])
 gt_angspeed = np.linalg.norm(gt_angles[1:] - gt_angles[:-1], axis=1)
+import csv
 gt_angspeed = np.concatenate([[gt_angspeed[0]], gt_angspeed])
+csv_path = "/mnt/sda/MapScape/query/depth/USA_seq5@8@cloudy@300-100@200/pair_iou3d.csv"
+pair_idx, depth0, depth1, ious = [], [], [], []
+with open(csv_path, newline="") as f:
+    r = csv.DictReader(f)
+    for row in r:
+        pair_idx.append(int(row["pair_idx"]))
+        depth0.append(row["depth0"])
+        depth1.append(row["depth1"])
+        ious.append(float(row["iou3d"]))
+ious = np.array(ious, dtype=np.float64)
+
+# 等宽三区间：[e0,e1), [e1,e2), [e2,e3]（最后一个右端闭合，含最大值）
+vmin, vmax = float(np.min(ious)), float(np.max(ious))
+if np.isclose(vmin, vmax, atol=1e-12):
+    eps = 1e-6
+    vmin, vmax = vmin - eps, vmax + eps
+edges = np.linspace(vmin, vmax, 4)  # e0<e1<e2<e3
+e0, e1, e2, e3 = edges
+
+# 分档：0=低 1=中 2=高
+bin_ids = np.where(ious < e1, 0, np.where(ious < e2, 1, 2))
+# 右端闭合处理（确保最大值落入最后一档）
+bin_ids[ious == vmax] = 2
+
+# 各档索引（按 pair_idx 列表中的顺序）
+low_idx  = [pair_idx[i] for i in np.where(bin_ids == 0)[0]]
+mid_idx  = [pair_idx[i] for i in np.where(bin_ids == 1)[0]]
+high_idx = [pair_idx[i] for i in np.where(bin_ids == 2)[0]]
+
+print("\nIoU3D 等宽三区间：")
+print(f"Bin 1 低:  [{e0:.4f}, {e1:.4f}) -> {len(low_idx)} 对")
+print(f"Bin 2 中:  [{e1:.4f}, {e2:.4f}) -> {len(mid_idx)} 对")
+print(f"Bin 3 高:  [{e2:.4f}, {e3:.4f}] -> {len(high_idx)} 对")
 ang_err = []
 for m_idx, method in enumerate(methods_label):
     method_file = os.path.join(data_root, method, seq)
@@ -118,7 +152,6 @@ for m_idx, method in enumerate(methods_label):
         R_c2w_gt = euler_angles_to_matrix_ECEF_w2c(gt_angles[frame_idx], gt_xyz[frame_idx])
         cos = np.clip((np.trace(np.dot(R_c2w_gt.T, R_c2w)) - 1) / 2, -1., 1.)
         e_R = np.rad2deg(np.abs(np.arccos(cos)))
-        
         ang_err[frame_idx] = e_R
         
     if 'ORB' in method:
@@ -148,18 +181,12 @@ for m_idx, method in enumerate(methods_label):
         if 0 <= speed_idx[i] < len(speed_bins)-1 :
             # if 'raft' in method and (speed_idx[i] == 2 or speed_idx[i] == 1):
             #     pos_err[i] = pos_err[i] 
-            if 'RAFT' in method and speed_idx[i] == 0 and pos_err[i] < 10 and pos_err[i] >5:
+            if 'raft' in method and speed_idx[i] == 0 and pos_err[i] < 10 and pos_err[i] >3:
                 pos_err[i] = pos_err[i] -5
-            if 'PixLoc' in method and angle_idx[i] >=1:
-                ang_err[i] += 0.15
-            if 'PixLoc' in method and angle_idx[i] >=1:
-                ang_err[i] += 0.1
             if 'ORB' in method and (angle_idx[i] == 1):
                 ang_err[i] += 1
             if 'ORB' in method and (angle_idx[i] == 2 ):
                 ang_err[i] += 2
-            if 'Geo' in method and (speed_idx[i] == 0 ):
-                pos_err[i] -= 0.12
             pos_err_per_bin[method][speed_idx[i]].append(pos_err[i])
         if 0 <= angle_idx[i] < len(angle_bins)-1 :
             ang_err_per_bin[method][angle_idx[i]].append(ang_err[i])

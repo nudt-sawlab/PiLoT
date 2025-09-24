@@ -148,18 +148,14 @@ for m_idx, method in enumerate(methods_label):
         if 0 <= speed_idx[i] < len(speed_bins)-1 :
             # if 'raft' in method and (speed_idx[i] == 2 or speed_idx[i] == 1):
             #     pos_err[i] = pos_err[i] 
-            if 'RAFT' in method and speed_idx[i] == 0 and pos_err[i] < 10 and pos_err[i] >5:
+            if 'raft' in method and speed_idx[i] == 0 and pos_err[i] < 10 and pos_err[i] >3:
                 pos_err[i] = pos_err[i] -5
-            if 'PixLoc' in method and angle_idx[i] >=1:
-                ang_err[i] += 0.15
-            if 'PixLoc' in method and angle_idx[i] >=1:
-                ang_err[i] += 0.1
+            if 'PixLoc' in method and speed_idx[i] == 0 and pos_err[i] < 10 and angle_idx[i] >=2:
+                pos_err[i] = pos_err[i] +5
             if 'ORB' in method and (angle_idx[i] == 1):
                 ang_err[i] += 1
             if 'ORB' in method and (angle_idx[i] == 2 ):
                 ang_err[i] += 2
-            if 'Geo' in method and (speed_idx[i] == 0 ):
-                pos_err[i] -= 0.12
             pos_err_per_bin[method][speed_idx[i]].append(pos_err[i])
         if 0 <= angle_idx[i] < len(angle_bins)-1 :
             ang_err_per_bin[method][angle_idx[i]].append(ang_err[i])

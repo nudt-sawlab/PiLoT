@@ -186,17 +186,20 @@ def WGS84_to_ECEF(pos):
 
 if __name__ == "__main__":
     query_files = []
-    reference_rgb_path = "/mnt/sda/ycb/Newzealand_seq1@300@0_30@rainy/0_0.png"
-    reference_depth_path = "/mnt/sda/ycb/Newzealand_seq1@300@0_30@rainy/0_1.png"
-    query_rgb_path = "/mnt/sda/ycb/Newzealand_seq1@300@0_30@rainy/7_0.png"
-    query_depth_path = "/mnt/sda/ycb/Newzealand_seq1@300@0_30@rainy/7_1.png"
-    pose_txt = "/mnt/sda/ycb/Newzealand_seq1@300@0_30@rainy/Newzealand_seq1@300@0_30@sunny.txt"
+    reference_rgb_path = "/mnt/sda/MapScape/query/depth/USA_seq5@8@cloudy@300-100@200/1_0.png"
+    reference_depth_path = "/mnt/sda/MapScape/query/depth/USA_seq5@8@cloudy@300-100@200/1_1.png"
+    query_rgb_path = "/mnt/sda/MapScape/query/depth/USA_seq5@8@cloudy@300-100@200/10_0.png"
+    query_depth_path = "/mnt/sda/MapScape/query/depth/USA_seq5@8@cloudy@300-100@200/10_1.png"
+    pose_txt = "/media/ubuntu/PS2000/poses/USA_seq5@8@cloudy@300-100@200.txt"
+    vis_save_path = "/mnt/sda/ycb/"
 
     pose_dict = load_poses(pose_txt)
     # Generate pairings
     origin = None
-    ref_pose_name = reference_rgb_path.split('/')[-1].split('_')[0] +'.jpg'
-    query_pose_name = query_rgb_path.split('/')[-1].split('_')[0] +'.jpg'
+    # ref_pose_name = reference_rgb_path.split('/')[-1].split('_')[0] +'.jpg'
+    # query_pose_name = query_rgb_path.split('/')[-1].split('_')[0] +'.jpg'
+    ref_pose_name = reference_rgb_path.split('/')[-1]
+    query_pose_name = query_rgb_path.split('/')[-1]
     ref_pose = pose_dict[ref_pose_name]
     query_pose = pose_dict[query_pose_name]
     # get query pose
@@ -220,9 +223,11 @@ if __name__ == "__main__":
         # query_T_candidates = add_noise_to_pose(euler_angles, translation, query_T)
 
     # get query intrinscis
-    qcamera = [1600, 1200, 1931.7, 1931.7, 800.0, 600.0]
+    # qcamera = [1600, 1200, 1931.7, 1931.7, 800.0, 600.0]
     
-    rcamera = [1600, 1200, 1931.7, 1931.7, 800.0, 600.0]
+    # rcamera = [1600, 1200, 1931.7, 1931.7, 800.0, 600.0]
+    qcamera = [960, 540, 1158.8, 1158.8, 480.0, 270.0]
+    rcamera = [960, 540, 1158.8, 1158.8, 480.0, 270.0] 
     lon, lat, alt, roll, pitch, yaw = map(float, ref_pose)
     euler_angles_ref = [pitch, roll, yaw]
     translation_ref = [lon, lat, alt]
@@ -250,7 +255,7 @@ if __name__ == "__main__":
     ey = np.random.randint(0, height, size= num_samples)
     ex = np.random.randint(0, width, size= num_samples)
     points2d_ref = np.column_stack((ex, ey)) 
-    points2d_ref = np.array([[1244, 541]])   
+    points2d_ref = np.array([[24, 54]])   
 
     points2d_ref_valid, point3D_from_ref, _, _ = get_3D_samples(points2d_ref, ref_depth_image, ref_T, rcamera)
     points2d_query, _, Points_3D_ECEF_origin, valid = get_points2D_ECEF_projection(np.array(query_T), qcamera, point3D_from_ref, points2d_ref_valid, use_valid = False, num_samples=20000)
