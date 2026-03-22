@@ -10,13 +10,10 @@ default_paths:
 render_config:
   type: "3dgs"
   gs3d:
-    project_path: "/home/choya/Documents/code/3dgs/choya_temp"
-    model_path: "/home/choya/Documents/code/3dgs/choya_temp/output/choya_temp/"          # TODO: 修改为你的3DGS训练输出路径
-    source_path: ""  # 留空则直接加载PLY（推荐）；填写COLMAP数据路径可启用场景归一化
+    ply_path: "data_demo/pretrained_model/point_cloud.ply"
     sh_degree: 3
-    iteration: -1            # -1 表示加载最新的checkpoint
     white_background: false
-    cgcs_offset: [401448, 3131258, 0]  # CGCS2000坐标原点偏移 (场景相关)
+    cgcs_offset: [401448, 3131258, 0]  # CGCS2000 Origin
   init_rot: [0,0,0]
   init_trans: [0,0,0]
   outputs: "outputs/citystars"
@@ -84,7 +81,7 @@ default_confs:
     distortion: [0.0046, 0.1294, 0, 0.0012, -0.2037] # k6
 
 
-  enable_target_indicator: false  # true=启用目标指示(需要bbox和RTK数据), false=仅定位
+  enable_target_indicator: false  # true=ego and target localizaition, false=only ego localization
 
   dataset_path: "data_demo/query"
   dataset_name: ""

@@ -4,7 +4,7 @@
 [![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/pytorch-2.4%2Bcu124-orange.svg)](https://pytorch.org/)
 
-**PiLoT** is a state-of-the-art pixel-level localization and tracking system for visual localization in large-scale environments. This repository contains the official implementation of our CVPR 2026 paper.
+**PiLoT** is a a unified framework that tackles UAV-based ego and target geo-localization. This repository contains the official implementation of our CVPR 2026 paper.
 
 ## 📋 Table of Contents
 
