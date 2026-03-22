@@ -8,11 +8,19 @@ default_paths:
   results: "pixloc_Aachen.txt"
 
 render_config:
-  model_path: "http://localhost:8078/Scene/Production_6.json"
+  type: "3dgs"
+  gs3d:
+    project_path: "/home/choya/Documents/code/3dgs/choya_temp"
+    model_path: "/home/choya/Documents/code/3dgs/choya_temp/output/choya_temp/"          # TODO: 修改为你的3DGS训练输出路径
+    source_path: ""  # 留空则直接加载PLY（推荐）；填写COLMAP数据路径可启用场景归一化
+    sh_degree: 3
+    iteration: -1            # -1 表示加载最新的checkpoint
+    white_background: false
+    cgcs_offset: [401448, 3131258, 0]  # CGCS2000坐标原点偏移 (场景相关)
   init_rot: [0,0,0]
   init_trans: [0,0,0]
-  # render_camera: [960, 540, 689.475, 689.45,478.75, 268.35]
   outputs: "outputs/citystars"
+
 default_confs:
   from_render_test:
     checkpoint: "data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt"
@@ -48,56 +56,35 @@ default_confs:
     scales: [1, 2, 4]
     extractor:
       name: unet_fusion
-      # num_head: 1
-      num_output_layer: 3 # 4 # 3
-      output_dim: [32, 32, 32] # [31, 31, 31] # [15, 15, 15] # [15, 15, 15, 15] # [16, 16, 16, 16] # [16, 16, 16]
-      encoder: mobileone_s0 # 'mobileone_s0' # mobileone_s1 # mobilenet_v2 tu-mobilevit_xs
-      encoder_depth: 3 # 4 # 3 # 5
+      num_output_layer: 3
+      output_dim: [32, 32, 32]
+      encoder: mobileone_s0
+      encoder_depth: 3
       decoder: UnetDecoder
-      decoder_channels: [128, 64, 32] # [128, 64, 32, 16] # [128, 64, 32] # [256, 128, 64, 32, 16]
-      align_data_to_pretrain: false # false # true
+      decoder_channels: [128, 64, 32]
+      align_data_to_pretrain: false
       pretrained_weights: "imagenet"
-      train_mask: false # true # false
-      normalize_key: false # true # false
-      train_box: false # true
+      train_mask: false
+      normalize_key: false
+      train_box: false
       compute_uncertainty: true
-      trainable: true # false # true
+      trainable: true
 
   cam_query:
     max_size: 512
     model: "PINHOLE"
-    # width: 960
-    # height: 540
-    # params: [675.0, 675.0, 478.925, 268.775]
+    # width: 1920
+    # height: 1080
+    # params: [1350.0, 1350.0, 957.85, 537.55]
+    # distortion: [0, 0, 0, 0, 0]
 
     width: 3840
     height: 2160
     params: [2700.0, 2700.0, 1915.7, 1075.1]
-    # width: 1920
-    # height: 1080
-    # params: [1350.0, 1350.0, 957.85, 537.55]
-    # width: 1920
-    # height: 1080
-    # params: [1333.5,1333,958.6,536.0]
-    # width: 512
-    # height: 288
-    # params: [355.6, 355.467,255.626, 142.93]
-
-    # distortion: [
-    #         0.0651,
-    #         -0.12010,
-    #         -0.0006094,
-    #         -0.0003261,
-    #         0.0924 ]       # k6
     distortion: [0.0046, 0.1294, 0, 0.0012, -0.2037] # k6
-    # raw_query_camera: [3840,
-    #             2160,
-    #             1900.0,
-    #             1088.7,
-    #             3840,
-    #             2160,
-    #             2689.5,
-    #             2687.5]
+
+
+  enable_target_indicator: false  # true=启用目标指示(需要bbox和RTK数据), false=仅定位
 
   dataset_path: "data_demo/query"
   dataset_name: ""

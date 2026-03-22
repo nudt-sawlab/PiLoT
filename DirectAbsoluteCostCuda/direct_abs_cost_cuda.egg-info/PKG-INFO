@@ -1,5 +1,0 @@
-Metadata-Version: 2.4
-Name: direct_abs_cost_cuda
-Version: 0.1.0
-Summary: CUDA extension for DirectAbsoluteCost
-Dynamic: summary

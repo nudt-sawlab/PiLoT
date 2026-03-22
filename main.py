@@ -63,8 +63,10 @@ class DualProcessTask:
         self.stop_evt = Event()
 
         self.render_config = config["render_config"]
+        self.render_type = self.render_config.get("type", "osg")
         default_confs = config["default_confs"]
         self.conf = default_confs["from_render_test"]
+        self.enable_target = default_confs.get("enable_target_indicator", True)
 
         folder_path = default_confs["dataset_path"]
         dataset_name = name or default_confs["dataset_name"]
@@ -83,20 +85,22 @@ class DualProcessTask:
         self.gt_pose_path = os.path.join(
             folder_path, "poses", dataset_name + ".txt"
         )
-        self.gt_target_xy_path = os.path.join(
-            folder_path, "bbox", dataset_name, dataset_name + "_xy.txt"
-        )
-        self.gt_rtk_path = os.path.join(
-            folder_path, "target_RTK", dataset_name + "_RTK.txt"
-        )
 
         # Estimation output paths
         self.estimated_pose_path = os.path.join(
             output_folder, dataset_name + ".txt"
         )
-        self.estimated_target_path = os.path.join(
-            output_folder, dataset_name + "_xyz.txt"
-        )
+
+        if self.enable_target:
+            self.gt_target_xy_path = os.path.join(
+                folder_path, "bbox", dataset_name, dataset_name + "_xy.txt"
+            )
+            self.gt_rtk_path = os.path.join(
+                folder_path, "target_RTK", dataset_name + "_RTK.txt"
+            )
+            self.estimated_target_path = os.path.join(
+                output_folder, dataset_name + "_xyz.txt"
+            )
 
         self.last_frame_info: Dict[str, Any] = {
             "observations": [],
@@ -122,7 +126,8 @@ class DualProcessTask:
         self.pose_q.put_nowait(
             (self.euler_angles, self.translation, init_tag, None)
         )
-        self.localizer = target_indicator.QueryLocalizer()
+        if self.enable_target:
+            self.localizer = target_indicator.QueryLocalizer()
 
     # -- Setup helpers --------------------------------------------------------
 
@@ -167,7 +172,7 @@ class DualProcessTask:
                 + glob.glob(os.path.join(img_path, "*.JPG")),
                 key=lambda p: int(os.path.basename(p).split(".")[0]),
             )
-        # self.img_list = self.img_list[:10]
+        self.img_list = self.img_list[:200]
         cam_cfg = default_confs["cam_query"]
         self.query_list = read_image_list(
             self.img_list,
@@ -192,19 +197,30 @@ class DualProcessTask:
         self.gt_pose_dict = load_pose_dict(
             self.gt_pose_path, origin=self.origin
         )
-        self.target_xy_dict = load_target_points(self.gt_target_xy_path)
+        if self.enable_target:
+            self.target_xy_dict = load_target_points(self.gt_target_xy_path)
 
     # -- Workers --------------------------------------------------------------
 
     def rendering_worker(self) -> None:
-        """Process that renders images and computes target locations."""
-        from pixloc.utils.osg import osg_render
+        """Process that renders images and computes target locations.
 
+        Supports two backends selected via ``render_config["type"]``:
+        * ``"osg"``  – OpenSceneGraph (default, legacy)
+        * ``"3dgs"`` – 3D Gaussian Splatting
+        """
         setproctitle.setproctitle("PiLoT_Render")
-        renderer = osg_render.RenderImageProcessor(self.render_config)
-        render_stream = torch.cuda.Stream()
-        torch.cuda.synchronize()
+        use_3dgs = self.render_type == "3dgs"
 
+        if use_3dgs:
+            from pixloc.utils.gs3d.gs3d_render import GS3DRenderer
+            renderer = GS3DRenderer(self.render_config)
+        else:
+            from pixloc.utils.osg import osg_render
+            renderer = osg_render.RenderImageProcessor(self.render_config)
+            render_stream = torch.cuda.Stream()
+
+        torch.cuda.synchronize()
         target_results: List[str] = []
 
         while True:
@@ -220,15 +236,17 @@ class DualProcessTask:
 
             euler, trans, qname, _fps = item
 
-            with torch.cuda.stream(render_stream):
-                for _ in range(20):
-                    renderer.update_pose(trans, euler)
-                color = renderer.get_color_image()
-                depth = renderer.get_depth_image()
+            if use_3dgs:
+                color, depth = renderer.render(trans, euler)
+            else:
+                with torch.cuda.stream(render_stream):
+                    for _ in range(20):
+                        renderer.update_pose(trans, euler)
+                    color = renderer.get_color_image()
+                    depth = renderer.get_depth_image()
+                torch.cuda.current_stream().synchronize()
 
-            torch.cuda.current_stream().synchronize()
-
-            if "init" not in qname:
+            if "init" not in qname and self.enable_target:
                 target_pt = (
                     np.array(self.target_xy_dict[qname])
                     / self.query_resize_ratio
@@ -256,6 +274,19 @@ class DualProcessTask:
                 target_results.append(
                     f"{qname} {' '.join(map(str, pt3d))}"
                 )
+            # elif "init" in qname:
+            #     color_bgr = cv2.cvtColor(color, cv2.COLOR_RGB2BGR)
+            #     cv2.imwrite(os.path.join(self.outputs, qname), color_bgr)
+            #     depth_np = depth if isinstance(depth, np.ndarray) else depth.cpu().numpy()
+            #     depth_uint16 = np.clip(
+            #         depth_np / (depth_np.max() + 1e-6) * 65535, 0, 65535
+            #     ).astype(np.uint16)
+            #     depth_name = qname.rsplit(".", 1)[0] + "_depth.png"
+            #     cv2.imwrite(os.path.join(self.outputs, depth_name), depth_uint16)
+            #     np.save(os.path.join(self.outputs, qname.rsplit(".", 1)[0] + "_depth.npy"), depth_np)
+            # else:
+            #     color_bgr = cv2.cvtColor(color, cv2.COLOR_RGB2BGR)
+            #     cv2.imwrite(os.path.join(self.outputs, qname), color_bgr)
 
             if self.padding:
                 color = pad_to_multiple(color, 16)
@@ -265,8 +296,9 @@ class DualProcessTask:
             except queue.Full:
                 break
 
-        with open(self.estimated_target_path, "w") as f:
-            f.write("\n".join(target_results))
+        if self.enable_target:
+            with open(self.estimated_target_path, "w") as f:
+                f.write("\n".join(target_results))
 
         self.stop_evt.set()
         self.task_q.put(None)
@@ -370,6 +402,8 @@ class DualProcessTask:
         query_trans: List[float],
         is_init: bool = True,
         num_samples: int = 500,
+        depth_min: float = 1.0,
+        depth_max: float = 5000.0,
     ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, Optional[torch.Tensor]]:
         """Back-project depth to 3D points and build initial pose candidates."""
         device = self.device
@@ -386,8 +420,13 @@ class DualProcessTask:
 
         H = int(self.render_camera_osg[1])
         W = int(self.render_camera_osg[0])
-        ys = torch.randint(0, H, size=(num_samples,), device=device)
-        xs = torch.randint(0, W, size=(num_samples,), device=device)
+
+        oversample = num_samples * 4
+        ys = torch.randint(0, H, size=(oversample,), device=device)
+        xs = torch.randint(0, W, size=(oversample,), device=device)
+        d_vals = depth[ys, xs]
+        valid = (d_vals >= depth_min) & (d_vals <= depth_max)
+        xs, ys = xs[valid][:num_samples], ys[valid][:num_samples]
         points2d = torch.stack((xs, ys), dim=1)
 
         return sample_3d_points(
@@ -399,7 +438,8 @@ class DualProcessTask:
     def evaluate(self) -> None:
         """Evaluate localization results against ground truth."""
         evaluate_pose(self.estimated_pose_path, self.gt_pose_path)
-        evaluate_target(self.estimated_target_path, self.gt_rtk_path)
+        if self.enable_target:
+            evaluate_target(self.estimated_target_path, self.gt_rtk_path)
 
     def run(self) -> None:
         """Launch rendering and localization as parallel processes."""

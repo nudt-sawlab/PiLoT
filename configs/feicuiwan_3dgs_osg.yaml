@@ -9,14 +9,14 @@ default_paths:
 
 render_config:
   model_path: "http://localhost:8078/Scene/Production_6.json"
-  init_rot: [49.71794737193199,0, -90]   
-  init_trans: [112.99659 ,28.29123, 112.671]
-  # render_camera: [960, 540, 689.475, 689.45,478.75, 268.35] 
+  init_rot: [0,0,0]
+  init_trans: [0,0,0]
+  # render_camera: [960, 540, 689.475, 689.45,478.75, 268.35]
   outputs: "outputs/citystars"
 default_confs:
   from_render_test:
-    checkpoint: "/mnt/sda/MapScape/Pretrained_model/model@mapscape@512@Fourier.ckpt"
-    refinement:  
+    checkpoint: "data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt"
+    refinement:
       num_dbs: 3
       multiscale: [4, 1]
       point_selection: "all"
@@ -24,7 +24,7 @@ default_confs:
       average_observations: false
       do_pose_approximation: true
     optimizer:
-      ratio: 3.75
+      ratio: 2
       num_iters: 3
       pad: 1
       lambda_: 0.01
@@ -43,7 +43,7 @@ default_confs:
     name: two_view_refiner
     normalize_features: true
     duplicate_optimizer_per_scale: true
-    features: 
+    features:
       conf:
     scales: [1, 2, 4]
     extractor:
@@ -51,25 +51,31 @@ default_confs:
       # num_head: 1
       num_output_layer: 3 # 4 # 3
       output_dim: [32, 32, 32] # [31, 31, 31] # [15, 15, 15] # [15, 15, 15, 15] # [16, 16, 16, 16] # [16, 16, 16]
-      encoder: mobileone_s0 # 'mobileone_s0' # mobileone_s1 # mobilenet_v2 tu-mobilevit_xs 
+      encoder: mobileone_s0 # 'mobileone_s0' # mobileone_s1 # mobilenet_v2 tu-mobilevit_xs
       encoder_depth: 3 # 4 # 3 # 5
       decoder: UnetDecoder
       decoder_channels: [128, 64, 32] # [128, 64, 32, 16] # [128, 64, 32] # [256, 128, 64, 32, 16]
       align_data_to_pretrain: false # false # true
-      pretrained_weights: 'imagenet'
+      pretrained_weights: "imagenet"
       train_mask: false # true # false
       normalize_key: false # true # false
       train_box: false # true
       compute_uncertainty: true
       trainable: true # false # true
-    
-  cam_query:
-    max_size: 512  #960
-    model: "PINHOLE"
-    # width: 1920
-    # height: 1080
-    # params: [1354.4,1354.3,968.9,533.9 ]
 
+  cam_query:
+    max_size: 960
+    model: "PINHOLE"
+    # width: 960
+    # height: 540
+    # params: [675.0, 675.0, 478.925, 268.775]
+
+    # width: 3840
+    # height: 2160
+    # params: [2700.0, 2700.0, 1915.7, 1075.1]
+    width: 1920
+    height: 1080
+    params: [1350.0, 1350.0, 957.85, 537.55]
     # width: 1920
     # height: 1080
     # params: [1333.5,1333,958.6,536.0]
@@ -77,12 +83,14 @@ default_confs:
     # height: 288
     # params: [355.6, 355.467,255.626, 142.93]
 
-    distortion: [
-    0.0076,
-            0,
-            0,
-            0,
-            -0.0015 ]       # k6
+    # distortion: [
+    #         0.0651,
+    #         -0.12010,
+    #         -0.0006094,
+    #         -0.0003261,
+    #         0.0924 ]       # k6
+    # distortion: [0.0046, 0.1294, 0, 0.0012, -0.2037] # k6
+    distortion: [0, 0, 0, 0, 0]
     # raw_query_camera: [3840,
     #             2160,
     #             1900.0,
@@ -92,14 +100,14 @@ default_confs:
     #             2689.5,
     #             2687.5]
 
-  dataset_path: "/mnt/sda/MapScape/query"
-  dataset_name: "DJI_20241113180128_0042_D"
-  output_name: "DJI_20241113180128_0042_D"
+  dataset_path: "data_demo/query"
+  dataset_name: ""
+  output_name: ""
   use_kf: false
   padding: True
   refine:
-    origin: [0,0,0]
-    dis_thes: 10
-    R_thes: 20
+    origin: [0, 0, 0]
+    dis_thes: 30
+    R_thes: 30
     mul: 0.001
   num_init_pose: 64

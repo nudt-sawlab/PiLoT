@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# DirectAbsoluteCostCuda source (closed-source, only pre-built .so distributed)
+DirectAbsoluteCostCuda/DirectAbsoluteCost_cuda.cu
+DirectAbsoluteCostCuda/costs_quat.py
+DirectAbsoluteCostCuda/test.py
+DirectAbsoluteCostCuda/run.sh
+DirectAbsoluteCostCuda/build/
+DirectAbsoluteCostCuda/direct_abs_cost_cuda.egg-info/
+
+# Build artifacts
+*.o
+*.obj
+
+# Data & pretrained models (too large for git)
+data_demo/
+
+# Third-party compiled libraries (install locally)
+third_party/
+
+# 3DGS rendering setup script (optional, not needed for core)
+setup_3dgs.sh
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs
+outputs/

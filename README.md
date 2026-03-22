@@ -1,8 +1,8 @@
 # PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/pytorch-1.13+-orange.svg)](https://pytorch.org/)
+[![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/pytorch-2.4%2Bcu124-orange.svg)](https://pytorch.org/)
 
 **PiLoT** is a state-of-the-art pixel-level localization and tracking system for visual localization in large-scale environments. This repository contains the official implementation of our CVPR 2026 paper.
 
@@ -41,10 +41,9 @@ PiLoT addresses the challenge of real-time visual localization by combining neur
 
 ### Prerequisites
 
-- Python 3.10+
-- CUDA 11.7+ (for GPU acceleration)
-- OpenSceneGraph (for 3D rendering)
-- OsgEarth (for geographic rendering)
+- Python 3.8
+- CUDA 12.4+ (for GPU acceleration)
+- Conda / Miniconda
 
 ### Step 1: Clone the Repository
 
@@ -60,15 +59,21 @@ conda env create -f environment.yaml
 conda activate pilot
 ```
 
-### Step 3: Install Additional Dependencies
+PyTorch is installed from the CUDA 12.4 index. If your CUDA version differs, update the `+cu124` suffix in `environment.yaml` accordingly (e.g., `+cu118` for CUDA 11.8).
+
+### Step 3: Install CUDA Extensions
+
+Pre-built binaries are provided for Python 3.8 / 3.9 / 3.10 (Linux x86_64):
 
 ```bash
-pip install -e .
+cd DirectAbsoluteCostCuda
+pip install .
+cd ..
 ```
 
 ### Step 4: Build 3D Tiles Renderer (Optional)
 
-If you need to use the custom 3D tiles renderer:
+If you need to use the OpenSceneGraph-based 3D tiles renderer:
 
 ```bash
 cd 3DTilesRender
@@ -78,14 +83,88 @@ make -j$(nproc)
 cd ../..
 ```
 
-### Step 5: Build CUDA Extensions
+## 🚀 Quick Start: 3DGS Demo
+
+We provide a minimal demo (`3dgs_test`) so you can verify the installation and get familiar with the pipeline. The demo runs PiLoT with a 3D Gaussian Splatting rendering backend on a short UAV sequence.
+
+### 1. Download Demo Data
+
+Download the pre-packaged data from OneDrive:
+
+| File | Description | Destination |
+|------|-------------|-------------|
+| `3dgs_model.zip` | Pre-trained 3DGS model (point cloud + decoder) | `data_demo/3dgs_model/` |
+| `3dgs_test_query.zip` | Query images, poses, and bbox annotations | `data_demo/query/` |
+| `pretrained_model.zip` | PiLoT localization checkpoint | `data_demo/pretrained_model/` |
+
+**OneDrive link**: *(TODO: paste your OneDrive sharing link here)*
+
+After downloading, unzip the files so that your directory looks like:
+
+```
+data_demo/
+├── 3dgs_model/                          # 3DGS model
+│   ├── point_cloud/
+│   │   └── iteration_30000/
+│   │       └── point_cloud.ply
+│   ├── cameras.json
+│   ├── cfg_args
+│   └── decoder_chkpnt30000.pth
+├── pretrained_model/
+│   └── model@mapscape@512@Fourier.ckpt  # PiLoT checkpoint
+└── query/
+    ├── images/
+    │   └── 3dgs_test/
+    │       └── 0_0.png
+    ├── poses/
+    │   └── 3dgs_test.txt
+    └── bbox/
+        └── 3dgs_test/
+            └── 3dgs_test_xy.txt
+```
+
+### 2. Update Configuration
+
+Edit `configs/feicuiwan_3dgs.yaml` and set the model path to the downloaded location:
+
+```yaml
+render_config:
+  type: "3dgs"
+  gs3d:
+    model_path: "data_demo/3dgs_model/"   # point to the unzipped 3DGS model
+    cgcs_offset: [401448, 3131258, 0]     # coordinate offset (scene-specific)
+```
+
+### 3. Install 3DGS Dependencies
 
 ```bash
-cd DirectAbsoluteCostCuda
-python setup.py build_ext --inplace
-pip install .
-cd ..
+conda activate pilot
+
+pip install plyfile pyproj
+pip install git+https://github.com/graphdeco-inria/diff-gaussian-rasterization.git
+pip install git+https://github.com/graphdeco-inria/gaussian-splatting.git#subdirectory=submodules/simple-knn
 ```
+
+### 4. Run the Demo
+
+```bash
+conda activate pilot
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+
+python main.py \
+    --config configs/feicuiwan_3dgs.yaml \
+    --init_euler "[-0.22401974815269624, 0.7200239935006039, 105.76207626859765]" \
+    --init_trans "[112.98981449433911, 28.291546360819833, 165.3497167181062]" \
+    --name 3dgs_test
+```
+
+The initial pose (euler & trans) is taken from `data_demo/query/poses/3dgs_test.txt`. You can also use `run_feicuiwan.sh` which auto-reads poses — just make sure to change the `--config` to `configs/feicuiwan_3dgs.yaml` inside the script.
+
+Results will be saved to the `outputs/` directory, including estimated poses and rendered images.
+
+> **Note**: To run with the OSG rendering backend instead, use `configs/feicuiwan_3dgs_osg.yaml` and ensure the OSG tile server is running.
+
+---
 
 ## 📦 Dataset Preparation
 

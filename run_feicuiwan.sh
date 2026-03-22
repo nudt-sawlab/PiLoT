@@ -31,6 +31,7 @@ names=(
   "DJI_20251119165945_0006_V"
   "DJI_20251119165726_0003_V"
   "DJI_20251119165535_0001_V"
+  "3dgs_test"
 )
 
 
@@ -44,7 +45,8 @@ target_names=(
   # "DJI_20250612174308_0001_V"
   # "DJI_20250612182017_0001_V"
   # "DJI_20250612183852_0005_V"
-  "DJI_20250612194903_0021_V"  
+  # "DJI_20250612194903_0021_V"  
+  "3dgs_test"
   # "DJI_20250612193704_0010_V"
   # "DJI_20250612193930_0012_V"
   # "DJI_20250612194150_0014_V"
@@ -115,7 +117,7 @@ for target_name in "${target_names[@]}"; do
 
     echo "--- fpvloc"
     python main.py \
-      --config "configs/feicuiwan_m4t.yaml" \
+      --config "configs/feicuiwan_3dgs_osg.yaml" \
       --init_euler "$euler" \
       --init_trans "$trans" \
       --name "$target_name"
