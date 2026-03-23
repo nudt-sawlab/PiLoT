@@ -1,16 +1,7 @@
-default_paths:
-  query_images: "images/images_upright/"
-  reference_images: "images/images_upright/"
-  reference_sfm: "sfm_superpoint+superglue/"
-  query_list: "*_time_queries_with_intrinsics.txt"
-  global_descriptors: "aachen_tf-netvlad.h5"
-  retrieval_pairs: "pairs-query-netvlad50.txt"
-  results: "pixloc_Aachen.txt"
-
 render_config:
   type: "3dgs"
   gs3d:
-    ply_path: "data_demo/pretrained_model/point_cloud.ply"
+    ply_path: "data_demo/Jadebay_3dgs_model/point_cloud.ply"
     sh_degree: 3
     white_background: false
     cgcs_offset: [401448, 3131258, 0]  # CGCS2000 Origin
@@ -82,6 +73,7 @@ default_confs:
 
 
   enable_target_indicator: false  # true=ego and target localizaition, false=only ego localization
+  enable_visualization: false      # save rendered images and generate PIP video (query + render overlay)
 
   dataset_path: "data_demo/query"
   dataset_name: ""

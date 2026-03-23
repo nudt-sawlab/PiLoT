@@ -67,6 +67,7 @@ class DualProcessTask:
         default_confs = config["default_confs"]
         self.conf = default_confs["from_render_test"]
         self.enable_target = default_confs.get("enable_target_indicator", True)
+        self.enable_viz = default_confs.get("enable_visualization", False)
 
         folder_path = default_confs["dataset_path"]
         dataset_name = name or default_confs["dataset_name"]
@@ -172,7 +173,6 @@ class DualProcessTask:
                 + glob.glob(os.path.join(img_path, "*.JPG")),
                 key=lambda p: int(os.path.basename(p).split(".")[0]),
             )
-        self.img_list = self.img_list[:200]
         cam_cfg = default_confs["cam_query"]
         self.query_list = read_image_list(
             self.img_list,
@@ -274,19 +274,9 @@ class DualProcessTask:
                 target_results.append(
                     f"{qname} {' '.join(map(str, pt3d))}"
                 )
-            # elif "init" in qname:
-            #     color_bgr = cv2.cvtColor(color, cv2.COLOR_RGB2BGR)
-            #     cv2.imwrite(os.path.join(self.outputs, qname), color_bgr)
-            #     depth_np = depth if isinstance(depth, np.ndarray) else depth.cpu().numpy()
-            #     depth_uint16 = np.clip(
-            #         depth_np / (depth_np.max() + 1e-6) * 65535, 0, 65535
-            #     ).astype(np.uint16)
-            #     depth_name = qname.rsplit(".", 1)[0] + "_depth.png"
-            #     cv2.imwrite(os.path.join(self.outputs, depth_name), depth_uint16)
-            #     np.save(os.path.join(self.outputs, qname.rsplit(".", 1)[0] + "_depth.npy"), depth_np)
-            # else:
-            #     color_bgr = cv2.cvtColor(color, cv2.COLOR_RGB2BGR)
-            #     cv2.imwrite(os.path.join(self.outputs, qname), color_bgr)
+            elif self.enable_viz and "init" not in qname:
+                color_bgr = cv2.cvtColor(color, cv2.COLOR_RGB2BGR)
+                cv2.imwrite(os.path.join(self.outputs, qname), color_bgr)
 
             if self.padding:
                 color = pad_to_multiple(color, 16)
@@ -383,6 +373,9 @@ class DualProcessTask:
         with open(self.estimated_pose_path, "w") as f:
             f.write("\n".join(results))
 
+        if self.enable_viz:
+            self._build_viz_video()
+
         self.pose_q.put(None)
         self.stop_evt.set()
         self.task_q.close()
@@ -390,6 +383,100 @@ class DualProcessTask:
         self.pose_q.close()
         self.pose_q.join_thread()
         logger.info("Localization worker finished.")
+
+    # -- Visualization --------------------------------------------------------
+
+    def _compose_viz_frame(
+        self,
+        ref_bgr: np.ndarray,
+        query_bgr: np.ndarray,
+        frame_idx: int,
+    ) -> np.ndarray:
+        """Overlay query on ref at ref resolution (center-window blend).
+
+        ``ref_bgr`` and ``query_bgr`` must be the same shape ``(H, W, 3)``.
+        """
+        H, W = ref_bgr.shape[:2]
+        if query_bgr.shape[:2] != (H, W):
+            query_bgr = cv2.resize(query_bgr, (W, H), interpolation=cv2.INTER_AREA)
+
+        margin_y = max(1, H // 4)
+        margin_x = max(1, W // 4)
+        y0, y1 = margin_y, H - margin_y
+        x0, x1 = margin_x, W - margin_x
+
+        out = query_bgr.astype(np.float32)
+        ref_block = ref_bgr[y0:y1, x0:x1].astype(np.float32)
+        query_block = query_bgr[y0:y1, x0:x1].astype(np.float32)
+        alpha = 0
+        blended = (1.0 - alpha) * ref_block + alpha * query_block
+        out[y0:y1, x0:x1] = blended
+        canvas = np.clip(out, 0, 255).astype(np.uint8)
+
+        cv2.putText(
+            canvas,
+            f"ref|query blend  frame {frame_idx}",
+            (max(4, x0), max(20, y0 - 6)),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.45,
+            (0, 255, 255),
+            thickness=1,
+            lineType=cv2.LINE_AA,
+        )
+        return canvas
+
+    def _build_viz_video(self) -> None:
+        """Build ``visualization.mp4`` after the run, pairing by filename.
+
+        Renders are saved during ``rendering_worker`` as ``outputs/<qname>``;
+        the query image is ``data_demo/.../images/<seq>/<qname>``. This avoids
+        queue/timing mismatch between ``color`` and ``img_path`` in the
+        localization loop.
+        """
+        W = int(self.render_camera_osg[0])
+        H = int(self.render_camera_osg[1])
+        if W <= 0 or H <= 0:
+            return
+
+        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+        video_path = os.path.join(self.outputs, "visualization.mp4")
+        writer: Optional[cv2.VideoWriter] = None
+        n_frames = 0
+
+        for idx, img_path in enumerate(self.img_list):
+            qname = os.path.basename(img_path)
+            render_path = os.path.join(self.outputs, qname)
+            if not os.path.isfile(render_path):
+                logger.warning(
+                    "Viz skip missing render for %s (expected %s)",
+                    qname, render_path,
+                )
+                continue
+
+            query_bgr = cv2.imread(img_path)
+            ref_bgr = cv2.imread(render_path)
+            if query_bgr is None or ref_bgr is None:
+                logger.warning("Viz skip failed read: %s / %s", img_path, render_path)
+                continue
+
+            ref_bgr = cv2.resize(ref_bgr, (W, H), interpolation=cv2.INTER_AREA)
+            query_bgr = cv2.resize(query_bgr, (W, H), interpolation=cv2.INTER_AREA)
+
+            canvas = self._compose_viz_frame(ref_bgr, query_bgr, idx)
+            if writer is None:
+                writer = cv2.VideoWriter(video_path, fourcc, 10, (W, H))
+            writer.write(canvas)
+            n_frames += 1
+
+        if writer is not None:
+            writer.release()
+            logger.info(
+                "Visualization video saved (%d frames): %s", n_frames, video_path,
+            )
+        else:
+            logger.warning(
+                "No visualization video written (no frames; check %s)", self.outputs,
+            )
 
     # -- Helpers --------------------------------------------------------------
 
@@ -480,6 +567,14 @@ def parse_args() -> argparse.Namespace:
     # from the first line of the pose file specified in the config.
     parser.add_argument("--init_euler", type=str, default="[0,0,0]")
     parser.add_argument("--init_trans", type=str, default="[0,0,0]")
+    parser.add_argument(
+        "--viz", action="store_true", default=None,
+        help="Enable visualization (save rendered images + PIP video)",
+    )
+    parser.add_argument(
+        "--no-viz", dest="viz", action="store_false",
+        help="Disable visualization",
+    )
     return parser.parse_args()
 
 
@@ -489,6 +584,9 @@ def main() -> None:
 
     with open(args.config, "r", encoding="utf-8") as f:
         config = yaml.safe_load(f)
+
+    if args.viz is not None:
+        config["default_confs"]["enable_visualization"] = args.viz
 
     task = DualProcessTask(config, name=args.name)
     task.run()

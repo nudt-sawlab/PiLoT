@@ -1,11 +1,4 @@
-default_paths:
-  query_images: "images/images_upright/"
-  reference_images: "images/images_upright/"
-  reference_sfm: "sfm_superpoint+superglue/"
-  query_list: "*_time_queries_with_intrinsics.txt"
-  global_descriptors: "aachen_tf-netvlad.h5"
-  retrieval_pairs: "pairs-query-netvlad50.txt"
-  results: "pixloc_Aachen.txt"
+
 
 render_config:
   model_path: "http://localhost:8082/tileset.json"

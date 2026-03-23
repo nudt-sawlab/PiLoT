@@ -20,6 +20,7 @@ DirectAbsoluteCostCuda/direct_abs_cost_cuda.egg-info/
 
 # Data & pretrained models (too large for git)
 data_demo/
+data_demo.zip
 
 # Third-party compiled libraries (install locally)
 third_party/
