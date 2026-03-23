@@ -47,8 +47,6 @@ cd ..
 ### Step 4: Install 3DGS Dependencies
 
 ```bash
-conda activate pilot
-
 pip install plyfile pyproj
 pip install git+https://github.com/graphdeco-inria/diff-gaussian-rasterization.git
 pip install git+https://github.com/graphdeco-inria/gaussian-splatting.git#subdirectory=submodules/simple-knn
@@ -93,9 +91,6 @@ data_demo/
 ### 3. Run the Demo
 
 ```bash
-conda activate pilot
-export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
-
 python main.py \
     --config configs/feicuiwan_3dgs.yaml \
     --name 3dgs_test
