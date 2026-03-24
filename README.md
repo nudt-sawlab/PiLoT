@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/license-Saw%20Lab-003399.svg)](LICENSE)
 <!-- [![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/pytorch-2.4%2Bcu124-orange.svg)](https://pytorch.org/) -->
-[Website](https://nudt-sawlab.github.io/PiLoT/) | [arXiv](https://arxiv.org/pdf/2603.20778) | Dataset(Coming) 
+[Website](https://nudt-sawlab.github.io/PiLoT/) | [arXiv](https://arxiv.org/abs/2603.20778) | Dataset(Coming) 
 
 **PiLoT** is a a unified framework that tackles UAV-based ego and target geo-localization. Our system takes a live video frame and a geo-referenced 3D map as input, and outputs 1) the **UAV 6-DoF pose**, visualized by the tight alignment in the AR overlays (bottom row), and 2) the **3D geo-coordinates** of any target pixel, as shown in the dynamic target tracking example (left, filmstrip view). 
 <!-- This repository contains the official implementation of our CVPR 2026 paper. -->
