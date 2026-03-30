@@ -58,7 +58,7 @@ class LearnedOptimizer(BaseOptimizer):
             log_range=[-6, 5],
         ),
         feature_dim=None,
-
+        num_filter_pose=32,
         # deprecated entries
         lambda_=0.,
         learned_damping=True,
@@ -68,7 +68,7 @@ class LearnedOptimizer(BaseOptimizer):
         self.dampingnet = DampingNet(conf.damping)
         assert conf.learned_damping
         self.ratio = conf.ratio
-        
+        self.num_filter_pose = conf.num_filter_pose
         self.fn = direct_abs_cost_cuda.residual_jacobian_batch_quat_cuda
         self.optimizer_cuda = direct_abs_cost_cuda.optimizer_step_cuda
         super()._init(conf)
@@ -214,18 +214,18 @@ class LearnedOptimizer(BaseOptimizer):
            
             overall_losses.append(w_loss)
             
-            if num_iters == 3 and len(overall_losses) == 2 and len(T_flat) > 1:  #ref_camera[0][0] == 480/ratio
-                _, topk_indices = torch.topk(-overall_losses[-1], 32, dim=-1, largest=True, sorted=True) # topk_indices: [B, 32]
-                T_flat = T_flat[topk_indices]
-                T = T[topk_indices]
-                failed = failed[topk_indices]
-                qcamera = qcamera[:len(topk_indices)]
-                cost = cost[topk_indices]
-                inputs["pose_data_q"] =  T_flat.unsqueeze(0).contiguous().clone()
-                inputs["cam_data_q"] = qcamera.unsqueeze(0).clone()
-                total_cost_loss = w_loss[topk_indices]
-            else:
-                total_cost_loss = w_loss
+        if num_iters == 2 and len(T_flat) > self.num_filter_pose:
+            _, topk_indices = torch.topk(-overall_losses[-1], self.num_filter_pose, dim=-1, largest=True, sorted=True) # topk_indices: [B, 32]
+            T_flat = T_flat[topk_indices]
+            T = T[topk_indices]
+            failed = failed[topk_indices]
+            qcamera = qcamera[:len(topk_indices)]
+            cost = cost[topk_indices]
+            inputs["pose_data_q"] =  T_flat.unsqueeze(0).contiguous().clone()
+            inputs["cam_data_q"] = qcamera.unsqueeze(0).clone()
+            total_cost_loss = w_loss[topk_indices]
+        else:
+            total_cost_loss = w_loss
          
         torch.cuda.synchronize()
         t1 = time.perf_counter()
