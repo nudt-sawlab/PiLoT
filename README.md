@@ -15,8 +15,8 @@
 - [x] Inference code (3DGS rendering backend)
 - [x] Demo data & pretrained model
 - [x] Training data 
+- [ ] Training code
 - [ ] Larger-area test scenes
-
 ## 🚀 Installation
 
 ### Step 1: Clone the Repository
