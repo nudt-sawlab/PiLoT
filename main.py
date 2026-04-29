@@ -206,16 +206,21 @@ class DualProcessTask:
     def rendering_worker(self) -> None:
         """Process that renders images and computes target locations.
 
-        Supports two backends selected via ``render_config["type"]``:
-        * ``"osg"``  – OpenSceneGraph (default, legacy)
-        * ``"3dgs"`` – 3D Gaussian Splatting
+        Supports three backends selected via ``render_config["type"]``:
+        * ``"osg"``     – OpenSceneGraph (default, legacy)
+        * ``"3dgs"``    – 3D Gaussian Splatting
+        * ``"dom_dsm"`` – DOM + DSM GeoTIFF prototype renderer
         """
         setproctitle.setproctitle("PiLoT_Render")
         use_3dgs = self.render_type == "3dgs"
+        use_dom_dsm = self.render_type == "dom_dsm"
 
         if use_3dgs:
             from pixloc.utils.gs3d.gs3d_render import GS3DRenderer
             renderer = GS3DRenderer(self.render_config)
+        elif use_dom_dsm:
+            from pixloc.utils.dom_dsm.dom_dsm_render import DOMDSMRenderer
+            renderer = DOMDSMRenderer(self.render_config)
         else:
             from pixloc.utils.osg import osg_render
             renderer = osg_render.RenderImageProcessor(self.render_config)
@@ -237,7 +242,7 @@ class DualProcessTask:
 
             euler, trans, qname, _fps = item
 
-            if use_3dgs:
+            if use_3dgs or use_dom_dsm:
                 color, depth = renderer.render(trans, euler)
             else:
                 with torch.cuda.stream(render_stream):
