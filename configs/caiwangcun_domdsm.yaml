@@ -10,9 +10,9 @@ render_config:
     cache_dir: "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/cache/dom_dsm_tiles"
     debug_dir: "/mnt/d/aiproject/PiLoT_work/outputs/exif_test/debug_render"
     debug_every: 1
-    near_m: 1.0
-    far_m: 1500.0
-    ray_step_m: 2.0
+    near_m: 330.0
+    far_m: 430.0
+    ray_step_m: 10.0
 
   init_rot: [0, 0, 0]
   init_trans: [0, 0, 0]
