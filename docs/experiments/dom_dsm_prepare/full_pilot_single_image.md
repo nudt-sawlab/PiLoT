@@ -9,6 +9,10 @@
 - GPU: `NVIDIA GeForce GTX 1080`
 - GPU memory during checks: `1313 MiB / 8192 MiB`
 - `direct_abs_cost_cuda` import status: failed, `ModuleNotFoundError("No module named 'direct_abs_cost_cuda'")`
+- Follow-up environment check after restoring the checkpoint:
+  - `segmentation-models-pytorch` was changed from `0.5.0` to `0.3.3` to match PiLoT's expected `DecoderBlock` / `CenterBlock` API.
+  - `direct_abs_cost_cuda` was found at `DirectAbsoluteCostCuda/direct_abs_cost_cuda.cpython-310-x86_64-linux-gnu.so` when `PYTHONPATH` includes `DirectAbsoluteCostCuda`.
+  - The extension still fails to load on this WSL Ubuntu because the prebuilt binary requires `GLIBC_2.32`, while the system has `ldd (Ubuntu GLIBC 2.31-0ubuntu9.18) 2.31`.
 
 ## Input
 
@@ -38,6 +42,11 @@
 - Main-process observation: the full command did not produce `outputs/exif_test.txt` before the 900 second timeout. `outputs/exif_test/` existed but remained empty.
 - Isolated localization check: direct `RenderLocalizer(conf)` initialization failed while loading `data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt`.
 - Error: `FileNotFoundError: [Errno 2] No such file or directory: 'data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt'`
+- Follow-up after placing the checkpoint:
+  - Checkpoint loading progressed.
+  - Feature extractor initialization initially failed with `ImportError: cannot import name 'DecoderBlock'` from `segmentation_models_pytorch.decoders.unet.decoder`.
+  - Downgrading to `segmentation-models-pytorch==0.3.3` fixed that API mismatch.
+  - The next blocker is `direct_abs_cost_cuda`: with only the repo root on `PYTHONPATH`, import fails with `ModuleNotFoundError`; with `PYTHONPATH=/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda` and torch `LD_LIBRARY_PATH`, import fails with `ImportError: /lib/x86_64-linux-gnu/libc.so.6: version 'GLIBC_2.32' not found`.
 - Output files:
   - `outputs/exif_test_single_512/rendered_rgb.png`
   - `outputs/exif_test_single_512/rendered_depth.png`
@@ -56,6 +65,6 @@
 
 - The test has not entered PiLoT refinement successfully.
 - A refined pose was not produced.
-- The current blocker is the missing PiLoT checkpoint at `data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt`.
-- `direct_abs_cost_cuda` is also not importable from the environment, but the run did not reach the learned optimizer stage because checkpoint loading failed first.
-- Continue to full single-image refinement only after restoring the checkpoint path. After that, re-check whether `direct_abs_cost_cuda` is required by the optimizer path before testing orthorectification or target localization.
+- The original checkpoint blocker was resolved by placing `model@mapscape@512@Fourier.ckpt` under `data_demo/pretrained_model/`.
+- The current blocker is the prebuilt `direct_abs_cost_cuda` binary ABI. This WSL Ubuntu has glibc 2.31, but the available Python 3.10 extension requires glibc 2.32 and newer libstdc++ symbols.
+- Full single-image refinement still cannot produce a refined pose in this environment until either the CUDA extension is rebuilt for this OS/toolchain or the run is moved to a newer Ubuntu/WSL environment that satisfies the binary requirements.
