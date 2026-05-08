@@ -180,6 +180,184 @@ nvidia-smi --query-gpu=name,memory.used,memory.total --format=csv,noheader || tr
 
 ## Execution Status
 
-This document prepares the Ubuntu 22.04 reproduction chain. It has not yet run inside Ubuntu 22.04 on this machine because the currently installed WSL distribution is `Ubuntu-20.04`.
+Executed on `Ubuntu-22.04` WSL.
 
-Next gate: install/start `Ubuntu-22.04`, create `.conda/pilot22`, and stop immediately if `direct_abs_cost_cuda` still fails to import.
+### WSL and glibc
+
+```text
+wsl -l -v
+Ubuntu-22.04  Running  2
+
+python: 3.8.20
+ldd (Ubuntu GLIBC 2.35-0ubuntu3.13) 2.35
+```
+
+### Environment
+
+The requested project path is kept as:
+
+```text
+/mnt/d/aiproject/PiLoT_work/.conda/pilot22
+```
+
+Because package installation directly under `/mnt/d` hit DrvFS `Operation not permitted` errors on binary package files, `.conda/pilot22` is a symlink to an ext4 environment:
+
+```text
+/mnt/d/aiproject/PiLoT_work/.conda/pilot22 -> /home/farsee2/pilot22
+```
+
+This keeps the activation path stable while avoiding Windows-mounted filesystem binary install failures.
+
+### PyTorch and CUDA
+
+`torch==2.4.1+cu124` was installed successfully. Several large CUDA wheels had to be downloaded with resumable `wget` because pip downloads through the proxy repeatedly timed out or produced hash mismatches.
+
+Final check:
+
+```text
+torch: 2.4.1+cu124
+cuda available: True
+cuda: 12.4
+gpu: NVIDIA GeForce GTX 1080
+```
+
+Known deviation:
+
+- `triton==3.0.0` is still not installed. Repeated downloads from PyPI / PyTorch were corrupted by network/proxy interruption and failed hash validation.
+- `torch` imports and CUDA is available without `triton`; this is enough for the current PiLoT single-image gate unless code paths invoke torch compilation/triton kernels.
+- `opencv-python==4.13.0.92` from `environment.yaml` was not used; `opencv-python==4.10.0.84` was installed as a Python 3.8 compatible wheel.
+
+Current `pip check` only reports:
+
+```text
+torch 2.4.1+cu124 requires triton, which is not installed.
+```
+
+### DirectAbsoluteCostCuda
+
+Direct installation from `/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda` failed with DrvFS metadata write errors:
+
+```text
+Operation not permitted: '/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda/direct_abs_cost_cuda.egg-info/...'
+```
+
+The same source directory was copied to `/tmp/DirectAbsoluteCostCuda_pilot22` and installed from ext4 successfully.
+
+Import check:
+
+```text
+direct_abs_cost_cuda import ok
+```
+
+This confirms the Ubuntu 20.04 glibc blocker is resolved on Ubuntu 22.04.
+
+### Input Files
+
+```text
+configs/caiwangcun_domdsm.yaml
+data_caiwangcun/query/images/exif_test/0000.jpg
+data_caiwangcun/query/poses/exif_test.txt
+data_caiwangcun/reference/caiwangcun_dom.tif
+data_caiwangcun/reference/caiwangcun_dsm.tif
+data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt
+```
+
+Pose line:
+
+```text
+0000.jpg 114.4368608916 30.3913609745 391.4620 180.000000 0.000000 -29.200000
+```
+
+### Renderer-only Baseline
+
+The existing 512-wide renderer-only check remains valid:
+
+```json
+{
+  "valid_depth_ratio": 0.99993896484375,
+  "depth_min": 360.0,
+  "depth_max": 390.0,
+  "render_time_sec": 77.93734488100006,
+  "image_size": {
+    "width": 512,
+    "height": 288
+  }
+}
+```
+
+The overlay conclusion from the 512 renderer-only gate was that road, shoreline, and vegetation boundaries are broadly consistent enough to attempt the full single-image PiLoT run.
+
+### RenderLocalizer Initialization
+
+Command:
+
+```bash
+python - <<'PY'
+import time, yaml, torch
+from pixloc.localization.localizer import RenderLocalizer
+conf = yaml.safe_load(open("configs/caiwangcun_domdsm.yaml"))["default_confs"]["from_render_test"]
+t0 = time.time()
+localizer = RenderLocalizer(conf)
+print("RenderLocalizer ready", round(time.time() - t0, 3))
+PY
+```
+
+Result:
+
+```text
+RenderLocalizer ready 31.274
+```
+
+The checkpoint loaded successfully from:
+
+```text
+data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt
+```
+
+### Full PiLoT Single-image Run
+
+Command:
+
+```bash
+/usr/bin/timeout 240s python -u main.py --config configs/caiwangcun_domdsm.yaml --name exif_test --viz
+```
+
+Result:
+
+```text
+STATUS:124
+```
+
+Failure stage:
+
+- Configuration read: passed.
+- Query image list loading: passed; progress showed `1/1`.
+- `RenderLocalizer` standalone initialization: passed before the full run.
+- Full multiprocessing run: failed/hung during spawned process CUDA tensor reconstruction.
+
+Key traceback:
+
+```text
+RuntimeError: CUDA error: invalid resource handle
+  File ".../torch/multiprocessing/reductions.py", line 149, in rebuild_cuda_tensor
+    storage = storage_cls._new_shared_cuda(
+```
+
+No refined pose was produced:
+
+```text
+outputs/exif_test/     exists but contains no files
+outputs/exif_test.txt  not generated
+```
+
+Diagnostic log:
+
+```text
+outputs/exif_test_ubuntu22_run.log
+```
+
+### Conclusion
+
+Ubuntu 22.04 resolves the `direct_abs_cost_cuda` glibc import blocker. PyTorch 2.4.1+cu124 imports successfully and sees the GTX 1080. `RenderLocalizer` initializes successfully with the local checkpoint.
+
+The current blocker is now inside the full PiLoT multiprocessing path, specifically CUDA tensor sharing/reconstruction under `spawn`, before a refined pose is written. Per the current restriction, `main.py` and `DOMDSMRenderer` were not modified. Next work should focus on a minimal single-image execution path or multiprocessing CUDA handoff fix, not renderer geometry or long-sequence testing.

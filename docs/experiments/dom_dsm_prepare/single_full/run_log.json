@@ -1,0 +1,94 @@
+{
+  "back_project_time_sec": 0.40281200408935547,
+  "checkpoint_path": "data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt",
+  "config_path": "configs/caiwangcun_domdsm.yaml",
+  "failure_stage": null,
+  "initial_pose": {
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      -29.2
+    ],
+    "image_name": "0000.jpg",
+    "pose_format": "image_name lon lat alt roll pitch yaw",
+    "translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ]
+  },
+  "localizer_init_time_sec": 27.21785068511963,
+  "output_dir": "/mnt/d/aiproject/PiLoT_work/outputs/exif_test_single_full",
+  "points_3d_count": 500,
+  "pose_delta_lon_lat_alt_roll_pitch_yaw": [
+    -0.00013685167733967774,
+    -2.167465324376394e-05,
+    4.097159828349959,
+    -180.00009948966172,
+    -179.9999344297537,
+    186.00006429664992
+  ],
+  "pose_file_path": "data_caiwangcun/query/poses/exif_test.txt",
+  "query_image_for_refine_note": "Resized to render camera dimensions before run_query so BaseRefiner.zero_pad(512) can accept the single test image. This only affects the standalone experiment script.",
+  "query_image_for_refine_shape": [
+    288,
+    512,
+    3
+  ],
+  "query_image_path": "data_caiwangcun/query/images/exif_test/0000.jpg",
+  "query_image_shape": [
+    527,
+    704,
+    3
+  ],
+  "query_resize_ratio": 7.5,
+  "refine_color_shape": [
+    288,
+    512,
+    3
+  ],
+  "refined_pose": {
+    "euler_pitch_roll_yaw": [
+      -179.9999344297537,
+      -9.94896617078202e-05,
+      156.80006429664994
+    ],
+    "image_name": "0000.jpg",
+    "pose_format": "image_name lon lat alt roll pitch yaw",
+    "translation_lon_lat_alt": [
+      114.43672403992267,
+      30.391339299846756,
+      395.55915982834995
+    ]
+  },
+  "render_camera_gs": [
+    512.0,
+    288.0,
+    256.0,
+    144.0,
+    360.0,
+    360.0
+  ],
+  "render_shape": [
+    288,
+    512,
+    3
+  ],
+  "render_stats": {
+    "depth_max": 390.0,
+    "depth_min": 360.0,
+    "valid_depth_ratio": 0.9999593098958334
+  },
+  "render_time_sec": 53.03266477584839,
+  "run_query_success": true,
+  "run_query_time_sec": 1.8203535079956055,
+  "torch": {
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce GTX 1080",
+    "version": "2.4.1+cu124"
+  },
+  "total_time_sec": 84.12126398086548,
+  "traceback": null
+}
