@@ -1,0 +1,23 @@
+{
+  "candidate": "06_swap_roll_pitch",
+  "depth_max": 390.0,
+  "depth_min": 360.0,
+  "description": "Swap refined pitch and roll.",
+  "edge_chamfer": 75.92964172363281,
+  "edge_overlap_count": 54,
+  "edge_overlap_ratio": 0.03356121814791796,
+  "euler_pitch_roll_yaw": [
+    -0.0001110565401035226,
+    179.99995341015037,
+    -144.79992977987283
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 1609,
+  "render_time_sec": 129.40043239897932,
+  "translation_lon_lat_alt": [
+    114.43672403988498,
+    30.391339299808664,
+    395.5591768939048
+  ],
+  "valid_depth_ratio": 0.9986911349826388
+}

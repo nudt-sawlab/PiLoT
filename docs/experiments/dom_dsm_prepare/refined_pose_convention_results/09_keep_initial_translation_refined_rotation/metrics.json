@@ -1,0 +1,23 @@
+{
+  "candidate": "09_keep_initial_translation_refined_rotation",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "Use initial translation with direct refined euler.",
+  "edge_chamfer": 10.749441146850586,
+  "edge_overlap_count": 340,
+  "edge_overlap_ratio": 0.1905829596412556,
+  "euler_pitch_roll_yaw": [
+    179.99995341015037,
+    -0.0001110565401035226,
+    -144.79992977987283
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 1784,
+  "render_time_sec": 116.82785179099301,
+  "translation_lon_lat_alt": [
+    114.4368608916,
+    30.3913609745,
+    391.462
+  ],
+  "valid_depth_ratio": 1.0
+}

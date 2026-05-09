@@ -1,0 +1,23 @@
+{
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "Accept euler update only; keep initial translation.",
+  "edge_chamfer": 11.15369701385498,
+  "edge_overlap_count": 379,
+  "edge_overlap_ratio": 0.2155858930602958,
+  "euler_pitch_roll_yaw": [
+    179.99995341015875,
+    -0.0001110565307272474,
+    -144.79992977988016
+  ],
+  "query_edge_count": 2132,
+  "render_edge_count": 1758,
+  "render_time_sec": 110.46884989738464,
+  "strategy": "clamp_rotation_only",
+  "translation_lon_lat_alt": [
+    114.4368608916,
+    30.3913609745,
+    391.462
+  ],
+  "valid_depth_ratio": 1.0
+}

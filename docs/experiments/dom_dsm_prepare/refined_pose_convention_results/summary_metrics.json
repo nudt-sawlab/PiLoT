@@ -1,0 +1,874 @@
+{
+  "best_by_edge_chamfer": "01_initial_baseline",
+  "best_by_edge_overlap_ratio": "10_equiv_initial_translation",
+  "candidates": [
+    {
+      "candidate": "01_initial_baseline",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Yawfix initial pose baseline.",
+      "edge_chamfer": 4.495985507965088,
+      "edge_overlap_count": 1049,
+      "edge_overlap_ratio": 0.6724358974358975,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1560,
+      "render_time_sec": 123.47946975400555,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999525282118056
+    },
+    {
+      "candidate": "02_direct_refined",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined euler and translation exactly as logged.",
+      "edge_chamfer": 9.933160781860352,
+      "edge_overlap_count": 543,
+      "edge_overlap_ratio": 0.35984095427435386,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        -144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1509,
+      "render_time_sec": 127.28633900199202,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986436631944444
+    },
+    {
+      "candidate": "03_neg_refined_yaw",
+      "depth_max": 400.0,
+      "depth_min": 360.0,
+      "description": "Use refined pitch/roll, but negate refined yaw.",
+      "edge_chamfer": 34.51394271850586,
+      "edge_overlap_count": 260,
+      "edge_overlap_ratio": 0.12357414448669202,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 3038,
+      "render_time_sec": 132.34407286599162,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.998291015625
+    },
+    {
+      "candidate": "04_refined_yaw_plus_180",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined pitch/roll, yaw = refined_yaw + 180.",
+      "edge_chamfer": 75.82412719726562,
+      "edge_overlap_count": 54,
+      "edge_overlap_ratio": 0.03383458646616541,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        35.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1596,
+      "render_time_sec": 130.12534676401992,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986911349826388
+    },
+    {
+      "candidate": "05_refined_yaw_minus_180",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined pitch/roll, yaw = refined_yaw - 180.",
+      "edge_chamfer": 75.82412719726562,
+      "edge_overlap_count": 54,
+      "edge_overlap_ratio": 0.03383458646616541,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        -324.79992977987285
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1596,
+      "render_time_sec": 127.69000867099385,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986911349826388
+    },
+    {
+      "candidate": "06_swap_roll_pitch",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Swap refined pitch and roll.",
+      "edge_chamfer": 75.92964172363281,
+      "edge_overlap_count": 54,
+      "edge_overlap_ratio": 0.03356121814791796,
+      "euler_pitch_roll_yaw": [
+        -0.0001110565401035226,
+        179.99995341015037,
+        -144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1609,
+      "render_time_sec": 129.40043239897932,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986911349826388
+    },
+    {
+      "candidate": "07_equivalent_downward_form",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Convert near [180,0,-144.8] to near [0,180,29.2].",
+      "edge_chamfer": 7.968849182128906,
+      "edge_overlap_count": 424,
+      "edge_overlap_ratio": 0.29712683952347585,
+      "euler_pitch_roll_yaw": [
+        -4.658984963157309e-05,
+        179.9998889434599,
+        29.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1427,
+      "render_time_sec": 122.21529530300177,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9979654947916666
+    },
+    {
+      "candidate": "08_keep_initial_rotation_refined_translation",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined translation with initial euler.",
+      "edge_chamfer": 7.957026958465576,
+      "edge_overlap_count": 426,
+      "edge_overlap_ratio": 0.29873772791023845,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1426,
+      "render_time_sec": 124.10670632499387,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9979654947916666
+    },
+    {
+      "candidate": "09_keep_initial_translation_refined_rotation",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Use initial translation with direct refined euler.",
+      "edge_chamfer": 10.749441146850586,
+      "edge_overlap_count": 340,
+      "edge_overlap_ratio": 0.1905829596412556,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        -144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1784,
+      "render_time_sec": 116.82785179099301,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "candidate": "10_equiv_initial_translation",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Use initial translation with equivalent downward refined euler.",
+      "edge_chamfer": 4.662417411804199,
+      "edge_overlap_count": 1047,
+      "edge_overlap_ratio": 0.6856581532416502,
+      "euler_pitch_roll_yaw": [
+        -4.658984963157309e-05,
+        179.9998889434599,
+        29.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1527,
+      "render_time_sec": 114.11629438499222,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999525282118056
+    },
+    {
+      "candidate": "11_equiv_refined_yaw_negated",
+      "depth_max": 400.0,
+      "depth_min": 360.0,
+      "description": "Use equivalent downward form with yaw sign flipped.",
+      "edge_chamfer": 31.91718292236328,
+      "edge_overlap_count": 260,
+      "edge_overlap_ratio": 0.12357414448669202,
+      "euler_pitch_roll_yaw": [
+        -4.658984963157309e-05,
+        179.9998889434599,
+        -29.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 2832,
+      "render_time_sec": 128.35388212100952,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9978773328993056
+    },
+    {
+      "candidate": "12_refined_translation_initial_yaw_only",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined translation and initial downward rotation/yaw.",
+      "edge_chamfer": 7.957026958465576,
+      "edge_overlap_count": 426,
+      "edge_overlap_ratio": 0.29873772791023845,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1426,
+      "render_time_sec": 124.85057331001735,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9979654947916666
+    }
+  ],
+  "config_path": "configs/caiwangcun_domdsm_16x9.yaml",
+  "image_size": {
+    "height": 288,
+    "width": 512
+  },
+  "initial_pose": {
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "image_name": "0000.jpg",
+    "pose_format": "image_name lon lat alt roll pitch yaw",
+    "translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ]
+  },
+  "output_dir": "docs/experiments/dom_dsm_prepare/refined_pose_convention_results",
+  "query_image_path": "data_caiwangcun/query/images/exif_test_16x9/0000.jpg",
+  "refined_pose": {
+    "euler_pitch_roll_yaw": [
+      179.99995341015037,
+      -0.0001110565401035226,
+      -144.79992977987283
+    ],
+    "image_name": "0000.jpg",
+    "pose_format": "image_name lon lat alt roll pitch yaw",
+    "translation_lon_lat_alt": [
+      114.43672403988498,
+      30.391339299808664,
+      395.5591768939048
+    ]
+  },
+  "run_log_path": "outputs/exif_test_16x9_yawfix_single_full/run_log.json",
+  "sorted_by_edge_chamfer": [
+    {
+      "candidate": "01_initial_baseline",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Yawfix initial pose baseline.",
+      "edge_chamfer": 4.495985507965088,
+      "edge_overlap_count": 1049,
+      "edge_overlap_ratio": 0.6724358974358975,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1560,
+      "render_time_sec": 123.47946975400555,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999525282118056
+    },
+    {
+      "candidate": "10_equiv_initial_translation",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Use initial translation with equivalent downward refined euler.",
+      "edge_chamfer": 4.662417411804199,
+      "edge_overlap_count": 1047,
+      "edge_overlap_ratio": 0.6856581532416502,
+      "euler_pitch_roll_yaw": [
+        -4.658984963157309e-05,
+        179.9998889434599,
+        29.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1527,
+      "render_time_sec": 114.11629438499222,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999525282118056
+    },
+    {
+      "candidate": "08_keep_initial_rotation_refined_translation",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined translation with initial euler.",
+      "edge_chamfer": 7.957026958465576,
+      "edge_overlap_count": 426,
+      "edge_overlap_ratio": 0.29873772791023845,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1426,
+      "render_time_sec": 124.10670632499387,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9979654947916666
+    },
+    {
+      "candidate": "12_refined_translation_initial_yaw_only",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined translation and initial downward rotation/yaw.",
+      "edge_chamfer": 7.957026958465576,
+      "edge_overlap_count": 426,
+      "edge_overlap_ratio": 0.29873772791023845,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1426,
+      "render_time_sec": 124.85057331001735,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9979654947916666
+    },
+    {
+      "candidate": "07_equivalent_downward_form",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Convert near [180,0,-144.8] to near [0,180,29.2].",
+      "edge_chamfer": 7.968849182128906,
+      "edge_overlap_count": 424,
+      "edge_overlap_ratio": 0.29712683952347585,
+      "euler_pitch_roll_yaw": [
+        -4.658984963157309e-05,
+        179.9998889434599,
+        29.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1427,
+      "render_time_sec": 122.21529530300177,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9979654947916666
+    },
+    {
+      "candidate": "02_direct_refined",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined euler and translation exactly as logged.",
+      "edge_chamfer": 9.933160781860352,
+      "edge_overlap_count": 543,
+      "edge_overlap_ratio": 0.35984095427435386,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        -144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1509,
+      "render_time_sec": 127.28633900199202,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986436631944444
+    },
+    {
+      "candidate": "09_keep_initial_translation_refined_rotation",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Use initial translation with direct refined euler.",
+      "edge_chamfer": 10.749441146850586,
+      "edge_overlap_count": 340,
+      "edge_overlap_ratio": 0.1905829596412556,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        -144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1784,
+      "render_time_sec": 116.82785179099301,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "candidate": "11_equiv_refined_yaw_negated",
+      "depth_max": 400.0,
+      "depth_min": 360.0,
+      "description": "Use equivalent downward form with yaw sign flipped.",
+      "edge_chamfer": 31.91718292236328,
+      "edge_overlap_count": 260,
+      "edge_overlap_ratio": 0.12357414448669202,
+      "euler_pitch_roll_yaw": [
+        -4.658984963157309e-05,
+        179.9998889434599,
+        -29.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 2832,
+      "render_time_sec": 128.35388212100952,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9978773328993056
+    },
+    {
+      "candidate": "03_neg_refined_yaw",
+      "depth_max": 400.0,
+      "depth_min": 360.0,
+      "description": "Use refined pitch/roll, but negate refined yaw.",
+      "edge_chamfer": 34.51394271850586,
+      "edge_overlap_count": 260,
+      "edge_overlap_ratio": 0.12357414448669202,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 3038,
+      "render_time_sec": 132.34407286599162,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.998291015625
+    },
+    {
+      "candidate": "04_refined_yaw_plus_180",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined pitch/roll, yaw = refined_yaw + 180.",
+      "edge_chamfer": 75.82412719726562,
+      "edge_overlap_count": 54,
+      "edge_overlap_ratio": 0.03383458646616541,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        35.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1596,
+      "render_time_sec": 130.12534676401992,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986911349826388
+    },
+    {
+      "candidate": "05_refined_yaw_minus_180",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined pitch/roll, yaw = refined_yaw - 180.",
+      "edge_chamfer": 75.82412719726562,
+      "edge_overlap_count": 54,
+      "edge_overlap_ratio": 0.03383458646616541,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        -324.79992977987285
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1596,
+      "render_time_sec": 127.69000867099385,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986911349826388
+    },
+    {
+      "candidate": "06_swap_roll_pitch",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Swap refined pitch and roll.",
+      "edge_chamfer": 75.92964172363281,
+      "edge_overlap_count": 54,
+      "edge_overlap_ratio": 0.03356121814791796,
+      "euler_pitch_roll_yaw": [
+        -0.0001110565401035226,
+        179.99995341015037,
+        -144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1609,
+      "render_time_sec": 129.40043239897932,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986911349826388
+    }
+  ],
+  "sorted_by_edge_overlap_ratio": [
+    {
+      "candidate": "10_equiv_initial_translation",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Use initial translation with equivalent downward refined euler.",
+      "edge_chamfer": 4.662417411804199,
+      "edge_overlap_count": 1047,
+      "edge_overlap_ratio": 0.6856581532416502,
+      "euler_pitch_roll_yaw": [
+        -4.658984963157309e-05,
+        179.9998889434599,
+        29.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1527,
+      "render_time_sec": 114.11629438499222,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999525282118056
+    },
+    {
+      "candidate": "01_initial_baseline",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Yawfix initial pose baseline.",
+      "edge_chamfer": 4.495985507965088,
+      "edge_overlap_count": 1049,
+      "edge_overlap_ratio": 0.6724358974358975,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1560,
+      "render_time_sec": 123.47946975400555,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999525282118056
+    },
+    {
+      "candidate": "02_direct_refined",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined euler and translation exactly as logged.",
+      "edge_chamfer": 9.933160781860352,
+      "edge_overlap_count": 543,
+      "edge_overlap_ratio": 0.35984095427435386,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        -144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1509,
+      "render_time_sec": 127.28633900199202,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986436631944444
+    },
+    {
+      "candidate": "08_keep_initial_rotation_refined_translation",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined translation with initial euler.",
+      "edge_chamfer": 7.957026958465576,
+      "edge_overlap_count": 426,
+      "edge_overlap_ratio": 0.29873772791023845,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1426,
+      "render_time_sec": 124.10670632499387,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9979654947916666
+    },
+    {
+      "candidate": "12_refined_translation_initial_yaw_only",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined translation and initial downward rotation/yaw.",
+      "edge_chamfer": 7.957026958465576,
+      "edge_overlap_count": 426,
+      "edge_overlap_ratio": 0.29873772791023845,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1426,
+      "render_time_sec": 124.85057331001735,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9979654947916666
+    },
+    {
+      "candidate": "07_equivalent_downward_form",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Convert near [180,0,-144.8] to near [0,180,29.2].",
+      "edge_chamfer": 7.968849182128906,
+      "edge_overlap_count": 424,
+      "edge_overlap_ratio": 0.29712683952347585,
+      "euler_pitch_roll_yaw": [
+        -4.658984963157309e-05,
+        179.9998889434599,
+        29.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1427,
+      "render_time_sec": 122.21529530300177,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9979654947916666
+    },
+    {
+      "candidate": "09_keep_initial_translation_refined_rotation",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Use initial translation with direct refined euler.",
+      "edge_chamfer": 10.749441146850586,
+      "edge_overlap_count": 340,
+      "edge_overlap_ratio": 0.1905829596412556,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        -144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1784,
+      "render_time_sec": 116.82785179099301,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "candidate": "03_neg_refined_yaw",
+      "depth_max": 400.0,
+      "depth_min": 360.0,
+      "description": "Use refined pitch/roll, but negate refined yaw.",
+      "edge_chamfer": 34.51394271850586,
+      "edge_overlap_count": 260,
+      "edge_overlap_ratio": 0.12357414448669202,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 3038,
+      "render_time_sec": 132.34407286599162,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.998291015625
+    },
+    {
+      "candidate": "11_equiv_refined_yaw_negated",
+      "depth_max": 400.0,
+      "depth_min": 360.0,
+      "description": "Use equivalent downward form with yaw sign flipped.",
+      "edge_chamfer": 31.91718292236328,
+      "edge_overlap_count": 260,
+      "edge_overlap_ratio": 0.12357414448669202,
+      "euler_pitch_roll_yaw": [
+        -4.658984963157309e-05,
+        179.9998889434599,
+        -29.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 2832,
+      "render_time_sec": 128.35388212100952,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9978773328993056
+    },
+    {
+      "candidate": "04_refined_yaw_plus_180",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined pitch/roll, yaw = refined_yaw + 180.",
+      "edge_chamfer": 75.82412719726562,
+      "edge_overlap_count": 54,
+      "edge_overlap_ratio": 0.03383458646616541,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        35.200070220127174
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1596,
+      "render_time_sec": 130.12534676401992,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986911349826388
+    },
+    {
+      "candidate": "05_refined_yaw_minus_180",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use refined pitch/roll, yaw = refined_yaw - 180.",
+      "edge_chamfer": 75.82412719726562,
+      "edge_overlap_count": 54,
+      "edge_overlap_ratio": 0.03383458646616541,
+      "euler_pitch_roll_yaw": [
+        179.99995341015037,
+        -0.0001110565401035226,
+        -324.79992977987285
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1596,
+      "render_time_sec": 127.69000867099385,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986911349826388
+    },
+    {
+      "candidate": "06_swap_roll_pitch",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Swap refined pitch and roll.",
+      "edge_chamfer": 75.92964172363281,
+      "edge_overlap_count": 54,
+      "edge_overlap_ratio": 0.03356121814791796,
+      "euler_pitch_roll_yaw": [
+        -0.0001110565401035226,
+        179.99995341015037,
+        -144.79992977987283
+      ],
+      "query_edge_count": 2104,
+      "render_edge_count": 1609,
+      "render_time_sec": 129.40043239897932,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9986911349826388
+    }
+  ]
+}

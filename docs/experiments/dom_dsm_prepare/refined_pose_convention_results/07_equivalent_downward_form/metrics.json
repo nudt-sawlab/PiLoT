@@ -1,0 +1,23 @@
+{
+  "candidate": "07_equivalent_downward_form",
+  "depth_max": 390.0,
+  "depth_min": 360.0,
+  "description": "Convert near [180,0,-144.8] to near [0,180,29.2].",
+  "edge_chamfer": 7.968849182128906,
+  "edge_overlap_count": 424,
+  "edge_overlap_ratio": 0.29712683952347585,
+  "euler_pitch_roll_yaw": [
+    -4.658984963157309e-05,
+    179.9998889434599,
+    29.200070220127174
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 1427,
+  "render_time_sec": 122.21529530300177,
+  "translation_lon_lat_alt": [
+    114.43672403988498,
+    30.391339299808664,
+    395.5591768939048
+  ],
+  "valid_depth_ratio": 0.9979654947916666
+}

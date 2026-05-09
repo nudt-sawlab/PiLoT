@@ -1,0 +1,23 @@
+{
+  "candidate": "12_refined_translation_initial_yaw_only",
+  "depth_max": 390.0,
+  "depth_min": 360.0,
+  "description": "Use refined translation and initial downward rotation/yaw.",
+  "edge_chamfer": 7.957026958465576,
+  "edge_overlap_count": 426,
+  "edge_overlap_ratio": 0.29873772791023845,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.2
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 1426,
+  "render_time_sec": 124.85057331001735,
+  "translation_lon_lat_alt": [
+    114.43672403988498,
+    30.391339299808664,
+    395.5591768939048
+  ],
+  "valid_depth_ratio": 0.9979654947916666
+}

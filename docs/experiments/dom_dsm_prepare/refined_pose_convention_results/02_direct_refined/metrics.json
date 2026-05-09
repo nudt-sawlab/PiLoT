@@ -1,0 +1,23 @@
+{
+  "candidate": "02_direct_refined",
+  "depth_max": 390.0,
+  "depth_min": 360.0,
+  "description": "Use refined euler and translation exactly as logged.",
+  "edge_chamfer": 9.933160781860352,
+  "edge_overlap_count": 543,
+  "edge_overlap_ratio": 0.35984095427435386,
+  "euler_pitch_roll_yaw": [
+    179.99995341015037,
+    -0.0001110565401035226,
+    -144.79992977987283
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 1509,
+  "render_time_sec": 127.28633900199202,
+  "translation_lon_lat_alt": [
+    114.43672403988498,
+    30.391339299808664,
+    395.5591768939048
+  ],
+  "valid_depth_ratio": 0.9986436631944444
+}

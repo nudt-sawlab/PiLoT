@@ -1,0 +1,23 @@
+{
+  "depth_max": 420.0,
+  "depth_min": 340.0,
+  "description": "Clamp lon/lat/alt and pitch/roll/yaw deltas around the initial pose.",
+  "edge_chamfer": 22.261497497558594,
+  "edge_overlap_count": 266,
+  "edge_overlap_ratio": 0.124765478424015,
+  "euler_pitch_roll_yaw": [
+    5.0,
+    175.0,
+    24.2
+  ],
+  "query_edge_count": 2132,
+  "render_edge_count": 2525,
+  "render_time_sec": 123.57766127586365,
+  "strategy": "clamp_small_delta",
+  "translation_lon_lat_alt": [
+    114.4368408916,
+    30.3913409745,
+    392.462
+  ],
+  "valid_depth_ratio": 1.0
+}

@@ -1,0 +1,23 @@
+{
+  "candidate": "11_equiv_refined_yaw_negated",
+  "depth_max": 400.0,
+  "depth_min": 360.0,
+  "description": "Use equivalent downward form with yaw sign flipped.",
+  "edge_chamfer": 31.91718292236328,
+  "edge_overlap_count": 260,
+  "edge_overlap_ratio": 0.12357414448669202,
+  "euler_pitch_roll_yaw": [
+    -4.658984963157309e-05,
+    179.9998889434599,
+    -29.200070220127174
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 2832,
+  "render_time_sec": 128.35388212100952,
+  "translation_lon_lat_alt": [
+    114.43672403988498,
+    30.391339299808664,
+    395.5591768939048
+  ],
+  "valid_depth_ratio": 0.9978773328993056
+}

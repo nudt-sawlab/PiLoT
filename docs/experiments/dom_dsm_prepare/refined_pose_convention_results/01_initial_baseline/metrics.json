@@ -1,0 +1,23 @@
+{
+  "candidate": "01_initial_baseline",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "Yawfix initial pose baseline.",
+  "edge_chamfer": 4.495985507965088,
+  "edge_overlap_count": 1049,
+  "edge_overlap_ratio": 0.6724358974358975,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.2
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 1560,
+  "render_time_sec": 123.47946975400555,
+  "translation_lon_lat_alt": [
+    114.4368608916,
+    30.3913609745,
+    391.462
+  ],
+  "valid_depth_ratio": 0.9999525282118056
+}
