@@ -1,0 +1,24 @@
+{
+  "candidate": "06_dji_yaw_plus_180",
+  "depth_max": 390.0,
+  "depth_min": 360.0,
+  "edge_chamfer": 53.181819915771484,
+  "edge_overlap_count": 305,
+  "edge_overlap_ratio": 0.1449619771863118,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    150.8
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 2676,
+  "render_time_sec": 50.61939728099969,
+  "render_yaw": 150.8,
+  "translation_lon_lat_alt": [
+    114.4368608916,
+    30.3913609745,
+    391.462
+  ],
+  "valid_depth_ratio": 0.9999457465277778,
+  "yaw_expression": "dji_yaw + 180"
+}
