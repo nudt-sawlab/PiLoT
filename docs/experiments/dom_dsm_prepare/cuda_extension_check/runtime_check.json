@@ -1,0 +1,153 @@
+{
+  "binary_arch_info": {
+    "contains_sm_61_marker": true,
+    "cuobjdump_available": false,
+    "cuobjdump_result": null,
+    "so_path": "/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+    "strings_arch_markers": [
+      "sm_35",
+      "sm_37",
+      "sm_50",
+      "sm_52",
+      "sm_53",
+      "sm_60",
+      "sm_61",
+      "sm_62",
+      "sm_70",
+      "sm_72",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_87",
+      "sm_89",
+      "sm_90"
+    ]
+  },
+  "callable_signatures": {
+    "optimizer_step_cuda": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda of PyCapsule object at 0x776787fdc8d0>",
+    "optimizer_step_cuda_v2": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v2 of PyCapsule object at 0x776787f9ac30>",
+    "optimizer_step_cuda_v3": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v3 of PyCapsule object at 0x776787f9a930>",
+    "residual_jacobian_batch_quat_cuda": "unavailable: ValueError: no signature found for builtin <built-in method residual_jacobian_batch_quat_cuda of PyCapsule object at 0x776787fdcc30>"
+  },
+  "callable_symbols": [
+    "optimizer_step_cuda",
+    "optimizer_step_cuda_v2",
+    "optimizer_step_cuda_v3",
+    "residual_jacobian_batch_quat_cuda"
+  ],
+  "captured_error_patterns": {
+    "CUDA error": false,
+    "invalid device function": false,
+    "invalid resource handle": false,
+    "no kernel image is available for execution on the device": false
+  },
+  "cuda_available": true,
+  "device_capability_0": [
+    6,
+    1
+  ],
+  "device_name_0": "NVIDIA GeForce GTX 1080",
+  "direct_abs_cost_cuda_file": "/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+  "direct_abs_cost_cuda_import_success": true,
+  "direct_absolute_cost_cuda_source_files": [],
+  "exception": null,
+  "minimal_function_test": {
+    "attempted": false,
+    "reason": "No function was called because the extension exposes no Python signature information sufficient to construct a safe minimal input."
+  },
+  "module_symbols": [
+    "optimizer_step_cuda",
+    "optimizer_step_cuda_v2",
+    "optimizer_step_cuda_v3",
+    "residual_jacobian_batch_quat_cuda"
+  ],
+  "plain_import_attempt": {
+    "parsed": {
+      "callable_symbols": [
+        "optimizer_step_cuda",
+        "optimizer_step_cuda_v2",
+        "optimizer_step_cuda_v3",
+        "residual_jacobian_batch_quat_cuda"
+      ],
+      "direct_abs_cost_cuda_file": "/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+      "exception": null,
+      "exception_type": null,
+      "import_success": true,
+      "module_symbols": [
+        "optimizer_step_cuda",
+        "optimizer_step_cuda_v2",
+        "optimizer_step_cuda_v3",
+        "residual_jacobian_batch_quat_cuda"
+      ],
+      "signatures": {
+        "optimizer_step_cuda": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda of PyCapsule object at 0x776787fdc8d0>",
+        "optimizer_step_cuda_v2": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v2 of PyCapsule object at 0x776787f9ac30>",
+        "optimizer_step_cuda_v3": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v3 of PyCapsule object at 0x776787f9a930>",
+        "residual_jacobian_batch_quat_cuda": "unavailable: ValueError: no signature found for builtin <built-in method residual_jacobian_batch_quat_cuda of PyCapsule object at 0x776787fdcc30>"
+      }
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"callable_symbols\": [\"optimizer_step_cuda\", \"optimizer_step_cuda_v2\", \"optimizer_step_cuda_v3\", \"residual_jacobian_batch_quat_cuda\"], \"direct_abs_cost_cuda_file\": \"/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so\", \"exception\": null, \"exception_type\": null, \"import_success\": true, \"module_symbols\": [\"optimizer_step_cuda\", \"optimizer_step_cuda_v2\", \"optimizer_step_cuda_v3\", \"residual_jacobian_batch_quat_cuda\"], \"signatures\": {\"optimizer_step_cuda\": \"unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda of PyCapsule object at 0x776787fdc8d0>\", \"optimizer_step_cuda_v2\": \"unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v2 of PyCapsule object at 0x776787f9ac30>\", \"optimizer_step_cuda_v3\": \"unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v3 of PyCapsule object at 0x776787f9a930>\", \"residual_jacobian_batch_quat_cuda\": \"unavailable: ValueError: no signature found for builtin <built-in method residual_jacobian_batch_quat_cuda of PyCapsule object at 0x776787fdcc30>\"}}\n"
+  },
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.17",
+  "python_version": "3.8.20 (default, Oct  3 2024, 15:24:27) \n[GCC 11.2.0]",
+  "selected_import_result": {
+    "callable_symbols": [
+      "optimizer_step_cuda",
+      "optimizer_step_cuda_v2",
+      "optimizer_step_cuda_v3",
+      "residual_jacobian_batch_quat_cuda"
+    ],
+    "direct_abs_cost_cuda_file": "/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+    "exception": null,
+    "exception_type": null,
+    "import_success": true,
+    "module_symbols": [
+      "optimizer_step_cuda",
+      "optimizer_step_cuda_v2",
+      "optimizer_step_cuda_v3",
+      "residual_jacobian_batch_quat_cuda"
+    ],
+    "signatures": {
+      "optimizer_step_cuda": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda of PyCapsule object at 0x776787fdc8d0>",
+      "optimizer_step_cuda_v2": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v2 of PyCapsule object at 0x776787f9ac30>",
+      "optimizer_step_cuda_v3": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v3 of PyCapsule object at 0x776787f9a930>",
+      "residual_jacobian_batch_quat_cuda": "unavailable: ValueError: no signature found for builtin <built-in method residual_jacobian_batch_quat_cuda of PyCapsule object at 0x776787fdcc30>"
+    }
+  },
+  "sys_executable": "/mnt/d/aiproject/PiLoT_work/.conda/pilot22/bin/python",
+  "torch_cuda_version": "12.4",
+  "torch_import_success": true,
+  "torch_lib_dir": "/home/farsee2/pilot22/lib/python3.8/site-packages/torch/lib",
+  "torch_lib_env_import_attempt": {
+    "parsed": {
+      "callable_symbols": [
+        "optimizer_step_cuda",
+        "optimizer_step_cuda_v2",
+        "optimizer_step_cuda_v3",
+        "residual_jacobian_batch_quat_cuda"
+      ],
+      "direct_abs_cost_cuda_file": "/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+      "exception": null,
+      "exception_type": null,
+      "import_success": true,
+      "module_symbols": [
+        "optimizer_step_cuda",
+        "optimizer_step_cuda_v2",
+        "optimizer_step_cuda_v3",
+        "residual_jacobian_batch_quat_cuda"
+      ],
+      "signatures": {
+        "optimizer_step_cuda": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda of PyCapsule object at 0x72dc1ce5c900>",
+        "optimizer_step_cuda_v2": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v2 of PyCapsule object at 0x72dc1ce28c60>",
+        "optimizer_step_cuda_v3": "unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v3 of PyCapsule object at 0x72dc1ce28960>",
+        "residual_jacobian_batch_quat_cuda": "unavailable: ValueError: no signature found for builtin <built-in method residual_jacobian_batch_quat_cuda of PyCapsule object at 0x72dc1ce5cc60>"
+      }
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"callable_symbols\": [\"optimizer_step_cuda\", \"optimizer_step_cuda_v2\", \"optimizer_step_cuda_v3\", \"residual_jacobian_batch_quat_cuda\"], \"direct_abs_cost_cuda_file\": \"/mnt/d/aiproject/PiLoT_work/DirectAbsoluteCostCuda/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so\", \"exception\": null, \"exception_type\": null, \"import_success\": true, \"module_symbols\": [\"optimizer_step_cuda\", \"optimizer_step_cuda_v2\", \"optimizer_step_cuda_v3\", \"residual_jacobian_batch_quat_cuda\"], \"signatures\": {\"optimizer_step_cuda\": \"unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda of PyCapsule object at 0x72dc1ce5c900>\", \"optimizer_step_cuda_v2\": \"unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v2 of PyCapsule object at 0x72dc1ce28c60>\", \"optimizer_step_cuda_v3\": \"unavailable: ValueError: no signature found for builtin <built-in method optimizer_step_cuda_v3 of PyCapsule object at 0x72dc1ce28960>\", \"residual_jacobian_batch_quat_cuda\": \"unavailable: ValueError: no signature found for builtin <built-in method residual_jacobian_batch_quat_cuda of PyCapsule object at 0x72dc1ce5cc60>\"}}\n"
+  },
+  "torch_version": "2.4.1+cu124"
+}
