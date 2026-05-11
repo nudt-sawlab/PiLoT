@@ -1,0 +1,146 @@
+{
+  "all_roundtrip_passed": true,
+  "base_translation_lon_lat_alt": [
+    114.4368608916,
+    30.3913609745,
+    391.462
+  ],
+  "config": "configs/caiwangcun_domdsm_16x9.yaml",
+  "euler_convention_check": {
+    "make_domdsm_downward_euler_29_2": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "normalize_domdsm_euler_base": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "note": "Refined Euler convention remains separate; feature-loss diagnosis fixes initial downward euler except raw_refined_full.",
+    "refined_euler_record_only": [
+      180.0,
+      0.0,
+      -144.8
+    ]
+  },
+  "pose_file": "data_caiwangcun/query/poses/exif_test_16x9_yawfix.txt",
+  "raster_crs": "EPSG:32650",
+  "roundtrip_checks": [
+    {
+      "abs_error": [
+        2.9103830456733704e-11,
+        4.656612873077393e-10,
+        0.0
+      ],
+      "candidate_translation_lon_lat_alt": [
+        114.4368608916,
+        30.39136097450001,
+        391.462
+      ],
+      "offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "passed": true,
+      "roundtrip_delta": [
+        2.9103830456733704e-11,
+        4.656612873077393e-10,
+        0.0
+      ]
+    },
+    {
+      "abs_error": [
+        2.0372681319713593e-10,
+        4.656612873077393e-10,
+        0.0
+      ],
+      "candidate_translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        391.462
+      ],
+      "offset": [
+        -5.0,
+        0.0,
+        0.0
+      ],
+      "passed": true,
+      "roundtrip_delta": [
+        -5.000000000203727,
+        4.656612873077393e-10,
+        0.0
+      ]
+    },
+    {
+      "abs_error": [
+        3.7834979593753815e-10,
+        4.656612873077393e-10,
+        0.0
+      ],
+      "candidate_translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        391.462
+      ],
+      "offset": [
+        -5.0,
+        5.0,
+        0.0
+      ],
+      "passed": true,
+      "roundtrip_delta": [
+        -4.99999999962165,
+        4.999999999534339,
+        0.0
+      ]
+    },
+    {
+      "abs_error": [
+        3.530171710508512e-10,
+        8.240341742293822e-10,
+        0.0
+      ],
+      "candidate_translation_lon_lat_alt": [
+        114.43672404018342,
+        30.39133929948879,
+        391.462
+      ],
+      "offset": [
+        -13.2078,
+        -2.1052,
+        0.0
+      ],
+      "passed": true,
+      "roundtrip_delta": [
+        -13.207800000353018,
+        -2.105199999175966,
+        0.0
+      ]
+    },
+    {
+      "abs_error": [
+        3.530171710508512e-10,
+        8.240341742293822e-10,
+        2.042810365310288e-14
+      ],
+      "candidate_translation_lon_lat_alt": [
+        114.43672404018342,
+        30.39133929948879,
+        395.55899999999997
+      ],
+      "offset": [
+        -13.2078,
+        -2.1052,
+        4.097
+      ],
+      "passed": true,
+      "roundtrip_delta": [
+        -13.207800000353018,
+        -2.105199999175966,
+        4.09699999999998
+      ]
+    }
+  ]
+}
