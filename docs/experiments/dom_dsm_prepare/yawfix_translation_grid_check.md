@@ -222,3 +222,44 @@ yawfix initial pose.
 Before changing pipeline behavior, confirm the best local candidates with a
 small 512-wide local search around `east=-5`, `north=0..5`, `alt=0`, because
 the exhaustive 512-wide grid is too slow for the current prototype renderer.
+
+## 512 Local Validation
+
+After the 256-wide coarse and local searches, a small 512-wide validation was run around the most promising local region:
+
+```bash
+./.conda/pilot22/bin/python tools/search_yawfix_translation_grid.py \
+  --config configs/caiwangcun_domdsm_16x9.yaml \
+  --query-image data_caiwangcun/query/images/exif_test_16x9/0000.jpg \
+  --pose-file data_caiwangcun/query/poses/exif_test_16x9_yawfix.txt \
+  --output-dir docs/experiments/dom_dsm_prepare/yawfix_translation_grid_results_local_512 \
+  --east-range -10 0 5 \
+  --north-range 0 10 5 \
+  --alt-offsets 0 \
+  --width 512 \
+  --top-k 5 \
+  --summary-every 1
+```
+
+512-wide result summary:
+
+| Candidate | East m | North m | Alt m | Edge overlap ratio | Edge chamfer |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| base initial | 0.0 | 0.0 | 0.0 | 0.672436 | 4.495986 |
+| refined translation + initial rotation | -13.21 | -2.11 | 4.10 | 0.298738 | 7.957027 |
+| best overlap grid | -5.0 | 5.0 | 0.0 | 1.035645 | 4.122172 |
+| best chamfer grid | -5.0 | 0.0 | 0.0 | 0.927888 | 3.643097 |
+
+Top 512 candidates by overlap:
+
+| Rank | East m | North m | Alt m | Edge overlap ratio | Edge chamfer |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | -5 | 5 | 0 | 1.035645 | 4.122172 |
+| 2 | -5 | 0 | 0 | 0.927888 | 3.643097 |
+| 3 | -10 | 5 | 0 | 0.847012 | 4.272976 |
+| 4 | 0 | 5 | 0 | 0.767916 | 4.510948 |
+| 5 | 0 | 0 | 0 | 0.672436 | 4.495986 |
+
+The 512 validation confirms the 256-wide conclusion. A small westward offset is beneficial, especially `east=-5m`; the best north offset is `0..5m`, and `alt=0` remains the checked local optimum. The refined translation is much worse than both the base pose and the local grid candidates.
+
+Updated conclusion after 512 validation: RenderLocalizer's refined translation is directionally related to the best region in east/west, but it overshoots west, moves south instead of neutral/north, and increases altitude. A small local translation near `east=-5m`, `north=0..5m`, `alt=0m` is a better rendering pose than both the original yawfix initial and the refined translation.
