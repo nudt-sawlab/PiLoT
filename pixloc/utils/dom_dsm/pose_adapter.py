@@ -98,9 +98,29 @@ def normalize_domdsm_euler(euler: Sequence[float]) -> List[float]:
     """
     if len(euler) != 3:
         raise ValueError(f"Expected [pitch, roll, yaw], got {euler}")
-    return [float(euler[0]), float(euler[1]), float(euler[2])]
+    return [float(euler[0]), float(euler[1]), normalize_angle_deg(float(euler[2]))]
+
+
+def normalize_angle_deg(angle: float) -> float:
+    """Normalize an angle in degrees into the [-180, 180) interval."""
+    return float(((float(angle) + 180.0) % 360.0) - 180.0)
+
+
+def normalize_yaw(yaw: float) -> float:
+    """Normalize a yaw angle in degrees into the DOM/DSM canonical range."""
+    return normalize_angle_deg(yaw)
+
+
+def refined_yaw_to_downward_yaw(refined_yaw: float) -> float:
+    """Convert PiLoT raw refined yaw into DOMDSMRenderer downward yaw."""
+    return normalize_angle_deg(float(refined_yaw) + 180.0)
+
+
+def make_downward_euler_from_yaw(yaw: float) -> List[float]:
+    """Create the DOMDSMRenderer downward-looking euler [pitch, roll, yaw]."""
+    return [0.0, 180.0, normalize_angle_deg(yaw)]
 
 
 def make_domdsm_downward_euler(yaw: float) -> List[float]:
     """Create the DOMDSMRenderer downward-looking euler [pitch, roll, yaw]."""
-    return [0.0, 180.0, float(yaw)]
+    return make_downward_euler_from_yaw(yaw)

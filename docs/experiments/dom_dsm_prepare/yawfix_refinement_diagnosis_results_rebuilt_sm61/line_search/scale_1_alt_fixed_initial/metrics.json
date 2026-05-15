@@ -1,0 +1,28 @@
+{
+  "alt_mode": "fixed_initial",
+  "alt_offset_m": 0.0,
+  "candidate": "line_search",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "directory": "line_search/scale_1_alt_fixed_initial",
+  "east_offset_m": 3.417825106094824,
+  "edge_chamfer": 4.220744609832764,
+  "edge_overlap_count": 291,
+  "edge_overlap_ratio": 0.6643835616438356,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.2
+  ],
+  "north_offset_m": -8.757484937552363,
+  "query_edge_count": 597,
+  "render_edge_count": 438,
+  "render_time_sec": 12.311750549997669,
+  "scale": 1.0,
+  "translation_lon_lat_alt": [
+    114.43689849578722,
+    30.39128272347114,
+    391.462
+  ],
+  "valid_depth_ratio": 1.0
+}

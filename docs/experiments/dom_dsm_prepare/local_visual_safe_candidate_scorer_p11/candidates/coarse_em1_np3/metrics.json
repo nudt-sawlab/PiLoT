@@ -1,0 +1,25 @@
+{
+  "candidate": "coarse_em1_np3",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "Stage 1 coarse translation grid candidate.",
+  "edge_chamfer": 3.0758116245269775,
+  "edge_overlap_count": 486,
+  "edge_overlap_ratio": 1.1626794258373205,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.19999999999999
+  ],
+  "query_edge_count": 597,
+  "render_edge_count": 418,
+  "render_time_sec": 16.20415387500543,
+  "source": "local_grid",
+  "stage": "coarse_translation",
+  "translation_lon_lat_alt": [
+    114.43684978613314,
+    30.391387815366432,
+    391.462
+  ],
+  "valid_depth_ratio": 0.9999457465277778
+}

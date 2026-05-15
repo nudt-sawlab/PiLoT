@@ -1,6 +1,7 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Inspect direct_abs_cost_cuda binary architecture support."""
 
+import argparse
 import json
 import os
 import platform
@@ -147,6 +148,7 @@ def _binary_arch_info(so_path: Optional[str]) -> Dict[str, Any]:
         "cuobjdump_arches": [],
         "strings_available": False,
         "strings_arch_markers": [],
+        "raw_binary_arch_markers": [],
         "architecture_source_for_judgment": None,
     }
     if not so_path or not Path(so_path).exists():
@@ -168,6 +170,27 @@ def _binary_arch_info(so_path: Optional[str]) -> Dict[str, Any]:
         info["strings_arch_markers"] = _parse_arches(result.get("stdout") or "")
         if not info["architecture_source_for_judgment"] and info["strings_arch_markers"]:
             info["architecture_source_for_judgment"] = "strings fallback"
+    try:
+        data = Path(so_path).read_bytes()
+        raw_arches = set()
+        for prefix in (b"sm_", b"compute_"):
+            start = 0
+            while True:
+                idx = data.find(prefix, start)
+                if idx < 0:
+                    break
+                token = data[idx : idx + len(prefix) + 2]
+                if len(token) == len(prefix) + 2 and token[-2:].isdigit():
+                    raw_arches.add(token.decode("ascii"))
+                start = idx + 1
+        info["raw_binary_arch_markers"] = sorted(
+            raw_arches,
+            key=lambda item: (item.split("_")[0], int(item.split("_")[1])),
+        )
+        if not info["architecture_source_for_judgment"] and info["raw_binary_arch_markers"]:
+            info["architecture_source_for_judgment"] = "raw binary byte scan"
+    except Exception as exc:
+        info["raw_binary_scan_error"] = f"{type(exc).__name__}: {exc}"
     return info
 
 
@@ -177,7 +200,12 @@ def _supports_current_gpu(torch_info: Dict[str, Any], arch_info: Dict[str, Any])
         return None, "GPU compute capability unavailable", []
     sm = f"sm_{int(capability[0])}{int(capability[1])}"
     compute = f"compute_{int(capability[0])}{int(capability[1])}"
-    arches = arch_info.get("cuobjdump_arches") or arch_info.get("strings_arch_markers") or []
+    arches = (
+        arch_info.get("cuobjdump_arches")
+        or arch_info.get("strings_arch_markers")
+        or arch_info.get("raw_binary_arch_markers")
+        or []
+    )
     if not arches:
         return None, f"No architecture markers found for current GPU {sm}", arches
     supported = sm in arches or compute in arches
@@ -186,7 +214,21 @@ def _supports_current_gpu(torch_info: Dict[str, Any], arch_info: Dict[str, Any])
     return False, f"Current direct_abs_cost_cuda binary does not support GTX 1080 {sm}.", arches
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--output",
+        default=str(OUT_JSON.relative_to(REPO_ROOT)),
+        help="Path for the JSON report, relative to repo root unless absolute.",
+    )
+    return parser.parse_args()
+
+
 def main() -> int:
+    args = parse_args()
+    output_path = Path(args.output)
+    if not output_path.is_absolute():
+        output_path = REPO_ROOT / output_path
     torch_info = _torch_info()
     ext_info = _import_extension()
     arch_info = _binary_arch_info(ext_info.get("direct_abs_cost_cuda_file"))
@@ -211,8 +253,9 @@ def main() -> int:
             "If source is unavailable, add a PyTorch debug fallback for residual/Jacobian/loss inspection instead of relying on direct_abs_cost_cuda.",
         ],
     }
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    OUT_JSON.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    result["output_path"] = str(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2, sort_keys=True))
     if supported is False:
         print("Current direct_abs_cost_cuda binary does not support GTX 1080 sm_61.")

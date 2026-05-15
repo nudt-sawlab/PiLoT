@@ -1,0 +1,25 @@
+{
+  "candidate": "yaw_plus_1deg",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "One-step local diagnostic candidate.",
+  "edge_chamfer": 3.731167793273926,
+  "edge_overlap_count": 447,
+  "edge_overlap_ratio": 0.8370786516853933,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    30.19999999999999
+  ],
+  "query_edge_count": 597,
+  "render_edge_count": 534,
+  "render_time_sec": 15.526514804980252,
+  "source": "local_grid",
+  "stage": "one_step",
+  "translation_lon_lat_alt": [
+    114.4368608916,
+    30.39136097450001,
+    391.462
+  ],
+  "valid_depth_ratio": 1.0
+}

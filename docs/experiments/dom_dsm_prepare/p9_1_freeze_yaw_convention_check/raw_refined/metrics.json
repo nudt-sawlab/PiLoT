@@ -1,0 +1,26 @@
+{
+  "alt_offset_m": -4.641931509308506,
+  "candidate": "raw_refined",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "east_offset_m": 4.19684243001393,
+  "edge_chamfer": 7.637528419494629,
+  "edge_overlap_count": 175,
+  "edge_overlap_ratio": 0.42892156862745096,
+  "euler_pitch_roll_yaw": [
+    -179.08162649280578,
+    0.08434003039310649,
+    -149.495171114327
+  ],
+  "north_offset_m": -9.643402213230729,
+  "note": "Raw rebuilt CUDA refined pose from P9.",
+  "query_edge_count": 597,
+  "render_edge_count": 408,
+  "render_time_sec": 11.330643046007026,
+  "translation_lon_lat_alt": [
+    114.43690680537581,
+    30.391274895961114,
+    386.8200684906915
+  ],
+  "valid_depth_ratio": 1.0
+}

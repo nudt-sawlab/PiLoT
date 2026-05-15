@@ -1,0 +1,13 @@
+{
+  "description": "uniform feature residual weighting",
+  "heuristic": false,
+  "max": 1.0,
+  "mean": 1.0,
+  "min": 1.0,
+  "non_one_ratio": 0.0,
+  "shape": [
+    144,
+    256
+  ],
+  "std": 0.0
+}

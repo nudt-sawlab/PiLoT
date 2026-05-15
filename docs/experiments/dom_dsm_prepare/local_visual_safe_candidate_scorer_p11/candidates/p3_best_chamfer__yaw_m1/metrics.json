@@ -1,0 +1,25 @@
+{
+  "candidate": "p3_best_chamfer__yaw_m1",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "Stage 2 yaw refinement from p3_best_chamfer with delta -1 deg.",
+  "edge_chamfer": 3.3583014011383057,
+  "edge_overlap_count": 664,
+  "edge_overlap_ratio": 1.336016096579477,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    28.19999999999999
+  ],
+  "query_edge_count": 597,
+  "render_edge_count": 497,
+  "render_time_sec": 13.611055687011685,
+  "source": "local_grid",
+  "stage": "yaw_refine",
+  "translation_lon_lat_alt": [
+    114.43680889685692,
+    30.39135995367542,
+    391.462
+  ],
+  "valid_depth_ratio": 0.9998914930555556
+}

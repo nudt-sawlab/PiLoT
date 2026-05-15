@@ -1,0 +1,25 @@
+{
+  "candidate": "p3_best_chamfer",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "P3 prior best chamfer seed; metrics are recomputed by P11.",
+  "edge_chamfer": 2.203321933746338,
+  "edge_overlap_count": 612,
+  "edge_overlap_ratio": 1.3421052631578947,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.19999999999999
+  ],
+  "query_edge_count": 597,
+  "render_edge_count": 456,
+  "render_time_sec": 15.870944682974368,
+  "source": "known_seed",
+  "stage": "known_seed",
+  "translation_lon_lat_alt": [
+    114.43680889685692,
+    30.39135995367542,
+    391.462
+  ],
+  "valid_depth_ratio": 0.9997829861111112
+}

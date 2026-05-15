@@ -1,0 +1,567 @@
+{
+  "trajectory": [
+    {
+      "best_by_cuda_w_loss_index": 55,
+      "best_metrics": {
+        "candidate_index": 55,
+        "cuda_cost_mean": 0.026751428842544556,
+        "cuda_cost_sum": 13.375713348388672,
+        "cuda_w_loss_mean": 0.03019348904490471,
+        "cuda_w_loss_sum": 0.03019348904490471,
+        "torch_cost2_cost_mean": 0.035225775092840195,
+        "torch_cost2_valid_count": 349,
+        "torch_cost2_w_loss_mean": 0.3425726890563965,
+        "torch_feature_loss": 0.11720450222492218,
+        "visual_chamfer": 3.055178642272949,
+        "visual_overlap": 0.8948453608247423
+      },
+      "best_pose": {
+        "alt_offset_m": 9.435515731863688,
+        "east_m": 0.21673043863847852,
+        "euler_pitch_roll_yaw": [
+          -179.9999507421,
+          -2.4482157783054353e-05,
+          -148.80000394037842
+        ],
+        "north_m": -5.631841205991805,
+        "translation_lon_lat_alt": [
+          114.43686447169212,
+          30.391310247643236,
+          400.8975157318637
+        ],
+        "yaw_deg": -148.80000394037842
+      },
+      "delta_summary": {
+        "delta_shape": [
+          144,
+          6
+        ],
+        "rotation_delta_norm_max": 0.1312793642282486,
+        "rotation_delta_norm_mean": 0.07276898622512817,
+        "translation_delta_norm_max": 0.01603136584162712,
+        "translation_delta_norm_mean": 0.008804955519735813
+      },
+      "global_iteration": 0,
+      "level": 2,
+      "local_iteration": 0,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 83,
+      "best_metrics": {
+        "candidate_index": 83,
+        "cuda_cost_mean": 0.027512235566973686,
+        "cuda_cost_sum": 13.75611686706543,
+        "cuda_w_loss_mean": 0.030233222991228104,
+        "cuda_w_loss_sum": 0.030233222991228104,
+        "torch_cost2_cost_mean": 0.03380081430077553,
+        "torch_cost2_valid_count": 356,
+        "torch_cost2_w_loss_mean": 0.36701634526252747,
+        "torch_feature_loss": 0.10998360812664032,
+        "visual_chamfer": 13.759113311767578,
+        "visual_overlap": 0.11371841155234658
+      },
+      "best_pose": {
+        "alt_offset_m": 7.228870904363703,
+        "east_m": 18.183786966488697,
+        "euler_pitch_roll_yaw": [
+          -177.767058073711,
+          1.7160044892927875,
+          -150.7822313567173
+        ],
+        "north_m": -9.431343480478972,
+        "translation_lon_lat_alt": [
+          114.4370522048482,
+          30.391279663148246,
+          398.6908709043637
+        ],
+        "yaw_deg": -150.7822313567173
+      },
+      "delta_summary": {
+        "delta_shape": [
+          144,
+          6
+        ],
+        "rotation_delta_norm_max": 0.042690858244895935,
+        "rotation_delta_norm_mean": 0.023832902312278748,
+        "translation_delta_norm_max": 0.006220702081918716,
+        "translation_delta_norm_mean": 0.002726381877437234
+      },
+      "global_iteration": 1,
+      "level": 2,
+      "local_iteration": 1,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 62,
+      "best_metrics": {
+        "candidate_index": 62,
+        "cuda_cost_mean": 0.027428383007645607,
+        "cuda_cost_sum": 13.714190483093262,
+        "cuda_w_loss_mean": 0.030207468196749687,
+        "cuda_w_loss_sum": 0.030207468196749687,
+        "torch_cost2_cost_mean": 0.03360646963119507,
+        "torch_cost2_valid_count": 359,
+        "torch_cost2_w_loss_mean": 0.37290850281715393,
+        "torch_feature_loss": 0.10706937313079834,
+        "visual_chamfer": 12.01960563659668,
+        "visual_overlap": 0.09715242881072027
+      },
+      "best_pose": {
+        "alt_offset_m": 6.8859795632884016,
+        "east_m": 16.369054602022516,
+        "euler_pitch_roll_yaw": [
+          -177.35449656525824,
+          1.466970174784852,
+          -149.7455594405916
+        ],
+        "north_m": -10.626575302798301,
+        "translation_lon_lat_alt": [
+          114.43703361501512,
+          30.39126851764606,
+          398.3479795632884
+        ],
+        "yaw_deg": -149.7455594405916
+      },
+      "delta_summary": null,
+      "global_iteration": 2,
+      "level": 2,
+      "local_iteration": 2,
+      "topk_event": {
+        "after_count": 32,
+        "after_level": 2,
+        "before_count": 144,
+        "selected_indices": [
+          62,
+          47,
+          43,
+          63,
+          59,
+          23,
+          46,
+          42,
+          79,
+          7,
+          27,
+          30,
+          31,
+          26,
+          107,
+          22,
+          75,
+          86,
+          117,
+          82,
+          83,
+          118,
+          81,
+          71,
+          98,
+          45,
+          122,
+          58,
+          101,
+          102,
+          66,
+          69
+        ]
+      }
+    },
+    {
+      "best_by_cuda_w_loss_index": 5,
+      "best_metrics": {
+        "candidate_index": 5,
+        "cuda_cost_mean": 0.03439384698867798,
+        "cuda_cost_sum": 17.196922302246094,
+        "cuda_w_loss_mean": 0.03698262944817543,
+        "cuda_w_loss_sum": 0.03698262944817543,
+        "torch_cost2_cost_mean": 0.03926064446568489,
+        "torch_cost2_valid_count": 413,
+        "torch_cost2_w_loss_mean": 0.2093052715063095,
+        "torch_feature_loss": 0.10345427691936493,
+        "visual_chamfer": 12.904762268066406,
+        "visual_overlap": 0.11725293132328309
+      },
+      "best_pose": {
+        "alt_offset_m": 6.082003647752117,
+        "east_m": 17.472610986063955,
+        "euler_pitch_roll_yaw": [
+          -177.57352811832678,
+          1.6068728813514974,
+          -149.38666842909157
+        ],
+        "north_m": -9.000662230420858,
+        "translation_lon_lat_alt": [
+          114.43704470795063,
+          30.391283400559878,
+          397.5440036477521
+        ],
+        "yaw_deg": -149.38666842909157
+      },
+      "delta_summary": {
+        "delta_shape": [
+          32,
+          6
+        ],
+        "rotation_delta_norm_max": 0.017828309908509254,
+        "rotation_delta_norm_mean": 0.012338083237409592,
+        "translation_delta_norm_max": 0.006873379461467266,
+        "translation_delta_norm_mean": 0.0065583158284425735
+      },
+      "global_iteration": 2,
+      "level": 1,
+      "local_iteration": 0,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 20,
+      "best_metrics": {
+        "candidate_index": 20,
+        "cuda_cost_mean": 0.03101697564125061,
+        "cuda_cost_sum": 15.5084867477417,
+        "cuda_w_loss_mean": 0.03224217891693115,
+        "cuda_w_loss_sum": 0.03224217891693115,
+        "torch_cost2_cost_mean": 0.03394785150885582,
+        "torch_cost2_valid_count": 424,
+        "torch_cost2_w_loss_mean": 0.28244978189468384,
+        "torch_feature_loss": 0.08433465659618378,
+        "visual_chamfer": 11.947820663452148,
+        "visual_overlap": 0.07705192629815745
+      },
+      "best_pose": {
+        "alt_offset_m": 0.9246618322208633,
+        "east_m": 15.190656269172905,
+        "euler_pitch_roll_yaw": [
+          -177.1370672700884,
+          0.9052181554619421,
+          -149.6878165008249
+        ],
+        "north_m": -16.766743659507483,
+        "translation_lon_lat_alt": [
+          114.43702280686297,
+          30.391212923390075,
+          392.38666183222085
+        ],
+        "yaw_deg": -149.6878165008249
+      },
+      "delta_summary": {
+        "delta_shape": [
+          32,
+          6
+        ],
+        "rotation_delta_norm_max": 0.017364149913191795,
+        "rotation_delta_norm_mean": 0.014670880511403084,
+        "translation_delta_norm_max": 0.0036888890899717808,
+        "translation_delta_norm_mean": 0.0033981557935476303
+      },
+      "global_iteration": 3,
+      "level": 1,
+      "local_iteration": 1,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 31,
+      "best_metrics": {
+        "candidate_index": 31,
+        "cuda_cost_mean": 0.03032555989921093,
+        "cuda_cost_sum": 15.162778854370117,
+        "cuda_w_loss_mean": 0.031199133023619652,
+        "cuda_w_loss_sum": 0.031199133023619652,
+        "torch_cost2_cost_mean": 0.03247224539518356,
+        "torch_cost2_valid_count": 425,
+        "torch_cost2_w_loss_mean": 0.3010537922382355,
+        "torch_feature_loss": 0.07851000130176544,
+        "visual_chamfer": 9.205408096313477,
+        "visual_overlap": 0.23678646934460887
+      },
+      "best_pose": {
+        "alt_offset_m": -2.9675760852992425,
+        "east_m": 9.885573551466223,
+        "euler_pitch_roll_yaw": [
+          -178.09127599850925,
+          0.47755271454782716,
+          -149.54158221594002
+        ],
+        "north_m": -13.404001310002059,
+        "translation_lon_lat_alt": [
+          114.43696684775142,
+          30.391242155509786,
+          388.49442391470075
+        ],
+        "yaw_deg": -149.54158221594002
+      },
+      "delta_summary": {
+        "delta_shape": [
+          32,
+          6
+        ],
+        "rotation_delta_norm_max": 0.014460895210504532,
+        "rotation_delta_norm_mean": 0.012724645435810089,
+        "translation_delta_norm_max": 0.0017704253550618887,
+        "translation_delta_norm_mean": 0.0015275742625817657
+      },
+      "global_iteration": 4,
+      "level": 1,
+      "local_iteration": 2,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 31,
+      "best_metrics": {
+        "candidate_index": 31,
+        "cuda_cost_mean": 0.02992245927453041,
+        "cuda_cost_sum": 14.96122932434082,
+        "cuda_w_loss_mean": 0.03084789589047432,
+        "cuda_w_loss_sum": 0.03084789589047432,
+        "torch_cost2_cost_mean": 0.032226309180259705,
+        "torch_cost2_valid_count": 424,
+        "torch_cost2_w_loss_mean": 0.303377628326416,
+        "torch_feature_loss": 0.07691290974617004,
+        "visual_chamfer": 8.807583808898926,
+        "visual_overlap": 0.3561643835616438
+      },
+      "best_pose": {
+        "alt_offset_m": -4.629242444120337,
+        "east_m": 7.307113666058285,
+        "euler_pitch_roll_yaw": [
+          -178.72860144929186,
+          0.38138662093224673,
+          -149.52629397101856
+        ],
+        "north_m": -10.2451446717605,
+        "translation_lon_lat_alt": [
+          114.4369392906092,
+          30.391270106231293,
+          386.83275755587965
+        ],
+        "yaw_deg": -149.52629397101856
+      },
+      "delta_summary": null,
+      "global_iteration": 5,
+      "level": 1,
+      "local_iteration": 3,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 26,
+      "best_metrics": {
+        "candidate_index": 26,
+        "cuda_cost_mean": 0.03024481050670147,
+        "cuda_cost_sum": 15.122404098510742,
+        "cuda_w_loss_mean": 0.030988533049821854,
+        "cuda_w_loss_sum": 0.030988533049821854,
+        "torch_cost2_cost_mean": 0.032070569694042206,
+        "torch_cost2_valid_count": 455,
+        "torch_cost2_w_loss_mean": 0.2735922336578369,
+        "torch_feature_loss": 0.07682104408740997,
+        "visual_chamfer": 7.84550666809082,
+        "visual_overlap": 0.3582089552238806
+      },
+      "best_pose": {
+        "alt_offset_m": -4.584498213313509,
+        "east_m": 7.548372379300417,
+        "euler_pitch_roll_yaw": [
+          -178.68420479627787,
+          0.4043024657191069,
+          -149.546371080986
+        ],
+        "north_m": -10.440039622131735,
+        "translation_lon_lat_alt": [
+          114.43694184534117,
+          30.391268398505634,
+          386.8775017866865
+        ],
+        "yaw_deg": -149.546371080986
+      },
+      "delta_summary": {
+        "delta_shape": [
+          32,
+          6
+        ],
+        "rotation_delta_norm_max": 0.004610910080373287,
+        "rotation_delta_norm_mean": 0.00415013637393713,
+        "translation_delta_norm_max": 0.00026881936355493963,
+        "translation_delta_norm_mean": 0.00024559866869822145
+      },
+      "global_iteration": 5,
+      "level": 0,
+      "local_iteration": 0,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 26,
+      "best_metrics": {
+        "candidate_index": 26,
+        "cuda_cost_mean": 0.030072908848524094,
+        "cuda_cost_sum": 15.036453247070312,
+        "cuda_w_loss_mean": 0.030812401324510574,
+        "cuda_w_loss_sum": 0.030812401324510574,
+        "torch_cost2_cost_mean": 0.031897127628326416,
+        "torch_cost2_valid_count": 455,
+        "torch_cost2_w_loss_mean": 0.2759658396244049,
+        "torch_feature_loss": 0.07683074474334717,
+        "visual_chamfer": 6.988363265991211,
+        "visual_overlap": 0.3772609819121447
+      },
+      "best_pose": {
+        "alt_offset_m": -4.514743360400189,
+        "east_m": 6.800811692082789,
+        "euler_pitch_roll_yaw": [
+          -178.90951358182483,
+          0.4132547731425181,
+          -149.5593397531837
+        ],
+        "north_m": -9.290947612375021,
+        "translation_lon_lat_alt": [
+          114.43693380089451,
+          30.391278604963205,
+          386.9472566395998
+        ],
+        "yaw_deg": -149.5593397531837
+      },
+      "delta_summary": {
+        "delta_shape": [
+          32,
+          6
+        ],
+        "rotation_delta_norm_max": 0.0033435970544815063,
+        "rotation_delta_norm_mean": 0.0029456201009452343,
+        "translation_delta_norm_max": 0.00012469422654248774,
+        "translation_delta_norm_mean": 0.00010538163769524544
+      },
+      "global_iteration": 6,
+      "level": 0,
+      "local_iteration": 1,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 14,
+      "best_metrics": {
+        "candidate_index": 14,
+        "cuda_cost_mean": 0.03003035858273506,
+        "cuda_cost_sum": 15.015178680419922,
+        "cuda_w_loss_mean": 0.030768807977437973,
+        "cuda_w_loss_sum": 0.030768807977437973,
+        "torch_cost2_cost_mean": 0.031854961067438126,
+        "torch_cost2_valid_count": 455,
+        "torch_cost2_w_loss_mean": 0.2764679193496704,
+        "torch_feature_loss": 0.0770111232995987,
+        "visual_chamfer": 7.236083984375,
+        "visual_overlap": 0.4152334152334152
+      },
+      "best_pose": {
+        "alt_offset_m": -4.406462838582684,
+        "east_m": 6.90086860282463,
+        "euler_pitch_roll_yaw": [
+          -179.0018147315127,
+          0.4848461035930548,
+          -149.56711039134623
+        ],
+        "north_m": -8.601895903237164,
+        "translation_lon_lat_alt": [
+          114.43693467911052,
+          30.39128483719895,
+          387.0555371614173
+        ],
+        "yaw_deg": -149.56711039134623
+      },
+      "delta_summary": {
+        "delta_shape": [
+          32,
+          6
+        ],
+        "rotation_delta_norm_max": 0.002357464749366045,
+        "rotation_delta_norm_mean": 0.002051587915048003,
+        "translation_delta_norm_max": 5.529083500732668e-05,
+        "translation_delta_norm_mean": 4.006182280136272e-05
+      },
+      "global_iteration": 7,
+      "level": 0,
+      "local_iteration": 2,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 1,
+      "best_metrics": {
+        "candidate_index": 1,
+        "cuda_cost_mean": 0.03002142533659935,
+        "cuda_cost_sum": 15.010711669921875,
+        "cuda_w_loss_mean": 0.030759654939174652,
+        "cuda_w_loss_sum": 0.030759654939174652,
+        "torch_cost2_cost_mean": 0.03184642270207405,
+        "torch_cost2_valid_count": 455,
+        "torch_cost2_w_loss_mean": 0.2764837145805359,
+        "torch_feature_loss": 0.07713537663221359,
+        "visual_chamfer": 6.924251556396484,
+        "visual_overlap": 0.4547738693467337
+      },
+      "best_pose": {
+        "alt_offset_m": -4.400120050355781,
+        "east_m": 6.786277570266975,
+        "euler_pitch_roll_yaw": [
+          -179.09809847193907,
+          0.5195196463700058,
+          -149.57040246660492
+        ],
+        "north_m": -7.963920140173286,
+        "translation_lon_lat_alt": [
+          114.43693333724336,
+          30.39129056516271,
+          387.0618799496442
+        ],
+        "yaw_deg": -149.57040246660492
+      },
+      "delta_summary": {
+        "delta_shape": [
+          32,
+          6
+        ],
+        "rotation_delta_norm_max": 0.001677096588537097,
+        "rotation_delta_norm_mean": 0.0014412675518542528,
+        "translation_delta_norm_max": 2.233983286714647e-05,
+        "translation_delta_norm_mean": 1.2510774467955343e-05
+      },
+      "global_iteration": 8,
+      "level": 0,
+      "local_iteration": 3,
+      "topk_event": null
+    },
+    {
+      "best_by_cuda_w_loss_index": 12,
+      "best_metrics": {
+        "candidate_index": 12,
+        "cuda_cost_mean": 0.030017130076885223,
+        "cuda_cost_sum": 15.008563995361328,
+        "cuda_w_loss_mean": 0.03075525537133217,
+        "cuda_w_loss_sum": 0.03075525537133217,
+        "torch_cost2_cost_mean": 0.031842414289712906,
+        "torch_cost2_valid_count": 455,
+        "torch_cost2_w_loss_mean": 0.27647340297698975,
+        "torch_feature_loss": 0.07723736017942429,
+        "visual_chamfer": 9.491847038269043,
+        "visual_overlap": 0.42710997442455245
+      },
+      "best_pose": {
+        "alt_offset_m": -4.406208331406106,
+        "east_m": 6.799714480643161,
+        "euler_pitch_roll_yaw": [
+          -179.1667258840875,
+          0.5592531199945815,
+          -149.57421377016396
+        ],
+        "north_m": -7.4495796537958086,
+        "translation_lon_lat_alt": [
+          114.43693335584706,
+          30.391295204690874,
+          387.0557916685939
+        ],
+        "yaw_deg": -149.57421377016396
+      },
+      "delta_summary": null,
+      "global_iteration": 9,
+      "level": 0,
+      "local_iteration": 4,
+      "topk_event": null
+    }
+  ]
+}

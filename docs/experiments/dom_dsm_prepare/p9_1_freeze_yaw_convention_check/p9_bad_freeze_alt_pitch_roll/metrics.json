@@ -1,0 +1,26 @@
+{
+  "alt_offset_m": 0.0,
+  "candidate": "p9_bad_freeze_alt_pitch_roll",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "east_offset_m": 4.19684243001393,
+  "edge_chamfer": 47.029754638671875,
+  "edge_overlap_count": 0,
+  "edge_overlap_ratio": 0.0,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    -149.495171114327
+  ],
+  "north_offset_m": -9.643402213230729,
+  "note": "Exact P9 freeze_alt_pitch_roll reproduction: initial alt/pitch/roll plus raw refined yaw.",
+  "query_edge_count": 597,
+  "render_edge_count": 452,
+  "render_time_sec": 12.12909358899924,
+  "translation_lon_lat_alt": [
+    114.43690680537581,
+    30.391274895961114,
+    391.462
+  ],
+  "valid_depth_ratio": 1.0
+}

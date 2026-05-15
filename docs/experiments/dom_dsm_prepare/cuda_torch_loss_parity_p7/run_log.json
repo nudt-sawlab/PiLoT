@@ -1,0 +1,10 @@
+{
+  "config_path": "configs/caiwangcun_domdsm_16x9.yaml",
+  "failure_stage": null,
+  "optimizer_step_called": false,
+  "output_dir": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/cuda_torch_loss_parity_p7",
+  "pose_file_path": "data_caiwangcun/query/poses/exif_test_16x9_yawfix.txt",
+  "query_image_path": "data_caiwangcun/query/images/exif_test_16x9/0000.jpg",
+  "summary_path": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/cuda_torch_loss_parity_p7/summary_metrics.json",
+  "traceback": null
+}

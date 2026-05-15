@@ -1,0 +1,242 @@
+{
+  "acceptance_checks": {
+    "has_p4_levels_2_1_0": true,
+    "has_single_initial_iteration_0": true,
+    "p4_has_topk_event": true,
+    "records_have_required_metrics": true
+  },
+  "config": "configs/caiwangcun_domdsm_16x9.yaml",
+  "cuda": {
+    "has_residual": true,
+    "has_step": true,
+    "module_path": "/mnt/d/aiproject/PiLoT_work/.conda/pilot22/lib/python3.8/site-packages/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so"
+  },
+  "diagnosis_branch": "case_a_feature_down_visual_worse",
+  "output_dir": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/rebuilt_cuda_optimizer_trajectory_p8",
+  "p4_grid": {
+    "best_visual_chamfer": 3.055178642272949,
+    "best_visual_chamfer_iteration": 0,
+    "cuda_w_loss_decreased": false,
+    "cuda_w_loss_end": 0.03075525537133217,
+    "cuda_w_loss_start": 0.03019348904490471,
+    "end": {
+      "alt_offset_m": -4.406208331406106,
+      "east_m": 6.799714480643161,
+      "euler_pitch_roll_yaw": [
+        -179.1667258840875,
+        0.5592531199945815,
+        -149.57421377016396
+      ],
+      "north_m": -7.4495796537958086,
+      "translation_lon_lat_alt": [
+        114.43693335584706,
+        30.391295204690874,
+        387.0557916685939
+      ],
+      "yaw_deg": -149.57421377016396
+    },
+    "feature_loss_decreased": true,
+    "feature_loss_end": 0.07723736017942429,
+    "feature_loss_start": 0.11720450222492218,
+    "level_order": [
+      2,
+      1,
+      0
+    ],
+    "num_records": 12,
+    "start": {
+      "alt_offset_m": 9.435515731863688,
+      "east_m": 0.21673043863847852,
+      "euler_pitch_roll_yaw": [
+        -179.9999507421,
+        -2.4482157783054353e-05,
+        -148.80000394037842
+      ],
+      "north_m": -5.631841205991805,
+      "translation_lon_lat_alt": [
+        114.43686447169212,
+        30.391310247643236,
+        400.8975157318637
+      ],
+      "yaw_deg": -148.80000394037842
+    },
+    "topk_events": [
+      {
+        "after_count": 32,
+        "after_level": 2,
+        "before_count": 144,
+        "selected_indices": [
+          62,
+          47,
+          43,
+          63,
+          59,
+          23,
+          46,
+          42,
+          79,
+          7,
+          27,
+          30,
+          31,
+          26,
+          107,
+          22,
+          75,
+          86,
+          117,
+          82,
+          83,
+          118,
+          81,
+          71,
+          98,
+          45,
+          122,
+          58,
+          101,
+          102,
+          66,
+          69
+        ]
+      }
+    ],
+    "trajectory": "p4_grid",
+    "visual_chamfer_end": 9.491847038269043,
+    "visual_chamfer_improved": false,
+    "visual_chamfer_start": 3.055178642272949,
+    "visual_overlap_end": 0.42710997442455245,
+    "visual_overlap_improved": false,
+    "visual_overlap_start": 0.8948453608247423
+  },
+  "p4_reproduction": {
+    "actual": {
+      "euler_pitch_roll_yaw": [
+        -179.1667258840875,
+        0.5592531199945815,
+        -149.57421377016396
+      ],
+      "translation_lon_lat_alt": [
+        114.43693335584706,
+        30.391295204690874,
+        387.0557916685939
+      ],
+      "yaw_deg": -149.57421377016396
+    },
+    "delta_east_north_alt_m": [
+      3.3818893745483365,
+      1.3079052837565541,
+      -0.969941895455122
+    ],
+    "delta_euler_deg": [
+      0.08507002373877981,
+      0.5345768948042342,
+      -0.048098942074574325
+    ],
+    "expected": {
+      "euler_pitch_roll_yaw": [
+        -179.25179590782628,
+        0.024676225190347293,
+        -149.5261148280894
+      ],
+      "translation_lon_lat_alt": [
+        114.43689849578722,
+        30.39128272347114,
+        388.025733564049
+      ]
+    },
+    "status": "p4_reproduction_mismatch"
+  },
+  "pose_file": "data_caiwangcun/query/poses/exif_test_16x9_yawfix.txt",
+  "query_image": "data_caiwangcun/query/images/exif_test_16x9/0000.jpg",
+  "reference": {
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "initial_grid_candidate_count": 144,
+    "points_3d_count": 500,
+    "raster_crs": "EPSG:32650",
+    "render_camera_gs": [
+      256.0,
+      144.0,
+      128.0,
+      72.0,
+      180.0,
+      180.0
+    ],
+    "translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ]
+  },
+  "single_initial": {
+    "best_visual_chamfer": 6.462682723999023,
+    "best_visual_chamfer_iteration": 11,
+    "cuda_w_loss_decreased": true,
+    "cuda_w_loss_end": 0.030767593532800674,
+    "cuda_w_loss_start": 0.03935486450791359,
+    "end": {
+      "alt_offset_m": -4.603873221844424,
+      "east_m": 5.788036771002226,
+      "euler_pitch_roll_yaw": [
+        -179.31735590368018,
+        0.4712571524428965,
+        -149.56957233532765
+      ],
+      "north_m": -6.86336192348972,
+      "translation_lon_lat_alt": [
+        114.43692269741531,
+        30.39130028290869,
+        386.85812677815557
+      ],
+      "yaw_deg": -149.56957233532765
+    },
+    "feature_loss_decreased": true,
+    "feature_loss_end": 0.07728563249111176,
+    "feature_loss_start": 0.242613285779953,
+    "level_order": [
+      2,
+      1,
+      0
+    ],
+    "num_records": 12,
+    "start": {
+      "alt_offset_m": -4.4566166360750685,
+      "east_m": 13.351218450727174,
+      "euler_pitch_roll_yaw": [
+        -179.9999416523592,
+        0.0001072648220951324,
+        -142.80007352387395
+      ],
+      "north_m": 2.222795555833727,
+      "translation_lon_lat_alt": [
+        114.43699920679643,
+        30.391383738775442,
+        387.0053833639249
+      ],
+      "yaw_deg": -142.80007352387395
+    },
+    "topk_events": [],
+    "trajectory": "single_initial",
+    "visual_chamfer_end": 6.462682723999023,
+    "visual_chamfer_improved": true,
+    "visual_chamfer_start": 12.01608943939209,
+    "visual_overlap_end": 0.4691689008042895,
+    "visual_overlap_improved": true,
+    "visual_overlap_start": 0.14099783080260303
+  },
+  "torch": {
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "gpu_capability": [
+      6,
+      1
+    ],
+    "gpu_name": "NVIDIA GeForce GTX 1080",
+    "version": "2.4.1+cu124"
+  },
+  "total_time_sec": 372.35679292678833
+}

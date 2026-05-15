@@ -1,0 +1,25 @@
+{
+  "candidate": "p3_best_overlap",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "P3 prior best overlap seed; metrics are recomputed by P11.",
+  "edge_chamfer": 2.911357879638672,
+  "edge_overlap_count": 543,
+  "edge_overlap_ratio": 1.2454128440366972,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.19999999999999
+  ],
+  "query_edge_count": 597,
+  "render_edge_count": 436,
+  "render_time_sec": 21.842444301000796,
+  "source": "known_seed",
+  "stage": "known_seed",
+  "translation_lon_lat_alt": [
+    114.43680771930727,
+    30.39140502872337,
+    391.462
+  ],
+  "valid_depth_ratio": 0.9999186197916666
+}

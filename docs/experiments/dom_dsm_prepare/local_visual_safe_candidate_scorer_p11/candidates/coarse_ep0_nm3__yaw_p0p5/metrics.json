@@ -1,0 +1,25 @@
+{
+  "candidate": "coarse_ep0_nm3__yaw_p0p5",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "Stage 2 yaw refinement from coarse_ep0_nm3 with delta 0.5 deg.",
+  "edge_chamfer": 5.011385917663574,
+  "edge_overlap_count": 395,
+  "edge_overlap_ratio": 0.9495192307692307,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.69999999999999
+  ],
+  "query_edge_count": 597,
+  "render_edge_count": 416,
+  "render_time_sec": 13.808990808029193,
+  "source": "local_grid",
+  "stage": "yaw_refine",
+  "translation_lon_lat_alt": [
+    114.43686159811423,
+    30.391333929469972,
+    391.462
+  ],
+  "valid_depth_ratio": 1.0
+}

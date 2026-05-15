@@ -1,0 +1,3 @@
+# safe_refined_acceptance_gate
+# selected_source_method: initial
+0000.jpg 114.4368608916 30.3913609745 391.462 180.0 0.0 29.2

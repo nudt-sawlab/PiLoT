@@ -1,0 +1,116 @@
+{
+  "binary_architecture": {
+    "architecture_source_for_judgment": "raw binary byte scan",
+    "cuobjdump_arches": [],
+    "cuobjdump_available": false,
+    "cuobjdump_list_elf": null,
+    "cuobjdump_path": null,
+    "raw_binary_arch_markers": [
+      "sm_10",
+      "sm_11",
+      "sm_12",
+      "sm_35",
+      "sm_37",
+      "sm_50",
+      "sm_52",
+      "sm_53",
+      "sm_60",
+      "sm_61",
+      "sm_62",
+      "sm_70",
+      "sm_72",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_87",
+      "sm_88",
+      "sm_89",
+      "sm_90"
+    ],
+    "so_path": "/mnt/d/aiproject/PiLoT_work/.conda/pilot22/lib/python3.8/site-packages/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+    "strings_arch_markers": [],
+    "strings_available": true
+  },
+  "current_gpu_supported_by_binary": true,
+  "direct_abs_cost_cuda": {
+    "direct_abs_cost_cuda_file": "/mnt/d/aiproject/PiLoT_work/.conda/pilot22/lib/python3.8/site-packages/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+    "exception": null,
+    "has_optimizer_step_cuda": true,
+    "has_residual_jacobian_batch_quat_cuda": true,
+    "import_success": true,
+    "symbols": [
+      "optimizer_step_cuda",
+      "optimizer_step_cuda_v2",
+      "optimizer_step_cuda_v3",
+      "residual_jacobian_batch_quat_cuda"
+    ]
+  },
+  "judged_arches": [
+    "sm_10",
+    "sm_11",
+    "sm_12",
+    "sm_35",
+    "sm_37",
+    "sm_50",
+    "sm_52",
+    "sm_53",
+    "sm_60",
+    "sm_61",
+    "sm_62",
+    "sm_70",
+    "sm_72",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_87",
+    "sm_88",
+    "sm_89",
+    "sm_90"
+  ],
+  "output_path": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/direct_abs_cost_cuda_check/binary_check_rebuilt_sm61.json",
+  "overall_loss_zero_interpretation": "If optimizer kernels fail at runtime, residual/loss computation can be invalid or skipped; P4/P5 overall_loss all-zero should therefore be treated as CUDA loss-path failure evidence, not as successful convergence.",
+  "recommendations": [
+    "Run on a GPU whose SM architecture is verified inside the loaded .so.",
+    "If CUDA source is available, rebuild with TORCH_CUDA_ARCH_LIST=\"6.1\" for GTX 1080.",
+    "If source is unavailable, add a PyTorch debug fallback for residual/Jacobian/loss inspection instead of relying on direct_abs_cost_cuda."
+  ],
+  "source_status": {
+    "extension_dir_exists": true,
+    "files": [
+      "DirectAbsoluteCostCuda/DirectAbsoluteCost_cuda.cu",
+      "DirectAbsoluteCostCuda/setup.py",
+      "DirectAbsoluteCostCuda/build/lib.linux-x86_64-cpython-38/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+      "DirectAbsoluteCostCuda/build/temp.linux-x86_64-cpython-38/.ninja_deps",
+      "DirectAbsoluteCostCuda/build/temp.linux-x86_64-cpython-38/.ninja_log",
+      "DirectAbsoluteCostCuda/build/temp.linux-x86_64-cpython-38/build.ninja",
+      "DirectAbsoluteCostCuda/build/temp.linux-x86_64-cpython-38/DirectAbsoluteCost_cuda.o",
+      "DirectAbsoluteCostCuda/direct_abs_cost_cuda.egg-info/dependency_links.txt",
+      "DirectAbsoluteCostCuda/direct_abs_cost_cuda.egg-info/not-zip-safe",
+      "DirectAbsoluteCostCuda/direct_abs_cost_cuda.egg-info/PKG-INFO",
+      "DirectAbsoluteCostCuda/direct_abs_cost_cuda.egg-info/SOURCES.txt",
+      "DirectAbsoluteCostCuda/direct_abs_cost_cuda.egg-info/top_level.txt",
+      "DirectAbsoluteCostCuda/prebuilt_backup/direct_abs_cost_cuda.cpython-310-x86_64-linux-gnu.so",
+      "DirectAbsoluteCostCuda/prebuilt_backup/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+      "DirectAbsoluteCostCuda/prebuilt_backup/direct_abs_cost_cuda.cpython-39-x86_64-linux-gnu.so",
+      "DirectAbsoluteCostCuda/prebuilt_backup/setup_prebuilt.py"
+    ],
+    "source_available": true,
+    "source_files": [
+      "DirectAbsoluteCostCuda/DirectAbsoluteCost_cuda.cu"
+    ]
+  },
+  "support_message": "Current GPU capability sm_61 appears present in direct_abs_cost_cuda binary.",
+  "torch": {
+    "cuda_available": true,
+    "exception": null,
+    "gpu_compute_capability": [
+      6,
+      1
+    ],
+    "gpu_name": "NVIDIA GeForce GTX 1080",
+    "python_version": "3.8.20",
+    "sys_executable": "/mnt/d/aiproject/PiLoT_work/.conda/pilot22/bin/python",
+    "torch_cuda_version": "12.4",
+    "torch_version": "2.4.1+cu124"
+  }
+}

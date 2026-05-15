@@ -1,0 +1,311 @@
+{
+  "acceptance_checks": {
+    "all_variants_have_candidate_metrics": true,
+    "all_variants_have_weight_maps": true,
+    "old_p9_1_yaw_bug_avoided": true,
+    "result_pose_safe_p10_exists": true,
+    "safe_gate_chamfer_not_worse": true,
+    "safe_gate_overlap_not_worse": true,
+    "summary_metrics_exists": true,
+    "variant_count_is_5": true,
+    "yaw_conversion_applied": true
+  },
+  "assumptions": {
+    "rank_agreement_methods": [
+      "initial",
+      "rebuilt_cuda_raw_refined",
+      "refined_freeze_alt",
+      "refined_freeze_alt_pitch_roll"
+    ],
+    "safe_gate": "P9 strict visual gate is applied to every variant",
+    "structure_weighting_scope": "Python diagnostic feature loss only; CUDA kernel is unchanged",
+    "vegetation_water_proxy": "RGB-only heuristic, not semantic segmentation"
+  },
+  "conclusions": {
+    "corrected_freeze_alt_pitch_roll_chamfer": 4.942535877227783,
+    "corrected_freeze_alt_pitch_roll_overlap": 0.5723140495867769,
+    "does_structure_weight_improve_rank_alignment": false,
+    "p10_success": false,
+    "raw_refined_worse_than_initial": true,
+    "safe_gate_selected_method": "initial",
+    "safe_output_worse_than_initial": false
+  },
+  "config": "configs/caiwangcun_domdsm_16x9.yaml",
+  "does_safe_gate_prevent_regression": true,
+  "does_structure_weight_improve_rank_alignment": {
+    "combined_structure_weighted_loss": false,
+    "dom_edge_weighted_loss": false,
+    "dsm_gradient_weighted_loss": false,
+    "low_texture_vegetation_water_downweighted_loss": false,
+    "uniform_loss": false
+  },
+  "environment": {
+    "cuda_available": true,
+    "cuda_has_residual": true,
+    "cuda_has_step": true,
+    "cuda_module_path": "/mnt/d/aiproject/PiLoT_work/.conda/pilot22/lib/python3.8/site-packages/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+    "gpu_capability": [
+      6,
+      1
+    ],
+    "gpu_name": "NVIDIA GeForce GTX 1080",
+    "raster_crs": "EPSG:32650",
+    "torch_cuda": "12.4",
+    "torch_version": "2.4.1+cu124"
+  },
+  "gate": {
+    "passing_refined_methods": [],
+    "rule": "edge_chamfer <= initial_edge_chamfer + 1e-9 and edge_overlap_ratio + 1e-9 >= initial_edge_overlap_ratio",
+    "safe_gate_selected_method": "initial"
+  },
+  "methods": {
+    "initial": {
+      "alt_offset_m": 0.0,
+      "candidate": "initial",
+      "delta_vs_initial": {
+        "edge_chamfer_delta": 0.0,
+        "edge_overlap_ratio_delta": 0.0
+      },
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 2.9222419261932373,
+      "edge_overlap_count": 472,
+      "edge_overlap_ratio": 0.963265306122449,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "method": "initial",
+      "north_offset_m": 0.0,
+      "passes_acceptance_gate": true,
+      "query_edge_count": 597,
+      "render_edge_count": 490,
+      "render_time_sec": 13.670827426976757,
+      "source_method": "pose_file_yawfix_initial",
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0,
+      "worse_than_initial": false
+    },
+    "rebuilt_cuda_raw_refined": {
+      "alt_offset_m": -4.477311094000925,
+      "candidate": "rebuilt_cuda_raw_refined",
+      "delta_vs_initial": {
+        "edge_chamfer_delta": 4.181675672531128,
+        "edge_overlap_ratio_delta": -0.425765306122449
+      },
+      "depth_max": 380.0,
+      "depth_min": 350.0,
+      "east_offset_m": 6.487287642201409,
+      "edge_chamfer": 7.103917598724365,
+      "edge_overlap_count": 215,
+      "edge_overlap_ratio": 0.5375,
+      "euler_pitch_roll_yaw": [
+        -179.20522563321768,
+        0.5176816908933283,
+        -149.57381359076936
+      ],
+      "method": "rebuilt_cuda_raw_refined",
+      "north_offset_m": -7.261503172572702,
+      "passes_acceptance_gate": false,
+      "query_edge_count": 597,
+      "render_edge_count": 400,
+      "render_time_sec": 12.966169282997726,
+      "source_method": "rebuilt_cuda_optimizer_raw_output",
+      "translation_lon_lat_alt": [
+        114.43693006264671,
+        30.39129683641827,
+        386.98468890599906
+      ],
+      "valid_depth_ratio": 1.0,
+      "worse_than_initial": true
+    },
+    "refined_freeze_alt": {
+      "alt_offset_m": 0.0,
+      "candidate": "refined_freeze_alt",
+      "delta_vs_initial": {
+        "edge_chamfer_delta": 5.2266457080841064,
+        "edge_overlap_ratio_delta": -0.5702017223074201
+      },
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "east_offset_m": 6.487287642201409,
+      "edge_chamfer": 8.148887634277344,
+      "edge_overlap_count": 204,
+      "edge_overlap_ratio": 0.3930635838150289,
+      "euler_pitch_roll_yaw": [
+        -179.20522563321768,
+        0.5176816908933283,
+        -149.57381359076936
+      ],
+      "method": "refined_freeze_alt",
+      "north_offset_m": -7.261503172572702,
+      "passes_acceptance_gate": false,
+      "query_edge_count": 597,
+      "render_edge_count": 519,
+      "render_time_sec": 14.10917457001051,
+      "source_method": "raw_refined_with_initial_alt",
+      "translation_lon_lat_alt": [
+        114.43693006264671,
+        30.39129683641827,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0,
+      "worse_than_initial": true
+    },
+    "refined_freeze_alt_pitch_roll": {
+      "alt_offset_m": 0.0,
+      "candidate": "refined_freeze_alt_pitch_roll",
+      "delta_vs_initial": {
+        "edge_chamfer_delta": 2.020293951034546,
+        "edge_overlap_ratio_delta": -0.3909512565356721
+      },
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 6.487287642201409,
+      "edge_chamfer": 4.942535877227783,
+      "edge_overlap_count": 277,
+      "edge_overlap_ratio": 0.5723140495867769,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        30.426186409230638
+      ],
+      "method": "refined_freeze_alt_pitch_roll",
+      "north_offset_m": -7.261503172572702,
+      "passes_acceptance_gate": false,
+      "query_edge_count": 597,
+      "render_edge_count": 484,
+      "render_time_sec": 12.680226352007594,
+      "source_method": "raw_refined_lon_lat_downward_yaw_with_initial_alt_pitch_roll",
+      "translation_lon_lat_alt": [
+        114.43693006264671,
+        30.39129683641827,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0,
+      "worse_than_initial": true
+    },
+    "safe_refined_acceptance_gate": {
+      "alt_offset_m": 0.0,
+      "candidate": "safe_refined_acceptance_gate",
+      "delta_vs_initial": {
+        "edge_chamfer_delta": 0.0,
+        "edge_overlap_ratio_delta": 0.0
+      },
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 2.9222419261932373,
+      "edge_overlap_count": 472,
+      "edge_overlap_ratio": 0.963265306122449,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "method": "safe_refined_acceptance_gate",
+      "north_offset_m": 0.0,
+      "passes_acceptance_gate": true,
+      "passing_refined_methods": [],
+      "query_edge_count": 597,
+      "render_edge_count": 490,
+      "render_time_sec": 11.817597465997096,
+      "selected_source_method": "initial",
+      "source_method": "initial",
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0,
+      "worse_than_initial": false
+    }
+  },
+  "output_dir": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/structure_weighted_safe_refinement_p10",
+  "p10_success": false,
+  "pose_file": "data_caiwangcun/query/poses/exif_test_16x9_yawfix.txt",
+  "query_image": "data_caiwangcun/query/images/exif_test_16x9/0000.jpg",
+  "rank_agreement_unweighted_loss_vs_chamfer": {
+    "combined_structure_weighted_loss": -0.6000000000000001,
+    "dom_edge_weighted_loss": -0.6000000000000001,
+    "dsm_gradient_weighted_loss": -0.6000000000000001,
+    "low_texture_vegetation_water_downweighted_loss": -0.6000000000000001,
+    "uniform_loss": -0.6000000000000001
+  },
+  "rank_agreement_weighted_loss_vs_chamfer": {
+    "combined_structure_weighted_loss": -0.6000000000000001,
+    "dom_edge_weighted_loss": -0.6000000000000001,
+    "dsm_gradient_weighted_loss": -0.6000000000000001,
+    "low_texture_vegetation_water_downweighted_loss": -0.6000000000000001,
+    "uniform_loss": -0.6000000000000001
+  },
+  "reference": {
+    "initial_euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "initial_render_depth_stats": {
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "valid_depth_ratio": 1.0
+    },
+    "initial_translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ],
+    "points_3d_count": 500,
+    "processed_level_order": [
+      2,
+      1,
+      0
+    ],
+    "render_camera_gs": [
+      256.0,
+      144.0,
+      128.0,
+      72.0,
+      180.0,
+      180.0
+    ]
+  },
+  "result_pose_safe_p10_path": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/structure_weighted_safe_refinement_p10/result_pose_safe_p10.txt",
+  "total_time_sec": 113.38855934143066,
+  "variant_best_by_visual_chamfer": {
+    "combined_structure_weighted_loss": "initial",
+    "dom_edge_weighted_loss": "initial",
+    "dsm_gradient_weighted_loss": "initial",
+    "low_texture_vegetation_water_downweighted_loss": "initial",
+    "uniform_loss": "initial"
+  },
+  "variant_best_by_weighted_feature_loss": {
+    "combined_structure_weighted_loss": "rebuilt_cuda_raw_refined",
+    "dom_edge_weighted_loss": "rebuilt_cuda_raw_refined",
+    "dsm_gradient_weighted_loss": "rebuilt_cuda_raw_refined",
+    "low_texture_vegetation_water_downweighted_loss": "rebuilt_cuda_raw_refined",
+    "uniform_loss": "rebuilt_cuda_raw_refined"
+  },
+  "variant_names": [
+    "uniform_loss",
+    "dom_edge_weighted_loss",
+    "dsm_gradient_weighted_loss",
+    "combined_structure_weighted_loss",
+    "low_texture_vegetation_water_downweighted_loss"
+  ],
+  "yaw_fix": {
+    "base_yaw": 29.2,
+    "downward_refined_yaw": 30.426186409230638,
+    "downward_yaw_delta_from_base": 1.2261864092306496,
+    "old_p9_1_yaw_bug_triggered": false,
+    "raw_refined_yaw": -149.57381359076936,
+    "rule": "normalize_yaw(raw_refined_yaw + 180)",
+    "yaw_conversion_applied": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Sobel edge strength from initial DOM RGB, mapped to [1, 3]",
+  "heuristic": false,
+  "max": 3.0,
+  "mean": 1.6249067783355713,
+  "min": 1.0,
+  "non_one_ratio": 0.9797905815972222,
+  "shape": [
+    144,
+    256
+  ],
+  "std": 0.4486097991466522
+}
