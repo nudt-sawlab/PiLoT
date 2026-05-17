@@ -69,7 +69,10 @@ cd ../..
 
 ### 1. Download Demo Data
 
-Download the [3DGS demo data and pretrained model](https://drive.google.com/file/d/17rCLllEqofPjhZ-3tix1NyElViOgPdKo/view?usp=sharing):
+Download the 3DGS demo data and pretrained model:
+
+- [Google Drive](https://drive.google.com/file/d/17rCLllEqofPjhZ-3tix1NyElViOgPdKo/view?usp=sharing)
+- [Baidu Netdisk](https://pan.baidu.com/s/1LJA28jwnQm5ahRONGyTowg?pwd=uwqa)
 
 Extract `data_demo` to the repository root:
 
