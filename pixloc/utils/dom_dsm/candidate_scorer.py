@@ -1,5 +1,6 @@
 """Candidate definitions for DOM/DSM visual-safe scoring experiments."""
 
+from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 from pyproj import CRS, Transformer
@@ -44,6 +45,30 @@ DEFAULT_KNOWN_SEEDS = [
         "description": "P4 prior scale 0.25 fixed-alt seed; metrics are recomputed by P11.",
     },
 ]
+
+
+def load_query_poses_from_file(pose_file: str) -> Dict[str, Dict[str, Any]]:
+    """Load image-name keyed WGS84/downward pose records from a pose file."""
+    poses: Dict[str, Dict[str, Any]] = {}
+    with open(pose_file, "r", encoding="utf-8") as f:
+        for line in f:
+            parts = line.strip().split()
+            if not parts or len(parts) < 7:
+                continue
+            name = parts[0]
+            lon, lat, alt, roll, pitch, yaw = map(float, parts[1:7])
+            euler = [pitch, roll, yaw]
+            entry = {
+                "image": name,
+                "translation_lon_lat_alt": [lon, lat, alt],
+                "euler_pitch_roll_yaw": euler,
+                "base_yaw": float(yaw),
+                "roll_pitch_yaw_file_order": [roll, pitch, yaw],
+            }
+            poses[name] = entry
+            poses[Path(name).name] = entry
+            poses[Path(name).name.lower()] = entry
+    return poses
 
 
 def offset_lonlat_by_enu(
@@ -245,6 +270,55 @@ def build_local_candidate_specs(
                 {"raw_refined_yaw": raw_yaw, "corrected_downward_yaw": downward_yaw},
             )
         )
+    return candidates, debug
+
+
+def build_p12_candidate_specs_for_image(
+    image_name: str,
+    initial_translation_lon_lat_alt: Sequence[float],
+    base_yaw: float,
+    to_raster: Transformer,
+    from_raster: Transformer,
+    coarse_east_offsets: Sequence[float] = (-5, -3, -1, 0, 1, 3, 5),
+    coarse_north_offsets: Sequence[float] = (-5, -3, -1, 0, 1, 3, 5),
+    yaw_refine_offsets: Sequence[float] = (-2, -1, -0.5, 0, 0.5, 1, 2),
+    topk_visual_for_yaw: int = 5,
+    include_initial: bool = True,
+    include_one_step: bool = True,
+    include_raw_refined: bool = False,
+    include_known_seeds_for_debug: bool = False,
+    raw_refined_translation_lon_lat_alt: Optional[Sequence[float]] = None,
+    raw_refined_euler_pitch_roll_yaw: Optional[Sequence[float]] = None,
+) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """Build the Stage 1 P12 candidates for one image.
+
+    Stage 2 yaw refinement depends on Stage 1 visual ranking, so the caller
+    should add yaw-refine specs after scoring Stage 1.
+    """
+    candidates, debug = build_local_candidate_specs(
+        initial_translation_lon_lat_alt,
+        base_yaw,
+        to_raster,
+        from_raster,
+        coarse_east_offsets=coarse_east_offsets,
+        coarse_north_offsets=coarse_north_offsets,
+        include_known_p3p4_seeds=include_known_seeds_for_debug,
+        include_raw_refined_candidates=include_raw_refined,
+        raw_refined_translation_lon_lat_alt=raw_refined_translation_lon_lat_alt,
+        raw_refined_euler_pitch_roll_yaw=raw_refined_euler_pitch_roll_yaw,
+    )
+    if not include_one_step:
+        candidates = [c for c in candidates if c["stage"] != "one_step"]
+    if not include_initial:
+        candidates = [c for c in candidates if c["stage"] != "initial"]
+    for item in candidates:
+        item["image"] = image_name
+    debug.update(
+        {
+            "yaw_refine_offsets": [float(x) for x in yaw_refine_offsets],
+            "topk_visual_for_yaw": int(topk_visual_for_yaw),
+        }
+    )
     return candidates, debug
 
 

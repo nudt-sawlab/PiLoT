@@ -1,0 +1,30 @@
+{
+  "candidate": "coarse_ep0_nm5",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "edge_chamfer": 8.165203094482422,
+  "edge_overlap_count": 329,
+  "edge_overlap_ratio": 0.7214912280701754,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.19999999999999
+  ],
+  "image": "0000.jpg",
+  "name": "coarse_ep0_nm5",
+  "offset_alt_m": 0.0,
+  "offset_east_m": 0.0,
+  "offset_north_m": -5.0,
+  "query_edge_count": 734,
+  "render_edge_count": 456,
+  "render_time_sec": 12.717294528032653,
+  "source": "local_grid",
+  "stage": "coarse_translation",
+  "translation_lon_lat_alt": [
+    114.43686206642319,
+    30.391315897149862,
+    391.462
+  ],
+  "valid_depth_ratio": 1.0,
+  "yaw_offset_deg": 0.0
+}

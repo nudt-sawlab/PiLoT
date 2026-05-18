@@ -1,0 +1,12 @@
+{
+  "max": 1.0,
+  "mean": 0.7522265911102295,
+  "min": 0.25,
+  "non_one_ratio": 0.5140516493055556,
+  "shape": [
+    144,
+    256
+  ],
+  "source_p10_key": "low_texture_vegetation_water_downweighted_loss",
+  "std": 0.2631073296070099
+}

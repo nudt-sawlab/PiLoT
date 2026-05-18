@@ -1,0 +1,12 @@
+{
+  "max": 3.0,
+  "mean": 1.2767281532287598,
+  "min": 1.0,
+  "non_one_ratio": 0.21082899305555555,
+  "shape": [
+    144,
+    256
+  ],
+  "source_p10_key": "dsm_gradient_weighted_loss",
+  "std": 0.5867692828178406
+}

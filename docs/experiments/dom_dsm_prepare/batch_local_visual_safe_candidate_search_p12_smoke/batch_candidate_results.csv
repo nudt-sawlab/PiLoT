@@ -1,0 +1,10 @@
+image,candidate,stage,source,offset_east_m,offset_north_m,offset_alt_m,yaw_offset_deg,edge_chamfer,edge_overlap_ratio,unweighted_feature_loss,weighted_feature_loss_uniform,passes_strict_visual_gate,selected_by_visual,selected_by_unweighted_feature,selected_by_weighted_uniform,valid_depth_ratio,query_edge_count,render_edge_count
+0000.jpg,initial,initial,initial,0.0,0.0,0.0,0.0,9.630294799804688,0.5285714285714286,0.2541188597679138,0.2541188597679138,True,False,False,False,1.0,734,490
+0000.jpg,east_minus_1m,one_step,local_grid,-1.0,0.0,0.0,0.0,9.702973365783691,0.61875,0.2562289237976074,0.2562289237976074,False,False,False,False,0.9999728732638888,734,480
+0000.jpg,east_plus_1m,one_step,local_grid,1.0,0.0,0.0,0.0,9.367851257324219,0.5247058823529411,0.25576144456863403,0.25576144456863403,False,False,False,False,1.0,734,425
+0000.jpg,north_minus_1m,one_step,local_grid,0.0,-1.0,0.0,0.0,9.560669898986816,0.5698689956331878,0.2543773949146271,0.2543773651123047,True,False,True,True,1.0,734,458
+0000.jpg,north_plus_1m,one_step,local_grid,0.0,1.0,0.0,0.0,9.894988059997559,0.565410199556541,0.25975680351257324,0.25975680351257324,False,False,False,False,0.9999728732638888,734,451
+0000.jpg,yaw_minus_1deg,one_step,local_grid,0.0,0.0,0.0,-1.0,9.350302696228027,0.7122969837587007,0.2579537034034729,0.2579537034034729,True,True,False,False,1.0,734,431
+0000.jpg,yaw_plus_1deg,one_step,local_grid,0.0,0.0,0.0,1.0,10.040475845336914,0.3895131086142322,0.2558221220970154,0.2558221220970154,False,False,False,False,1.0,734,534
+0000.jpg,alt_minus_1m,one_step,local_grid,0.0,0.0,-1.0,0.0,9.730813980102539,0.5305343511450382,0.25382769107818604,0.25382769107818604,False,False,False,False,1.0,734,524
+0000.jpg,alt_plus_1m,one_step,local_grid,0.0,0.0,1.0,0.0,9.739657402038574,0.5452631578947369,0.2559141218662262,0.2559141516685486,False,False,False,False,0.9999728732638888,734,475

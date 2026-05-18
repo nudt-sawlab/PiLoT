@@ -1,0 +1,47 @@
+{
+  "candidate": "coarse_em3_nm3",
+  "depth_max": 390.0,
+  "depth_min": 360.0,
+  "edge_chamfer": 3.1843552589416504,
+  "edge_overlap_count": 2257,
+  "edge_overlap_ratio": 0.8365455893254262,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    -152.1
+  ],
+  "image": "0004.JPG",
+  "name": "coarse_em3_nm3",
+  "offset_alt_m": 0.0,
+  "offset_east_m": -3.0,
+  "offset_north_m": -3.0,
+  "passes_chamfer_only_gate": false,
+  "passes_overlap_only_gate": false,
+  "passes_strict_visual_gate": false,
+  "query_edge_count": 2698,
+  "render_edge_count": 3335,
+  "render_time_sec": 14.23532169801183,
+  "source": "local_grid",
+  "stage": "coarse_translation",
+  "translation_lon_lat_alt": [
+    114.4427363711013,
+    30.384094732764595,
+    391.455
+  ],
+  "unweighted_feature_loss": 0.22970613837242126,
+  "valid_depth_ratio": 1.0,
+  "weighted_feature_loss_by_mode": {
+    "combined": 0.2299448549747467,
+    "depth_gradient": 0.2307998389005661,
+    "dom_edge": 0.23014605045318604,
+    "low_texture_downweight": 0.2318331003189087,
+    "uniform": 0.22970613837242126
+  },
+  "weighted_feature_loss_combined": 0.2299448549747467,
+  "weighted_feature_loss_depth_gradient": 0.2307998389005661,
+  "weighted_feature_loss_dom_edge": 0.23014605045318604,
+  "weighted_feature_loss_low_texture_downweight": 0.2318331003189087,
+  "weighted_feature_loss_uniform": 0.22970613837242126,
+  "worse_than_initial": true,
+  "yaw_offset_deg": 0.0
+}

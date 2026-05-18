@@ -1,0 +1,12 @@
+# P12 selected safe pose
+image: 0003.JPG
+method: coarse_ep0_np5__yaw_m1
+policy: strict_visual_gate_then_best_chamfer
+lon lat alt: 114.44346415919692 30.383078964240394 391.433
+euler_pitch_roll_yaw: 0.0 180.0 -153.3
+edge_chamfer: 3.883826732635498
+edge_overlap_ratio: 0.7352742044685172
+initial_edge_chamfer: 4.390451431274414
+initial_edge_overlap_ratio: 0.6980365605958023
+safe_output_worse_than_initial: False
+0003.JPG 114.44346415919692 30.383078964240394 391.433 180.0 0.0 -153.3

@@ -1,0 +1,12 @@
+{
+  "max": 3.0,
+  "mean": 1.7345432043075562,
+  "min": 1.0,
+  "non_one_ratio": 0.9814181857638888,
+  "shape": [
+    144,
+    256
+  ],
+  "source_p10_key": "combined_structure_weighted_loss",
+  "std": 0.5364600419998169
+}
