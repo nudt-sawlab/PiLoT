@@ -1,0 +1,40 @@
+{
+  "best": {
+    "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+    "convention": "R_xml",
+    "max_reprojection_error_px": 6.507677107455678,
+    "mean_reprojection_error_px": 1.4394885085368831,
+    "median_error_gt_10px": false,
+    "median_error_lt_2px": true,
+    "median_reprojection_error_px": 1.1949523286471107,
+    "p90_reprojection_error_px": 2.777682312426607,
+    "valid_measurement_count": 78576
+  },
+  "conventions": [
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "R_xml",
+      "max_reprojection_error_px": 6.507677107455678,
+      "mean_reprojection_error_px": 1.4394885085368831,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.1949523286471107,
+      "p90_reprojection_error_px": 2.777682312426607,
+      "valid_measurement_count": 78576
+    },
+    {
+      "camera_chain_interpretation": "XML convention, distortion, or coordinate parsing is still wrong.",
+      "convention": "R_xml_transpose",
+      "max_reprojection_error_px": 1.458370399847048e+25,
+      "mean_reprojection_error_px": 2.140730613604457e+20,
+      "median_error_gt_10px": true,
+      "median_error_lt_2px": false,
+      "median_reprojection_error_px": 1757.7689465121914,
+      "p90_reprojection_error_px": 204065.27512235506,
+      "valid_measurement_count": 68252
+    }
+  ],
+  "num_tiepoints": 8162,
+  "xml": "data_caiwangcun/CaiWangCun.xml",
+  "xml_srs": "EPSG:4547"
+}

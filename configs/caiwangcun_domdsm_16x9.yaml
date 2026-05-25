@@ -6,7 +6,12 @@ render_config:
     nodata: -9999
     tile_size_m: 512
     mesh_gsd: 0.5
-    render_backend: "prototype"
+    render_backend: "gpu_mesh"
+    gpu_renderer: "nvdiffrast"
+    fallback_backend: "prototype"
+    tile_margin_m: 80
+    min_valid_depth_ratio: 0.05
+    depth_convention: "camera_z_m"
     cache_dir: "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/cache/dom_dsm_tiles"
     debug_dir: "/mnt/d/aiproject/PiLoT_work/outputs/exif_test/debug_render"
     debug_every: 1
@@ -68,11 +73,11 @@ default_confs:
       trainable: true
 
   cam_query:
-    max_size: 512
+    max_size: 5280
     model: "PINHOLE"
-    width: 3840
-    height: 2160
-    params: [2700.0, 2700.0, 1915.7, 1075.1]
+    width: 5280
+    height: 3956
+    params: [3725.151611, 3725.151611, 2640.0, 1978.0]
     distortion: [0, 0, 0, 0, 0]
 
   enable_target_indicator: false

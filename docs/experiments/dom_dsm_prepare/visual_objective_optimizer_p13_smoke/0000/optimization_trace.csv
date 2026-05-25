@@ -1,0 +1,3 @@
+iteration,center_east_m,center_north_m,center_yaw_deg,step_xy,step_yaw,best_candidate,best_objective,best_chamfer,best_overlap,moved,num_evaluations
+0,0.0,0.0,0.5,2.0,0.5,ez0_nz0_yp0p5,9.043711970902418,9.588724136352539,0.5450121654501217,True,7
+1,0.0,0.0,0.5,1.0,0.25,ez0_nz0_yp0p5,9.043711970902418,9.588724136352539,0.5450121654501217,False,8

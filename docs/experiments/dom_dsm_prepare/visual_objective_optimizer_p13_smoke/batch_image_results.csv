@@ -1,0 +1,2 @@
+image,initial_chamfer,initial_overlap,selected_candidate,selected_chamfer,selected_overlap,selected_offset_east_m,selected_offset_north_m,selected_yaw_offset_deg,chamfer_improvement,overlap_improvement,safe_output_worse_than_initial,num_evaluations,stop_reason
+0000.jpg,9.630294799804688,0.5285714285714286,ez0_nz0_yp0p5,9.588724136352539,0.5450121654501217,0.0,0.0,0.5,0.04157066345214844,0.016440736878693074,False,8,max_iters

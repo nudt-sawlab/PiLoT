@@ -93,9 +93,12 @@ def _save_depth_png(path: Path, depth: np.ndarray) -> None:
 
 
 def _save_overlay(path: Path, query_rgb: np.ndarray, render_rgb: np.ndarray) -> None:
-    h, w = render_rgb.shape[:2]
-    query_resized = cv2.resize(query_rgb, (w, h), interpolation=cv2.INTER_AREA)
-    overlay_rgb = cv2.addWeighted(query_resized, 0.5, render_rgb, 0.5, 0)
+    if query_rgb.shape[:2] != render_rgb.shape[:2]:
+        raise ValueError(
+            "Query/render overlay requires equal HxW, got "
+            f"query={query_rgb.shape[:2]} render={render_rgb.shape[:2]}"
+        )
+    overlay_rgb = cv2.addWeighted(query_rgb, 0.5, render_rgb, 0.5, 0)
     cv2.imwrite(os.fspath(path), cv2.cvtColor(overlay_rgb, cv2.COLOR_RGB2BGR))
 
 
@@ -122,7 +125,7 @@ def _setup_camera(
     w, h = cam_cfg["width"], cam_cfg["height"]
 
     raw_query_camera = np.array([w, h, cx, cy, fx, fy])
-    render_camera_gs = np.array([w, h, w / 2, h / 2, fx, fx])
+    render_camera_gs = np.array([w, h, cx, cy, fx, fy])
     render_camera_gs = render_camera_gs / query_resize_ratio
 
     cam_cfg["params"] = np.array(cam_cfg["params"]) / query_resize_ratio
@@ -208,6 +211,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--query-image", default=DEFAULT_QUERY_IMAGE)
     parser.add_argument("--pose-file", default=DEFAULT_POSE_FILE)
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument(
+        "--render-only",
+        action="store_true",
+        help="Stop after initial render, depth, and query/render overlay outputs.",
+    )
     return parser.parse_args()
 
 
@@ -302,6 +310,11 @@ def main() -> int:
             "BaseRefiner.zero_pad(512) can accept the single test image. "
             "This only affects the standalone experiment script."
         )
+        if args.render_only:
+            log["render_only"] = True
+            log["total_time_sec"] = time.time() - start_total
+            _write_json(run_log_path, log)
+            return 0
 
         stage = "back_project"
         device = "cuda" if torch.cuda.is_available() else "cpu"

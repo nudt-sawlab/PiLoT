@@ -1,0 +1,357 @@
+{
+  "candidates": [
+    {
+      "candidate": "initial",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "edge_chamfer": 9.630294799804688,
+      "edge_overlap_count": 259,
+      "edge_overlap_ratio": 0.5285714285714286,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.19999999999999
+      ],
+      "image": "0000.jpg",
+      "objective": 9.101723371233259,
+      "offset_alt_m": 0.0,
+      "offset_east_m": 0.0,
+      "offset_north_m": 0.0,
+      "passes_strict_visual_gate": true,
+      "query_edge_count": 734,
+      "render_edge_count": 490,
+      "render_time_sec": 14.155918725999072,
+      "safe_output_worse_than_initial": false,
+      "selected_by_visual_objective": false,
+      "translation_lon_lat_alt": [
+        114.4368608889,
+        30.391360972199998,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0,
+      "yaw_offset_deg": 0.0
+    },
+    {
+      "candidate": "ep2_nz0_yz0",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "edge_chamfer": 9.653855323791504,
+      "edge_overlap_count": 213,
+      "edge_overlap_ratio": 0.42685370741482964,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.19999999999999
+      ],
+      "image": "0000.jpg",
+      "objective": 9.227001616376674,
+      "offset_alt_m": 0.0,
+      "offset_east_m": 2.0,
+      "offset_north_m": 0.0,
+      "passes_strict_visual_gate": false,
+      "query_edge_count": 734,
+      "render_edge_count": 499,
+      "render_time_sec": 13.021841392968781,
+      "safe_output_worse_than_initial": true,
+      "selected_by_visual_objective": false,
+      "translation_lon_lat_alt": [
+        114.43688168679797,
+        30.39136138052405,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0,
+      "yaw_offset_deg": 0.0
+    },
+    {
+      "candidate": "em2_nz0_yz0",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "edge_chamfer": 10.004671096801758,
+      "edge_overlap_count": 316,
+      "edge_overlap_ratio": 0.7053571428571429,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.19999999999999
+      ],
+      "image": "0000.jpg",
+      "objective": 9.299313953944615,
+      "offset_alt_m": 0.0,
+      "offset_east_m": -2.0,
+      "offset_north_m": 0.0,
+      "passes_strict_visual_gate": false,
+      "query_edge_count": 734,
+      "render_edge_count": 448,
+      "render_time_sec": 12.834504551952705,
+      "safe_output_worse_than_initial": true,
+      "selected_by_visual_objective": false,
+      "translation_lon_lat_alt": [
+        114.43684009100245,
+        30.39136056387264,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999457465277778,
+      "yaw_offset_deg": 0.0
+    },
+    {
+      "candidate": "ez0_np2_yz0",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "edge_chamfer": 9.881991386413574,
+      "edge_overlap_count": 238,
+      "edge_overlap_ratio": 0.49480249480249483,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.19999999999999
+      ],
+      "image": "0000.jpg",
+      "objective": 9.38718889161108,
+      "offset_alt_m": 0.0,
+      "offset_east_m": 0.0,
+      "offset_north_m": 2.0,
+      "passes_strict_visual_gate": false,
+      "query_edge_count": 734,
+      "render_edge_count": 481,
+      "render_time_sec": 12.845169014064595,
+      "safe_output_worse_than_initial": true,
+      "selected_by_visual_objective": false,
+      "translation_lon_lat_alt": [
+        114.43686041788999,
+        30.391379002219956,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999728732638888,
+      "yaw_offset_deg": 0.0
+    },
+    {
+      "candidate": "ez0_nm2_yz0",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "edge_chamfer": 9.936878204345703,
+      "edge_overlap_count": 265,
+      "edge_overlap_ratio": 0.5760869565217391,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.19999999999999
+      ],
+      "image": "0000.jpg",
+      "objective": 9.360791247823965,
+      "offset_alt_m": 0.0,
+      "offset_east_m": 0.0,
+      "offset_north_m": -2.0,
+      "passes_strict_visual_gate": false,
+      "query_edge_count": 734,
+      "render_edge_count": 460,
+      "render_time_sec": 12.930501683033071,
+      "safe_output_worse_than_initial": true,
+      "selected_by_visual_objective": false,
+      "translation_lon_lat_alt": [
+        114.4368613599096,
+        30.39134294217999,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0,
+      "yaw_offset_deg": 0.0
+    },
+    {
+      "candidate": "ez0_nz0_yp0p5",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "edge_chamfer": 9.588724136352539,
+      "edge_overlap_count": 224,
+      "edge_overlap_ratio": 0.5450121654501217,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.69999999999999
+      ],
+      "image": "0000.jpg",
+      "objective": 9.043711970902418,
+      "offset_alt_m": 0.0,
+      "offset_east_m": 0.0,
+      "offset_north_m": 0.0,
+      "passes_strict_visual_gate": true,
+      "query_edge_count": 734,
+      "render_edge_count": 411,
+      "render_time_sec": 13.058918960974552,
+      "safe_output_worse_than_initial": false,
+      "selected_by_visual_objective": true,
+      "translation_lon_lat_alt": [
+        114.4368608889,
+        30.391360972199998,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0,
+      "yaw_offset_deg": 0.5
+    },
+    {
+      "candidate": "ez0_nz0_ym0p5",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "edge_chamfer": 9.791240692138672,
+      "edge_overlap_count": 282,
+      "edge_overlap_ratio": 0.705,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        28.69999999999999
+      ],
+      "image": "0000.jpg",
+      "objective": 9.086240692138672,
+      "offset_alt_m": 0.0,
+      "offset_east_m": 0.0,
+      "offset_north_m": 0.0,
+      "passes_strict_visual_gate": false,
+      "query_edge_count": 734,
+      "render_edge_count": 400,
+      "render_time_sec": 12.828052105032839,
+      "safe_output_worse_than_initial": true,
+      "selected_by_visual_objective": false,
+      "translation_lon_lat_alt": [
+        114.4368608889,
+        30.391360972199998,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999728732638888,
+      "yaw_offset_deg": -0.5
+    },
+    {
+      "candidate": "ep2_nz0_yp0p5",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "edge_chamfer": 9.491663932800293,
+      "edge_overlap_count": 242,
+      "edge_overlap_ratio": 0.46990291262135925,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.69999999999999
+      ],
+      "image": "0000.jpg",
+      "objective": 9.021761020178934,
+      "offset_alt_m": 0.0,
+      "offset_east_m": 2.0,
+      "offset_north_m": 0.0,
+      "passes_strict_visual_gate": false,
+      "query_edge_count": 734,
+      "render_edge_count": 515,
+      "render_time_sec": 12.69815654004924,
+      "safe_output_worse_than_initial": true,
+      "selected_by_visual_objective": false,
+      "translation_lon_lat_alt": [
+        114.43688168679797,
+        30.39136138052405,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0,
+      "yaw_offset_deg": 0.5
+    }
+  ],
+  "chamfer_improvement": 0.04157066345214844,
+  "final_step_xy": 1.0,
+  "final_step_yaw": 0.25,
+  "image": "0000.jpg",
+  "initial": {
+    "candidate": "initial",
+    "depth_max": 380.0,
+    "depth_min": 360.0,
+    "edge_chamfer": 9.630294799804688,
+    "edge_overlap_count": 259,
+    "edge_overlap_ratio": 0.5285714285714286,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.19999999999999
+    ],
+    "image": "0000.jpg",
+    "objective": 9.101723371233259,
+    "offset_alt_m": 0.0,
+    "offset_east_m": 0.0,
+    "offset_north_m": 0.0,
+    "passes_strict_visual_gate": true,
+    "query_edge_count": 734,
+    "render_edge_count": 490,
+    "render_time_sec": 14.155918725999072,
+    "safe_output_worse_than_initial": false,
+    "selected_by_visual_objective": false,
+    "translation_lon_lat_alt": [
+      114.4368608889,
+      30.391360972199998,
+      391.462
+    ],
+    "valid_depth_ratio": 1.0,
+    "yaw_offset_deg": 0.0
+  },
+  "num_evaluations": 8,
+  "optimization_trace": [
+    {
+      "best_candidate": "ez0_nz0_yp0p5",
+      "best_chamfer": 9.588724136352539,
+      "best_objective": 9.043711970902418,
+      "best_overlap": 0.5450121654501217,
+      "center_east_m": 0.0,
+      "center_north_m": 0.0,
+      "center_yaw_deg": 0.5,
+      "iteration": 0,
+      "moved": true,
+      "num_evaluations": 7,
+      "step_xy": 2.0,
+      "step_yaw": 0.5
+    },
+    {
+      "best_candidate": "ez0_nz0_yp0p5",
+      "best_chamfer": 9.588724136352539,
+      "best_objective": 9.043711970902418,
+      "best_overlap": 0.5450121654501217,
+      "center_east_m": 0.0,
+      "center_north_m": 0.0,
+      "center_yaw_deg": 0.5,
+      "iteration": 1,
+      "moved": false,
+      "num_evaluations": 8,
+      "step_xy": 1.0,
+      "step_yaw": 0.25
+    }
+  ],
+  "overlap_improvement": 0.016440736878693074,
+  "safe_output_worse_than_initial": false,
+  "selected": {
+    "candidate": "ez0_nz0_yp0p5",
+    "depth_max": 380.0,
+    "depth_min": 360.0,
+    "edge_chamfer": 9.588724136352539,
+    "edge_overlap_count": 224,
+    "edge_overlap_ratio": 0.5450121654501217,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.69999999999999
+    ],
+    "image": "0000.jpg",
+    "objective": 9.043711970902418,
+    "offset_alt_m": 0.0,
+    "offset_east_m": 0.0,
+    "offset_north_m": 0.0,
+    "passes_strict_visual_gate": true,
+    "query_edge_count": 734,
+    "render_edge_count": 411,
+    "render_time_sec": 13.058918960974552,
+    "safe_output_worse_than_initial": false,
+    "selected_by_visual_objective": true,
+    "translation_lon_lat_alt": [
+      114.4368608889,
+      30.391360972199998,
+      391.462
+    ],
+    "valid_depth_ratio": 1.0,
+    "yaw_offset_deg": 0.5
+  },
+  "selected_alt_offset_m": 0.0,
+  "selected_is_initial": false,
+  "selected_offset_east_m": 0.0,
+  "selected_offset_north_m": 0.0,
+  "selected_yaw_offset_deg": 0.5,
+  "stop_reason": "max_iters"
+}

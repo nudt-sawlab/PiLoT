@@ -1,0 +1,21 @@
+{
+  "axis_transform": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "axis_transform_key": "ppp",
+  "best_metrics": {
+    "edge_chamfer": 21.891067504882812,
+    "edge_overlap_ratio": 0.25713625898374354,
+    "valid_depth_ratio": 0.987328894353035
+  },
+  "distortion_enabled": true,
+  "principal_point_mode": "xml",
+  "ray_step_m": 2.0,
+  "render_scale": 1.0,
+  "rotation_convention": "R_xml_transpose",
+  "sampling_mode": "nearest",
+  "selected_from": "fullres_topk",
+  "subdir": "xml_best_convention"
+}

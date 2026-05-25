@@ -1,0 +1,45 @@
+{
+  "batch_statistics": {
+    "mean_chamfer_improvement": 0.04157066345214844,
+    "mean_num_evaluations": 8.0,
+    "mean_overlap_improvement": 0.016440736878693074,
+    "median_chamfer_improvement": 0.04157066345214844,
+    "median_num_evaluations": 8.0,
+    "median_overlap_improvement": 0.016440736878693074,
+    "non_initial_accept_rate": 1.0,
+    "regression_rate": 0.0
+  },
+  "config": "configs/caiwangcun_domdsm_16x9.yaml",
+  "experiment": "P13 visual objective pose optimizer",
+  "failed_images": [],
+  "interpretation": {
+    "conclusion": "P13 safely improves the batch with fewer evaluations than P12.",
+    "does_optimizer_reduce_evaluations_vs_p12": true,
+    "does_visual_optimizer_improve_initial": true,
+    "recommended_next_step": "P14 should add multi-scale coarse-to-fine visual optimization or a differentiable edge-distance objective."
+  },
+  "num_images_failed": 0,
+  "num_images_processed": 1,
+  "output_dir": "docs/experiments/dom_dsm_prepare/visual_objective_optimizer_p13_smoke",
+  "p13_success": true,
+  "per_image": [
+    {
+      "chamfer_improvement": 0.04157066345214844,
+      "image": "0000.jpg",
+      "initial_chamfer": 9.630294799804688,
+      "initial_overlap": 0.5285714285714286,
+      "num_evaluations": 8,
+      "overlap_improvement": 0.016440736878693074,
+      "safe_output_worse_than_initial": false,
+      "selected_candidate": "ez0_nz0_yp0p5",
+      "selected_chamfer": 9.588724136352539,
+      "selected_offset_east_m": 0.0,
+      "selected_offset_north_m": 0.0,
+      "selected_overlap": 0.5450121654501217,
+      "selected_yaw_offset_deg": 0.5,
+      "stop_reason": "max_iters"
+    }
+  ],
+  "pose_file": "data_caiwangcun/query/poses/exif_test_yawfix.txt",
+  "query_dir": "data_caiwangcun/query/images/exif_test"
+}

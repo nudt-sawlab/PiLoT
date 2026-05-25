@@ -1,0 +1,32 @@
+{
+  "trace": [
+    {
+      "best_candidate": "ez0_nz0_yp0p5",
+      "best_chamfer": 9.588724136352539,
+      "best_objective": 9.043711970902418,
+      "best_overlap": 0.5450121654501217,
+      "center_east_m": 0.0,
+      "center_north_m": 0.0,
+      "center_yaw_deg": 0.5,
+      "iteration": 0,
+      "moved": true,
+      "num_evaluations": 7,
+      "step_xy": 2.0,
+      "step_yaw": 0.5
+    },
+    {
+      "best_candidate": "ez0_nz0_yp0p5",
+      "best_chamfer": 9.588724136352539,
+      "best_objective": 9.043711970902418,
+      "best_overlap": 0.5450121654501217,
+      "center_east_m": 0.0,
+      "center_north_m": 0.0,
+      "center_yaw_deg": 0.5,
+      "iteration": 1,
+      "moved": false,
+      "num_evaluations": 8,
+      "step_xy": 1.0,
+      "step_yaw": 0.25
+    }
+  ]
+}
