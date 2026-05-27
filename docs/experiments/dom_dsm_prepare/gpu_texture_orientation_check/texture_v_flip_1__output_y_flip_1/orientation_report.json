@@ -1,0 +1,76 @@
+{
+  "corners": {
+    "bottom_left": {
+      "distances": {
+        "blue": 360.62445068359375,
+        "green": 360.62445068359375,
+        "red": 0.0,
+        "yellow": 255.0
+      },
+      "label": "red",
+      "mean_rgb": [
+        255.0,
+        0.0,
+        0.0
+      ]
+    },
+    "bottom_right": {
+      "distances": {
+        "blue": 360.62445068359375,
+        "green": 0.0,
+        "red": 360.62445068359375,
+        "yellow": 255.0
+      },
+      "label": "green",
+      "mean_rgb": [
+        0.0,
+        255.0,
+        0.0
+      ]
+    },
+    "top_left": {
+      "distances": {
+        "blue": 0.0,
+        "green": 360.62445068359375,
+        "red": 360.62445068359375,
+        "yellow": 441.6729431152344
+      },
+      "label": "blue",
+      "mean_rgb": [
+        0.0,
+        0.0,
+        255.0
+      ]
+    },
+    "top_right": {
+      "distances": {
+        "blue": 441.6729431152344,
+        "green": 255.0,
+        "red": 255.0,
+        "yellow": 0.0
+      },
+      "label": "yellow",
+      "mean_rgb": [
+        255.0,
+        255.0,
+        0.0
+      ]
+    }
+  },
+  "depth_bottom_mean": 19.505207061767578,
+  "depth_expected_top_lt_bottom": true,
+  "depth_matches_expected": true,
+  "depth_top_mean": 10.494791030883789,
+  "height": 384,
+  "labels": {
+    "bottom_left": "red",
+    "bottom_right": "green",
+    "top_left": "blue",
+    "top_right": "yellow"
+  },
+  "matches_expected": false,
+  "output_y_flip": true,
+  "texture_v_flip": true,
+  "valid_depth_ratio": 1.0,
+  "width": 512
+}

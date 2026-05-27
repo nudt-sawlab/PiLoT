@@ -1,0 +1,100 @@
+{
+  "convention_file": {
+    "axis_transform": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "axis_transform_key": "ppp",
+    "best_metrics": {
+      "edge_chamfer": 21.891067504882812,
+      "edge_overlap_ratio": 0.25713625898374354,
+      "valid_depth_ratio": 0.987328894353035
+    },
+    "distortion_enabled": true,
+    "principal_point_mode": "xml",
+    "ray_step_m": 2.0,
+    "render_scale": 1.0,
+    "rotation_convention": "R_xml_transpose",
+    "sampling_mode": "nearest",
+    "selected_from": "fullres_topk",
+    "subdir": "xml_best_convention"
+  },
+  "matched_photo": {
+    "exif_projected_center_xml_srs": [
+      541984.9086498083,
+      3363578.9876813805,
+      391.462
+    ],
+    "image": "0000.jpg",
+    "match_distance_xy_m": 0.2816910688575215,
+    "match_distance_z_m": 0.14517539599228257,
+    "match_warning": false,
+    "matched_photo_id": "7",
+    "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+    "status": "ok",
+    "xml_photo": {
+      "center_xml": [
+        541984.8573536231,
+        3363579.2646625345,
+        391.3168246040077
+      ],
+      "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+      "intrinsics": {
+        "aspect": 0.999965,
+        "cx": 2650.555218,
+        "cy": 1961.222555,
+        "distortion": {
+          "k1": -0.101571,
+          "k2": -0.019639,
+          "k3": 0.0,
+          "p1": -0.000217,
+          "p2": 0.000239
+        },
+        "focal": 3722.256453,
+        "fx": 3722.256453,
+        "fy": 3722.3867365357787,
+        "fy_rule": "fy = focal / aspect",
+        "height": 3956,
+        "photogroup_index": 1,
+        "skew": 0.0,
+        "width": 5280
+      },
+      "photo_id": "7",
+      "rotation": [
+        [
+          -0.87056761672,
+          -0.49201431925,
+          0.00582532161
+        ],
+        [
+          -0.49199004153,
+          0.87058560751,
+          0.00514772081
+        ],
+        [
+          -0.0076041935,
+          0.00161543882,
+          -0.99996978284
+        ]
+      ]
+    }
+  },
+  "query_image": "data_caiwangcun/query/images/exif_test/0000.jpg",
+  "ray_conventions": [
+    {
+      "dom_sampling_mode": "bilinear",
+      "dsm_sampling_mode": "bilinear",
+      "legacy_rotation_convention": "R_xml_transpose",
+      "num_hits": 10,
+      "num_points": 10,
+      "output_dir": "point_check_cam_to_world_correct",
+      "ray_refine_iters": 10,
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T"
+    }
+  ],
+  "xml": "data_caiwangcun/CaiWangCun.xml",
+  "xml_projection_rotation": "R_world_to_camera = R_xml",
+  "xml_srs": "EPSG:4547"
+}

@@ -1,0 +1,54 @@
+{
+  "best": {
+    "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+    "convention": "world_to_camera_correct",
+    "is_primary_acceptance": true,
+    "legacy_convention": "R_xml",
+    "max_reprojection_error_px": 6.507677107455677,
+    "mean_reprojection_error_px": 1.4394885085368831,
+    "median_error_gt_10px": false,
+    "median_error_lt_2px": true,
+    "median_reprojection_error_px": 1.1949523286471107,
+    "p90_reprojection_error_px": 2.7776823124266063,
+    "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+    "valid_measurement_count": 78576,
+    "xml_projection_rotation": "R_world_to_camera = R_xml"
+  },
+  "conventions": [
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "world_to_camera_correct",
+      "is_primary_acceptance": true,
+      "legacy_convention": "R_xml",
+      "max_reprojection_error_px": 6.507677107455677,
+      "mean_reprojection_error_px": 1.4394885085368831,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.1949523286471107,
+      "p90_reprojection_error_px": 2.7776823124266063,
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "valid_measurement_count": 78576,
+      "xml_projection_rotation": "R_world_to_camera = R_xml"
+    },
+    {
+      "camera_chain_interpretation": "XML convention, distortion, or coordinate parsing is still wrong.",
+      "convention": "camera_to_world_wrong_for_projection",
+      "is_primary_acceptance": false,
+      "legacy_convention": "R_xml_transpose",
+      "max_reprojection_error_px": 1.458370399847048e+25,
+      "mean_reprojection_error_px": 2.140730613604457e+20,
+      "median_error_gt_10px": true,
+      "median_error_lt_2px": false,
+      "median_reprojection_error_px": 1757.7689465121912,
+      "p90_reprojection_error_px": 204065.27512235506,
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "valid_measurement_count": 68252,
+      "xml_projection_rotation": "R_camera_to_world = R_xml.T"
+    }
+  ],
+  "num_tiepoints": 8162,
+  "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+  "xml": "data_caiwangcun/CaiWangCun.xml",
+  "xml_projection_rotation": "R_world_to_camera = R_xml",
+  "xml_srs": "EPSG:4547"
+}

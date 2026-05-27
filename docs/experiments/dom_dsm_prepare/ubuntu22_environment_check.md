@@ -1,5 +1,93 @@
 # Ubuntu 22.04 Environment Check
 
+## Current Default Execution Environment
+
+The current default local execution environment for this repository is:
+
+- GitHub repository: `jhvbgg5558/PiLoT`
+- local path: `/mnt/d/aiproject/PiLoT_work`
+- working branch: `feature/dom-dsm-renderer`
+- system: `Ubuntu-22.04 WSL`
+- Python: `./.conda/pilot22/bin/python`
+- Python version: `3.8.20`
+- PyTorch: `2.4.1+cu124`
+- CUDA runtime: `12.4`
+- GPU: `NVIDIA GeForce GTX 1080`
+- GPU compute capability: `sm_61`
+
+Unless a later experiment note explicitly says otherwise, environment-specific conclusions in the DOM/DSM experiment documents should be interpreted against this baseline.
+
+
+## Authoritative Current Runtime Path
+
+Use this section first when opening a new terminal/window. The DOM/DSM experiments in this repo were run from the `Ubuntu-22.04` WSL distribution, not from the default `Ubuntu-20.04` distribution.
+
+Open the correct distro from Windows PowerShell:
+
+```powershell
+wsl -d Ubuntu-22.04
+```
+
+Then use the project and Python exactly as follows:
+
+```bash
+cd /mnt/d/aiproject/PiLoT_work
+./.conda/pilot22/bin/python --version
+```
+
+Path mapping:
+
+```text
+Windows project path: D:\aiproject\PiLoT_work
+WSL project path:     /mnt/d/aiproject/PiLoT_work
+Do not use as repo:   D:\aiproject\Pilot or /mnt/d/aiproject/Pilot
+```
+
+The `pilot22` entry under the repo is intentionally a Linux symlink into the Ubuntu-22.04 ext4 filesystem:
+
+```text
+/mnt/d/aiproject/PiLoT_work/.conda/pilot22 -> /home/farsee2/pilot22
+/mnt/d/aiproject/PiLoT_work/.conda/pilot22/bin/python -> python3.8
+real Python: /home/farsee2/pilot22/bin/python3.8
+```
+
+If `/home/farsee2/pilot22/bin/python3.8` is missing, you are almost certainly in the wrong WSL distro. Check with:
+
+```bash
+cat /etc/os-release
+wsl.exe -l -v   # from PowerShell, not inside WSL
+```
+
+Expected runtime facts:
+
+```text
+Python: 3.8.20
+PyTorch: 2.4.1+cu124
+CUDA runtime reported by torch: 12.4
+GPU: NVIDIA GeForce GTX 1080
+Compute capability: sm_61
+```
+
+Recommended sanity check:
+
+```bash
+cd /mnt/d/aiproject/PiLoT_work
+readlink .conda/pilot22
+readlink -f .conda/pilot22/bin/python
+./.conda/pilot22/bin/python - <<'PY'
+import os, sys, torch
+print("sys.executable:", sys.executable)
+print("real executable:", os.path.realpath(sys.executable))
+print("sys.prefix:", sys.prefix)
+print("torch:", torch.__version__)
+print("torch cuda:", torch.version.cuda)
+print("cuda available:", torch.cuda.is_available())
+if torch.cuda.is_available():
+    print("gpu:", torch.cuda.get_device_name(0))
+    print("capability:", torch.cuda.get_device_capability(0))
+PY
+```
+
 ## Repository Requirements Check
 
 README installation notes only say that `DirectAbsoluteCostCuda` provides pre-built binaries for Python 3.8 / 3.9 / 3.10 on Linux x86_64:

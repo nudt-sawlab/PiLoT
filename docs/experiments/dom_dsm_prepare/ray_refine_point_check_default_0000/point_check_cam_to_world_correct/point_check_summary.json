@@ -1,0 +1,539 @@
+{
+  "convention_file": {
+    "axis_transform": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "axis_transform_key": "ppp",
+    "best_metrics": {
+      "edge_chamfer": 21.891067504882812,
+      "edge_overlap_ratio": 0.25713625898374354,
+      "valid_depth_ratio": 0.987328894353035
+    },
+    "distortion_enabled": true,
+    "principal_point_mode": "xml",
+    "ray_step_m": 2.0,
+    "render_scale": 1.0,
+    "rotation_convention": "R_xml_transpose",
+    "sampling_mode": "nearest",
+    "selected_from": "fullres_topk",
+    "subdir": "xml_best_convention"
+  },
+  "dom_sampling_mode": "bilinear",
+  "dsm_sampling_mode": "bilinear",
+  "legacy_rotation_convention": "R_xml_transpose",
+  "matched_photo": {
+    "exif_projected_center_xml_srs": [
+      541984.9086498083,
+      3363578.9876813805,
+      391.462
+    ],
+    "image": "0000.jpg",
+    "match_distance_xy_m": 0.2816910688575215,
+    "match_distance_z_m": 0.14517539599228257,
+    "match_warning": false,
+    "matched_photo_id": "7",
+    "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+    "status": "ok",
+    "xml_photo": {
+      "center_xml": [
+        541984.8573536231,
+        3363579.2646625345,
+        391.3168246040077
+      ],
+      "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+      "intrinsics": {
+        "aspect": 0.999965,
+        "cx": 2650.555218,
+        "cy": 1961.222555,
+        "distortion": {
+          "k1": -0.101571,
+          "k2": -0.019639,
+          "k3": 0.0,
+          "p1": -0.000217,
+          "p2": 0.000239
+        },
+        "focal": 3722.256453,
+        "fx": 3722.256453,
+        "fy": 3722.3867365357787,
+        "fy_rule": "fy = focal / aspect",
+        "height": 3956,
+        "photogroup_index": 1,
+        "skew": 0.0,
+        "width": 5280
+      },
+      "photo_id": "7",
+      "rotation": [
+        [
+          -0.87056761672,
+          -0.49201431925,
+          0.00582532161
+        ],
+        [
+          -0.49199004153,
+          0.87058560751,
+          0.00514772081
+        ],
+        [
+          -0.0076041935,
+          0.00161543882,
+          -0.99996978284
+        ]
+      ]
+    }
+  },
+  "num_hits": 10,
+  "num_points": 10,
+  "points": [
+    {
+      "depth": 362.8427734375,
+      "dom_col": 2428,
+      "dom_patch_rel": "patches/dom_00.png",
+      "dom_rgb": [
+        131,
+        140,
+        133
+      ],
+      "dom_row": 5330,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 28.487489700317383,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 0,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_00.png",
+      "query_x": 2640.0,
+      "query_y": 1978.0,
+      "ray_cam": [
+        -0.0028357284609228373,
+        0.004507208243012428,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        -0.007353001702773375,
+        0.006934568454695854,
+        -0.999963100020616
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253723.8147983225,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3364943.3712444217,
+      "z_ray": 28.487440057367223
+    },
+    {
+      "depth": 374.4677734375,
+      "dom_col": 3628,
+      "dom_patch_rel": "patches/dom_01.png",
+      "dom_rgb": [
+        138,
+        128,
+        119
+      ],
+      "dom_row": 5484,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 15.548311233520508,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 1,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_01.png",
+      "query_x": 1320.0,
+      "query_y": 989.0,
+      "ray_cam": [
+        -0.3654319941997528,
+        -0.2669259309768677,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        0.44185396663045867,
+        -0.05096866110130736,
+        -1.0034726019024156
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253891.94285292207,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3364921.7689653332,
+      "z_ray": 15.548673664075295
+    },
+    {
+      "depth": 360.0849609375,
+      "dom_col": 1961,
+      "dom_patch_rel": "patches/dom_02.png",
+      "dom_rgb": [
+        120,
+        148,
+        108
+      ],
+      "dom_row": 6395,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 31.500991821289062,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 2,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_02.png",
+      "query_x": 3959.0,
+      "query_y": 989.0,
+      "ray_cam": [
+        0.35894033312797546,
+        -0.2666884660720825,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        -0.1888779543575286,
+        -0.4071634850866031,
+        -0.9992516777273153
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253658.47067103666,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3364794.2416387484,
+      "z_ray": 31.501323262836024
+    },
+    {
+      "depth": 366.1689453125,
+      "dom_col": 2904,
+      "dom_patch_rel": "patches/dom_03.png",
+      "dom_rgb": [
+        105,
+        114,
+        99
+      ],
+      "dom_row": 4245,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 24.899431228637695,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 3,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_03.png",
+      "query_x": 1320.0,
+      "query_y": 2966.0,
+      "ray_cam": [
+        -0.36573687195777893,
+        0.2761867642402649,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        0.1749133458583072,
+        0.42200743883326314,
+        -1.0006785853900633
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253790.53061722746,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3365095.3811051627,
+      "z_ray": 24.899402394923754
+    },
+    {
+      "depth": 364.9931640625,
+      "dom_col": 1258,
+      "dom_patch_rel": "patches/dom_04.png",
+      "dom_rgb": [
+        139,
+        151,
+        102
+      ],
+      "dom_row": 5178,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 27.616886138916016,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 4,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_04.png",
+      "query_x": 3959.0,
+      "query_y": 2966.0,
+      "ray_cam": [
+        0.35923561453819275,
+        0.27593761682510376,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        -0.4561016458509311,
+        0.06509369026118024,
+        -0.9964566700391567
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253560.0087990002,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3364964.6138383397,
+      "z_ray": 27.616951755233345
+    },
+    {
+      "depth": 364.3232421875,
+      "dom_col": 2770,
+      "dom_patch_rel": "patches/dom_05.png",
+      "dom_rgb": [
+        75,
+        86,
+        81
+      ],
+      "dom_row": 5936,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 26.504789352416992,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 5,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_05.png",
+      "query_x": 2640.0,
+      "query_y": 989.0,
+      "ray_cam": [
+        -0.0028723690193146467,
+        -0.26301079988479614,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        0.1242950923096445,
+        -0.2259447314917234,
+        -1.0013404214811419
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253771.76637287167,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3364858.5381692387,
+      "z_ray": 26.50523571660034
+    },
+    {
+      "depth": 362.5380859375,
+      "dom_col": 2087,
+      "dom_patch_rel": "patches/dom_06.png",
+      "dom_rgb": [
+        113,
+        126,
+        110
+      ],
+      "dom_row": 4727,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 29.290420532226562,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 6,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_06.png",
+      "query_x": 2640.0,
+      "query_y": 2966.0,
+      "ray_cam": [
+        -0.0028756679967045784,
+        0.27205145359039307,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        -0.13894733601586526,
+        0.23987438864975855,
+        -0.9985860896018864
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253676.10908060812,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3365027.8186880974,
+      "z_ray": 29.29133503592692
+    },
+    {
+      "depth": 374.9599609375,
+      "dom_col": 3266,
+      "dom_patch_rel": "patches/dom_07.png",
+      "dom_rgb": [
+        134,
+        144,
+        133
+      ],
+      "dom_row": 4855,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 15.585891723632812,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 7,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_07.png",
+      "query_x": 1320.0,
+      "query_y": 1978.0,
+      "ray_cam": [
+        -0.36251702904701233,
+        0.004599468782544136,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        0.3057284996605327,
+        0.1839832394073727,
+        -1.0020578843421337
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253841.11872814363,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3365009.841434632,
+      "z_ray": 15.585239433967331
+    },
+    {
+      "depth": 364.4052734375,
+      "dom_col": 1615,
+      "dom_patch_rel": "patches/dom_08.png",
+      "dom_rgb": [
+        90,
+        104,
+        95
+      ],
+      "dom_row": 5789,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 27.68689727783203,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 8,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_08.png",
+      "query_x": 3959.0,
+      "query_y": 1978.0,
+      "ray_cam": [
+        0.35613003373146057,
+        0.0045945774763822556,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        -0.319899954571429,
+        -0.1696056642673361,
+        -0.9978715592564458
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253609.9095514352,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3364879.0498879068,
+      "z_ray": 27.687166197658087
+    },
+    {
+      "depth": 365.2275390625,
+      "dom_col": 2564,
+      "dom_patch_rel": "patches/dom_09.png",
+      "dom_rgb": [
+        74,
+        82,
+        70
+      ],
+      "dom_row": 5572,
+      "dom_sampling_mode": "bilinear",
+      "dsm_height": 25.90216064453125,
+      "dsm_sampling_mode": "bilinear",
+      "hit": true,
+      "index": 9,
+      "legacy_rotation_convention": "R_xml_transpose",
+      "origin_raster": [
+        253726.48278185344,
+        3364940.855086371,
+        391.3168246040077
+      ],
+      "query_patch_rel": "patches/query_09.png",
+      "query_x": 2640.0,
+      "query_y": 1582.0,
+      "ray_cam": [
+        -0.002841079141944647,
+        -0.10197757184505463,
+        1.0
+      ],
+      "ray_refine_iters": 10,
+      "ray_rotation_matrix_source": "photo.rotation.T",
+      "ray_world": [
+        0.045041107804692636,
+        -0.08576691589716229,
+        -1.0005112851084614
+      ],
+      "render_ray_convention": "cam_to_world_correct",
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "rotation_convention": "R_xml_transpose",
+      "x_raster": 253742.93303481358,
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "y_raster": 3364909.5306467446,
+      "z_ray": 25.90255013958506
+    }
+  ],
+  "query_image": "data_caiwangcun/query/images/exif_test/0000.jpg",
+  "ray_refine_iters": 10,
+  "ray_rotation_matrix_source": "photo.rotation.T",
+  "render_ray_convention": "cam_to_world_correct",
+  "render_ray_rotation": "R_camera_to_world = R_xml.T",
+  "rotation_convention": "R_xml_transpose",
+  "xml": "data_caiwangcun/CaiWangCun.xml",
+  "xml_projection_rotation": "R_world_to_camera = R_xml",
+  "xml_srs": "EPSG:4547"
+}
