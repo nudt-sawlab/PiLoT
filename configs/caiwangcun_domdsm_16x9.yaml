@@ -1,0 +1,98 @@
+render_config:
+  type: "dom_dsm"
+  dom_dsm:
+    dom_path: "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/reference/caiwangcun_dom.tif"
+    dsm_path: "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/reference/caiwangcun_dsm.tif"
+    nodata: -9999
+    tile_size_m: 512
+    mesh_gsd: 0.5
+    render_backend: "gpu_mesh"
+    gpu_renderer: "nvdiffrast"
+    fallback_backend: "prototype"
+    tile_margin_m: 80
+    min_valid_depth_ratio: 0.05
+    depth_convention: "camera_z_m"
+    cache_dir: "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/cache/dom_dsm_tiles"
+    debug_dir: "/mnt/d/aiproject/PiLoT_work/outputs/exif_test/debug_render"
+    debug_every: 1
+    near_m: 330.0
+    far_m: 430.0
+    ray_step_m: 10.0
+
+  init_rot: [0, 0, 0]
+  init_trans: [0, 0, 0]
+  outputs: "outputs/caiwangcun_domdsm"
+
+default_confs:
+  from_render_test:
+    checkpoint: "data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt"
+    refinement:
+      num_dbs: 3
+      multiscale: [4, 1]
+      point_selection: "all"
+      normalize_descriptors: true
+      average_observations: false
+      do_pose_approximation: true
+    optimizer:
+      ratio: 2
+      num_iters: 3
+      pad: 1
+      lambda_: 0.01
+      verbose: false
+      loss_fn: scaled_barron(0, 0.1)
+      no_conditions: true
+      jacobi_scaling: false
+      sqrt_diag_damping: false
+      name: learned_optimizer
+      bound_confidence: true
+      learned_damping: true
+      damping:
+        type: constant
+    init_target_offset: null
+    success_thresh: 3
+    name: two_view_refiner
+    normalize_features: true
+    duplicate_optimizer_per_scale: true
+    features:
+      conf:
+    scales: [1, 2, 4]
+    extractor:
+      name: unet_fusion
+      num_output_layer: 3
+      output_dim: [32, 32, 32]
+      encoder: mobileone_s0
+      encoder_depth: 3
+      decoder: UnetDecoder
+      decoder_channels: [128, 64, 32]
+      align_data_to_pretrain: false
+      pretrained_weights: "imagenet"
+      train_mask: false
+      normalize_key: false
+      train_box: false
+      compute_uncertainty: true
+      trainable: true
+
+  cam_query:
+    max_size: 5280
+    model: "PINHOLE"
+    width: 5280
+    height: 3956
+    params: [3725.151611, 3725.151611, 2640.0, 1978.0]
+    distortion: [0, 0, 0, 0, 0]
+
+  enable_target_indicator: false
+  enable_visualization: true
+
+  dataset_path: "data_caiwangcun/query"
+  dataset_name: "exif_test_16x9"
+  output_name: "exif_test_16x9"
+  use_kf: false
+  padding: true
+
+  refine:
+    origin: [0, 0, 0]
+    dis_thes: 30
+    R_thes: 30
+    mul: 0.001
+
+  num_init_pose: 64

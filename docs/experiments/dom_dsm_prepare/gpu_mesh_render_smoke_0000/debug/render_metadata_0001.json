@@ -1,0 +1,19 @@
+{
+  "backend_requested": "gpu_mesh",
+  "backend_used": "gpu_mesh",
+  "depth_convention": "camera_z_m",
+  "depth_max_m": 378.0835876464844,
+  "depth_median_m": 366.23388671875,
+  "depth_min_m": 356.1386413574219,
+  "dsm_window": [
+    48,
+    2951,
+    4798,
+    4798
+  ],
+  "fallback_reason": null,
+  "render_time_ms": 15638.377518999732,
+  "triangle_count": 2751044,
+  "valid_depth_ratio": 1.0,
+  "vertex_count": 1442401
+}

@@ -1,0 +1,1022 @@
+{
+  "best_by_edge_chamfer": {
+    "alt_mode": "fixed_initial",
+    "alt_offset_m": 0.0,
+    "candidate": "line_search",
+    "depth_max": 380.0,
+    "depth_min": 360.0,
+    "directory": "line_search/scale_0.25_alt_fixed_initial",
+    "east_offset_m": -3.301954568043584,
+    "edge_chamfer": 4.50643253326416,
+    "edge_overlap_count": 1237,
+    "edge_overlap_ratio": 0.8011658031088082,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "north_offset_m": -0.5262919114902616,
+    "query_edge_count": 2104,
+    "render_edge_count": 1544,
+    "render_time_sec": 49.14203941300002,
+    "scale": 0.25,
+    "translation_lon_lat_alt": [
+      114.43682667868978,
+      30.391355555832323,
+      391.462
+    ],
+    "valid_depth_ratio": 0.9998575846354166
+  },
+  "best_by_edge_overlap_ratio": {
+    "alt_mode": "scaled_refined",
+    "alt_offset_m": 1.0242957333829281,
+    "candidate": "line_search",
+    "depth_max": 380.0,
+    "depth_min": 360.0,
+    "directory": "line_search/scale_0.25_alt_scaled_refined",
+    "east_offset_m": -3.301954568043584,
+    "edge_chamfer": 5.328036308288574,
+    "edge_overlap_count": 1260,
+    "edge_overlap_ratio": 0.8087291399229781,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "north_offset_m": -0.5262919114902616,
+    "query_edge_count": 2104,
+    "render_edge_count": 1558,
+    "render_time_sec": 47.48213620599995,
+    "scale": 0.25,
+    "translation_lon_lat_alt": [
+      114.43682667868978,
+      30.391355555832323,
+      392.4862957333829
+    ],
+    "valid_depth_ratio": 0.9997219509548612
+  },
+  "initial": {
+    "alt_offset_m": 0.0,
+    "candidate": "initial",
+    "depth_max": 380.0,
+    "depth_min": 360.0,
+    "east_offset_m": 0.0,
+    "edge_chamfer": 5.493693828582764,
+    "edge_overlap_count": 993,
+    "edge_overlap_ratio": 0.629277566539924,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "north_offset_m": 0.0,
+    "query_edge_count": 2104,
+    "render_edge_count": 1578,
+    "render_time_sec": 50.513783157000034,
+    "translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ],
+    "valid_depth_ratio": 0.9999932183159722
+  },
+  "interpretation": {
+    "best_alt_mode": "scaled_refined",
+    "best_fixed_initial_alt_by_chamfer": {
+      "alt_mode": "fixed_initial",
+      "alt_offset_m": 0.0,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.25_alt_fixed_initial",
+      "east_offset_m": -3.301954568043584,
+      "edge_chamfer": 4.50643253326416,
+      "edge_overlap_count": 1237,
+      "edge_overlap_ratio": 0.8011658031088082,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -0.5262919114902616,
+      "query_edge_count": 2104,
+      "render_edge_count": 1544,
+      "render_time_sec": 49.14203941300002,
+      "scale": 0.25,
+      "translation_lon_lat_alt": [
+        114.43682667868978,
+        30.391355555832323,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998575846354166
+    },
+    "best_line_by_edge_chamfer": {
+      "alt_mode": "fixed_initial",
+      "alt_offset_m": 0.0,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.25_alt_fixed_initial",
+      "east_offset_m": -3.301954568043584,
+      "edge_chamfer": 4.50643253326416,
+      "edge_overlap_count": 1237,
+      "edge_overlap_ratio": 0.8011658031088082,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -0.5262919114902616,
+      "query_edge_count": 2104,
+      "render_edge_count": 1544,
+      "render_time_sec": 49.14203941300002,
+      "scale": 0.25,
+      "translation_lon_lat_alt": [
+        114.43682667868978,
+        30.391355555832323,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998575846354166
+    },
+    "best_line_by_edge_overlap_ratio": {
+      "alt_mode": "scaled_refined",
+      "alt_offset_m": 1.0242957333829281,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.25_alt_scaled_refined",
+      "east_offset_m": -3.301954568043584,
+      "edge_chamfer": 5.328036308288574,
+      "edge_overlap_count": 1260,
+      "edge_overlap_ratio": 0.8087291399229781,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -0.5262919114902616,
+      "query_edge_count": 2104,
+      "render_edge_count": 1558,
+      "render_time_sec": 47.48213620599995,
+      "scale": 0.25,
+      "translation_lon_lat_alt": [
+        114.43682667868978,
+        30.391355555832323,
+        392.4862957333829
+      ],
+      "valid_depth_ratio": 0.9997219509548612
+    },
+    "best_non_fixed_alt_by_chamfer": {
+      "alt_mode": "scaled_refined",
+      "alt_offset_m": 3.0728872001487844,
+      "candidate": "line_search",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.75_alt_scaled_refined",
+      "east_offset_m": -9.905863704101648,
+      "edge_chamfer": 5.265010833740234,
+      "edge_overlap_count": 617,
+      "edge_overlap_ratio": 0.40752972258916775,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -1.578875734936446,
+      "query_edge_count": 2104,
+      "render_edge_count": 1514,
+      "render_time_sec": 50.77073035000012,
+      "scale": 0.75,
+      "translation_lon_lat_alt": [
+        114.43675825288268,
+        30.391344718470688,
+        394.5348872001488
+      ],
+      "valid_depth_ratio": 0.99884033203125
+    },
+    "best_scale": 0.25,
+    "does_raw_refined_improve_initial": false,
+    "does_scaled_refined_improve_initial": true,
+    "is_alt_update_harmful": true,
+    "is_update_direction_useful": true,
+    "is_update_overshooting": true,
+    "scale_1_worse_than_initial": true
+  },
+  "line_search_candidates": [
+    {
+      "alt_mode": "fixed_initial",
+      "alt_offset_m": 0.0,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0_alt_fixed_initial",
+      "east_offset_m": 0.0,
+      "edge_chamfer": 5.493693828582764,
+      "edge_overlap_count": 993,
+      "edge_overlap_ratio": 0.629277566539924,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 2104,
+      "render_edge_count": 1578,
+      "render_time_sec": 48.65553007699998,
+      "scale": 0.0,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.39136097450001,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999932183159722
+    },
+    {
+      "alt_mode": "scaled_refined",
+      "alt_offset_m": 0.0,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0_alt_scaled_refined",
+      "east_offset_m": 0.0,
+      "edge_chamfer": 5.493693828582764,
+      "edge_overlap_count": 993,
+      "edge_overlap_ratio": 0.629277566539924,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 2104,
+      "render_edge_count": 1578,
+      "render_time_sec": 49.097406328000034,
+      "scale": 0.0,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.39136097450001,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999932183159722
+    },
+    {
+      "alt_mode": "full_refined",
+      "alt_offset_m": 4.0971829335317125,
+      "candidate": "line_search",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0_alt_full_refined",
+      "east_offset_m": 0.0,
+      "edge_chamfer": 5.710144519805908,
+      "edge_overlap_count": 821,
+      "edge_overlap_ratio": 0.6072485207100592,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 2104,
+      "render_edge_count": 1352,
+      "render_time_sec": 52.393325814000036,
+      "scale": 0.0,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.39136097450001,
+        395.5591829335317
+      ],
+      "valid_depth_ratio": 0.99993896484375
+    },
+    {
+      "alt_mode": "fixed_initial",
+      "alt_offset_m": 0.0,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.25_alt_fixed_initial",
+      "east_offset_m": -3.301954568043584,
+      "edge_chamfer": 4.50643253326416,
+      "edge_overlap_count": 1237,
+      "edge_overlap_ratio": 0.8011658031088082,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -0.5262919114902616,
+      "query_edge_count": 2104,
+      "render_edge_count": 1544,
+      "render_time_sec": 49.14203941300002,
+      "scale": 0.25,
+      "translation_lon_lat_alt": [
+        114.43682667868978,
+        30.391355555832323,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998575846354166
+    },
+    {
+      "alt_mode": "scaled_refined",
+      "alt_offset_m": 1.0242957333829281,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.25_alt_scaled_refined",
+      "east_offset_m": -3.301954568043584,
+      "edge_chamfer": 5.328036308288574,
+      "edge_overlap_count": 1260,
+      "edge_overlap_ratio": 0.8087291399229781,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -0.5262919114902616,
+      "query_edge_count": 2104,
+      "render_edge_count": 1558,
+      "render_time_sec": 47.48213620599995,
+      "scale": 0.25,
+      "translation_lon_lat_alt": [
+        114.43682667868978,
+        30.391355555832323,
+        392.4862957333829
+      ],
+      "valid_depth_ratio": 0.9997219509548612
+    },
+    {
+      "alt_mode": "full_refined",
+      "alt_offset_m": 4.0971829335317125,
+      "candidate": "line_search",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.25_alt_full_refined",
+      "east_offset_m": -3.301954568043584,
+      "edge_chamfer": 5.408423900604248,
+      "edge_overlap_count": 905,
+      "edge_overlap_ratio": 0.6368754398311048,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -0.5262919114902616,
+      "query_edge_count": 2104,
+      "render_edge_count": 1421,
+      "render_time_sec": 51.72005651100005,
+      "scale": 0.25,
+      "translation_lon_lat_alt": [
+        114.43682667868978,
+        30.391355555832323,
+        395.5591829335317
+      ],
+      "valid_depth_ratio": 0.9997151692708334
+    },
+    {
+      "alt_mode": "fixed_initial",
+      "alt_offset_m": 0.0,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.5_alt_fixed_initial",
+      "east_offset_m": -6.603909136058064,
+      "edge_chamfer": 4.511798858642578,
+      "edge_overlap_count": 1077,
+      "edge_overlap_ratio": 0.6718652526512788,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -1.052583822980523,
+      "query_edge_count": 2104,
+      "render_edge_count": 1603,
+      "render_time_sec": 52.38780972699999,
+      "scale": 0.5,
+      "translation_lon_lat_alt": [
+        114.43679246578402,
+        30.39135013715588,
+        391.462
+      ],
+      "valid_depth_ratio": 0.999755859375
+    },
+    {
+      "alt_mode": "scaled_refined",
+      "alt_offset_m": 2.0485914667658562,
+      "candidate": "line_search",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.5_alt_scaled_refined",
+      "east_offset_m": -6.603909136058064,
+      "edge_chamfer": 5.267746448516846,
+      "edge_overlap_count": 944,
+      "edge_overlap_ratio": 0.6742857142857143,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -1.052583822980523,
+      "query_edge_count": 2104,
+      "render_edge_count": 1400,
+      "render_time_sec": 50.771768710999936,
+      "scale": 0.5,
+      "translation_lon_lat_alt": [
+        114.43679246578402,
+        30.39135013715588,
+        393.51059146676585
+      ],
+      "valid_depth_ratio": 0.9993489583333334
+    },
+    {
+      "alt_mode": "full_refined",
+      "alt_offset_m": 4.0971829335317125,
+      "candidate": "line_search",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.5_alt_full_refined",
+      "east_offset_m": -6.603909136058064,
+      "edge_chamfer": 5.577503204345703,
+      "edge_overlap_count": 841,
+      "edge_overlap_ratio": 0.5893482831114225,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -1.052583822980523,
+      "query_edge_count": 2104,
+      "render_edge_count": 1427,
+      "render_time_sec": 52.656130683000015,
+      "scale": 0.5,
+      "translation_lon_lat_alt": [
+        114.43679246578402,
+        30.39135013715588,
+        395.5591829335317
+      ],
+      "valid_depth_ratio": 0.9993489583333334
+    },
+    {
+      "alt_mode": "fixed_initial",
+      "alt_offset_m": 0.0,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.75_alt_fixed_initial",
+      "east_offset_m": -9.905863704101648,
+      "edge_chamfer": 5.149660587310791,
+      "edge_overlap_count": 820,
+      "edge_overlap_ratio": 0.48520710059171596,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -1.578875734936446,
+      "query_edge_count": 2104,
+      "render_edge_count": 1690,
+      "render_time_sec": 51.40866089299993,
+      "scale": 0.75,
+      "translation_lon_lat_alt": [
+        114.43675825288268,
+        30.391344718470688,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9995659722222222
+    },
+    {
+      "alt_mode": "scaled_refined",
+      "alt_offset_m": 3.0728872001487844,
+      "candidate": "line_search",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.75_alt_scaled_refined",
+      "east_offset_m": -9.905863704101648,
+      "edge_chamfer": 5.265010833740234,
+      "edge_overlap_count": 617,
+      "edge_overlap_ratio": 0.40752972258916775,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -1.578875734936446,
+      "query_edge_count": 2104,
+      "render_edge_count": 1514,
+      "render_time_sec": 50.77073035000012,
+      "scale": 0.75,
+      "translation_lon_lat_alt": [
+        114.43675825288268,
+        30.391344718470688,
+        394.5348872001488
+      ],
+      "valid_depth_ratio": 0.99884033203125
+    },
+    {
+      "alt_mode": "full_refined",
+      "alt_offset_m": 4.0971829335317125,
+      "candidate": "line_search",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_0.75_alt_full_refined",
+      "east_offset_m": -9.905863704101648,
+      "edge_chamfer": 6.534786224365234,
+      "edge_overlap_count": 572,
+      "edge_overlap_ratio": 0.4144927536231884,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -1.578875734936446,
+      "query_edge_count": 2104,
+      "render_edge_count": 1380,
+      "render_time_sec": 52.51058642099997,
+      "scale": 0.75,
+      "translation_lon_lat_alt": [
+        114.43675825288268,
+        30.391344718470688,
+        395.5591829335317
+      ],
+      "valid_depth_ratio": 0.99884033203125
+    },
+    {
+      "alt_mode": "fixed_initial",
+      "alt_offset_m": 0.0,
+      "candidate": "line_search",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_1_alt_fixed_initial",
+      "east_offset_m": -13.207818272145232,
+      "edge_chamfer": 6.163984298706055,
+      "edge_overlap_count": 662,
+      "edge_overlap_ratio": 0.39593301435406697,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -2.1051676464267075,
+      "query_edge_count": 2104,
+      "render_edge_count": 1672,
+      "render_time_sec": 49.04894728299996,
+      "scale": 1.0,
+      "translation_lon_lat_alt": [
+        114.43672403998579,
+        30.391339299776714,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9992811414930556
+    },
+    {
+      "alt_mode": "scaled_refined",
+      "alt_offset_m": 4.0971829335317125,
+      "candidate": "line_search",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_1_alt_scaled_refined",
+      "east_offset_m": -13.207818272145232,
+      "edge_chamfer": 6.853324890136719,
+      "edge_overlap_count": 467,
+      "edge_overlap_ratio": 0.3312056737588652,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -2.1051676464267075,
+      "query_edge_count": 2104,
+      "render_edge_count": 1410,
+      "render_time_sec": 52.10696050499996,
+      "scale": 1.0,
+      "translation_lon_lat_alt": [
+        114.43672403998579,
+        30.391339299776714,
+        395.5591829335317
+      ],
+      "valid_depth_ratio": 0.9981689453125
+    },
+    {
+      "alt_mode": "full_refined",
+      "alt_offset_m": 4.0971829335317125,
+      "candidate": "line_search",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "directory": "line_search/scale_1_alt_full_refined",
+      "east_offset_m": -13.207818272145232,
+      "edge_chamfer": 6.853324890136719,
+      "edge_overlap_count": 467,
+      "edge_overlap_ratio": 0.3312056737588652,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -2.1051676464267075,
+      "query_edge_count": 2104,
+      "render_edge_count": 1410,
+      "render_time_sec": 52.27042450199997,
+      "scale": 1.0,
+      "translation_lon_lat_alt": [
+        114.43672403998579,
+        30.391339299776714,
+        395.5591829335317
+      ],
+      "valid_depth_ratio": 0.9981689453125
+    }
+  ],
+  "raw_refined_full": {
+    "alt_offset_m": 4.0971829335317125,
+    "candidate": "raw_refined_full",
+    "depth_max": 390.0,
+    "depth_min": 360.0,
+    "east_offset_m": -13.207818272145232,
+    "edge_chamfer": 9.169733047485352,
+    "edge_overlap_count": 488,
+    "edge_overlap_ratio": 0.30672532998114393,
+    "euler_pitch_roll_yaw": [
+      179.99995341022662,
+      -0.00011105648747170372,
+      -144.79992977992384
+    ],
+    "north_offset_m": -2.1051676464267075,
+    "query_edge_count": 2104,
+    "render_edge_count": 1591,
+    "render_time_sec": 51.992767704000016,
+    "translation_lon_lat_alt": [
+      114.43672403998579,
+      30.39133929977672,
+      395.5591829335317
+    ],
+    "valid_depth_ratio": 0.9988064236111112
+  },
+  "raw_refined_translation_initial_rotation": {
+    "alt_offset_m": 4.0971829335317125,
+    "candidate": "raw_refined_translation_initial_rotation",
+    "depth_max": 390.0,
+    "depth_min": 360.0,
+    "east_offset_m": -13.207818272145232,
+    "edge_chamfer": 6.853324890136719,
+    "edge_overlap_count": 467,
+    "edge_overlap_ratio": 0.3312056737588652,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "north_offset_m": -2.1051676464267075,
+    "query_edge_count": 2104,
+    "render_edge_count": 1410,
+    "render_time_sec": 50.857880405999936,
+    "translation_lon_lat_alt": [
+      114.43672403998579,
+      30.39133929977672,
+      395.5591829335317
+    ],
+    "valid_depth_ratio": 0.9981689453125
+  },
+  "refinement_raw": {
+    "alt_modes": [
+      "fixed_initial",
+      "scaled_refined",
+      "full_refined"
+    ],
+    "back_project_time_sec": 0.7624990940093994,
+    "checkpoint_path": "data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt",
+    "config_path": "configs/caiwangcun_domdsm_16x9.yaml",
+    "diff_R": 1.999977707862854,
+    "diff_t": 0.028450489044189453,
+    "fail_list": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "failure_stage": null,
+    "initial_euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "initial_render_stats_for_refine": {
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "valid_depth_ratio": 0.9999932183159722
+    },
+    "initial_render_time_sec_for_refine": 47.75767135620117,
+    "initial_translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ],
+    "line_scales": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "localizer_init_time_sec": 27.70490336418152,
+    "output_dir": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/yawfix_refinement_diagnosis_results",
+    "overall_loss": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "points_3d_count": 500,
+    "pose_file_path": "data_caiwangcun/query/poses/exif_test_16x9_yawfix.txt",
+    "pose_format": "image_name lon lat alt roll pitch yaw",
+    "query_for_visual_shape": [
+      288,
+      512,
+      3
+    ],
+    "query_image_path": "data_caiwangcun/query/images/exif_test_16x9/0000.jpg",
+    "query_image_shape": [
+      396,
+      704,
+      3
+    ],
+    "query_resize_ratio": 7.5,
+    "raster_crs": "EPSG:32650",
+    "raw_ret": {
+      "T_opt": "Pose: torch.Size([32]) torch.float32 cuda:0",
+      "T_refined": "Pose: torch.Size([]) torch.float32 cuda:0",
+      "diff_R": 1.999977707862854,
+      "diff_t": 0.028450489044189453,
+      "euler_angles": [
+        179.99995341022662,
+        -0.00011105648747170372,
+        -144.79992977992384
+      ],
+      "fail_list": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "overall_loss": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "translation": [
+        114.43672403998579,
+        30.39133929977672,
+        395.5591829335317
+      ]
+    },
+    "refine_color_shape": [
+      288,
+      512,
+      3
+    ],
+    "refined_delta_east_north_alt_m": [
+      -13.207818272145232,
+      -2.1051676464267075,
+      4.0971829335317125
+    ],
+    "refined_delta_lon_lat_alt": [
+      -0.0001368516142150611,
+      -2.1674723278408692e-05,
+      4.0971829335317125
+    ],
+    "refined_euler_pitch_roll_yaw": [
+      179.99995341022662,
+      -0.00011105648747170372,
+      -144.79992977992384
+    ],
+    "refined_translation_lon_lat_alt": [
+      114.43672403998579,
+      30.39133929977672,
+      395.5591829335317
+    ],
+    "render_camera_gs": [
+      512.0,
+      288.0,
+      256.0,
+      144.0,
+      360.0,
+      360.0
+    ],
+    "renderer_width": 512,
+    "ret_fields": {
+      "T_opt": "Pose: torch.Size([32]) torch.float32 cuda:0",
+      "T_refined": "Pose: torch.Size([]) torch.float32 cuda:0",
+      "diff_R": 1.999977707862854,
+      "diff_t": 0.028450489044189453,
+      "euler_angles": [
+        179.99995341022662,
+        -0.00011105648747170372,
+        -144.79992977992384
+      ],
+      "fail_list": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "overall_loss": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "translation": [
+        114.43672403998579,
+        30.39133929977672,
+        395.5591829335317
+      ]
+    },
+    "run_query_success": true,
+    "run_query_time_sec": 1.5315542221069336,
+    "selected_candidate_index": null,
+    "timing": {
+      "back_project_time_sec": 0.7624990940093994,
+      "localizer_init_time_sec": 27.70490336418152,
+      "run_query_time_sec": 1.5315542221069336
+    },
+    "torch": {
+      "cuda_available": true,
+      "cuda_version": "12.4",
+      "device": "cuda",
+      "gpu_capability": [
+        6,
+        1
+      ],
+      "gpu_name": "NVIDIA GeForce GTX 1080",
+      "version": "2.4.1+cu124"
+    },
+    "traceback": null
+  },
+  "total_time_sec": 975.3050374984741
+}

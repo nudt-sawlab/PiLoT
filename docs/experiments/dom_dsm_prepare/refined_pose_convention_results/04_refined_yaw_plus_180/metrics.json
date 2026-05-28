@@ -1,0 +1,23 @@
+{
+  "candidate": "04_refined_yaw_plus_180",
+  "depth_max": 390.0,
+  "depth_min": 360.0,
+  "description": "Use refined pitch/roll, yaw = refined_yaw + 180.",
+  "edge_chamfer": 75.82412719726562,
+  "edge_overlap_count": 54,
+  "edge_overlap_ratio": 0.03383458646616541,
+  "euler_pitch_roll_yaw": [
+    179.99995341015037,
+    -0.0001110565401035226,
+    35.200070220127174
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 1596,
+  "render_time_sec": 130.12534676401992,
+  "translation_lon_lat_alt": [
+    114.43672403988498,
+    30.391339299808664,
+    395.5591768939048
+  ],
+  "valid_depth_ratio": 0.9986911349826388
+}

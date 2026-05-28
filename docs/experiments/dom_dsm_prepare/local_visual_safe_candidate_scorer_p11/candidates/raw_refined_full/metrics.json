@@ -1,0 +1,25 @@
+{
+  "candidate": "raw_refined_full",
+  "depth_max": 380.0,
+  "depth_min": 350.0,
+  "description": "Raw rebuilt CUDA refined output; included for diagnosis only, never directly trusted.",
+  "edge_chamfer": 7.103917598724365,
+  "edge_overlap_count": 215,
+  "edge_overlap_ratio": 0.5375,
+  "euler_pitch_roll_yaw": [
+    -179.20522564983946,
+    0.5176715168554739,
+    -149.57381078565984
+  ],
+  "query_edge_count": 597,
+  "render_edge_count": 400,
+  "render_time_sec": 16.583776473999023,
+  "source": "raw_refined",
+  "stage": "raw_refined",
+  "translation_lon_lat_alt": [
+    114.43693006200878,
+    30.3912968360893,
+    386.98471863474697
+  ],
+  "valid_depth_ratio": 1.0
+}

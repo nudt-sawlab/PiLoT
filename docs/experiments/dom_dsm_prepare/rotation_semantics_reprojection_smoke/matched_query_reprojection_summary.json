@@ -1,0 +1,606 @@
+{
+  "matched_queries": [
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "world_to_camera_correct",
+      "exif_projected_center_xml_srs": [
+        541984.9086498083,
+        3363578.9876813805,
+        391.462
+      ],
+      "image": "0000.jpg",
+      "is_primary_acceptance": true,
+      "legacy_convention": "R_xml",
+      "match_distance_xy_m": 0.2816910688575215,
+      "match_distance_z_m": 0.14517539599228257,
+      "match_warning": false,
+      "matched_photo_id": "7",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+      "max_reprojection_error_px": 4.865809589026811,
+      "mean_reprojection_error_px": 1.4734928617165683,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.102535043679946,
+      "p90_reprojection_error_px": 3.1929536112919843,
+      "photo_id": "7",
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "status": "ok",
+      "valid_measurement_count": 83,
+      "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+      "xml_photo": {
+        "center_xml": [
+          541984.8573536231,
+          3363579.2646625345,
+          391.3168246040077
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "7",
+        "rotation": [
+          [
+            -0.87056761672,
+            -0.49201431925,
+            0.00582532161
+          ],
+          [
+            -0.49199004153,
+            0.87058560751,
+            0.00514772081
+          ],
+          [
+            -0.0076041935,
+            0.00161543882,
+            -0.99996978284
+          ]
+        ]
+      },
+      "xml_projection_rotation": "R_world_to_camera = R_xml"
+    },
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "world_to_camera_correct",
+      "exif_projected_center_xml_srs": [
+        542086.2772505179,
+        3363398.498096489,
+        391.49
+      ],
+      "image": "0001.JPG",
+      "is_primary_acceptance": true,
+      "legacy_convention": "R_xml",
+      "match_distance_xy_m": 0.1658530076573679,
+      "match_distance_z_m": 0.02462621500330897,
+      "match_warning": false,
+      "matched_photo_id": "13",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135240_0013_V.JPG",
+      "max_reprojection_error_px": 4.611584825881603,
+      "mean_reprojection_error_px": 1.5034261791305896,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.2216441163493779,
+      "p90_reprojection_error_px": 3.0070375506295224,
+      "photo_id": "13",
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "status": "ok",
+      "valid_measurement_count": 73,
+      "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135240_0013_V.JPG",
+      "xml_photo": {
+        "center_xml": [
+          542086.2372451546,
+          3363398.6590523557,
+          391.4653737849967
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135240_0013_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "13",
+        "rotation": [
+          [
+            -0.86642549535,
+            -0.49928270899,
+            0.00486184293
+          ],
+          [
+            -0.49922723826,
+            0.86642045619,
+            0.00936790621
+          ],
+          [
+            -0.00888963376,
+            0.00568942836,
+            -0.99994430086
+          ]
+        ]
+      },
+      "xml_projection_rotation": "R_world_to_camera = R_xml"
+    },
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "world_to_camera_correct",
+      "exif_projected_center_xml_srs": [
+        542154.0015249487,
+        3363278.151227486,
+        391.443
+      ],
+      "image": "0002.JPG",
+      "is_primary_acceptance": true,
+      "legacy_convention": "R_xml",
+      "match_distance_xy_m": 0.040006737271755625,
+      "match_distance_z_m": 0.03727451006011506,
+      "match_warning": false,
+      "matched_photo_id": "17",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135249_0017_V.JPG",
+      "max_reprojection_error_px": 4.605356022823547,
+      "mean_reprojection_error_px": 1.5277704315884464,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.1830939584325615,
+      "p90_reprojection_error_px": 3.020254986912576,
+      "photo_id": "17",
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "status": "ok",
+      "valid_measurement_count": 96,
+      "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135249_0017_V.JPG",
+      "xml_photo": {
+        "center_xml": [
+          542154.010390456,
+          3363278.1122154132,
+          391.40572548993987
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135249_0017_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "17",
+        "rotation": [
+          [
+            -0.86528897529,
+            -0.50125780678,
+            0.00394973332
+          ],
+          [
+            -0.50120828085,
+            0.8652767365,
+            0.00929669127
+          ],
+          [
+            -0.00807765143,
+            0.00606468542,
+            -0.99994898427
+          ]
+        ]
+      },
+      "xml_projection_rotation": "R_world_to_camera = R_xml"
+    },
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "world_to_camera_correct",
+      "exif_projected_center_xml_srs": [
+        542623.2552558185,
+        3362658.3089407124,
+        391.433
+      ],
+      "image": "0003.JPG",
+      "is_primary_acceptance": true,
+      "legacy_convention": "R_xml",
+      "match_distance_xy_m": 0.08951881747046932,
+      "match_distance_z_m": 0.02119766984378657,
+      "match_warning": false,
+      "matched_photo_id": "69",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135518_0069_V.JPG",
+      "max_reprojection_error_px": 5.309623111766792,
+      "mean_reprojection_error_px": 1.4803412731430132,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.277979127975406,
+      "p90_reprojection_error_px": 2.6930381393767253,
+      "photo_id": "69",
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "status": "ok",
+      "valid_measurement_count": 83,
+      "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135518_0069_V.JPG",
+      "xml_photo": {
+        "center_xml": [
+          542623.1657668437,
+          3362658.3112520054,
+          391.4118023301562
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135518_0069_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "69",
+        "rotation": [
+          [
+            0.86766573037,
+            0.49702569389,
+            0.01102905057
+          ],
+          [
+            0.4967454939,
+            -0.8676423744,
+            0.02099105611
+          ],
+          [
+            0.02000236586,
+            -0.01273458886,
+            -0.99971882827
+          ]
+        ]
+      },
+      "xml_projection_rotation": "R_world_to_camera = R_xml"
+    },
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "world_to_camera_correct",
+      "exif_projected_center_xml_srs": [
+        542555.6499308508,
+        3362778.7180556348,
+        391.455
+      ],
+      "image": "0004.JPG",
+      "is_primary_acceptance": true,
+      "legacy_convention": "R_xml",
+      "match_distance_xy_m": 0.09049735493185475,
+      "match_distance_z_m": 0.06755571740546884,
+      "match_warning": false,
+      "matched_photo_id": "73",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135527_0073_V.JPG",
+      "max_reprojection_error_px": 5.229809374611801,
+      "mean_reprojection_error_px": 1.5236437998829555,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.172390983479556,
+      "p90_reprojection_error_px": 2.796070261401585,
+      "photo_id": "73",
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "status": "ok",
+      "valid_measurement_count": 91,
+      "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135527_0073_V.JPG",
+      "xml_photo": {
+        "center_xml": [
+          542555.6065063314,
+          3362778.638657383,
+          391.3874442825945
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135527_0073_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "73",
+        "rotation": [
+          [
+            0.86218519282,
+            0.50654189392,
+            0.00721130879
+          ],
+          [
+            0.50639110073,
+            -0.86215594445,
+            0.01597437185
+          ],
+          [
+            0.01430896131,
+            -0.01012112428,
+            -0.99984639644
+          ]
+        ]
+      },
+      "xml_projection_rotation": "R_world_to_camera = R_xml"
+    },
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "world_to_camera_correct",
+      "exif_projected_center_xml_srs": [
+        542182.8264060576,
+        3363657.821579623,
+        391.457
+      ],
+      "image": "0005.JPG",
+      "is_primary_acceptance": true,
+      "legacy_convention": "R_xml",
+      "match_distance_xy_m": 0.17743287760267357,
+      "match_distance_z_m": 0.09625922330599224,
+      "match_warning": false,
+      "matched_photo_id": "123",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135751_0123_V.JPG",
+      "max_reprojection_error_px": 4.23276384236604,
+      "mean_reprojection_error_px": 1.3645971250295947,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.1365109926532204,
+      "p90_reprojection_error_px": 2.8172116950389645,
+      "photo_id": "123",
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "status": "ok",
+      "valid_measurement_count": 80,
+      "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135751_0123_V.JPG",
+      "xml_photo": {
+        "center_xml": [
+          542182.75889863,
+          3363657.985668542,
+          391.360740776694
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135751_0123_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "123",
+        "rotation": [
+          [
+            -0.84910945018,
+            -0.5281502056,
+            0.00839654286
+          ],
+          [
+            -0.52805476662,
+            0.84913537288,
+            0.01128193147
+          ],
+          [
+            -0.01308835598,
+            0.00514576015,
+            -0.99990110315
+          ]
+        ]
+      },
+      "xml_projection_rotation": "R_world_to_camera = R_xml"
+    },
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "world_to_camera_correct",
+      "exif_projected_center_xml_srs": [
+        542284.1485605524,
+        3363477.5891922154,
+        391.488
+      ],
+      "image": "0006.JPG",
+      "is_primary_acceptance": true,
+      "legacy_convention": "R_xml",
+      "match_distance_xy_m": 0.11007913602483028,
+      "match_distance_z_m": 0.013938543283700255,
+      "match_warning": false,
+      "matched_photo_id": "129",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135805_0129_V.JPG",
+      "max_reprojection_error_px": 4.966581266479521,
+      "mean_reprojection_error_px": 1.2537757215891063,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.0269322159095309,
+      "p90_reprojection_error_px": 2.2072522483837544,
+      "photo_id": "129",
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "status": "ok",
+      "valid_measurement_count": 95,
+      "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135805_0129_V.JPG",
+      "xml_photo": {
+        "center_xml": [
+          542284.0547994265,
+          3363477.531518413,
+          391.4740614567163
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135805_0129_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "129",
+        "rotation": [
+          [
+            -0.84591474639,
+            -0.53330470638,
+            0.00378576092
+          ],
+          [
+            -0.53322296119,
+            0.84587657164,
+            0.01288794841
+          ],
+          [
+            -0.01007549001,
+            0.00888345096,
+            -0.99990978033
+          ]
+        ]
+      },
+      "xml_projection_rotation": "R_world_to_camera = R_xml"
+    },
+    {
+      "camera_chain_interpretation": "XML camera chain is basically correct for tie point reprojection.",
+      "convention": "world_to_camera_correct",
+      "exif_projected_center_xml_srs": [
+        542355.0897277046,
+        3363351.546622607,
+        391.482
+      ],
+      "image": "0007.JPG",
+      "is_primary_acceptance": true,
+      "legacy_convention": "R_xml",
+      "match_distance_xy_m": 0.038972926565292415,
+      "match_distance_z_m": 0.011764028493360001,
+      "match_warning": false,
+      "matched_photo_id": "134",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135815_0134_V.JPG",
+      "max_reprojection_error_px": 4.429050655595822,
+      "mean_reprojection_error_px": 1.5115290154371335,
+      "median_error_gt_10px": false,
+      "median_error_lt_2px": true,
+      "median_reprojection_error_px": 1.2043287404434004,
+      "p90_reprojection_error_px": 2.9793199258570535,
+      "photo_id": "134",
+      "render_ray_rotation_note": "Not used for tie point reprojection; render rays use R_camera_to_world = R_xml.T.",
+      "status": "ok",
+      "valid_measurement_count": 105,
+      "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135815_0134_V.JPG",
+      "xml_photo": {
+        "center_xml": [
+          542355.0787872846,
+          3363351.5092167757,
+          391.4937640284934
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135815_0134_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "134",
+        "rotation": [
+          [
+            -0.84682526073,
+            -0.53183456609,
+            0.0062427646
+          ],
+          [
+            -0.53174071225,
+            0.84681916149,
+            0.01221157933
+          ],
+          [
+            -0.01178103268,
+            0.00702154175,
+            -0.99990594819
+          ]
+        ]
+      },
+      "xml_projection_rotation": "R_world_to_camera = R_xml"
+    }
+  ],
+  "primary_projection_convention": "world_to_camera_correct",
+  "xml_projection_rotation": "R_world_to_camera = R_xml"
+}

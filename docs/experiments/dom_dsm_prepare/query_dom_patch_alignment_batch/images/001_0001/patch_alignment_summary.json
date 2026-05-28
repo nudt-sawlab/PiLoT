@@ -1,0 +1,137 @@
+{
+  "K_xml": [
+    [
+      3722.256453,
+      0.0,
+      2650.555218
+    ],
+    [
+      0.0,
+      3722.3867365357787,
+      1961.222555
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "camera_match_report": [
+    {
+      "exif_projected_center_xml_srs": [
+        542086.2772505179,
+        3363398.498096489,
+        391.49
+      ],
+      "image": "0001.JPG",
+      "match_distance_xy_m": 0.1658530076573679,
+      "match_distance_z_m": 0.02462621500330897,
+      "match_warning": false,
+      "matched_photo_id": "13",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135240_0013_V.JPG",
+      "status": "ok",
+      "xml_photo": {
+        "center_xml": [
+          542086.2372451546,
+          3363398.6590523557,
+          391.4653737849967
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135240_0013_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "13",
+        "rotation": [
+          [
+            -0.86642549535,
+            -0.49928270899,
+            0.00486184293
+          ],
+          [
+            -0.49922723826,
+            0.86642045619,
+            0.00936790621
+          ],
+          [
+            -0.00888963376,
+            0.00568942836,
+            -0.99994430086
+          ]
+        ]
+      }
+    }
+  ],
+  "candidate_patch_count": 31,
+  "config": "configs/caiwangcun_domdsm.yaml",
+  "direction_consistency": 0.3082295638439594,
+  "edge_metric_reliable": true,
+  "experiment": "Query DOM patch alignment",
+  "high_confidence_patch_count": 12,
+  "local_texture_phase_difference_likely": false,
+  "max_patches": 100,
+  "mean_edge_chamfer_after": 12.400346398353577,
+  "mean_edge_chamfer_before": 22.2963863213857,
+  "mean_query_dom_ncc": -0.09018675315504272,
+  "mean_query_render_ncc": 0.7008309960365295,
+  "mean_render_dom_ncc": -0.10547245759516954,
+  "median_best_dx_px": -17.5,
+  "median_best_dy_px": 5.0,
+  "median_offset_norm_px": 45.7423065858314,
+  "min_edge_count": 180,
+  "min_gradient": 9.0,
+  "offset_norm_p90_px": 81.93203541556478,
+  "output_dir": "docs/experiments/dom_dsm_prepare/query_dom_patch_alignment_batch/images/001_0001",
+  "patch_size": 256,
+  "query_image": "data_caiwangcun/query/images/exif_test/0001.JPG",
+  "recommended_next_step": "review patch report manually and broaden to more images before changing geometry",
+  "render_image": "docs/experiments/dom_dsm_prepare/query_dom_patch_alignment_batch/images/001_0001/gpu_pinhole_render.png",
+  "render_meta": {
+    "backend_requested": "gpu_mesh",
+    "backend_used": "gpu_mesh",
+    "debug_texture_mode": "none",
+    "depth_convention": "camera_z_m",
+    "depth_max_m": 405.15521240234375,
+    "depth_median_m": 369.2027893066406,
+    "depth_min_m": 323.8292236328125,
+    "dsm_window": [
+      738,
+      4258,
+      4798,
+      4798
+    ],
+    "fallback_reason": null,
+    "output_y_flip": true,
+    "render_time_ms": 17081.40204,
+    "rendered_now": true,
+    "source": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/query_dom_patch_alignment_batch/images/001_0001/gpu_pinhole_render.png",
+    "texture_v_flip": false,
+    "triangle_count": 2879610,
+    "valid_depth_ratio": 0.9998365543708061,
+    "vertex_count": 1442401
+  },
+  "search_radius": 80,
+  "stable_local_shift_likely": false,
+  "stride": 512,
+  "texture_candidate_count": 31,
+  "xml": "data_caiwangcun/CaiWangCun.xml",
+  "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135240_0013_V.JPG",
+  "xml_photo_id": "13",
+  "xml_srs": "EPSG:4547"
+}

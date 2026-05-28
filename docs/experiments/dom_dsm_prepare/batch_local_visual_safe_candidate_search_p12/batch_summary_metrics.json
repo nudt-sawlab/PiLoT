@@ -1,0 +1,393 @@
+{
+  "batch_statistics": {
+    "feature_top10_contains_visual_top1_rate": 0.4,
+    "feature_top1_matches_visual_top1_rate": 0.0,
+    "feature_top1_safe_rate": 0.2,
+    "feature_top5_contains_visual_top1_rate": 0.2,
+    "mean_chamfer_improvement": 0.6961703300476074,
+    "mean_overlap_improvement": 0.08348785952858781,
+    "mean_spearman_unweighted_vs_chamfer": 0.0739095755845682,
+    "mean_spearman_unweighted_vs_overlap": -0.06927500944544729,
+    "mean_spearman_weighted_vs_chamfer_by_mode": {
+      "combined": 0.03841988161706056,
+      "depth_gradient": 0.017631501616220978,
+      "dom_edge": 0.0540909281726208,
+      "low_texture_downweight": 0.004789891272406743,
+      "uniform": 0.0739095755845682
+    },
+    "mean_spearman_weighted_vs_overlap_by_mode": {
+      "combined": -0.07361151924772262,
+      "depth_gradient": -0.10860165400277064,
+      "dom_edge": -0.06562696780151966,
+      "low_texture_downweight": -0.10463876411569625,
+      "uniform": -0.06927500944544729
+    },
+    "median_chamfer_improvement": 0.37941932678222656,
+    "median_overlap_improvement": 0.07375833951074873,
+    "non_initial_accept_rate": 1.0,
+    "num_both_improved": 5,
+    "num_chamfer_improved": 5,
+    "num_images_processed": 5,
+    "num_overlap_improved": 5,
+    "regression_rate": 0.0,
+    "strict_gate_accept_rate": 1.0,
+    "weighted_feature_top1_safe_rate_by_mode": {
+      "combined": 1.0,
+      "depth_gradient": 1.0,
+      "dom_edge": 1.0,
+      "low_texture_downweight": 1.0,
+      "uniform": 1.0
+    },
+    "weighted_feature_top5_contains_visual_top1_rate_by_mode": {
+      "combined": 0.0,
+      "depth_gradient": 0.0,
+      "dom_edge": 0.2,
+      "low_texture_downweight": 0.0,
+      "uniform": 0.2
+    }
+  },
+  "candidate_generation": {
+    "coarse_east_offsets": [
+      -5.0,
+      -3.0,
+      -1.0,
+      0.0,
+      1.0,
+      3.0,
+      5.0
+    ],
+    "coarse_north_offsets": [
+      -5.0,
+      -3.0,
+      -1.0,
+      0.0,
+      1.0,
+      3.0,
+      5.0
+    ],
+    "enable_alt_refine": false,
+    "include_known_seeds_for_debug": false,
+    "include_raw_refined": false,
+    "topk_visual_for_yaw": 5,
+    "weight_modes": [
+      "uniform",
+      "dom_edge",
+      "depth_gradient",
+      "combined",
+      "low_texture_downweight"
+    ],
+    "yaw_refine_offsets": [
+      -2.0,
+      -1.0,
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      2.0
+    ]
+  },
+  "config": "configs/caiwangcun_domdsm_16x9.yaml",
+  "experiment": "P12 batch local visual-safe candidate search",
+  "failed_images": [],
+  "interpretation": {
+    "conclusion": "Case B: Batch search safely improves images with dispersed offsets; this supports per-image local visual-safe refinement.",
+    "does_any_structure_weight_help_feature_ranking": false,
+    "does_batch_local_search_generalize": true,
+    "does_batch_show_systematic_offset": false,
+    "does_feature_scorer_generalize": false,
+    "recommended_next_step": "P13 should implement coarse-to-fine candidate refinement with visual-safe selection.",
+    "systematic_offset_hypothesis": "most common selected east/north offset (-3.0, 0.0) count 1/5"
+  },
+  "num_images_failed": 0,
+  "num_images_processed": 5,
+  "num_images_requested": 5,
+  "offset_distribution": {
+    "mean_selected_alt_offset": 0.0,
+    "mean_selected_east_offset": -1.2,
+    "mean_selected_north_offset": 0.8,
+    "mean_selected_yaw_offset": -0.1,
+    "median_selected_alt_offset": 0.0,
+    "median_selected_east_offset": -3.0,
+    "median_selected_north_offset": 0.0,
+    "median_selected_yaw_offset": 0.0,
+    "most_common_selected_offset": {
+      "count": 1,
+      "east": -3.0,
+      "north": 0.0
+    },
+    "selected_alt_offsets": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "selected_east_offsets": [
+      -3.0,
+      -5.0,
+      -3.0,
+      0.0,
+      5.0
+    ],
+    "selected_north_offsets": [
+      0.0,
+      -1.0,
+      -5.0,
+      5.0,
+      5.0
+    ],
+    "selected_yaw_offsets": [
+      0.0,
+      0.5,
+      -1.0,
+      -1.0,
+      1.0
+    ],
+    "std_selected_alt_offset": 0.0,
+    "std_selected_east_offset": 3.487119154832539,
+    "std_selected_north_offset": 3.815756805667783,
+    "std_selected_yaw_offset": 0.8
+  },
+  "p12_success": true,
+  "per_image": [
+    {
+      "best_weight_mode_by_rank_alignment": "dom_edge",
+      "chamfer_improvement": 2.0455803871154785,
+      "feature_top10_contains_visual_top1": true,
+      "feature_top1_candidate": "coarse_em1_nm3",
+      "feature_top1_matches_visual_top1": false,
+      "feature_top1_passes_strict_gate": true,
+      "feature_top5_contains_visual_top1": false,
+      "image": "0000.jpg",
+      "initial_chamfer": 9.630294799804688,
+      "initial_overlap": 0.5285714285714286,
+      "num_candidates": 83,
+      "num_strict_pass": 34,
+      "overlap_improvement": 0.20103230103230108,
+      "safe_output_worse_than_initial": false,
+      "selected_candidate": "coarse_em3_np0",
+      "selected_chamfer": 7.584714412689209,
+      "selected_offset_alt_m": 0.0,
+      "selected_offset_east_m": -3.0,
+      "selected_offset_north_m": 0.0,
+      "selected_overlap": 0.7296037296037297,
+      "selected_yaw_offset_deg": 0.0,
+      "spearman_unweighted_vs_chamfer": 0.14107300281264434,
+      "spearman_unweighted_vs_overlap": -0.014105201292976766,
+      "spearman_weighted_vs_chamfer_by_mode": {
+        "combined": 0.16390999538222573,
+        "depth_gradient": 0.12587632761009193,
+        "dom_edge": 0.16819193148902234,
+        "low_texture_downweight": 0.04838168003022547,
+        "uniform": 0.14107300281264434
+      },
+      "spearman_weighted_vs_overlap_by_mode": {
+        "combined": 0.035346962763947776,
+        "depth_gradient": -0.05921245959447541,
+        "dom_edge": 0.05581209856849001,
+        "low_texture_downweight": -0.0711347130683011,
+        "uniform": -0.014105201292976766
+      },
+      "strict_gate_accepts_non_initial": true,
+      "weighted_feature_top5_contains_visual_top1_by_mode": {
+        "combined": false,
+        "depth_gradient": false,
+        "dom_edge": false,
+        "low_texture_downweight": false,
+        "uniform": false
+      }
+    },
+    {
+      "best_weight_mode_by_rank_alignment": "uniform",
+      "chamfer_improvement": 0.2836732864379883,
+      "feature_top10_contains_visual_top1": true,
+      "feature_top1_candidate": "coarse_em5_np3__yaw_p2",
+      "feature_top1_matches_visual_top1": false,
+      "feature_top1_passes_strict_gate": false,
+      "feature_top5_contains_visual_top1": true,
+      "image": "0001.JPG",
+      "initial_chamfer": 4.17815637588501,
+      "initial_overlap": 0.6847222222222222,
+      "num_candidates": 83,
+      "num_strict_pass": 21,
+      "overlap_improvement": 0.024207566462167707,
+      "safe_output_worse_than_initial": false,
+      "selected_candidate": "coarse_em5_nm1__yaw_p0p5",
+      "selected_chamfer": 3.8944830894470215,
+      "selected_offset_alt_m": 0.0,
+      "selected_offset_east_m": -5.0,
+      "selected_offset_north_m": -1.0,
+      "selected_overlap": 0.7089297886843899,
+      "selected_yaw_offset_deg": 0.5,
+      "spearman_unweighted_vs_chamfer": 0.5003778178917762,
+      "spearman_unweighted_vs_overlap": 0.20267830905503548,
+      "spearman_weighted_vs_chamfer_by_mode": {
+        "combined": 0.4818017715461148,
+        "depth_gradient": 0.45325553083413794,
+        "dom_edge": 0.4849082742118299,
+        "low_texture_downweight": 0.46129465597581965,
+        "uniform": 0.5003778178917762
+      },
+      "spearman_weighted_vs_overlap_by_mode": {
+        "combined": 0.24484698375383063,
+        "depth_gradient": 0.17988329625120691,
+        "dom_edge": 0.25855337727215477,
+        "low_texture_downweight": 0.1961504554804584,
+        "uniform": 0.20267830905503548
+      },
+      "strict_gate_accepts_non_initial": true,
+      "weighted_feature_top5_contains_visual_top1_by_mode": {
+        "combined": false,
+        "depth_gradient": false,
+        "dom_edge": true,
+        "low_texture_downweight": false,
+        "uniform": true
+      }
+    },
+    {
+      "best_weight_mode_by_rank_alignment": "uniform",
+      "chamfer_improvement": 0.37941932678222656,
+      "feature_top10_contains_visual_top1": false,
+      "feature_top1_candidate": "coarse_em3_np5",
+      "feature_top1_matches_visual_top1": false,
+      "feature_top1_passes_strict_gate": false,
+      "feature_top5_contains_visual_top1": false,
+      "image": "0002.JPG",
+      "initial_chamfer": 4.727849006652832,
+      "initial_overlap": 0.4724550898203593,
+      "num_candidates": 83,
+      "num_strict_pass": 32,
+      "overlap_improvement": 0.08120344676500663,
+      "safe_output_worse_than_initial": false,
+      "selected_candidate": "coarse_em3_nm5__yaw_m1",
+      "selected_chamfer": 4.3484296798706055,
+      "selected_offset_alt_m": 0.0,
+      "selected_offset_east_m": -3.0,
+      "selected_offset_north_m": -5.0,
+      "selected_overlap": 0.5536585365853659,
+      "selected_yaw_offset_deg": -1.0,
+      "spearman_unweighted_vs_chamfer": -0.07434616514839854,
+      "spearman_unweighted_vs_overlap": -0.22975525796566054,
+      "spearman_weighted_vs_chamfer_by_mode": {
+        "combined": -0.172851685487595,
+        "depth_gradient": -0.23166533730741778,
+        "dom_edge": -0.08291003736199154,
+        "low_texture_downweight": -0.16676461945342336,
+        "uniform": -0.07434616514839854
+      },
+      "spearman_weighted_vs_overlap_by_mode": {
+        "combined": -0.281789177616389,
+        "depth_gradient": -0.34215608076906934,
+        "dom_edge": -0.21676252046513578,
+        "low_texture_downweight": -0.23422610301834523,
+        "uniform": -0.22975525796566054
+      },
+      "strict_gate_accepts_non_initial": true,
+      "weighted_feature_top5_contains_visual_top1_by_mode": {
+        "combined": false,
+        "depth_gradient": false,
+        "dom_edge": false,
+        "low_texture_downweight": false,
+        "uniform": false
+      }
+    },
+    {
+      "best_weight_mode_by_rank_alignment": "uniform",
+      "chamfer_improvement": 0.506624698638916,
+      "feature_top10_contains_visual_top1": false,
+      "feature_top1_candidate": "coarse_ep3_np0",
+      "feature_top1_matches_visual_top1": false,
+      "feature_top1_passes_strict_gate": false,
+      "feature_top5_contains_visual_top1": false,
+      "image": "0003.JPG",
+      "initial_chamfer": 4.390451431274414,
+      "initial_overlap": 0.6980365605958023,
+      "num_candidates": 83,
+      "num_strict_pass": 29,
+      "overlap_improvement": 0.03723764387271489,
+      "safe_output_worse_than_initial": false,
+      "selected_candidate": "coarse_ep0_np5__yaw_m1",
+      "selected_chamfer": 3.883826732635498,
+      "selected_offset_alt_m": 0.0,
+      "selected_offset_east_m": 0.0,
+      "selected_offset_north_m": 5.0,
+      "selected_overlap": 0.7352742044685172,
+      "selected_yaw_offset_deg": -1.0,
+      "spearman_unweighted_vs_chamfer": 0.19577263758868224,
+      "spearman_unweighted_vs_overlap": 0.04202174551866,
+      "spearman_weighted_vs_chamfer_by_mode": {
+        "combined": 0.10664959489526049,
+        "depth_gradient": 0.11813106082868052,
+        "dom_edge": 0.09472734142143491,
+        "low_texture_downweight": 0.07019016833886071,
+        "uniform": 0.19577263758868224
+      },
+      "spearman_weighted_vs_overlap_by_mode": {
+        "combined": -0.04571596490491592,
+        "depth_gradient": 0.007829226312917159,
+        "dom_edge": -0.0873389026489233,
+        "low_texture_downweight": -0.08083203895722257,
+        "uniform": 0.04202174551866
+      },
+      "strict_gate_accepts_non_initial": true,
+      "weighted_feature_top5_contains_visual_top1_by_mode": {
+        "combined": false,
+        "depth_gradient": false,
+        "dom_edge": false,
+        "low_texture_downweight": false,
+        "uniform": false
+      }
+    },
+    {
+      "best_weight_mode_by_rank_alignment": "depth_gradient",
+      "chamfer_improvement": 0.26555395126342773,
+      "feature_top10_contains_visual_top1": false,
+      "feature_top1_candidate": "alt_minus_1m",
+      "feature_top1_matches_visual_top1": false,
+      "feature_top1_passes_strict_gate": false,
+      "feature_top5_contains_visual_top1": false,
+      "image": "0004.JPG",
+      "initial_chamfer": 2.9588804244995117,
+      "initial_overlap": 0.8932542624166049,
+      "num_candidates": 83,
+      "num_strict_pass": 39,
+      "overlap_improvement": 0.07375833951074873,
+      "safe_output_worse_than_initial": false,
+      "selected_candidate": "coarse_ep5_np5__yaw_p1",
+      "selected_chamfer": 2.693326473236084,
+      "selected_offset_alt_m": 0.0,
+      "selected_offset_east_m": 5.0,
+      "selected_offset_north_m": 5.0,
+      "selected_overlap": 0.9670126019273536,
+      "selected_yaw_offset_deg": 1.0,
+      "spearman_unweighted_vs_chamfer": -0.39332941522186315,
+      "spearman_unweighted_vs_overlap": -0.3472146425422946,
+      "spearman_weighted_vs_chamfer_by_mode": {
+        "combined": -0.38741026825070324,
+        "depth_gradient": -0.3774400738843877,
+        "dom_edge": -0.3944628688971916,
+        "low_texture_downweight": -0.38915242852944876,
+        "uniform": -0.39332941522186315
+      },
+      "spearman_weighted_vs_overlap_by_mode": {
+        "combined": -0.3207464002350866,
+        "depth_gradient": -0.32935225221443254,
+        "dom_edge": -0.338398891734184,
+        "low_texture_downweight": -0.3331514210150708,
+        "uniform": -0.3472146425422946
+      },
+      "strict_gate_accepts_non_initial": true,
+      "weighted_feature_top5_contains_visual_top1_by_mode": {
+        "combined": false,
+        "depth_gradient": false,
+        "dom_edge": false,
+        "low_texture_downweight": false,
+        "uniform": false
+      }
+    }
+  ],
+  "pose_file": "data_caiwangcun/query/poses/exif_test_yawfix.txt",
+  "query_dir": "data_caiwangcun/query/images/exif_test",
+  "skipped_missing_pose": [],
+  "width": 256
+}

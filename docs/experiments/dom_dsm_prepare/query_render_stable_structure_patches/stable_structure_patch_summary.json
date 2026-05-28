@@ -1,0 +1,75 @@
+{
+  "batch_dir": "docs/experiments/dom_dsm_prepare/query_dom_patch_alignment_batch",
+  "by_scene": {
+    "stable_structure": {
+      "count": 109,
+      "direction_consistency_high": 0.400452885401398,
+      "high_confidence_count": 54,
+      "mean_edge_chamfer_after_high": 8.30650841306757,
+      "mean_query_dom_ncc_high": 0.0861318096070102,
+      "mean_query_render_ncc_high": 0.6916728223915454,
+      "median_dx_px_high": 20.0,
+      "median_dy_px_high": 2.0,
+      "median_offset_norm_px_high": 42.69060341507647
+    },
+    "vegetation": {
+      "count": 65,
+      "direction_consistency_high": 0.24660872743535936,
+      "high_confidence_count": 38,
+      "mean_edge_chamfer_after_high": 16.935525542811344,
+      "mean_query_dom_ncc_high": 0.01486273183744695,
+      "mean_query_render_ncc_high": 0.6087620477927359,
+      "median_dx_px_high": -7.0,
+      "median_dy_px_high": 3.5,
+      "median_offset_norm_px_high": 39.967257126905324
+    },
+    "water": {
+      "count": 7,
+      "direction_consistency_high": 0.7831770678956295,
+      "high_confidence_count": 2,
+      "mean_edge_chamfer_after_high": 4.825404644012451,
+      "mean_query_dom_ncc_high": 0.0619952455163002,
+      "mean_query_render_ncc_high": 0.7544895112514496,
+      "median_dx_px_high": -33.0,
+      "median_dy_px_high": -20.5,
+      "median_offset_norm_px_high": 49.604448987823105
+    }
+  },
+  "conclusion": "stable-structure separation does not yet isolate a cleaner geometric signal; inspect scene labels and feature residuals",
+  "experiment": "Stable structure patch attribution",
+  "num_rows": 181,
+  "patch_label_counts": {
+    "edge_unreliable": 13,
+    "occlusion_or_change": 9,
+    "stable_match": 61,
+    "texture_mismatch": 98
+  },
+  "scene_counts": {
+    "stable_structure": 109,
+    "vegetation": 65,
+    "water": 7
+  },
+  "stable_structure": {
+    "count": 104,
+    "direction_consistency_high": 0.400452885401398,
+    "high_confidence_count": 54,
+    "mean_edge_chamfer_after_high": 8.30650841306757,
+    "mean_query_dom_ncc_high": 0.0861318096070102,
+    "mean_query_render_ncc_high": 0.6916728223915454,
+    "median_dx_px_high": 20.0,
+    "median_dy_px_high": 2.0,
+    "median_offset_norm_px_high": 42.69060341507647
+  },
+  "stable_structure_better_than_unstable": false,
+  "unstable_texture": {
+    "count": 72,
+    "direction_consistency_high": 0.262065145173592,
+    "high_confidence_count": 40,
+    "mean_edge_chamfer_after_high": 16.330019497871398,
+    "mean_query_dom_ncc_high": 0.01721935752138961,
+    "mean_query_render_ncc_high": 0.6160484209656716,
+    "median_dx_px_high": -7.5,
+    "median_dy_px_high": 3.5,
+    "median_offset_norm_px_high": 39.967257126905324
+  }
+}

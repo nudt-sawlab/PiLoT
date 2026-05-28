@@ -1,0 +1,161 @@
+{
+  "camera_match_report": [
+    {
+      "exif_projected_center_xml_srs": [
+        541984.9086498083,
+        3363578.9876813805,
+        391.462
+      ],
+      "image": "0000.jpg",
+      "match_distance_xy_m": 0.2816910688575215,
+      "match_distance_z_m": 0.14517539599228257,
+      "match_warning": false,
+      "matched_photo_id": "7",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+      "status": "ok",
+      "xml_photo": {
+        "center_xml": [
+          541984.8573536231,
+          3363579.2646625345,
+          391.3168246040077
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "7",
+        "rotation": [
+          [
+            -0.87056761672,
+            -0.49201431925,
+            0.00582532161
+          ],
+          [
+            -0.49199004153,
+            0.87058560751,
+            0.00514772081
+          ],
+          [
+            -0.0076041935,
+            0.00161543882,
+            -0.99996978284
+          ]
+        ]
+      }
+    }
+  ],
+  "experiment": "ContextCapture XML pose rendered by DOMDSMRenderer gpu_mesh",
+  "images": [
+    {
+      "camera_center_lon_lat_alt": [
+        114.43686036628351,
+        30.391363472409957,
+        391.3168246040077
+      ],
+      "camera_center_xml_srs": [
+        541984.8573536231,
+        3363579.2646625345,
+        391.3168246040077
+      ],
+      "config": "configs/caiwangcun_domdsm.yaml",
+      "depth_max": 378.95562744140625,
+      "depth_min": 355.35528564453125,
+      "edge_chamfer": 28.398826599121094,
+      "edge_overlap_count": 22034,
+      "edge_overlap_ratio": 0.2476509463651486,
+      "experiment": "ContextCapture XML pose rendered by DOMDSMRenderer gpu_mesh",
+      "intrinsics": {
+        "aspect": 0.999965,
+        "cx": 2650.555218,
+        "cy": 1961.222555,
+        "distortion": {
+          "k1": -0.101571,
+          "k2": -0.019639,
+          "k3": 0.0,
+          "p1": -0.000217,
+          "p2": 0.000239
+        },
+        "focal": 3722.256453,
+        "fx": 3722.256453,
+        "fy": 3722.3867365357787,
+        "fy_rule": "fy = focal / aspect",
+        "height": 3956,
+        "photogroup_index": 1,
+        "skew": 0.0,
+        "width": 5280
+      },
+      "matched_exif_distance_xy_m": 0.2816910688575215,
+      "matched_exif_distance_z_m": 0.14517539599228257,
+      "output_dir": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/contextcapture_xml_gpu_mesh_orientation_checked_0000/0000/xml_gpu_mesh",
+      "query_edge_count": 393239,
+      "query_image_path": "data_caiwangcun/query/images/exif_test/0000.jpg",
+      "query_resized_for_overlay": false,
+      "render_camera": [
+        5280,
+        3956,
+        2650.555218,
+        1961.222555,
+        3722.256453,
+        3722.3867365357787
+      ],
+      "render_edge_count": 88972,
+      "render_height": 3956,
+      "render_ray_rotation": "R_camera_to_world = R_xml.T",
+      "render_time_sec": 17.06235202900001,
+      "render_width": 5280,
+      "renderer_metadata": {
+        "backend_requested": "gpu_mesh",
+        "backend_used": "gpu_mesh",
+        "debug_texture_mode": "none",
+        "depth_convention": "camera_z_m",
+        "depth_max_m": 378.95562744140625,
+        "depth_median_m": 366.4324645996094,
+        "depth_min_m": 355.35528564453125,
+        "dsm_window": [
+          48,
+          2950,
+          4798,
+          4798
+        ],
+        "fallback_reason": null,
+        "output_y_flip": true,
+        "render_time_ms": 16883.011124000008,
+        "texture_v_flip": false,
+        "triangle_count": 2751030,
+        "valid_depth_ratio": 0.9963799234764225,
+        "vertex_count": 1442401
+      },
+      "valid_depth_ratio": 0.9963799234764225,
+      "xml": "data_caiwangcun/CaiWangCun.xml",
+      "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+      "xml_photo_id": "7",
+      "xml_projection_rotation": "R_world_to_camera = R_xml",
+      "xml_srs": "EPSG:4547"
+    }
+  ],
+  "metrics_mean": {
+    "edge_chamfer": 28.398826599121094,
+    "edge_overlap_ratio": 0.2476509463651486,
+    "valid_depth_ratio": 0.9963799234764225
+  },
+  "num_images_rendered": 1,
+  "xml": "data_caiwangcun/CaiWangCun.xml",
+  "xml_srs": "EPSG:4547"
+}

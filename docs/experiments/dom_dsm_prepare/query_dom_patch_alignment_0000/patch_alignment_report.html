@@ -1,0 +1,153 @@
+<html><head><meta charset='utf-8'><style>body{font-family:sans-serif} table{border-collapse:collapse} td,th{border:1px solid #ccc;padding:5px} img{max-width:180px} .low{color:#777}</style></head><body>
+<h1>Query DOM Patch Alignment</h1>
+<pre>{
+  "K_xml": [
+    [
+      3722.256453,
+      0.0,
+      2650.555218
+    ],
+    [
+      0.0,
+      3722.3867365357787,
+      1961.222555
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "camera_match_report": [
+    {
+      "exif_projected_center_xml_srs": [
+        541984.9086498083,
+        3363578.9876813805,
+        391.462
+      ],
+      "image": "0000.jpg",
+      "match_distance_xy_m": 0.2816910688575215,
+      "match_distance_z_m": 0.14517539599228257,
+      "match_warning": false,
+      "matched_photo_id": "7",
+      "matched_xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+      "status": "ok",
+      "xml_photo": {
+        "center_xml": [
+          541984.8573536231,
+          3363579.2646625345,
+          391.3168246040077
+        ],
+        "image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+        "intrinsics": {
+          "aspect": 0.999965,
+          "cx": 2650.555218,
+          "cy": 1961.222555,
+          "distortion": {
+            "k1": -0.101571,
+            "k2": -0.019639,
+            "k3": 0.0,
+            "p1": -0.000217,
+            "p2": 0.000239
+          },
+          "focal": 3722.256453,
+          "fx": 3722.256453,
+          "fy": 3722.3867365357787,
+          "fy_rule": "fy = focal / aspect",
+          "height": 3956,
+          "photogroup_index": 1,
+          "skew": 0.0,
+          "width": 5280
+        },
+        "photo_id": "7",
+        "rotation": [
+          [
+            -0.87056761672,
+            -0.49201431925,
+            0.00582532161
+          ],
+          [
+            -0.49199004153,
+            0.87058560751,
+            0.00514772081
+          ],
+          [
+            -0.0076041935,
+            0.00161543882,
+            -0.99996978284
+          ]
+        ]
+      }
+    }
+  ],
+  "candidate_patch_count": 32,
+  "config": "configs/caiwangcun_domdsm.yaml",
+  "direction_consistency": 0.2409525385191819,
+  "edge_metric_reliable": true,
+  "experiment": "Query DOM patch alignment",
+  "high_confidence_patch_count": 19,
+  "local_texture_phase_difference_likely": false,
+  "max_patches": 100,
+  "mean_edge_chamfer_after": 14.76191352543078,
+  "mean_edge_chamfer_before": 20.98709824210719,
+  "mean_query_dom_ncc": -0.03275828689067183,
+  "mean_query_render_ncc": 0.5541661915026213,
+  "mean_render_dom_ncc": -0.04369910407082276,
+  "median_best_dx_px": 16.0,
+  "median_best_dy_px": 9.0,
+  "median_offset_norm_px": 42.44997055358225,
+  "min_edge_count": 180,
+  "min_gradient": 9.0,
+  "offset_norm_p90_px": 73.33512948073265,
+  "output_dir": "docs/experiments/dom_dsm_prepare/query_dom_patch_alignment_0000",
+  "patch_size": 256,
+  "query_image": "data_caiwangcun/query/images/exif_test/0000.jpg",
+  "recommended_next_step": "review patch report manually and broaden to more images before changing geometry",
+  "render_image": "docs/experiments/dom_dsm_prepare/query_image_domain_vs_render_0000/gpu_pinhole_render.png",
+  "render_meta": {
+    "rendered_now": false,
+    "source": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/query_image_domain_vs_render_0000/gpu_pinhole_render.png"
+  },
+  "search_radius": 80,
+  "stable_local_shift_likely": false,
+  "stride": 512,
+  "texture_candidate_count": 32,
+  "xml": "data_caiwangcun/CaiWangCun.xml",
+  "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+  "xml_photo_id": "7",
+  "xml_srs": "EPSG:4547"
+}</pre>
+<table><tr><th>#</th><th>xy</th><th>accepted</th><th>high conf</th><th>dx,dy</th><th>NCC</th><th>phase</th><th>edge before/after</th><th>q-r/q-d/r-d NCC</th><th>query</th><th>render</th><th>DOM</th><th>after</th><th>edges after</th></tr>
+<tr><td>0</td><td>1232,2256</td><td>True</td><td>True</td><td>-29.0, -31.0</td><td>0.250</td><td>0.322</td><td>11.37 / 6.89</td><td>0.250 / -0.00980872381478548 / 0.021571801975369453</td><td><img src='patches/patch_000/query.png'></td><td><img src='patches/patch_000/render.png'></td><td><img src='patches/patch_000/dom.png'></td><td><img src='patches/patch_000/overlay_after.png'></td><td><img src='patches/patch_000/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>1</td><td>208,208</td><td>True</td><td>False</td><td>-8.0, 6.0</td><td>0.066</td><td>0.030</td><td>11.98 / 12.82</td><td>0.066 / 0.13034197688102722 / -0.0149106215685606</td><td><img src='patches/patch_001/query.png'></td><td><img src='patches/patch_001/render.png'></td><td><img src='patches/patch_001/dom.png'></td><td><img src='patches/patch_001/overlay_after.png'></td><td><img src='patches/patch_001/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>2</td><td>4816,720</td><td>True</td><td>False</td><td>40.0, -4.0</td><td>0.117</td><td>-0.015</td><td>15.50 / 16.64</td><td>0.117 / -0.0007006158703006804 / 0.05907431244850159</td><td><img src='patches/patch_002/query.png'></td><td><img src='patches/patch_002/render.png'></td><td><img src='patches/patch_002/dom.png'></td><td><img src='patches/patch_002/overlay_after.png'></td><td><img src='patches/patch_002/edge_overlay_after.png'></td></tr>
+<tr><td>3</td><td>720,720</td><td>True</td><td>True</td><td>-48.0, -77.0</td><td>0.392</td><td>0.058</td><td>11.91 / 8.71</td><td>0.392 / -0.19837431609630585 / -0.20853692293167114</td><td><img src='patches/patch_003/query.png'></td><td><img src='patches/patch_003/render.png'></td><td><img src='patches/patch_003/dom.png'></td><td><img src='patches/patch_003/overlay_after.png'></td><td><img src='patches/patch_003/edge_overlay_after.png'></td></tr>
+<tr><td>4</td><td>2256,720</td><td>True</td><td>True</td><td>27.0, -23.0</td><td>0.624</td><td>0.292</td><td>15.20 / 13.87</td><td>0.624 / -0.03450574353337288 / -0.05192635580897331</td><td><img src='patches/patch_004/query.png'></td><td><img src='patches/patch_004/render.png'></td><td><img src='patches/patch_004/dom.png'></td><td><img src='patches/patch_004/overlay_after.png'></td><td><img src='patches/patch_004/edge_overlay_after.png'></td></tr>
+<tr><td>5</td><td>3280,1232</td><td>True</td><td>True</td><td>23.0, 12.0</td><td>0.553</td><td>0.441</td><td>12.45 / 9.85</td><td>0.553 / -0.04961467906832695 / -0.04347604140639305</td><td><img src='patches/patch_005/query.png'></td><td><img src='patches/patch_005/render.png'></td><td><img src='patches/patch_005/dom.png'></td><td><img src='patches/patch_005/overlay_after.png'></td><td><img src='patches/patch_005/edge_overlay_after.png'></td></tr>
+<tr><td>6</td><td>3280,3280</td><td>True</td><td>True</td><td>-24.0, 41.0</td><td>0.580</td><td>0.237</td><td>21.65 / 8.15</td><td>0.580 / -0.10409224033355713 / -0.1624421775341034</td><td><img src='patches/patch_006/query.png'></td><td><img src='patches/patch_006/render.png'></td><td><img src='patches/patch_006/dom.png'></td><td><img src='patches/patch_006/overlay_after.png'></td><td><img src='patches/patch_006/edge_overlay_after.png'></td></tr>
+<tr><td>7</td><td>3792,1744</td><td>True</td><td>True</td><td>18.0, 30.0</td><td>0.740</td><td>0.498</td><td>12.93 / 9.72</td><td>0.740 / -0.007019271608442068 / 0.00014050721074454486</td><td><img src='patches/patch_007/query.png'></td><td><img src='patches/patch_007/render.png'></td><td><img src='patches/patch_007/dom.png'></td><td><img src='patches/patch_007/overlay_after.png'></td><td><img src='patches/patch_007/edge_overlay_after.png'></td></tr>
+<tr><td>8</td><td>1744,3280</td><td>True</td><td>True</td><td>-57.0, 9.0</td><td>0.414</td><td>0.274</td><td>23.26 / 13.41</td><td>0.414 / -0.010181010700762272 / -0.010914139449596405</td><td><img src='patches/patch_008/query.png'></td><td><img src='patches/patch_008/render.png'></td><td><img src='patches/patch_008/dom.png'></td><td><img src='patches/patch_008/overlay_after.png'></td><td><img src='patches/patch_008/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>9</td><td>720,208</td><td>True</td><td>False</td><td>71.0, 30.0</td><td>0.136</td><td>0.007</td><td>10.92 / 17.75</td><td>0.136 / 0.04398336261510849 / -0.21123643219470978</td><td><img src='patches/patch_009/query.png'></td><td><img src='patches/patch_009/render.png'></td><td><img src='patches/patch_009/dom.png'></td><td><img src='patches/patch_009/overlay_after.png'></td><td><img src='patches/patch_009/edge_overlay_after.png'></td></tr>
+<tr><td>10</td><td>4304,2256</td><td>True</td><td>True</td><td>32.0, 54.0</td><td>0.394</td><td>0.039</td><td>16.36 / 11.19</td><td>0.394 / 0.03344958275556564 / -0.016335612162947655</td><td><img src='patches/patch_010/query.png'></td><td><img src='patches/patch_010/render.png'></td><td><img src='patches/patch_010/dom.png'></td><td><img src='patches/patch_010/overlay_after.png'></td><td><img src='patches/patch_010/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>11</td><td>208,3280</td><td>True</td><td>False</td><td>-6.0, -42.0</td><td>0.115</td><td>0.015</td><td>31.73 / 32.67</td><td>0.115 / -0.04605378210544586 / -0.008231665939092636</td><td><img src='patches/patch_011/query.png'></td><td><img src='patches/patch_011/render.png'></td><td><img src='patches/patch_011/dom.png'></td><td><img src='patches/patch_011/overlay_after.png'></td><td><img src='patches/patch_011/edge_overlay_after.png'></td></tr>
+<tr><td>12</td><td>1744,720</td><td>True</td><td>True</td><td>16.0, -42.0</td><td>0.607</td><td>0.247</td><td>16.04 / 7.05</td><td>0.607 / -0.06533518433570862 / -0.1486656665802002</td><td><img src='patches/patch_012/query.png'></td><td><img src='patches/patch_012/render.png'></td><td><img src='patches/patch_012/dom.png'></td><td><img src='patches/patch_012/overlay_after.png'></td><td><img src='patches/patch_012/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>13</td><td>4816,1232</td><td>True</td><td>False</td><td>-20.0, 49.0</td><td>0.096</td><td>0.019</td><td>31.77 / 27.75</td><td>0.096 / 0.027226274833083153 / -0.015117475762963295</td><td><img src='patches/patch_013/query.png'></td><td><img src='patches/patch_013/render.png'></td><td><img src='patches/patch_013/dom.png'></td><td><img src='patches/patch_013/overlay_after.png'></td><td><img src='patches/patch_013/edge_overlay_after.png'></td></tr>
+<tr><td>14</td><td>2768,1744</td><td>True</td><td>True</td><td>6.0, 6.0</td><td>0.560</td><td>0.493</td><td>17.06 / 16.02</td><td>0.560 / 0.025755515322089195 / 0.04584767669439316</td><td><img src='patches/patch_014/query.png'></td><td><img src='patches/patch_014/render.png'></td><td><img src='patches/patch_014/dom.png'></td><td><img src='patches/patch_014/overlay_after.png'></td><td><img src='patches/patch_014/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>15</td><td>4304,2768</td><td>True</td><td>False</td><td>26.0, 69.0</td><td>0.394</td><td>0.026</td><td>25.21 / 17.72</td><td>0.394 / 0.04320197552442551 / 0.01421805564314127</td><td><img src='patches/patch_015/query.png'></td><td><img src='patches/patch_015/render.png'></td><td><img src='patches/patch_015/dom.png'></td><td><img src='patches/patch_015/overlay_after.png'></td><td><img src='patches/patch_015/edge_overlay_after.png'></td></tr>
+<tr><td>16</td><td>2768,720</td><td>True</td><td>True</td><td>32.0, -6.0</td><td>0.790</td><td>0.228</td><td>11.49 / 5.97</td><td>0.790 / -0.13156315684318542 / -0.18164676427841187</td><td><img src='patches/patch_016/query.png'></td><td><img src='patches/patch_016/render.png'></td><td><img src='patches/patch_016/dom.png'></td><td><img src='patches/patch_016/overlay_after.png'></td><td><img src='patches/patch_016/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>17</td><td>4816,2256</td><td>True</td><td>False</td><td>80.0, 74.0</td><td>0.429</td><td>0.020</td><td>23.84 / 25.43</td><td>0.429 / -0.07157394289970398 / -0.12369508296251297</td><td><img src='patches/patch_017/query.png'></td><td><img src='patches/patch_017/render.png'></td><td><img src='patches/patch_017/dom.png'></td><td><img src='patches/patch_017/overlay_after.png'></td><td><img src='patches/patch_017/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>18</td><td>2768,208</td><td>True</td><td>False</td><td>48.0, -32.0</td><td>0.864</td><td>-0.008</td><td>24.49 / 7.60</td><td>0.864 / -0.25809723138809204 / -0.27148813009262085</td><td><img src='patches/patch_018/query.png'></td><td><img src='patches/patch_018/render.png'></td><td><img src='patches/patch_018/dom.png'></td><td><img src='patches/patch_018/overlay_after.png'></td><td><img src='patches/patch_018/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>19</td><td>3280,720</td><td>True</td><td>False</td><td>41.0, 0.0</td><td>0.478</td><td>0.368</td><td>30.22 / 36.85</td><td>0.478 / 0.024753639474511147 / 0.0307252649217844</td><td><img src='patches/patch_019/query.png'></td><td><img src='patches/patch_019/render.png'></td><td><img src='patches/patch_019/dom.png'></td><td><img src='patches/patch_019/overlay_after.png'></td><td><img src='patches/patch_019/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>20</td><td>2256,1232</td><td>True</td><td>False</td><td>16.0, -12.0</td><td>0.633</td><td>0.419</td><td>25.25 / 27.59</td><td>0.633 / 0.09321223944425583 / 0.09147027879953384</td><td><img src='patches/patch_020/query.png'></td><td><img src='patches/patch_020/render.png'></td><td><img src='patches/patch_020/dom.png'></td><td><img src='patches/patch_020/overlay_after.png'></td><td><img src='patches/patch_020/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>21</td><td>4816,208</td><td>True</td><td>False</td><td>-4.0, 64.0</td><td>0.143</td><td>-0.008</td><td>27.99 / 30.71</td><td>0.143 / 0.006824968382716179 / 0.03303796052932739</td><td><img src='patches/patch_021/query.png'></td><td><img src='patches/patch_021/render.png'></td><td><img src='patches/patch_021/dom.png'></td><td><img src='patches/patch_021/overlay_after.png'></td><td><img src='patches/patch_021/edge_overlay_after.png'></td></tr>
+<tr><td>22</td><td>3792,2256</td><td>True</td><td>True</td><td>3.0, 35.0</td><td>0.626</td><td>0.481</td><td>29.23 / 26.00</td><td>0.626 / 0.001361498492769897 / 0.008625992573797703</td><td><img src='patches/patch_022/query.png'></td><td><img src='patches/patch_022/render.png'></td><td><img src='patches/patch_022/dom.png'></td><td><img src='patches/patch_022/overlay_after.png'></td><td><img src='patches/patch_022/edge_overlay_after.png'></td></tr>
+<tr><td>23</td><td>1744,1232</td><td>True</td><td>True</td><td>10.0, -29.0</td><td>0.606</td><td>0.344</td><td>18.40 / 14.97</td><td>0.606 / -0.07916734367609024 / -0.08822433650493622</td><td><img src='patches/patch_023/query.png'></td><td><img src='patches/patch_023/render.png'></td><td><img src='patches/patch_023/dom.png'></td><td><img src='patches/patch_023/overlay_after.png'></td><td><img src='patches/patch_023/edge_overlay_after.png'></td></tr>
+<tr><td>24</td><td>4304,1744</td><td>True</td><td>True</td><td>40.0, 42.0</td><td>0.571</td><td>0.191</td><td>30.18 / 27.46</td><td>0.571 / -0.06271529942750931 / -0.07618635147809982</td><td><img src='patches/patch_024/query.png'></td><td><img src='patches/patch_024/render.png'></td><td><img src='patches/patch_024/dom.png'></td><td><img src='patches/patch_024/overlay_after.png'></td><td><img src='patches/patch_024/edge_overlay_after.png'></td></tr>
+<tr><td>25</td><td>3792,3280</td><td>True</td><td>True</td><td>-4.0, 71.0</td><td>0.856</td><td>0.152</td><td>24.67 / 23.08</td><td>0.856 / 0.04148256778717041 / 0.034510426223278046</td><td><img src='patches/patch_025/query.png'></td><td><img src='patches/patch_025/render.png'></td><td><img src='patches/patch_025/dom.png'></td><td><img src='patches/patch_025/overlay_after.png'></td><td><img src='patches/patch_025/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>26</td><td>3280,208</td><td>True</td><td>False</td><td>61.0, -26.0</td><td>0.849</td><td>0.016</td><td>34.67 / 14.95</td><td>0.849 / -0.47941693663597107 / -0.4953050911426544</td><td><img src='patches/patch_026/query.png'></td><td><img src='patches/patch_026/render.png'></td><td><img src='patches/patch_026/dom.png'></td><td><img src='patches/patch_026/overlay_after.png'></td><td><img src='patches/patch_026/edge_overlay_after.png'></td></tr>
+<tr class='low'><td>27</td><td>4304,1232</td><td>True</td><td>False</td><td>61.0, 29.0</td><td>0.823</td><td>-0.003</td><td>40.30 / 28.36</td><td>0.823 / -0.0033548090141266584 / 0.0332329161465168</td><td><img src='patches/patch_027/query.png'></td><td><img src='patches/patch_027/render.png'></td><td><img src='patches/patch_027/dom.png'></td><td><img src='patches/patch_027/overlay_after.png'></td><td><img src='patches/patch_027/edge_overlay_after.png'></td></tr>
+<tr><td>28</td><td>4304,3280</td><td>True</td><td>True</td><td>19.0, 80.0</td><td>0.282</td><td>0.059</td><td>43.68 / 25.33</td><td>0.282 / 0.1094454899430275 / 0.1263902485370636</td><td><img src='patches/patch_028/query.png'></td><td><img src='patches/patch_028/render.png'></td><td><img src='patches/patch_028/dom.png'></td><td><img src='patches/patch_028/overlay_after.png'></td><td><img src='patches/patch_028/edge_overlay_after.png'></td></tr>
+<tr><td>29</td><td>3792,1232</td><td>True</td><td>True</td><td>36.0, 22.0</td><td>0.424</td><td>0.170</td><td>28.97 / 19.64</td><td>0.424 / -0.04677655175328255 / -0.06694318354129791</td><td><img src='patches/patch_029/query.png'></td><td><img src='patches/patch_029/render.png'></td><td><img src='patches/patch_029/dom.png'></td><td><img src='patches/patch_029/overlay_after.png'></td><td><img src='patches/patch_029/edge_overlay_after.png'></td></tr>
+<tr><td>30</td><td>3792,720</td><td>True</td><td>True</td><td>57.0, 8.0</td><td>0.669</td><td>0.042</td><td>31.08 / 19.72</td><td>0.669 / -0.08328874409198761 / -0.11356912553310394</td><td><img src='patches/patch_030/query.png'></td><td><img src='patches/patch_030/render.png'></td><td><img src='patches/patch_030/dom.png'></td><td><img src='patches/patch_030/overlay_after.png'></td><td><img src='patches/patch_030/edge_overlay_after.png'></td></tr>
+<tr><td>31</td><td>1232,1744</td><td>True</td><td>True</td><td>-16.0, -37.0</td><td>0.589</td><td>0.376</td><td>22.81 / 13.46</td><td>0.589 / 0.048540160059928894 / 0.10149704664945602</td><td><img src='patches/patch_031/query.png'></td><td><img src='patches/patch_031/render.png'></td><td><img src='patches/patch_031/dom.png'></td><td><img src='patches/patch_031/overlay_after.png'></td><td><img src='patches/patch_031/edge_overlay_after.png'></td></tr>
+</table></body></html>

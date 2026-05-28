@@ -1,0 +1,30 @@
+{
+  "candidate": "em1_np0p5_ym0p25",
+  "depth_max": 410.0,
+  "depth_min": 330.0,
+  "edge_chamfer": 4.762845516204834,
+  "edge_overlap_count": 803,
+  "edge_overlap_ratio": 0.48784933171324424,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    28.94999999999999
+  ],
+  "image": "0002.JPG",
+  "objective": 4.27499618449159,
+  "offset_alt_m": 0.0,
+  "offset_east_m": -1.0,
+  "offset_north_m": 0.5,
+  "passes_strict_visual_gate": false,
+  "query_edge_count": 1773,
+  "render_edge_count": 1646,
+  "render_time_sec": 13.84585417190101,
+  "safe_output_worse_than_initial": null,
+  "translation_lon_lat_alt": [
+    114.43859765036501,
+    30.388645775705264,
+    391.443
+  ],
+  "valid_depth_ratio": 1.0,
+  "yaw_offset_deg": -0.25
+}

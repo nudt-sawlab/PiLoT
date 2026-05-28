@@ -1,0 +1,41 @@
+{
+  "alt_offset_m": 0.0,
+  "candidate": "north_plus_1m",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "east_offset_m": 0.0,
+  "edge_chamfer": 4.645458698272705,
+  "edge_overlap_count": 911,
+  "edge_overlap_ratio": 0.6021150033046927,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.2
+  ],
+  "loss_by_level": [
+    0.14939579367637634,
+    0.19436246156692505,
+    0.11992914974689484
+  ],
+  "north_offset_m": 1.0,
+  "num_valid_by_level": [
+    498,
+    498,
+    490
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 1513,
+  "render_time_sec": 54.135268950999944,
+  "torch_feature_loss": 0.15456247329711914,
+  "translation_lon_lat_alt": [
+    114.43686065609505,
+    30.391369989509986,
+    391.462
+  ],
+  "valid_depth_ratio": 0.9999660915798612,
+  "valid_ratio_by_level": [
+    0.9960000514984131,
+    0.9960000514984131,
+    0.9800000190734863
+  ]
+}

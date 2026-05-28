@@ -1,0 +1,14 @@
+{
+  "description": "heuristic RGB proxy that downweights low-texture, vegetation-like, and water-like areas",
+  "heuristic": true,
+  "max": 1.0,
+  "mean": 0.7840213179588318,
+  "min": 0.25,
+  "non_one_ratio": 0.4223090277777778,
+  "shape": [
+    144,
+    256
+  ],
+  "source_p10_key": "low_texture_vegetation_water_downweighted_loss",
+  "std": 0.26909926533699036
+}

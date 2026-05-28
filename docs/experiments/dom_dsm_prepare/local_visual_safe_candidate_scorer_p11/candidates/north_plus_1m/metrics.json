@@ -1,0 +1,25 @@
+{
+  "candidate": "north_plus_1m",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "One-step local diagnostic candidate.",
+  "edge_chamfer": 3.5814857482910156,
+  "edge_overlap_count": 471,
+  "edge_overlap_ratio": 1.0466666666666666,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.19999999999999
+  ],
+  "query_edge_count": 597,
+  "render_edge_count": 450,
+  "render_time_sec": 15.156467950029764,
+  "source": "local_grid",
+  "stage": "one_step",
+  "translation_lon_lat_alt": [
+    114.43686065609505,
+    30.391369989509986,
+    391.462
+  ],
+  "valid_depth_ratio": 0.9999728732638888
+}

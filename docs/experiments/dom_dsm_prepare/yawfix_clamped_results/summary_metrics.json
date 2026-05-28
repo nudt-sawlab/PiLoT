@@ -1,0 +1,223 @@
+{
+  "back_project_time_sec": 2.529357433319092,
+  "best_by_edge_chamfer": "keep_initial",
+  "best_by_edge_overlap_ratio": "keep_initial",
+  "checkpoint_path": "data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt",
+  "clamp_thresholds": {
+    "max_euler_delta_pitch_roll_yaw": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "max_trans_delta_lon_lat_alt": [
+      2e-05,
+      2e-05,
+      1.0
+    ]
+  },
+  "config_path": "configs/caiwangcun_domdsm_16x9.yaml",
+  "failure_stage": null,
+  "initial_pose": {
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "image_name": "0000.jpg",
+    "pose_format": "image_name lon lat alt roll pitch yaw",
+    "translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ]
+  },
+  "localizer_init_time_sec": 142.48547506332397,
+  "output_dir": "/mnt/d/aiproject/PiLoT_work/outputs/exif_test_16x9_yawfix_clamped",
+  "points_3d_count": 500,
+  "pose_file_path": "data_caiwangcun/query/poses/exif_test_16x9_yawfix.txt",
+  "query_image_for_refine_shape": [
+    288,
+    512,
+    3
+  ],
+  "query_image_path": "data_caiwangcun/query/images/exif_test_16x9/0000.jpg",
+  "query_image_shape": [
+    396,
+    704,
+    3
+  ],
+  "query_resize_ratio": 7.5,
+  "raw_pose_delta_lon_lat_alt_roll_pitch_yaw": [
+    -0.00013685170053179263,
+    -2.167469277836176e-05,
+    4.097174058027576,
+    -180.00011105653073,
+    179.99995341015875,
+    -173.99992977988015
+  ],
+  "raw_refined_pose": {
+    "euler_pitch_roll_yaw": [
+      179.99995341015875,
+      -0.0001110565307272474,
+      -144.79992977988016
+    ],
+    "image_name": "0000.jpg",
+    "pose_format": "image_name lon lat alt roll pitch yaw",
+    "translation_lon_lat_alt": [
+      114.43672403989947,
+      30.39133929980722,
+      395.55917405802757
+    ]
+  },
+  "refine_color_shape": [
+    288,
+    512,
+    3
+  ],
+  "render_camera_gs": [
+    512.0,
+    288.0,
+    256.0,
+    144.0,
+    360.0,
+    360.0
+  ],
+  "render_shape": [
+    288,
+    512,
+    3
+  ],
+  "render_stats": {
+    "depth_max": 380.0,
+    "depth_min": 360.0,
+    "valid_depth_ratio": 0.9999932183159722
+  },
+  "render_time_sec": 108.14879751205444,
+  "run_query_success": true,
+  "run_query_time_sec": 5.669088840484619,
+  "strategy_metrics": [
+    {
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Do not accept any refinement update.",
+      "edge_chamfer": 6.274406433105469,
+      "edge_overlap_count": 1001,
+      "edge_overlap_ratio": 0.6343472750316856,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2132,
+      "render_edge_count": 1578,
+      "render_time_sec": 114.2418007850647,
+      "strategy": "keep_initial",
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999932183159722
+    },
+    {
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Use the raw pose returned by localizer.run_query().",
+      "edge_chamfer": 9.99929428100586,
+      "edge_overlap_count": 507,
+      "edge_overlap_ratio": 0.31866750471401634,
+      "euler_pitch_roll_yaw": [
+        179.99995341015875,
+        -0.0001110565307272474,
+        -144.79992977988016
+      ],
+      "query_edge_count": 2132,
+      "render_edge_count": 1591,
+      "render_time_sec": 116.99833130836487,
+      "strategy": "raw_refined",
+      "translation_lon_lat_alt": [
+        114.43672403989947,
+        30.39133929980722,
+        395.55917405802757
+      ],
+      "valid_depth_ratio": 0.9988064236111112
+    },
+    {
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "description": "Accept translation update only; keep initial euler.",
+      "edge_chamfer": 7.723006248474121,
+      "edge_overlap_count": 461,
+      "edge_overlap_ratio": 0.32695035460992905,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "query_edge_count": 2132,
+      "render_edge_count": 1410,
+      "render_time_sec": 118.90744996070862,
+      "strategy": "clamp_translation_only",
+      "translation_lon_lat_alt": [
+        114.43672403989947,
+        30.39133929980722,
+        395.55917405802757
+      ],
+      "valid_depth_ratio": 0.9981689453125
+    },
+    {
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "description": "Accept euler update only; keep initial translation.",
+      "edge_chamfer": 11.15369701385498,
+      "edge_overlap_count": 379,
+      "edge_overlap_ratio": 0.2155858930602958,
+      "euler_pitch_roll_yaw": [
+        179.99995341015875,
+        -0.0001110565307272474,
+        -144.79992977988016
+      ],
+      "query_edge_count": 2132,
+      "render_edge_count": 1758,
+      "render_time_sec": 110.46884989738464,
+      "strategy": "clamp_rotation_only",
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "depth_max": 420.0,
+      "depth_min": 340.0,
+      "description": "Clamp lon/lat/alt and pitch/roll/yaw deltas around the initial pose.",
+      "edge_chamfer": 22.261497497558594,
+      "edge_overlap_count": 266,
+      "edge_overlap_ratio": 0.124765478424015,
+      "euler_pitch_roll_yaw": [
+        5.0,
+        175.0,
+        24.2
+      ],
+      "query_edge_count": 2132,
+      "render_edge_count": 2525,
+      "render_time_sec": 123.57766127586365,
+      "strategy": "clamp_small_delta",
+      "translation_lon_lat_alt": [
+        114.4368408916,
+        30.3913409745,
+        392.462
+      ],
+      "valid_depth_ratio": 1.0
+    }
+  ],
+  "torch": {
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce GTX 1080",
+    "version": "2.4.1+cu124"
+  },
+  "traceback": null
+}

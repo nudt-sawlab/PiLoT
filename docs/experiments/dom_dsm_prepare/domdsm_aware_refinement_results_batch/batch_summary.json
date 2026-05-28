@@ -1,0 +1,31 @@
+{
+  "alt_drift_stats": {
+    "max": 4.097191599488269,
+    "mean": 4.097191599488269,
+    "median": 4.097191599488269,
+    "min": 4.097191599488269
+  },
+  "batch_note": "pose file has only one image; batch evaluation not yet available",
+  "failures": [],
+  "improve_rate": 0.0,
+  "initial_mean_chamfer": 5.493693828582764,
+  "mean_translation_update_m": 13.988042196060404,
+  "median_chamfer_delta": 0.670290470123291,
+  "median_overlap_delta": -0.23334455218585698,
+  "num_images": 1,
+  "per_image": [
+    {
+      "alt_drift_m": 4.097191599488269,
+      "chamfer_delta": 0.670290470123291,
+      "image": "0000.jpg",
+      "initial_chamfer": 5.493693828582764,
+      "initial_overlap": 0.629277566539924,
+      "overlap_delta": -0.23334455218585698,
+      "refined_chamfer": 6.163984298706055,
+      "refined_overlap": 0.39593301435406697,
+      "translation_update_m": 13.988042196060404
+    }
+  ],
+  "pose_file_image_count": 1,
+  "refined_mean_chamfer": 6.163984298706055
+}

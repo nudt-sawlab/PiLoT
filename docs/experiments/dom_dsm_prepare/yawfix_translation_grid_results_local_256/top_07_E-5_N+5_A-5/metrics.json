@@ -1,0 +1,26 @@
+{
+  "alt_offset_m": -5.0,
+  "candidate": "grid",
+  "candidate_key": "grid:E-5.000:N+5.000:A-5.000",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "east_offset_m": -5.0,
+  "edge_chamfer": 3.2729263305664062,
+  "edge_overlap_count": 392,
+  "edge_overlap_ratio": 1.1495601173020529,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.2
+  ],
+  "north_offset_m": 5.0,
+  "query_edge_count": 597,
+  "render_edge_count": 341,
+  "render_time_sec": 10.993611830985174,
+  "translation_lon_lat_alt": [
+    114.43680771930727,
+    30.39140502872337,
+    386.462
+  ],
+  "valid_depth_ratio": 1.0
+}

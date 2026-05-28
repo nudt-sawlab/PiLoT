@@ -1,0 +1,11 @@
+# P11 selected safe pose
+method: coarse_em3_np0
+policy: strict_visual_gate_then_best_chamfer
+lon lat alt: 114.43682969475384 30.39136036200773 391.462
+euler_pitch_roll_yaw: 0.0 180.0 29.19999999999999
+edge_chamfer: 2.0891294479370117
+edge_overlap_ratio: 1.2773892773892774
+initial_edge_chamfer: 2.9222419261932373
+initial_edge_overlap_ratio: 0.963265306122449
+safe_output_worse_than_initial: False
+0000.jpg 114.43682969475384 30.39136036200773 391.462 180.0 0.0 29.19999999999999

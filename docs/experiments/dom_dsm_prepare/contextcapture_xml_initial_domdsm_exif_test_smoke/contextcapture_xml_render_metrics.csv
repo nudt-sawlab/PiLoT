@@ -1,0 +1,3 @@
+image,xml_photo_id,rotation_convention,distortion_enabled,render_width,render_height,source_query_width,source_query_height,query_resized_for_overlay,match_distance_xy_m,match_distance_z_m,edge_chamfer,edge_overlap_ratio,query_edge_count,render_edge_count,edge_overlap_count,valid_depth_ratio,depth_min,depth_max,render_time_sec
+0000.jpg,7,R_xml,True,5280,3956,5280,3956,False,0.2816910688575215,0.14517539599228257,25.927614212036133,0.2190572148254768,393239,138950,30438,0.9895642790391274,360.0,390.0,11.706982309999148
+0000.jpg,7,R_xml_transpose,True,5280,3956,5280,3956,False,0.2816910688575215,0.14517539599228257,23.25981330871582,0.2539837002797713,393239,139757,35496,0.9850848442718387,360.0,380.0,15.926528787997086

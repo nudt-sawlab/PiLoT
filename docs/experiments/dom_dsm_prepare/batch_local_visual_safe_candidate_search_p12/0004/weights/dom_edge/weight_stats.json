@@ -1,0 +1,12 @@
+{
+  "max": 3.0,
+  "mean": 1.594644546508789,
+  "min": 1.0,
+  "non_one_ratio": 0.9796549479166666,
+  "shape": [
+    144,
+    256
+  ],
+  "source_p10_key": "dom_edge_weighted_loss",
+  "std": 0.48552072048187256
+}

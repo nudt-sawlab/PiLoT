@@ -1,0 +1,58 @@
+{
+  "config_path": "configs/caiwangcun_domdsm.yaml",
+  "image_size": {
+    "height": 288,
+    "width": 512
+  },
+  "initial": {
+    "depth_max": 390.0,
+    "depth_min": 360.0,
+    "edge_chamfer": 31.349480628967285,
+    "edge_overlap_count": 299,
+    "edge_overlap_ratio": 0.11616161616161616,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      -29.2
+    ],
+    "query_edge_count": 2663,
+    "render_edge_count": 2574,
+    "render_time_sec": 54.65156054496765,
+    "translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ],
+    "valid_depth_ratio": 0.9999593098958334
+  },
+  "initial_edge_chamfer": 31.349480628967285,
+  "initial_edge_overlap_ratio": 0.11616161616161616,
+  "initial_valid_depth_ratio": 0.9999593098958334,
+  "output_dir": "/mnt/d/aiproject/PiLoT_work/outputs/exif_test_single_full/visual_check",
+  "query_image_path": "data_caiwangcun/query/images/exif_test/0000.jpg",
+  "refined": {
+    "depth_max": 390.0,
+    "depth_min": 360.0,
+    "edge_chamfer": 30.231738090515137,
+    "edge_overlap_count": 244,
+    "edge_overlap_ratio": 0.09523809523809523,
+    "euler_pitch_roll_yaw": [
+      -179.9999344297537,
+      -9.94896617078202e-05,
+      156.80006429664994
+    ],
+    "query_edge_count": 2663,
+    "render_edge_count": 2562,
+    "render_time_sec": 56.14942765235901,
+    "translation_lon_lat_alt": [
+      114.43672403992267,
+      30.391339299846756,
+      395.55915982834995
+    ],
+    "valid_depth_ratio": 0.9982706705729166
+  },
+  "refined_edge_chamfer": 30.231738090515137,
+  "refined_edge_overlap_ratio": 0.09523809523809523,
+  "refined_valid_depth_ratio": 0.9982706705729166,
+  "run_log_path": "outputs/exif_test_single_full/run_log.json"
+}

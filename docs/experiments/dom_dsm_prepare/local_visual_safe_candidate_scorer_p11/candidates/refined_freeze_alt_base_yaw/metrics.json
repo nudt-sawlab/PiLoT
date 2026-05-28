@@ -1,0 +1,25 @@
+{
+  "candidate": "refined_freeze_alt_base_yaw",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "description": "Raw refined lon/lat with initial alt and base yaw.",
+  "edge_chamfer": 4.132634162902832,
+  "edge_overlap_count": 282,
+  "edge_overlap_ratio": 0.6090712742980562,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.19999999999999
+  ],
+  "query_edge_count": 597,
+  "render_edge_count": 463,
+  "render_time_sec": 18.403849919966888,
+  "source": "corrected_refined",
+  "stage": "raw_refined",
+  "translation_lon_lat_alt": [
+    114.43693006200878,
+    30.3912968360893,
+    391.462
+  ],
+  "valid_depth_ratio": 1.0
+}

@@ -1,0 +1,1704 @@
+{
+  "acceptance_checks": {
+    "all_input_poses_unchanged": true,
+    "candidate_count_is_6": true,
+    "losses_finite_nonzero": {
+      "cuda_cost_mean": true,
+      "cuda_w_loss_mean": true,
+      "torch_feature_loss_total": true
+    },
+    "optimizer_step_called": false
+  },
+  "agreement": {
+    "cuda_cost_matches_torch_top1": true,
+    "cuda_w_loss_matches_torch_top1": true,
+    "diagnosis_branch": "loss parity passed: inspect Jacobian / optimizer_step_cuda / pose update sign, side, and parameter order next",
+    "spearman_torch_vs_cuda_cost": 0.9428571428571428,
+    "spearman_torch_vs_cuda_w_loss": 1.0
+  },
+  "assumptions": {
+    "p4_scale_025": "old P4 line_search/scale_0.25_alt_fixed_initial",
+    "raw_refined_old": "old P4 raw_refined_full",
+    "rebuilt_cuda_refined": "rebuilt P4 raw_refined_full",
+    "reference_features_and_p3d": "fixed initial render"
+  },
+  "candidate_count": 6,
+  "candidates": [
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "initial",
+      "cuda_cost_matches_torch_top1": true,
+      "cuda_cost_mean": 0.036875899881124496,
+      "cuda_cost_sum": 18.43794822692871,
+      "cuda_loss_by_level": {
+        "0": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.036875899881124496,
+            "nonzero_count": 489,
+            "nonzero_mean": 0.03770541399717331,
+            "nonzero_sum": 18.43794822692871,
+            "sum": 18.43794822692871
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.03770541399717331,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.03770541399717331,
+            "nonzero_sum": 0.03770541399717331,
+            "sum": 0.03770541399717331
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.03851481154561043,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.03851481154561043,
+            "nonzero_sum": 19.257404327392578,
+            "sum": 19.257404327392578
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.9160000681877136,
+            "nonzero_count": 458,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 458.0,
+            "sum": 458.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.19293223321437836,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.19293223321437836,
+            "nonzero_sum": 96.46611022949219,
+            "sum": 96.46611022949219
+          }
+        },
+        "1": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.035501718521118164,
+            "nonzero_count": 486,
+            "nonzero_mean": 0.03652440011501312,
+            "nonzero_sum": 17.750858306884766,
+            "sum": 17.750858306884766
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.03652440011501312,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.03652440011501312,
+            "nonzero_sum": 0.03652440011501312,
+            "sum": 0.03652440011501312
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.037634387612342834,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.037634387612342834,
+            "nonzero_sum": 18.81719207763672,
+            "sum": 18.81719207763672
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.8480000495910645,
+            "nonzero_count": 424,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 424.0,
+            "sum": 424.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.22879940271377563,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.22879940271377563,
+            "nonzero_sum": 114.39969635009766,
+            "sum": 114.39969635009766
+          }
+        },
+        "2": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.030335741117596626,
+            "nonzero_count": 477,
+            "nonzero_mean": 0.03179846704006195,
+            "nonzero_sum": 15.167868614196777,
+            "sum": 15.167869567871094
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.03179846704006195,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.03179846704006195,
+            "nonzero_sum": 0.03179846704006195,
+            "sum": 0.03179846704006195
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.03392556309700012,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.03392556309700012,
+            "nonzero_sum": 16.962779998779297,
+            "sum": 16.962779998779297
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.7440000176429749,
+            "nonzero_count": 372,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 372.0,
+            "sum": 372.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.3650735020637512,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.3650735020637512,
+            "nonzero_sum": 182.5367431640625,
+            "sum": 182.5367431640625
+          }
+        }
+      },
+      "cuda_torch_rank_agreement": {
+        "spearman_torch_vs_cuda_cost": 0.9428571428571428,
+        "spearman_torch_vs_cuda_w_loss": 1.0
+      },
+      "cuda_w_loss_matches_torch_top1": true,
+      "cuda_w_loss_mean": 0.03770541399717331,
+      "cuda_w_loss_sum": 0.03770541399717331,
+      "diagnosis_branch": "loss parity passed: inspect Jacobian / optimizer_step_cuda / pose update sign, side, and parameter order next",
+      "east_offset_m": 0.0,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "input_pose_unchanged": true,
+      "north_offset_m": 0.0,
+      "output_euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "output_translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "pose_update_delta_east_north_alt_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pose_update_delta_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rank_cuda_cost": 2,
+      "rank_cuda_w_loss": 2,
+      "rank_torch_feature_loss": 2,
+      "rank_visual_chamfer": 3,
+      "rank_visual_overlap": 4,
+      "source_label": "pose_file_yawfix_initial",
+      "torch_cost2_cost_mean": 0.03851481154561043,
+      "torch_cost2_cost_sum": 19.257404327392578,
+      "torch_cost2_w_loss_mean": 0.19293223321437836,
+      "torch_cost2_w_loss_sum": 96.46611022949219,
+      "torch_feature_loss_by_level": [
+        0.11828811466693878,
+        0.11058511584997177,
+        0.06295517832040787
+      ],
+      "torch_feature_loss_total": 0.09727614372968674,
+      "torch_feature_num_valid_by_level": [
+        489,
+        488,
+        484
+      ],
+      "torch_feature_valid_ratio_by_level": [
+        0.9780000448226929,
+        0.9760000705718994,
+        0.968000054359436
+      ],
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "visual_chamfer": 2.9222419261932373,
+      "visual_metrics": {
+        "candidate": "initial",
+        "depth_max": 380.0,
+        "depth_min": 360.0,
+        "east_north_alt_offset_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "edge_chamfer": 2.9222419261932373,
+        "edge_overlap_count": 472,
+        "edge_overlap_ratio": 0.963265306122449,
+        "euler_pitch_roll_yaw": [
+          0.0,
+          180.0,
+          29.2
+        ],
+        "query_edge_count": 597,
+        "render_edge_count": 490,
+        "render_time_sec": 12.734515109012136,
+        "source_label": "pose_file_yawfix_initial",
+        "translation_lon_lat_alt": [
+          114.4368608916,
+          30.3913609745,
+          391.462
+        ],
+        "valid_depth_ratio": 1.0
+      },
+      "visual_overlap": 0.963265306122449
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "p3_best_overlap",
+      "cuda_cost_matches_torch_top1": true,
+      "cuda_cost_mean": 0.0438922680914402,
+      "cuda_cost_sum": 21.94613265991211,
+      "cuda_loss_by_level": {
+        "0": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.0438922680914402,
+            "nonzero_count": 480,
+            "nonzero_mean": 0.04572111368179321,
+            "nonzero_sum": 21.94613265991211,
+            "sum": 21.94613265991211
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.045721109956502914,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.045721109956502914,
+            "nonzero_sum": 0.045721109956502914,
+            "sum": 0.045721109956502914
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.0462469756603241,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.0462469756603241,
+            "nonzero_sum": 23.12348747253418,
+            "sum": 23.12348747253418
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.8940000534057617,
+            "nonzero_count": 447,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 447.0,
+            "sum": 447.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.1162116751074791,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.1162116751074791,
+            "nonzero_sum": 58.1058349609375,
+            "sum": 58.1058349609375
+          }
+        },
+        "1": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.044458575546741486,
+            "nonzero_count": 475,
+            "nonzero_mean": 0.046798497438430786,
+            "nonzero_sum": 22.22928810119629,
+            "sum": 22.229286193847656
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.046798497438430786,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.046798497438430786,
+            "nonzero_sum": 0.046798497438430786,
+            "sum": 0.046798497438430786
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.04719297215342522,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.04719297215342522,
+            "nonzero_sum": 23.596485137939453,
+            "sum": 23.596485137939453
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.8240000605583191,
+            "nonzero_count": 412,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 412.0,
+            "sum": 412.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.12548694014549255,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.12548694014549255,
+            "nonzero_sum": 62.743465423583984,
+            "sum": 62.743465423583984
+          }
+        },
+        "2": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.031521398574113846,
+            "nonzero_count": 463,
+            "nonzero_mean": 0.034040383994579315,
+            "nonzero_sum": 15.760698318481445,
+            "sum": 15.760699272155762
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.034040387719869614,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.034040387719869614,
+            "nonzero_sum": 0.034040387719869614,
+            "sum": 0.034040387719869614
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.03554035350680351,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.03554035350680351,
+            "nonzero_sum": 17.77017593383789,
+            "sum": 17.77017593383789
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.7200000286102295,
+            "nonzero_count": 360,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 360.0,
+            "sum": 360.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.3325493335723877,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.3325493335723877,
+            "nonzero_sum": 166.274658203125,
+            "sum": 166.274658203125
+          }
+        }
+      },
+      "cuda_torch_rank_agreement": {
+        "spearman_torch_vs_cuda_cost": 0.9428571428571428,
+        "spearman_torch_vs_cuda_w_loss": 1.0
+      },
+      "cuda_w_loss_matches_torch_top1": true,
+      "cuda_w_loss_mean": 0.045721109956502914,
+      "cuda_w_loss_sum": 0.045721109956502914,
+      "diagnosis_branch": "loss parity passed: inspect Jacobian / optimizer_step_cuda / pose update sign, side, and parameter order next",
+      "east_offset_m": -4.99999999962165,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "input_pose_unchanged": true,
+      "north_offset_m": 4.999999999534339,
+      "output_euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "output_translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        391.462
+      ],
+      "pose_update_delta_east_north_alt_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pose_update_delta_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rank_cuda_cost": 6,
+      "rank_cuda_w_loss": 5,
+      "rank_torch_feature_loss": 5,
+      "rank_visual_chamfer": 2,
+      "rank_visual_overlap": 2,
+      "source_label": "docs/experiments/dom_dsm_prepare/torch_feature_loss_diagnosis/summary_metrics.json",
+      "torch_cost2_cost_mean": 0.0462469756603241,
+      "torch_cost2_cost_sum": 23.12348747253418,
+      "torch_cost2_w_loss_mean": 0.1162116751074791,
+      "torch_cost2_w_loss_sum": 58.1058349609375,
+      "torch_feature_loss_by_level": [
+        0.17584693431854248,
+        0.19231583178043365,
+        0.08160507678985596
+      ],
+      "torch_feature_loss_total": 0.14992260932922363,
+      "torch_feature_num_valid_by_level": [
+        480,
+        479,
+        475
+      ],
+      "torch_feature_valid_ratio_by_level": [
+        0.9600000381469727,
+        0.9580000638961792,
+        0.9500000476837158
+      ],
+      "translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        391.462
+      ],
+      "visual_chamfer": 2.911357879638672,
+      "visual_metrics": {
+        "candidate": "p3_best_overlap",
+        "depth_max": 380.0,
+        "depth_min": 360.0,
+        "east_north_alt_offset_m": [
+          -4.99999999962165,
+          4.999999999534339,
+          0.0
+        ],
+        "edge_chamfer": 2.911357879638672,
+        "edge_overlap_count": 543,
+        "edge_overlap_ratio": 1.2454128440366972,
+        "euler_pitch_roll_yaw": [
+          0.0,
+          180.0,
+          29.2
+        ],
+        "query_edge_count": 597,
+        "render_edge_count": 436,
+        "render_time_sec": 12.890137303998927,
+        "source_label": "docs/experiments/dom_dsm_prepare/torch_feature_loss_diagnosis/summary_metrics.json",
+        "translation_lon_lat_alt": [
+          114.43680771930727,
+          30.39140502872337,
+          391.462
+        ],
+        "valid_depth_ratio": 0.9999186197916666
+      },
+      "visual_overlap": 1.2454128440366972
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "p3_best_chamfer",
+      "cuda_cost_matches_torch_top1": true,
+      "cuda_cost_mean": 0.040451426059007645,
+      "cuda_cost_sum": 20.225711822509766,
+      "cuda_loss_by_level": {
+        "0": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.040451426059007645,
+            "nonzero_count": 483,
+            "nonzero_mean": 0.04187517985701561,
+            "nonzero_sum": 20.225711822509766,
+            "sum": 20.225711822509766
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.04187517985701561,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.04187517985701561,
+            "nonzero_sum": 0.04187517985701561,
+            "sum": 0.04187517985701561
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.04280642792582512,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.04280642792582512,
+            "nonzero_sum": 21.403213500976562,
+            "sum": 21.403213500976562
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.9100000262260437,
+            "nonzero_count": 455,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 455.0,
+            "sum": 455.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.14677754044532776,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.14677754044532776,
+            "nonzero_sum": 73.38876342773438,
+            "sum": 73.38876342773438
+          }
+        },
+        "1": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.038846541196107864,
+            "nonzero_count": 482,
+            "nonzero_mean": 0.040297236293554306,
+            "nonzero_sum": 19.423267364501953,
+            "sum": 19.423269271850586
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.040297240018844604,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.040297240018844604,
+            "nonzero_sum": 0.040297240018844604,
+            "sum": 0.040297240018844604
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.041606493294239044,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.041606493294239044,
+            "nonzero_sum": 20.803245544433594,
+            "sum": 20.803245544433594
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.8440000414848328,
+            "nonzero_count": 422,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 422.0,
+            "sum": 422.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.18052110075950623,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.18052110075950623,
+            "nonzero_sum": 90.26054382324219,
+            "sum": 90.26054382324219
+          }
+        },
+        "2": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.03011736460030079,
+            "nonzero_count": 470,
+            "nonzero_mean": 0.03203974664211273,
+            "nonzero_sum": 15.05868148803711,
+            "sum": 15.05868148803711
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.03203974664211273,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.03203974664211273,
+            "nonzero_sum": 0.03203974664211273,
+            "sum": 0.03203974664211273
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.034361567348241806,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.034361567348241806,
+            "nonzero_sum": 17.180782318115234,
+            "sum": 17.180782318115234
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.734000027179718,
+            "nonzero_count": 367,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 367.0,
+            "sum": 367.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.35720109939575195,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.35720109939575195,
+            "nonzero_sum": 178.6005401611328,
+            "sum": 178.6005401611328
+          }
+        }
+      },
+      "cuda_torch_rank_agreement": {
+        "spearman_torch_vs_cuda_cost": 0.9428571428571428,
+        "spearman_torch_vs_cuda_w_loss": 1.0
+      },
+      "cuda_w_loss_matches_torch_top1": true,
+      "cuda_w_loss_mean": 0.04187517985701561,
+      "cuda_w_loss_sum": 0.04187517985701561,
+      "diagnosis_branch": "loss parity passed: inspect Jacobian / optimizer_step_cuda / pose update sign, side, and parameter order next",
+      "east_offset_m": -5.000000000203727,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "input_pose_unchanged": true,
+      "north_offset_m": 4.656612873077393e-10,
+      "output_euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "output_translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        391.462
+      ],
+      "pose_update_delta_east_north_alt_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pose_update_delta_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rank_cuda_cost": 4,
+      "rank_cuda_w_loss": 4,
+      "rank_torch_feature_loss": 4,
+      "rank_visual_chamfer": 1,
+      "rank_visual_overlap": 1,
+      "source_label": "docs/experiments/dom_dsm_prepare/torch_feature_loss_diagnosis/summary_metrics.json",
+      "torch_cost2_cost_mean": 0.04280642792582512,
+      "torch_cost2_cost_sum": 21.403213500976562,
+      "torch_cost2_w_loss_mean": 0.14677754044532776,
+      "torch_cost2_w_loss_sum": 73.38876342773438,
+      "torch_feature_loss_by_level": [
+        0.14795739948749542,
+        0.13871242105960846,
+        0.06927787512540817
+      ],
+      "torch_feature_loss_total": 0.11864922940731049,
+      "torch_feature_num_valid_by_level": [
+        483,
+        482,
+        478
+      ],
+      "torch_feature_valid_ratio_by_level": [
+        0.9660000205039978,
+        0.9640000462532043,
+        0.956000030040741
+      ],
+      "translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        391.462
+      ],
+      "visual_chamfer": 2.203321933746338,
+      "visual_metrics": {
+        "candidate": "p3_best_chamfer",
+        "depth_max": 380.0,
+        "depth_min": 360.0,
+        "east_north_alt_offset_m": [
+          -5.000000000203727,
+          4.656612873077393e-10,
+          0.0
+        ],
+        "edge_chamfer": 2.203321933746338,
+        "edge_overlap_count": 612,
+        "edge_overlap_ratio": 1.3421052631578947,
+        "euler_pitch_roll_yaw": [
+          0.0,
+          180.0,
+          29.2
+        ],
+        "query_edge_count": 597,
+        "render_edge_count": 456,
+        "render_time_sec": 12.851272019994212,
+        "source_label": "docs/experiments/dom_dsm_prepare/torch_feature_loss_diagnosis/summary_metrics.json",
+        "translation_lon_lat_alt": [
+          114.43680889685692,
+          30.39135995367542,
+          391.462
+        ],
+        "valid_depth_ratio": 0.9997829861111112
+      },
+      "visual_overlap": 1.3421052631578947
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "p4_scale_025",
+      "cuda_cost_matches_torch_top1": true,
+      "cuda_cost_mean": 0.03928159549832344,
+      "cuda_cost_sum": 19.640796661376953,
+      "cuda_loss_by_level": {
+        "0": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.03928159549832344,
+            "nonzero_count": 488,
+            "nonzero_mean": 0.04024753347039223,
+            "nonzero_sum": 19.640796661376953,
+            "sum": 19.640796661376953
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.04024753347039223,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.04024753347039223,
+            "nonzero_sum": 0.04024753347039223,
+            "sum": 0.04024753347039223
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.04082157462835312,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.04082157462835312,
+            "nonzero_sum": 20.410785675048828,
+            "sum": 20.410785675048828
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.9100000262260437,
+            "nonzero_count": 455,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 455.0,
+            "sum": 455.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.1683853268623352,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.1683853268623352,
+            "nonzero_sum": 84.19265747070312,
+            "sum": 84.19265747070312
+          }
+        },
+        "1": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.037121422588825226,
+            "nonzero_count": 487,
+            "nonzero_mean": 0.0381123386323452,
+            "nonzero_sum": 18.56070899963379,
+            "sum": 18.560710906982422
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.0381123423576355,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.0381123423576355,
+            "nonzero_sum": 0.0381123423576355,
+            "sum": 0.0381123423576355
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.03909795731306076,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.03909795731306076,
+            "nonzero_sum": 19.54897689819336,
+            "sum": 19.54897689819336
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.8480000495910645,
+            "nonzero_count": 424,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 424.0,
+            "sum": 424.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.20812156796455383,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.20812156796455383,
+            "nonzero_sum": 104.06077575683594,
+            "sum": 104.06077575683594
+          }
+        },
+        "2": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.030549732968211174,
+            "nonzero_count": 475,
+            "nonzero_mean": 0.03215761110186577,
+            "nonzero_sum": 15.274866104125977,
+            "sum": 15.274866104125977
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.03215761110186577,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.03215761110186577,
+            "nonzero_sum": 0.03215761110186577,
+            "sum": 0.03215761110186577
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.034005746245384216,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.034005746245384216,
+            "nonzero_sum": 17.002872467041016,
+            "sum": 17.002872467041016
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.7380000352859497,
+            "nonzero_count": 369,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 369.0,
+            "sum": 369.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.3644324243068695,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.3644324243068695,
+            "nonzero_sum": 182.21620178222656,
+            "sum": 182.21620178222656
+          }
+        }
+      },
+      "cuda_torch_rank_agreement": {
+        "spearman_torch_vs_cuda_cost": 0.9428571428571428,
+        "spearman_torch_vs_cuda_w_loss": 1.0
+      },
+      "cuda_w_loss_matches_torch_top1": true,
+      "cuda_w_loss_mean": 0.04024753347039223,
+      "cuda_w_loss_sum": 0.04024753347039223,
+      "diagnosis_branch": "loss parity passed: inspect Jacobian / optimizer_step_cuda / pose update sign, side, and parameter order next",
+      "east_offset_m": -3.301954568247311,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "input_pose_unchanged": true,
+      "north_offset_m": -0.5262919119559228,
+      "output_euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "output_translation_lon_lat_alt": [
+        114.43682667868978,
+        30.391355555832323,
+        391.462
+      ],
+      "pose_update_delta_east_north_alt_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pose_update_delta_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rank_cuda_cost": 3,
+      "rank_cuda_w_loss": 3,
+      "rank_torch_feature_loss": 3,
+      "rank_visual_chamfer": 4,
+      "rank_visual_overlap": 3,
+      "source_label": "old_p4:line_search/scale_0.25_alt_fixed_initial",
+      "torch_cost2_cost_mean": 0.04082157462835312,
+      "torch_cost2_cost_sum": 20.410785675048828,
+      "torch_cost2_w_loss_mean": 0.1683853268623352,
+      "torch_cost2_w_loss_sum": 84.19265747070312,
+      "torch_feature_loss_by_level": [
+        0.13718031346797943,
+        0.12175366282463074,
+        0.06592188030481339
+      ],
+      "torch_feature_loss_total": 0.10828529298305511,
+      "torch_feature_num_valid_by_level": [
+        488,
+        487,
+        483
+      ],
+      "torch_feature_valid_ratio_by_level": [
+        0.9760000705718994,
+        0.9740000367164612,
+        0.9660000205039978
+      ],
+      "translation_lon_lat_alt": [
+        114.43682667868978,
+        30.391355555832323,
+        391.462
+      ],
+      "visual_chamfer": 3.0537750720977783,
+      "visual_metrics": {
+        "candidate": "p4_scale_025",
+        "depth_max": 380.0,
+        "depth_min": 360.0,
+        "east_north_alt_offset_m": [
+          -3.301954568247311,
+          -0.5262919119559228,
+          0.0
+        ],
+        "edge_chamfer": 3.0537750720977783,
+        "edge_overlap_count": 511,
+        "edge_overlap_ratio": 1.2342995169082125,
+        "euler_pitch_roll_yaw": [
+          0.0,
+          180.0,
+          29.2
+        ],
+        "query_edge_count": 597,
+        "render_edge_count": 414,
+        "render_time_sec": 13.28057481799624,
+        "source_label": "old_p4:line_search/scale_0.25_alt_fixed_initial",
+        "translation_lon_lat_alt": [
+          114.43682667868978,
+          30.391355555832323,
+          391.462
+        ],
+        "valid_depth_ratio": 0.9998643663194444
+      },
+      "visual_overlap": 1.2342995169082125
+    },
+    {
+      "alt_offset_m": -3.4362664359509836,
+      "candidate": "rebuilt_cuda_refined",
+      "cuda_cost_matches_torch_top1": true,
+      "cuda_cost_mean": 0.029845822602510452,
+      "cuda_cost_sum": 14.922910690307617,
+      "cuda_loss_by_level": {
+        "0": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.029845822602510452,
+            "nonzero_count": 486,
+            "nonzero_mean": 0.03070557676255703,
+            "nonzero_sum": 14.922910690307617,
+            "sum": 14.922910690307617
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.03070557676255703,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.03070557676255703,
+            "nonzero_sum": 0.03070557676255703,
+            "sum": 0.03070557676255703
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.031985849142074585,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.031985849142074585,
+            "nonzero_sum": 15.992923736572266,
+            "sum": 15.992923736572266
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.9040000438690186,
+            "nonzero_count": 452,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 452.0,
+            "sum": 452.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.2751966416835785,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.2751966416835785,
+            "nonzero_sum": 137.5983123779297,
+            "sum": 137.5983123779297
+          }
+        },
+        "1": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.029814288020133972,
+            "nonzero_count": 483,
+            "nonzero_mean": 0.030863653868436813,
+            "nonzero_sum": 14.907144546508789,
+            "sum": 14.907143592834473
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.030863652005791664,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.030863652005791664,
+            "nonzero_sum": 0.030863652005791664,
+            "sum": 0.030863652005791664
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.032431915402412415,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.032431915402412415,
+            "nonzero_sum": 16.215957641601562,
+            "sum": 16.215957641601562
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.8460000157356262,
+            "nonzero_count": 423,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 423.0,
+            "sum": 423.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.3023550510406494,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.3023550510406494,
+            "nonzero_sum": 151.17752075195312,
+            "sum": 151.17752075195312
+          }
+        },
+        "2": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.031190190464258194,
+            "nonzero_count": 475,
+            "nonzero_mean": 0.03283177316188812,
+            "nonzero_sum": 15.595093727111816,
+            "sum": 15.595094680786133
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.03283177688717842,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.03283177688717842,
+            "nonzero_sum": 0.03283177688717842,
+            "sum": 0.03283177688717842
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.03509092330932617,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.03509092330932617,
+            "nonzero_sum": 17.545461654663086,
+            "sum": 17.545461654663086
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.7360000610351562,
+            "nonzero_count": 368,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 368.0,
+            "sum": 368.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.34469741582870483,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.34469741582870483,
+            "nonzero_sum": 172.34869384765625,
+            "sum": 172.34869384765625
+          }
+        }
+      },
+      "cuda_torch_rank_agreement": {
+        "spearman_torch_vs_cuda_cost": 0.9428571428571428,
+        "spearman_torch_vs_cuda_w_loss": 1.0
+      },
+      "cuda_w_loss_matches_torch_top1": true,
+      "cuda_w_loss_mean": 0.03070557676255703,
+      "cuda_w_loss_sum": 0.03070557676255703,
+      "diagnosis_branch": "loss parity passed: inspect Jacobian / optimizer_step_cuda / pose update sign, side, and parameter order next",
+      "east_offset_m": 3.417825106094824,
+      "euler_pitch_roll_yaw": [
+        -179.25179590782628,
+        0.024676225190347293,
+        -149.5261148280894
+      ],
+      "input_pose_unchanged": true,
+      "north_offset_m": -8.757484937552363,
+      "output_euler_pitch_roll_yaw": [
+        -179.25179590782628,
+        0.024676225190347293,
+        -149.5261148280894
+      ],
+      "output_translation_lon_lat_alt": [
+        114.43689849578722,
+        30.39128272347114,
+        388.025733564049
+      ],
+      "pose_update_delta_east_north_alt_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pose_update_delta_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rank_cuda_cost": 1,
+      "rank_cuda_w_loss": 1,
+      "rank_torch_feature_loss": 1,
+      "rank_visual_chamfer": 5,
+      "rank_visual_overlap": 5,
+      "source_label": "rebuilt_p4:raw_refined_full",
+      "torch_cost2_cost_mean": 0.031985849142074585,
+      "torch_cost2_cost_sum": 15.992923736572266,
+      "torch_cost2_w_loss_mean": 0.2751966416835785,
+      "torch_cost2_w_loss_sum": 137.5983123779297,
+      "torch_feature_loss_by_level": [
+        0.08368071913719177,
+        0.07917392998933792,
+        0.07136335223913193
+      ],
+      "torch_feature_loss_total": 0.07807266712188721,
+      "torch_feature_num_valid_by_level": [
+        486,
+        485,
+        482
+      ],
+      "torch_feature_valid_ratio_by_level": [
+        0.9720000624656677,
+        0.9700000286102295,
+        0.9640000462532043
+      ],
+      "translation_lon_lat_alt": [
+        114.43689849578722,
+        30.39128272347114,
+        388.025733564049
+      ],
+      "visual_chamfer": 5.728789806365967,
+      "visual_metrics": {
+        "candidate": "rebuilt_cuda_refined",
+        "depth_max": 380.0,
+        "depth_min": 360.0,
+        "east_north_alt_offset_m": [
+          3.417825106094824,
+          -8.757484937552363,
+          -3.4362664359509836
+        ],
+        "edge_chamfer": 5.728789806365967,
+        "edge_overlap_count": 255,
+        "edge_overlap_ratio": 0.5930232558139535,
+        "euler_pitch_roll_yaw": [
+          -179.25179590782628,
+          0.024676225190347293,
+          -149.5261148280894
+        ],
+        "query_edge_count": 597,
+        "render_edge_count": 430,
+        "render_time_sec": 12.427636986976722,
+        "source_label": "rebuilt_p4:raw_refined_full",
+        "translation_lon_lat_alt": [
+          114.43689849578722,
+          30.39128272347114,
+          388.025733564049
+        ],
+        "valid_depth_ratio": 1.0
+      },
+      "visual_overlap": 0.5930232558139535
+    },
+    {
+      "alt_offset_m": 4.0971829335317125,
+      "candidate": "raw_refined_old",
+      "cuda_cost_matches_torch_top1": true,
+      "cuda_cost_mean": 0.04249554127454758,
+      "cuda_cost_sum": 21.247770309448242,
+      "cuda_loss_by_level": {
+        "0": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.04249554127454758,
+            "nonzero_count": 452,
+            "nonzero_mean": 0.047008343040943146,
+            "nonzero_sum": 21.247770309448242,
+            "sum": 21.247770309448242
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.047008343040943146,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.047008343040943146,
+            "nonzero_sum": 0.047008343040943146,
+            "sum": 0.047008343040943146
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.04925756901502609,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.04925756901502609,
+            "nonzero_sum": 24.6287841796875,
+            "sum": 24.6287841796875
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.8460000157356262,
+            "nonzero_count": 423,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 423.0,
+            "sum": 423.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.10403737425804138,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.10403737425804138,
+            "nonzero_sum": 52.01868438720703,
+            "sum": 52.01868438720703
+          }
+        },
+        "1": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.047322891652584076,
+            "nonzero_count": 448,
+            "nonzero_mean": 0.05281572788953781,
+            "nonzero_sum": 23.66144561767578,
+            "sum": 23.66144561767578
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.05281572788953781,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.05281572788953781,
+            "nonzero_sum": 0.05281572788953781,
+            "sum": 0.05281572788953781
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.054804906249046326,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.054804906249046326,
+            "nonzero_sum": 27.40245246887207,
+            "sum": 27.40245246887207
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.796000063419342,
+            "nonzero_count": 398,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 398.0,
+            "sum": 398.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.09208104014396667,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.09208104014396667,
+            "nonzero_sum": 46.04051971435547,
+            "sum": 46.04051971435547
+          }
+        },
+        "2": {
+          "cuda_cost": {
+            "finite_count": 500,
+            "mean": 0.03447997570037842,
+            "nonzero_count": 437,
+            "nonzero_mean": 0.03945076838135719,
+            "nonzero_sum": 17.239986419677734,
+            "sum": 17.239986419677734
+          },
+          "cuda_w_loss": {
+            "finite_count": 1,
+            "mean": 0.03945076838135719,
+            "nonzero_count": 1,
+            "nonzero_mean": 0.03945076838135719,
+            "nonzero_sum": 0.03945076838135719,
+            "sum": 0.03945076838135719
+          },
+          "torch_cost2_cost": {
+            "finite_count": 500,
+            "mean": 0.042535439133644104,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.042535439133644104,
+            "nonzero_sum": 21.267719268798828,
+            "sum": 21.267719268798828
+          },
+          "torch_cost2_valid": {
+            "finite_count": 500,
+            "mean": 0.6860000491142273,
+            "nonzero_count": 343,
+            "nonzero_mean": 1.0,
+            "nonzero_sum": 343.0,
+            "sum": 343.0
+          },
+          "torch_cost2_w_loss": {
+            "finite_count": 500,
+            "mean": 0.22431382536888123,
+            "nonzero_count": 500,
+            "nonzero_mean": 0.22431382536888123,
+            "nonzero_sum": 112.15690612792969,
+            "sum": 112.15690612792969
+          }
+        }
+      },
+      "cuda_torch_rank_agreement": {
+        "spearman_torch_vs_cuda_cost": 0.9428571428571428,
+        "spearman_torch_vs_cuda_w_loss": 1.0
+      },
+      "cuda_w_loss_matches_torch_top1": true,
+      "cuda_w_loss_mean": 0.047008343040943146,
+      "cuda_w_loss_sum": 0.047008343040943146,
+      "diagnosis_branch": "loss parity passed: inspect Jacobian / optimizer_step_cuda / pose update sign, side, and parameter order next",
+      "east_offset_m": -13.207818272145232,
+      "euler_pitch_roll_yaw": [
+        179.99995341022662,
+        -0.00011105648747170372,
+        -144.79992977992384
+      ],
+      "input_pose_unchanged": true,
+      "north_offset_m": -2.1051676464267075,
+      "output_euler_pitch_roll_yaw": [
+        179.99995341022662,
+        -0.00011105648747170372,
+        -144.79992977992384
+      ],
+      "output_translation_lon_lat_alt": [
+        114.43672403998579,
+        30.39133929977672,
+        395.5591829335317
+      ],
+      "pose_update_delta_east_north_alt_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pose_update_delta_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rank_cuda_cost": 5,
+      "rank_cuda_w_loss": 6,
+      "rank_torch_feature_loss": 6,
+      "rank_visual_chamfer": 6,
+      "rank_visual_overlap": 6,
+      "source_label": "old_p4:raw_refined_full",
+      "torch_cost2_cost_mean": 0.04925756901502609,
+      "torch_cost2_cost_sum": 24.6287841796875,
+      "torch_cost2_w_loss_mean": 0.10403737425804138,
+      "torch_cost2_w_loss_sum": 52.01868438720703,
+      "torch_feature_loss_by_level": [
+        0.20030802488327026,
+        0.3094898462295532,
+        0.14034709334373474
+      ],
+      "torch_feature_loss_total": 0.2167149782180786,
+      "torch_feature_num_valid_by_level": [
+        452,
+        451,
+        447
+      ],
+      "torch_feature_valid_ratio_by_level": [
+        0.9040000438690186,
+        0.9020000696182251,
+        0.8940000534057617
+      ],
+      "translation_lon_lat_alt": [
+        114.43672403998579,
+        30.39133929977672,
+        395.5591829335317
+      ],
+      "visual_chamfer": 5.747402191162109,
+      "visual_metrics": {
+        "candidate": "raw_refined_old",
+        "depth_max": 390.0,
+        "depth_min": 370.0,
+        "east_north_alt_offset_m": [
+          -13.207818272145232,
+          -2.1051676464267075,
+          4.0971829335317125
+        ],
+        "edge_chamfer": 5.747402191162109,
+        "edge_overlap_count": 213,
+        "edge_overlap_ratio": 0.5725806451612904,
+        "euler_pitch_roll_yaw": [
+          179.99995341022662,
+          -0.00011105648747170372,
+          -144.79992977992384
+        ],
+        "query_edge_count": 597,
+        "render_edge_count": 372,
+        "render_time_sec": 13.862068392016226,
+        "source_label": "old_p4:raw_refined_full",
+        "translation_lon_lat_alt": [
+          114.43672403998579,
+          30.39133929977672,
+          395.5591829335317
+        ],
+        "valid_depth_ratio": 0.9989149305555556
+      },
+      "visual_overlap": 0.5725806451612904
+    }
+  ],
+  "config": "configs/caiwangcun_domdsm_16x9.yaml",
+  "cuda": {
+    "has_residual": true,
+    "has_step": true,
+    "module_path": "/mnt/d/aiproject/PiLoT_work/.conda/pilot22/lib/python3.8/site-packages/direct_abs_cost_cuda.cpython-38-x86_64-linux-gnu.so",
+    "optimizer_step_called": false
+  },
+  "output_dir": "/mnt/d/aiproject/PiLoT_work/docs/experiments/dom_dsm_prepare/cuda_torch_loss_parity_p7",
+  "pose_file": "data_caiwangcun/query/poses/exif_test_16x9_yawfix.txt",
+  "query_image": "data_caiwangcun/query/images/exif_test_16x9/0000.jpg",
+  "rank_by_cuda_cost": [
+    "rebuilt_cuda_refined",
+    "initial",
+    "p4_scale_025",
+    "p3_best_chamfer",
+    "raw_refined_old",
+    "p3_best_overlap"
+  ],
+  "rank_by_cuda_w_loss": [
+    "rebuilt_cuda_refined",
+    "initial",
+    "p4_scale_025",
+    "p3_best_chamfer",
+    "p3_best_overlap",
+    "raw_refined_old"
+  ],
+  "rank_by_torch_feature_loss": [
+    "rebuilt_cuda_refined",
+    "initial",
+    "p4_scale_025",
+    "p3_best_chamfer",
+    "p3_best_overlap",
+    "raw_refined_old"
+  ],
+  "rank_by_visual_chamfer": [
+    "p3_best_chamfer",
+    "p3_best_overlap",
+    "initial",
+    "p4_scale_025",
+    "rebuilt_cuda_refined",
+    "raw_refined_old"
+  ],
+  "rank_by_visual_overlap": [
+    "p3_best_chamfer",
+    "p3_best_overlap",
+    "p4_scale_025",
+    "initial",
+    "rebuilt_cuda_refined",
+    "raw_refined_old"
+  ],
+  "reference": {
+    "depth_stats": {
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "valid_depth_ratio": 1.0
+    },
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "feature_scales_query": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.25,
+        0.25
+      ]
+    ],
+    "feature_scales_render": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.25,
+        0.25
+      ]
+    ],
+    "per_level_cuda_shapes": {
+      "0": {
+        "raw_shapes": {
+          "cuda_H": [
+            1,
+            6,
+            6,
+            6
+          ],
+          "cuda_cost": [
+            1,
+            6,
+            500
+          ],
+          "cuda_g": [
+            1,
+            6,
+            6
+          ],
+          "cuda_w_loss": [
+            1,
+            6
+          ],
+          "torch_H": [
+            1,
+            6,
+            6,
+            6
+          ],
+          "torch_cost": [
+            1,
+            6,
+            500
+          ],
+          "torch_g": [
+            1,
+            6,
+            6
+          ],
+          "torch_valid": [
+            1,
+            6,
+            500
+          ],
+          "torch_w_loss": [
+            1,
+            6,
+            500
+          ]
+        },
+        "timing_sec": {
+          "cuda_residual_jacobian": 0.002177499991375953,
+          "torch_direct_absolute_cost2": 0.039851702022133395
+        }
+      },
+      "1": {
+        "raw_shapes": {
+          "cuda_H": [
+            1,
+            6,
+            6,
+            6
+          ],
+          "cuda_cost": [
+            1,
+            6,
+            500
+          ],
+          "cuda_g": [
+            1,
+            6,
+            6
+          ],
+          "cuda_w_loss": [
+            1,
+            6
+          ],
+          "torch_H": [
+            1,
+            6,
+            6,
+            6
+          ],
+          "torch_cost": [
+            1,
+            6,
+            500
+          ],
+          "torch_g": [
+            1,
+            6,
+            6
+          ],
+          "torch_valid": [
+            1,
+            6,
+            500
+          ],
+          "torch_w_loss": [
+            1,
+            6,
+            500
+          ]
+        },
+        "timing_sec": {
+          "cuda_residual_jacobian": 0.0024033999943640083,
+          "torch_direct_absolute_cost2": 0.33580181197612546
+        }
+      },
+      "2": {
+        "raw_shapes": {
+          "cuda_H": [
+            1,
+            6,
+            6,
+            6
+          ],
+          "cuda_cost": [
+            1,
+            6,
+            500
+          ],
+          "cuda_g": [
+            1,
+            6,
+            6
+          ],
+          "cuda_w_loss": [
+            1,
+            6
+          ],
+          "torch_H": [
+            1,
+            6,
+            6,
+            6
+          ],
+          "torch_cost": [
+            1,
+            6,
+            500
+          ],
+          "torch_g": [
+            1,
+            6,
+            6
+          ],
+          "torch_valid": [
+            1,
+            6,
+            500
+          ],
+          "torch_w_loss": [
+            1,
+            6,
+            500
+          ]
+        },
+        "timing_sec": {
+          "cuda_residual_jacobian": 0.014006000012159348,
+          "torch_direct_absolute_cost2": 0.30527761098346673
+        }
+      }
+    },
+    "points_3d_count": 500,
+    "processed_level_order": [
+      2,
+      1,
+      0
+    ],
+    "render_camera_gs": [
+      256.0,
+      144.0,
+      128.0,
+      72.0,
+      180.0,
+      180.0
+    ],
+    "translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ]
+  },
+  "torch": {
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "gpu_capability": [
+      6,
+      1
+    ],
+    "gpu_name": "NVIDIA GeForce GTX 1080",
+    "version": "2.4.1+cu124"
+  },
+  "total_time_sec": 123.42224407196045
+}

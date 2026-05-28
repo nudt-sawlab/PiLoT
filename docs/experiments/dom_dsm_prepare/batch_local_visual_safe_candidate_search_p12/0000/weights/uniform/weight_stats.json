@@ -1,0 +1,12 @@
+{
+  "max": 1.0,
+  "mean": 1.0,
+  "min": 1.0,
+  "non_one_ratio": 0.0,
+  "shape": [
+    144,
+    256
+  ],
+  "source_p10_key": "uniform_loss",
+  "std": 0.0
+}

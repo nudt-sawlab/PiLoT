@@ -1,0 +1,26 @@
+{
+  "alt_offset_m": -4.641931509308506,
+  "candidate": "refined_trans_raw_yaw_frozen_pr",
+  "depth_max": 380.0,
+  "depth_min": 360.0,
+  "east_offset_m": 4.19684243001393,
+  "edge_chamfer": 50.1546630859375,
+  "edge_overlap_count": 0,
+  "edge_overlap_ratio": 0.0,
+  "euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    -149.495171114327
+  ],
+  "north_offset_m": -9.643402213230729,
+  "note": "Refined full translation with initial pitch/roll and raw refined yaw.",
+  "query_edge_count": 597,
+  "render_edge_count": 345,
+  "render_time_sec": 11.383043709996855,
+  "translation_lon_lat_alt": [
+    114.43690680537581,
+    30.391274895961114,
+    386.8200684906915
+  ],
+  "valid_depth_ratio": 1.0
+}

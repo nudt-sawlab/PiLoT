@@ -1,0 +1,12 @@
+# P13 selected safe pose
+image: 0004.JPG
+method: em2_nz0_ym0p812
+policy: strict_visual_gate_then_best_visual_objective
+lon lat alt: 114.44274606463934 30.38412198160019 391.455
+euler_pitch_roll_yaw: 0.0 180.0 -152.9125
+edge_chamfer: 2.8428397178649902
+edge_overlap_ratio: 0.9258710155670867
+initial_edge_chamfer: 2.9588804244995117
+initial_edge_overlap_ratio: 0.8932542624166049
+safe_output_worse_than_initial: False
+0004.JPG 114.44274606463934 30.38412198160019 391.455 180.0 0.0 -152.9125

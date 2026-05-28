@@ -1,0 +1,270 @@
+{
+  "downward_pose_file_convention": {
+    "pitch": 0.0,
+    "roll": 180.0
+  },
+  "num_images": 8,
+  "num_recovered": 8,
+  "num_skipped": 0,
+  "output_pose_file": "data_caiwangcun/query/poses/exif_test_yawfix.txt",
+  "query_dir": "data_caiwangcun/query/images/exif_test",
+  "records": [
+    {
+      "computed_yaw": 29.19999999999999,
+      "image": "0000.jpg",
+      "missing_fields": [],
+      "path": "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/query/images/exif_test/0000.jpg",
+      "pose_line": "0000.jpg 114.4368608889 30.3913609722 391.462 180.0 0.0 29.200000",
+      "raw_gimbal_yaw_degree": -29.2,
+      "raw_gps": {
+        "GPSAltitude": "391.462",
+        "GPSAltitudeRef": "b'\\x00'",
+        "GPSDateStamp": "2025:10:31",
+        "GPSLatitude": "(30.0, 23.0, 28.8995)",
+        "GPSLatitudeRef": "N",
+        "GPSLongitude": "(114.0, 26.0, 12.6992)",
+        "GPSLongitudeRef": "E",
+        "GPSMapDatum": "WGS-84\u0000",
+        "GPSStatus": "A",
+        "GPSTimeStamp": "(5.0, 52.0, 45.0)",
+        "GPSVersionID": "b'\\x02\\x03\\x00\\x00'"
+      },
+      "roll_pitch_yaw_file_order": [
+        180.0,
+        0.0,
+        29.19999999999999
+      ],
+      "status": "ok",
+      "translation_lon_lat_alt": [
+        114.43686088888889,
+        30.391360972222223,
+        391.462
+      ]
+    },
+    {
+      "computed_yaw": 29.400000000000006,
+      "image": "0001.JPG",
+      "missing_fields": [],
+      "path": "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/query/images/exif_test/0001.JPG",
+      "pose_line": "0001.JPG 114.4379083611 30.3897293889 391.490 180.0 0.0 29.400000",
+      "raw_gimbal_yaw_degree": -29.4,
+      "raw_gps": {
+        "GPSAltitude": "391.49",
+        "GPSAltitudeRef": "b'\\x00'",
+        "GPSDateStamp": "2025:10:31",
+        "GPSLatitude": "(30.0, 23.0, 23.0258)",
+        "GPSLatitudeRef": "N",
+        "GPSLongitude": "(114.0, 26.0, 16.4701)",
+        "GPSLongitudeRef": "E",
+        "GPSMapDatum": "WGS-84\u0000",
+        "GPSStatus": "A",
+        "GPSTimeStamp": "(5.0, 52.0, 59.0)",
+        "GPSVersionID": "b'\\x02\\x03\\x00\\x00'"
+      },
+      "roll_pitch_yaw_file_order": [
+        180.0,
+        0.0,
+        29.400000000000006
+      ],
+      "status": "ok",
+      "translation_lon_lat_alt": [
+        114.43790836111111,
+        30.389729388888888,
+        391.49
+      ]
+    },
+    {
+      "computed_yaw": 29.19999999999999,
+      "image": "0002.JPG",
+      "missing_fields": [],
+      "path": "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/query/images/exif_test/0002.JPG",
+      "pose_line": "0002.JPG 114.4386081667 30.3886414722 391.443 180.0 0.0 29.200000",
+      "raw_gimbal_yaw_degree": -29.2,
+      "raw_gps": {
+        "GPSAltitude": "391.443",
+        "GPSAltitudeRef": "b'\\x00'",
+        "GPSDateStamp": "2025:10:31",
+        "GPSLatitude": "(30.0, 23.0, 19.1093)",
+        "GPSLatitudeRef": "N",
+        "GPSLongitude": "(114.0, 26.0, 18.9894)",
+        "GPSLongitudeRef": "E",
+        "GPSMapDatum": "WGS-84\u0000",
+        "GPSStatus": "A",
+        "GPSTimeStamp": "(5.0, 53.0, 8.0)",
+        "GPSVersionID": "b'\\x02\\x03\\x00\\x00'"
+      },
+      "roll_pitch_yaw_file_order": [
+        180.0,
+        0.0,
+        29.19999999999999
+      ],
+      "status": "ok",
+      "translation_lon_lat_alt": [
+        114.43860816666667,
+        30.388641472222222,
+        391.443
+      ]
+    },
+    {
+      "computed_yaw": -152.3,
+      "image": "0003.JPG",
+      "missing_fields": [],
+      "path": "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/query/images/exif_test/0003.JPG",
+      "pose_line": "0003.JPG 114.4434653333 30.3830338889 391.433 180.0 0.0 -152.300000",
+      "raw_gimbal_yaw_degree": 152.3,
+      "raw_gps": {
+        "GPSAltitude": "391.433",
+        "GPSAltitudeRef": "b'\\x00'",
+        "GPSDateStamp": "2025:10:31",
+        "GPSLatitude": "(30.0, 22.0, 58.922)",
+        "GPSLatitudeRef": "N",
+        "GPSLongitude": "(114.0, 26.0, 36.4752)",
+        "GPSLongitudeRef": "E",
+        "GPSMapDatum": "WGS-84\u0000",
+        "GPSStatus": "A",
+        "GPSTimeStamp": "(5.0, 55.0, 37.0)",
+        "GPSVersionID": "b'\\x02\\x03\\x00\\x00'"
+      },
+      "roll_pitch_yaw_file_order": [
+        180.0,
+        0.0,
+        -152.3
+      ],
+      "status": "ok",
+      "translation_lon_lat_alt": [
+        114.44346533333334,
+        30.38303388888889,
+        391.433
+      ]
+    },
+    {
+      "computed_yaw": -152.1,
+      "image": "0004.JPG",
+      "missing_fields": [],
+      "path": "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/query/images/exif_test/0004.JPG",
+      "pose_line": "0004.JPG 114.4427668611 30.3841223889 391.455 180.0 0.0 -152.100000",
+      "raw_gimbal_yaw_degree": 152.1,
+      "raw_gps": {
+        "GPSAltitude": "391.455",
+        "GPSAltitudeRef": "b'\\x00'",
+        "GPSDateStamp": "2025:10:31",
+        "GPSLatitude": "(30.0, 23.0, 2.8406)",
+        "GPSLatitudeRef": "N",
+        "GPSLongitude": "(114.0, 26.0, 33.9607)",
+        "GPSLongitudeRef": "E",
+        "GPSMapDatum": "WGS-84\u0000",
+        "GPSStatus": "A",
+        "GPSTimeStamp": "(5.0, 55.0, 46.0)",
+        "GPSVersionID": "b'\\x02\\x03\\x00\\x00'"
+      },
+      "roll_pitch_yaw_file_order": [
+        180.0,
+        0.0,
+        -152.1
+      ],
+      "status": "ok",
+      "translation_lon_lat_alt": [
+        114.44276686111111,
+        30.384122388888887,
+        391.455
+      ]
+    },
+    {
+      "computed_yaw": 29.19999999999999,
+      "image": "0005.JPG",
+      "missing_fields": [],
+      "path": "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/query/images/exif_test/0005.JPG",
+      "pose_line": "0005.JPG 114.4389233889 30.3920651667 391.457 180.0 0.0 29.200000",
+      "raw_gimbal_yaw_degree": -29.2,
+      "raw_gps": {
+        "GPSAltitude": "391.457",
+        "GPSAltitudeRef": "b'\\x00'",
+        "GPSDateStamp": "2025:10:31",
+        "GPSLatitude": "(30.0, 23.0, 31.4346)",
+        "GPSLatitudeRef": "N",
+        "GPSLongitude": "(114.0, 26.0, 20.1242)",
+        "GPSLongitudeRef": "E",
+        "GPSMapDatum": "WGS-84\u0000",
+        "GPSStatus": "A",
+        "GPSTimeStamp": "(5.0, 58.0, 10.0)",
+        "GPSVersionID": "b'\\x02\\x03\\x00\\x00'"
+      },
+      "roll_pitch_yaw_file_order": [
+        180.0,
+        0.0,
+        29.19999999999999
+      ],
+      "status": "ok",
+      "translation_lon_lat_alt": [
+        114.4389233888889,
+        30.392065166666665,
+        391.457
+      ]
+    },
+    {
+      "computed_yaw": 29.19999999999999,
+      "image": "0006.JPG",
+      "missing_fields": [],
+      "path": "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/query/images/exif_test/0006.JPG",
+      "pose_line": "0006.JPG 114.4399703611 30.3904358889 391.488 180.0 0.0 29.200000",
+      "raw_gimbal_yaw_degree": -29.2,
+      "raw_gps": {
+        "GPSAltitude": "391.488",
+        "GPSAltitudeRef": "b'\\x00'",
+        "GPSDateStamp": "2025:10:31",
+        "GPSLatitude": "(30.0, 23.0, 25.5692)",
+        "GPSLatitudeRef": "N",
+        "GPSLongitude": "(114.0, 26.0, 23.8933)",
+        "GPSLongitudeRef": "E",
+        "GPSMapDatum": "WGS-84\u0000",
+        "GPSStatus": "A",
+        "GPSTimeStamp": "(5.0, 58.0, 24.0)",
+        "GPSVersionID": "b'\\x02\\x03\\x00\\x00'"
+      },
+      "roll_pitch_yaw_file_order": [
+        180.0,
+        0.0,
+        29.19999999999999
+      ],
+      "status": "ok",
+      "translation_lon_lat_alt": [
+        114.43997036111111,
+        30.390435888888888,
+        391.488
+      ]
+    },
+    {
+      "computed_yaw": 29.0,
+      "image": "0007.JPG",
+      "missing_fields": [],
+      "path": "/mnt/d/aiproject/PiLoT_work/data_caiwangcun/query/images/exif_test/0007.JPG",
+      "pose_line": "0007.JPG 114.4407033889 30.3892964722 391.482 180.0 0.0 29.000000",
+      "raw_gimbal_yaw_degree": -29.0,
+      "raw_gps": {
+        "GPSAltitude": "391.482",
+        "GPSAltitudeRef": "b'\\x00'",
+        "GPSDateStamp": "2025:10:31",
+        "GPSLatitude": "(30.0, 23.0, 21.4673)",
+        "GPSLatitudeRef": "N",
+        "GPSLongitude": "(114.0, 26.0, 26.5322)",
+        "GPSLongitudeRef": "E",
+        "GPSMapDatum": "WGS-84\u0000",
+        "GPSStatus": "A",
+        "GPSTimeStamp": "(5.0, 58.0, 33.0)",
+        "GPSVersionID": "b'\\x02\\x03\\x00\\x00'"
+      },
+      "roll_pitch_yaw_file_order": [
+        180.0,
+        0.0,
+        29.0
+      ],
+      "status": "ok",
+      "translation_lon_lat_alt": [
+        114.44070338888889,
+        30.38929647222222,
+        391.482
+      ]
+    }
+  ],
+  "yaw_rule": "yaw = normalize_angle_deg(-drone-dji:GimbalYawDegree)"
+}

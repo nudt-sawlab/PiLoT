@@ -1,0 +1,72 @@
+{
+  "combined": {
+    "description": "max(dom_edge_weight, dsm_gradient_weight)",
+    "heuristic": false,
+    "max": 3.0,
+    "mean": 1.7354578971862793,
+    "min": 1.0,
+    "non_one_ratio": 0.9813639322916666,
+    "shape": [
+      144,
+      256
+    ],
+    "source_p10_key": "combined_structure_weighted_loss",
+    "std": 0.5366603136062622
+  },
+  "depth_gradient": {
+    "description": "Sobel gradient of initial render depth, mapped to [1, 3]",
+    "heuristic": false,
+    "max": 3.0,
+    "mean": 1.1991366147994995,
+    "min": 1.0,
+    "non_one_ratio": 0.14591471354166666,
+    "shape": [
+      144,
+      256
+    ],
+    "source_p10_key": "dsm_gradient_weighted_loss",
+    "std": 0.5217679738998413
+  },
+  "dom_edge": {
+    "description": "Sobel edge strength from initial DOM RGB, mapped to [1, 3]",
+    "heuristic": false,
+    "max": 3.0,
+    "mean": 1.6249067783355713,
+    "min": 1.0,
+    "non_one_ratio": 0.9797905815972222,
+    "shape": [
+      144,
+      256
+    ],
+    "source_p10_key": "dom_edge_weighted_loss",
+    "std": 0.4486097991466522
+  },
+  "low_texture_downweight": {
+    "description": "heuristic RGB proxy that downweights low-texture, vegetation-like, and water-like areas",
+    "heuristic": true,
+    "max": 1.0,
+    "mean": 0.7840213179588318,
+    "min": 0.25,
+    "non_one_ratio": 0.4223090277777778,
+    "shape": [
+      144,
+      256
+    ],
+    "source_p10_key": "low_texture_vegetation_water_downweighted_loss",
+    "std": 0.26909926533699036
+  },
+  "uniform": {
+    "description": "uniform feature residual weighting",
+    "heuristic": false,
+    "max": 1.0,
+    "mean": 1.0,
+    "min": 1.0,
+    "non_one_ratio": 0.0,
+    "shape": [
+      144,
+      256
+    ],
+    "source_p10_key": "uniform_loss",
+    "std": 0.0
+  }
+}

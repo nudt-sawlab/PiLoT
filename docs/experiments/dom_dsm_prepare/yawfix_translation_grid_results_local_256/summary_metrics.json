@@ -1,0 +1,3049 @@
+{
+  "all_candidates": [
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "base_initial",
+      "candidate_key": "base_initial:E+0.000:N+0.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 3.9567079544067383,
+      "edge_overlap_count": 535,
+      "edge_overlap_ratio": 1.0348162475822051,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 517,
+      "render_time_sec": 13.744791670003906,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.3913609745,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": 4.097176893904816,
+      "candidate": "refined_translation_initial_rotation",
+      "candidate_key": "refined_translation_initial_rotation:E-13.208:N-2.105:A+4.097",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -13.207827881269623,
+      "edge_chamfer": 4.707603931427002,
+      "edge_overlap_count": 221,
+      "edge_overlap_ratio": 0.7015873015873015,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -2.10516388528049,
+      "query_edge_count": 597,
+      "render_edge_count": 315,
+      "render_time_sec": 13.477519731997745,
+      "translation_lon_lat_alt": [
+        114.43672403988498,
+        30.391339299808664,
+        395.5591768939048
+      ],
+      "valid_depth_ratio": 0.9981282552083334
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N-10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 6.911449432373047,
+      "edge_overlap_count": 62,
+      "edge_overlap_ratio": 0.14691943127962084,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 422,
+      "render_time_sec": 11.71371072801412,
+      "translation_lon_lat_alt": [
+        114.43660327319316,
+        30.39126572008813,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9971245659722222
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N-10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 6.7300238609313965,
+      "edge_overlap_count": 89,
+      "edge_overlap_ratio": 0.1905781584582441,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 467,
+      "render_time_sec": 11.26928691699868,
+      "translation_lon_lat_alt": [
+        114.43665526787794,
+        30.391266740991703,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9983995225694444
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N-10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 5.089073181152344,
+      "edge_overlap_count": 153,
+      "edge_overlap_ratio": 0.4157608695652174,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 368,
+      "render_time_sec": 11.418086956982734,
+      "translation_lon_lat_alt": [
+        114.4367072625654,
+        30.391267761874627,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9992947048611112
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N-10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 4.435784816741943,
+      "edge_overlap_count": 246,
+      "edge_overlap_ratio": 0.6473684210526316,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 380,
+      "render_time_sec": 11.604146116005722,
+      "translation_lon_lat_alt": [
+        114.4367592572555,
+        30.391268782736873,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9998372395833334
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N-10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 5.025229454040527,
+      "edge_overlap_count": 284,
+      "edge_overlap_ratio": 0.8377581120943953,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 339,
+      "render_time_sec": 11.525403170002392,
+      "translation_lon_lat_alt": [
+        114.43681125194828,
+        30.39126980357846,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N-10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 5.148478031158447,
+      "edge_overlap_count": 247,
+      "edge_overlap_ratio": 0.7670807453416149,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 322,
+      "render_time_sec": 11.68098304598243,
+      "translation_lon_lat_alt": [
+        114.4368632466437,
+        30.39127082439938,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N-5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 6.476244926452637,
+      "edge_overlap_count": 113,
+      "edge_overlap_ratio": 0.3054054054054054,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 370,
+      "render_time_sec": 11.342559223994613,
+      "translation_lon_lat_alt": [
+        114.43660209555352,
+        30.391310795129467,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9971245659722222
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N-5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 4.974306106567383,
+      "edge_overlap_count": 150,
+      "edge_overlap_ratio": 0.352112676056338,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 426,
+      "render_time_sec": 11.49778154300293,
+      "translation_lon_lat_alt": [
+        114.43665409026212,
+        30.391311816034868,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9983723958333334
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N-5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 4.631253719329834,
+      "edge_overlap_count": 199,
+      "edge_overlap_ratio": 0.5574229691876751,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 357,
+      "render_time_sec": 12.345211131003452,
+      "translation_lon_lat_alt": [
+        114.4367060849734,
+        30.391312836919617,
+        386.462
+      ],
+      "valid_depth_ratio": 0.999267578125
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N-5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 3.891970157623291,
+      "edge_overlap_count": 302,
+      "edge_overlap_ratio": 0.8118279569892473,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 372,
+      "render_time_sec": 11.43378497500089,
+      "translation_lon_lat_alt": [
+        114.43675807968734,
+        30.39131385778369,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9998101128472222
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N-5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 5.6529622077941895,
+      "edge_overlap_count": 379,
+      "edge_overlap_ratio": 0.9668367346938775,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 392,
+      "render_time_sec": 11.177805087005254,
+      "translation_lon_lat_alt": [
+        114.43681007440392,
+        30.391314878627114,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N-5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 3.6979479789733887,
+      "edge_overlap_count": 318,
+      "edge_overlap_ratio": 0.8688524590163934,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 366,
+      "render_time_sec": 11.234249797009397,
+      "translation_lon_lat_alt": [
+        114.4368620691232,
+        30.391315899449875,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N+0.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 6.058584213256836,
+      "edge_overlap_count": 140,
+      "edge_overlap_ratio": 0.3422982885085575,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 409,
+      "render_time_sec": 10.606451553991064,
+      "translation_lon_lat_alt": [
+        114.43660091791122,
+        30.39135587017043,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9970160590277778
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N+0.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 5.192544460296631,
+      "edge_overlap_count": 191,
+      "edge_overlap_ratio": 0.5684523809523809,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 336,
+      "render_time_sec": 11.018799313984346,
+      "translation_lon_lat_alt": [
+        114.43665291264365,
+        30.391356891077677,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9983452690972222
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+0.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 3.7033491134643555,
+      "edge_overlap_count": 273,
+      "edge_overlap_ratio": 0.7438692098092643,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 367,
+      "render_time_sec": 11.036598070000764,
+      "translation_lon_lat_alt": [
+        114.43670490737875,
+        30.391357911964256,
+        386.462
+      ],
+      "valid_depth_ratio": 0.999267578125
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+0.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 3.0570898056030273,
+      "edge_overlap_count": 371,
+      "edge_overlap_ratio": 1.0248618784530388,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 362,
+      "render_time_sec": 11.097226582001895,
+      "translation_lon_lat_alt": [
+        114.4367569021165,
+        30.39135893283017,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9998101128472222
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+0.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 4.664336681365967,
+      "edge_overlap_count": 411,
+      "edge_overlap_ratio": 1.2607361963190185,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 326,
+      "render_time_sec": 10.986282005993417,
+      "translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+0.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 4.008145332336426,
+      "edge_overlap_count": 379,
+      "edge_overlap_ratio": 1.0188172043010753,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 372,
+      "render_time_sec": 11.025727508007549,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.39136097450001,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N+5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 5.944286346435547,
+      "edge_overlap_count": 153,
+      "edge_overlap_ratio": 0.3893129770992366,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 393,
+      "render_time_sec": 12.124035778979305,
+      "translation_lon_lat_alt": [
+        114.43659974026626,
+        30.39140094521107,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9970160590277778
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N+5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 5.6401262283325195,
+      "edge_overlap_count": 164,
+      "edge_overlap_ratio": 0.5394736842105263,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 304,
+      "render_time_sec": 11.413705884013325,
+      "translation_lon_lat_alt": [
+        114.43665173502252,
+        30.39140196612015,
+        386.462
+      ],
+      "valid_depth_ratio": 0.998291015625
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 3.505213737487793,
+      "edge_overlap_count": 243,
+      "edge_overlap_ratio": 0.7297297297297297,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 333,
+      "render_time_sec": 10.93191808598931,
+      "translation_lon_lat_alt": [
+        114.43670372978144,
+        30.39140298700854,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9992404513888888
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.877854108810425,
+      "edge_overlap_count": 370,
+      "edge_overlap_ratio": 1.1011904761904763,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 336,
+      "render_time_sec": 10.762161227001343,
+      "translation_lon_lat_alt": [
+        114.43675572454302,
+        30.39140400787629,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9997829861111112
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 3.2729263305664062,
+      "edge_overlap_count": 392,
+      "edge_overlap_ratio": 1.1495601173020529,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 341,
+      "render_time_sec": 10.993611830985174,
+      "translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 3.3195154666900635,
+      "edge_overlap_count": 325,
+      "edge_overlap_ratio": 0.9259259259259259,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 351,
+      "render_time_sec": 11.06809338502353,
+      "translation_lon_lat_alt": [
+        114.43685971407416,
+        30.391406049549783,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N+10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 5.975622177124023,
+      "edge_overlap_count": 104,
+      "edge_overlap_ratio": 0.25742574257425743,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 404,
+      "render_time_sec": 11.116179996024584,
+      "translation_lon_lat_alt": [
+        114.43659856261866,
+        30.39144602025134,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9969618055555556
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N+10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 5.130675315856934,
+      "edge_overlap_count": 179,
+      "edge_overlap_ratio": 0.47480106100795755,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 377,
+      "render_time_sec": 10.98055873400881,
+      "translation_lon_lat_alt": [
+        114.43665055739872,
+        30.391447041162237,
+        386.462
+      ],
+      "valid_depth_ratio": 0.998291015625
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 3.832474708557129,
+      "edge_overlap_count": 333,
+      "edge_overlap_ratio": 0.8740157480314961,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 381,
+      "render_time_sec": 11.014006631012307,
+      "translation_lon_lat_alt": [
+        114.43670255218146,
+        30.391448062052486,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9992133246527778
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 3.515249729156494,
+      "edge_overlap_count": 320,
+      "edge_overlap_ratio": 0.9523809523809523,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 336,
+      "render_time_sec": 10.882592407986522,
+      "translation_lon_lat_alt": [
+        114.43675454696687,
+        30.39144908292206,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9997829861111112
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 4.198604583740234,
+      "edge_overlap_count": 288,
+      "edge_overlap_ratio": 0.9142857142857143,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 315,
+      "render_time_sec": 11.009996760025388,
+      "translation_lon_lat_alt": [
+        114.43680654175493,
+        30.39145010377096,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+10.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 4.510293960571289,
+      "edge_overlap_count": 236,
+      "edge_overlap_ratio": 0.6704545454545454,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 352,
+      "render_time_sec": 11.065995768003631,
+      "translation_lon_lat_alt": [
+        114.43685853654566,
+        30.391451124599214,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N-10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 7.400279998779297,
+      "edge_overlap_count": 66,
+      "edge_overlap_ratio": 0.12716763005780346,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 519,
+      "render_time_sec": 11.967008009989513,
+      "translation_lon_lat_alt": [
+        114.43660327319316,
+        30.39126572008813,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9969075520833334
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N-10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 5.3170061111450195,
+      "edge_overlap_count": 87,
+      "edge_overlap_ratio": 0.17611336032388664,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 494,
+      "render_time_sec": 11.938136941986158,
+      "translation_lon_lat_alt": [
+        114.43665526787794,
+        30.391266740991703,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9982096354166666
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N-10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 4.397688865661621,
+      "edge_overlap_count": 175,
+      "edge_overlap_ratio": 0.37393162393162394,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 468,
+      "render_time_sec": 11.925784607010428,
+      "translation_lon_lat_alt": [
+        114.4367072625654,
+        30.391267761874627,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9991590711805556
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N-10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 4.213781833648682,
+      "edge_overlap_count": 293,
+      "edge_overlap_ratio": 0.6689497716894978,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 438,
+      "render_time_sec": 11.851348936004797,
+      "translation_lon_lat_alt": [
+        114.4367592572555,
+        30.391268782736873,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9997829861111112
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N-10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 4.693212509155273,
+      "edge_overlap_count": 374,
+      "edge_overlap_ratio": 1.038888888888889,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 360,
+      "render_time_sec": 12.017384963983204,
+      "translation_lon_lat_alt": [
+        114.43681125194828,
+        30.39126980357846,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999457465277778
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N-10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 3.8925747871398926,
+      "edge_overlap_count": 373,
+      "edge_overlap_ratio": 0.8902147971360382,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 419,
+      "render_time_sec": 12.006059092993382,
+      "translation_lon_lat_alt": [
+        114.4368632466437,
+        30.39127082439938,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N-5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 7.031513690948486,
+      "edge_overlap_count": 103,
+      "edge_overlap_ratio": 0.23356009070294784,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 441,
+      "render_time_sec": 11.895684262999566,
+      "translation_lon_lat_alt": [
+        114.43660209555352,
+        30.391310795129467,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9969075520833334
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N-5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 5.277063369750977,
+      "edge_overlap_count": 164,
+      "edge_overlap_ratio": 0.31721470019342357,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 517,
+      "render_time_sec": 12.095433915994363,
+      "translation_lon_lat_alt": [
+        114.43665409026212,
+        30.391311816034868,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9981553819444444
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N-5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 3.8830041885375977,
+      "edge_overlap_count": 266,
+      "edge_overlap_ratio": 0.5898004434589801,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 451,
+      "render_time_sec": 12.830381929990835,
+      "translation_lon_lat_alt": [
+        114.4367060849734,
+        30.391312836919617,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9991048177083334
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N-5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 3.142810821533203,
+      "edge_overlap_count": 418,
+      "edge_overlap_ratio": 0.8548057259713702,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 489,
+      "render_time_sec": 12.008240177994594,
+      "translation_lon_lat_alt": [
+        114.43675807968734,
+        30.39131385778369,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9995659722222222
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N-5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 3.8930773735046387,
+      "edge_overlap_count": 503,
+      "edge_overlap_ratio": 1.1405895691609977,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 441,
+      "render_time_sec": 11.853878791996976,
+      "translation_lon_lat_alt": [
+        114.43681007440392,
+        30.391314878627114,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998914930555556
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N-5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 3.3496487140655518,
+      "edge_overlap_count": 427,
+      "edge_overlap_ratio": 0.9552572706935123,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 447,
+      "render_time_sec": 11.822187468002085,
+      "translation_lon_lat_alt": [
+        114.4368620691232,
+        30.391315899449875,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N+0.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 5.211016654968262,
+      "edge_overlap_count": 191,
+      "edge_overlap_ratio": 0.39059304703476483,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 489,
+      "render_time_sec": 12.001596986985533,
+      "translation_lon_lat_alt": [
+        114.43660091791122,
+        30.39135587017043,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9967447916666666
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N+0.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 4.75748872756958,
+      "edge_overlap_count": 217,
+      "edge_overlap_ratio": 0.4568421052631579,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 475,
+      "render_time_sec": 11.905517031002091,
+      "translation_lon_lat_alt": [
+        114.43665291264365,
+        30.391356891077677,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9981282552083334
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+0.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 3.1694138050079346,
+      "edge_overlap_count": 358,
+      "edge_overlap_ratio": 0.8099547511312217,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 442,
+      "render_time_sec": 12.098854184994707,
+      "translation_lon_lat_alt": [
+        114.43670490737875,
+        30.391357911964256,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9990505642361112
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+0.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.9822235107421875,
+      "edge_overlap_count": 486,
+      "edge_overlap_ratio": 1.0103950103950103,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 481,
+      "render_time_sec": 11.981543544010492,
+      "translation_lon_lat_alt": [
+        114.4367569021165,
+        30.39135893283017,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9995388454861112
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+0.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.410712718963623,
+      "edge_overlap_count": 602,
+      "edge_overlap_ratio": 1.4333333333333333,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 420,
+      "render_time_sec": 11.936676943005295,
+      "translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998372395833334
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 5.435352325439453,
+      "edge_overlap_count": 188,
+      "edge_overlap_ratio": 0.42058165548098436,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 447,
+      "render_time_sec": 11.916202243999578,
+      "translation_lon_lat_alt": [
+        114.43659974026626,
+        30.39140094521107,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9967447916666666
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 3.741558790206909,
+      "edge_overlap_count": 308,
+      "edge_overlap_ratio": 0.5934489402697495,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 519,
+      "render_time_sec": 12.395552661007969,
+      "translation_lon_lat_alt": [
+        114.43665173502252,
+        30.39140196612015,
+        391.462
+      ],
+      "valid_depth_ratio": 0.998046875
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 2.8321175575256348,
+      "edge_overlap_count": 399,
+      "edge_overlap_ratio": 0.822680412371134,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 485,
+      "render_time_sec": 12.891672715981258,
+      "translation_lon_lat_alt": [
+        114.43670372978144,
+        30.39140298700854,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9990234375
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.1305344104766846,
+      "edge_overlap_count": 553,
+      "edge_overlap_ratio": 1.1943844492440605,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 463,
+      "render_time_sec": 11.907937273994321,
+      "translation_lon_lat_alt": [
+        114.43675572454302,
+        30.39140400787629,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9995930989583334
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.007302761077881,
+      "edge_overlap_count": 580,
+      "edge_overlap_ratio": 1.2719298245614035,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 456,
+      "render_time_sec": 11.6900538780028,
+      "translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998643663194444
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 2.875324249267578,
+      "edge_overlap_count": 450,
+      "edge_overlap_ratio": 0.9846827133479212,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 457,
+      "render_time_sec": 11.846283266000682,
+      "translation_lon_lat_alt": [
+        114.43685971407416,
+        30.391406049549783,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N+10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 5.435162544250488,
+      "edge_overlap_count": 137,
+      "edge_overlap_ratio": 0.26601941747572816,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 515,
+      "render_time_sec": 11.942845153011149,
+      "translation_lon_lat_alt": [
+        114.43659856261866,
+        30.39144602025134,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9966634114583334
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N+10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 4.176462173461914,
+      "edge_overlap_count": 232,
+      "edge_overlap_ratio": 0.48333333333333334,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 480,
+      "render_time_sec": 11.901974517997587,
+      "translation_lon_lat_alt": [
+        114.43665055739872,
+        30.391447041162237,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9980197482638888
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 3.3323817253112793,
+      "edge_overlap_count": 371,
+      "edge_overlap_ratio": 0.7540650406504065,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 492,
+      "render_time_sec": 11.84438572198269,
+      "translation_lon_lat_alt": [
+        114.43670255218146,
+        30.391448062052486,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9989963107638888
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.4969358444213867,
+      "edge_overlap_count": 523,
+      "edge_overlap_ratio": 1.0275049115913557,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 509,
+      "render_time_sec": 12.004996064002626,
+      "translation_lon_lat_alt": [
+        114.43675454696687,
+        30.39144908292206,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9995930989583334
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 3.069502830505371,
+      "edge_overlap_count": 493,
+      "edge_overlap_ratio": 0.9666666666666667,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 510,
+      "render_time_sec": 12.684810802020365,
+      "translation_lon_lat_alt": [
+        114.43680654175493,
+        30.39145010377096,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999728732638888
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 4.546978950500488,
+      "edge_overlap_count": 281,
+      "edge_overlap_ratio": 0.597872340425532,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 470,
+      "render_time_sec": 12.155412593012443,
+      "translation_lon_lat_alt": [
+        114.43685853654566,
+        30.391451124599214,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9999728732638888
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N-10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 8.772611618041992,
+      "edge_overlap_count": 48,
+      "edge_overlap_ratio": 0.1188118811881188,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 404,
+      "render_time_sec": 13.022783350985264,
+      "translation_lon_lat_alt": [
+        114.43660327319316,
+        30.39126572008813,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9945746527777778
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N-10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 7.441912651062012,
+      "edge_overlap_count": 63,
+      "edge_overlap_ratio": 0.16890080428954424,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 373,
+      "render_time_sec": 12.992168742988724,
+      "translation_lon_lat_alt": [
+        114.43665526787794,
+        30.391266740991703,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9963650173611112
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N-10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 5.2639265060424805,
+      "edge_overlap_count": 104,
+      "edge_overlap_ratio": 0.23318385650224216,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 446,
+      "render_time_sec": 13.161979685013648,
+      "translation_lon_lat_alt": [
+        114.4367072625654,
+        30.391267761874627,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9977484809027778
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N-10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 4.667890548706055,
+      "edge_overlap_count": 184,
+      "edge_overlap_ratio": 0.45098039215686275,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 408,
+      "render_time_sec": 12.94484392699087,
+      "translation_lon_lat_alt": [
+        114.4367592572555,
+        30.391268782736873,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9988335503472222
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N-10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 4.465518951416016,
+      "edge_overlap_count": 247,
+      "edge_overlap_ratio": 0.6785714285714286,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 364,
+      "render_time_sec": 13.016694126010407,
+      "translation_lon_lat_alt": [
+        114.43681125194828,
+        30.39126980357846,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9995388454861112
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N-10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 4.5915327072143555,
+      "edge_overlap_count": 275,
+      "edge_overlap_ratio": 0.7596685082872928,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 362,
+      "render_time_sec": 13.076627803005977,
+      "translation_lon_lat_alt": [
+        114.4368632466437,
+        30.39127082439938,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9999457465277778
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N-5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 7.510864734649658,
+      "edge_overlap_count": 87,
+      "edge_overlap_ratio": 0.19376391982182628,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 449,
+      "render_time_sec": 12.936795235000318,
+      "translation_lon_lat_alt": [
+        114.43660209555352,
+        30.391310795129467,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9945475260416666
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N-5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 6.343225955963135,
+      "edge_overlap_count": 109,
+      "edge_overlap_ratio": 0.28835978835978837,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 378,
+      "render_time_sec": 13.012828756007366,
+      "translation_lon_lat_alt": [
+        114.43665409026212,
+        30.391311816034868,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9963107638888888
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N-5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 4.568857669830322,
+      "edge_overlap_count": 183,
+      "edge_overlap_ratio": 0.4295774647887324,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 426,
+      "render_time_sec": 12.901363593991846,
+      "translation_lon_lat_alt": [
+        114.4367060849734,
+        30.391312836919617,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9977213541666666
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N-5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 3.5080881118774414,
+      "edge_overlap_count": 273,
+      "edge_overlap_ratio": 0.6774193548387096,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 403,
+      "render_time_sec": 13.01880773800076,
+      "translation_lon_lat_alt": [
+        114.43675807968734,
+        30.39131385778369,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9988064236111112
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N-5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 4.696553707122803,
+      "edge_overlap_count": 335,
+      "edge_overlap_ratio": 0.9203296703296703,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 364,
+      "render_time_sec": 12.931309191015316,
+      "translation_lon_lat_alt": [
+        114.43681007440392,
+        30.391314878627114,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9995388454861112
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N-5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 3.0897297859191895,
+      "edge_overlap_count": 399,
+      "edge_overlap_ratio": 0.9236111111111112,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 432,
+      "render_time_sec": 13.02338477698504,
+      "translation_lon_lat_alt": [
+        114.4368620691232,
+        30.391315899449875,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9999457465277778
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N+0.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 6.843050003051758,
+      "edge_overlap_count": 152,
+      "edge_overlap_ratio": 0.39790575916230364,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 382,
+      "render_time_sec": 12.905533184006345,
+      "translation_lon_lat_alt": [
+        114.43660091791122,
+        30.39135587017043,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9944661458333334
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N+0.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 5.504997253417969,
+      "edge_overlap_count": 158,
+      "edge_overlap_ratio": 0.412532637075718,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 383,
+      "render_time_sec": 13.02059167099651,
+      "translation_lon_lat_alt": [
+        114.43665291264365,
+        30.391356891077677,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9962293836805556
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+0.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 4.594569683074951,
+      "edge_overlap_count": 233,
+      "edge_overlap_ratio": 0.6508379888268156,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 358,
+      "render_time_sec": 13.960474415012868,
+      "translation_lon_lat_alt": [
+        114.43670490737875,
+        30.391357911964256,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9976942274305556
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+0.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.637378692626953,
+      "edge_overlap_count": 310,
+      "edge_overlap_ratio": 0.824468085106383,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 376,
+      "render_time_sec": 12.961660492990632,
+      "translation_lon_lat_alt": [
+        114.4367569021165,
+        30.39135893283017,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9988064236111112
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+0.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.721198558807373,
+      "edge_overlap_count": 423,
+      "edge_overlap_ratio": 1.2120343839541547,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 349,
+      "render_time_sec": 12.86951867400785,
+      "translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        396.462
+      ],
+      "valid_depth_ratio": 0.99951171875
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+0.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 5.4306135177612305,
+      "edge_overlap_count": 401,
+      "edge_overlap_ratio": 0.9901234567901235,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 405,
+      "render_time_sec": 12.82909448898863,
+      "translation_lon_lat_alt": [
+        114.4368608916,
+        30.39136097450001,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9999457465277778
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N+5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 7.770388603210449,
+      "edge_overlap_count": 151,
+      "edge_overlap_ratio": 0.36211031175059955,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 417,
+      "render_time_sec": 12.826193993998459,
+      "translation_lon_lat_alt": [
+        114.43659974026626,
+        30.39140094521107,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9944390190972222
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N+5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 4.96226692199707,
+      "edge_overlap_count": 190,
+      "edge_overlap_ratio": 0.4896907216494845,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 388,
+      "render_time_sec": 12.898987377004232,
+      "translation_lon_lat_alt": [
+        114.43665173502252,
+        30.39140196612015,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9962022569444444
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 3.7124829292297363,
+      "edge_overlap_count": 292,
+      "edge_overlap_ratio": 0.7468030690537084,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 391,
+      "render_time_sec": 12.853477465978358,
+      "translation_lon_lat_alt": [
+        114.43670372978144,
+        30.39140298700854,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9976671006944444
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 3.856107234954834,
+      "edge_overlap_count": 369,
+      "edge_overlap_ratio": 1.0982142857142858,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 336,
+      "render_time_sec": 12.80635115399491,
+      "translation_lon_lat_alt": [
+        114.43675572454302,
+        30.39140400787629,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9987521701388888
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.222156047821045,
+      "edge_overlap_count": 504,
+      "edge_overlap_ratio": 1.3808219178082193,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 365,
+      "render_time_sec": 12.877135758986697,
+      "translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        396.462
+      ],
+      "valid_depth_ratio": 0.99951171875
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 3.450986385345459,
+      "edge_overlap_count": 395,
+      "edge_overlap_ratio": 1.1253561253561253,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 351,
+      "render_time_sec": 13.24148771300679,
+      "translation_lon_lat_alt": [
+        114.43685971407416,
+        30.391406049549783,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9999186197916666
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-25.000:N+10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 360.0,
+      "east_offset_m": -25.0,
+      "edge_chamfer": 7.233712196350098,
+      "edge_overlap_count": 112,
+      "edge_overlap_ratio": 0.3128491620111732,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 358,
+      "render_time_sec": 13.731601020001108,
+      "translation_lon_lat_alt": [
+        114.43659856261866,
+        30.39144602025134,
+        396.462
+      ],
+      "valid_depth_ratio": 0.994384765625
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-20.000:N+10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -20.0,
+      "edge_chamfer": 6.14925479888916,
+      "edge_overlap_count": 160,
+      "edge_overlap_ratio": 0.45977011494252873,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 348,
+      "render_time_sec": 13.004861311987042,
+      "translation_lon_lat_alt": [
+        114.43665055739872,
+        30.391447041162237,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9961480034722222
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 3.5221569538116455,
+      "edge_overlap_count": 269,
+      "edge_overlap_ratio": 0.682741116751269,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 394,
+      "render_time_sec": 13.684373117983341,
+      "translation_lon_lat_alt": [
+        114.43670255218146,
+        30.391448062052486,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9976128472222222
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 3.2172460556030273,
+      "edge_overlap_count": 378,
+      "edge_overlap_ratio": 1.008,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 375,
+      "render_time_sec": 13.308242394996341,
+      "translation_lon_lat_alt": [
+        114.43675454696687,
+        30.39144908292206,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9987250434027778
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 3.2827999591827393,
+      "edge_overlap_count": 376,
+      "edge_overlap_ratio": 1.065155807365439,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 353,
+      "render_time_sec": 13.25819241499994,
+      "translation_lon_lat_alt": [
+        114.43680654175493,
+        30.39145010377096,
+        396.462
+      ],
+      "valid_depth_ratio": 0.99951171875
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+10.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 5.195888519287109,
+      "edge_overlap_count": 378,
+      "edge_overlap_ratio": 0.9287469287469288,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 407,
+      "render_time_sec": 13.892543341004057,
+      "translation_lon_lat_alt": [
+        114.43685853654566,
+        30.391451124599214,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9999186197916666
+    }
+  ],
+  "alt_offsets_m": [
+    -5.0,
+    0.0,
+    5.0
+  ],
+  "base_euler_pitch_roll_yaw": [
+    0.0,
+    180.0,
+    29.2
+  ],
+  "base_initial_metrics": {
+    "alt_offset_m": 0.0,
+    "candidate": "base_initial",
+    "candidate_key": "base_initial:E+0.000:N+0.000:A+0.000",
+    "depth_max": 380.0,
+    "depth_min": 360.0,
+    "east_offset_m": 0.0,
+    "edge_chamfer": 3.9567079544067383,
+    "edge_overlap_count": 535,
+    "edge_overlap_ratio": 1.0348162475822051,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "north_offset_m": 0.0,
+    "query_edge_count": 597,
+    "render_edge_count": 517,
+    "render_time_sec": 13.744791670003906,
+    "translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ],
+    "valid_depth_ratio": 1.0
+  },
+  "base_translation_lon_lat_alt": [
+    114.4368608916,
+    30.3913609745,
+    391.462
+  ],
+  "best_by_edge_chamfer": {
+    "alt_offset_m": 0.0,
+    "candidate": "grid",
+    "candidate_key": "grid:E-5.000:N+5.000:A+0.000",
+    "depth_max": 380.0,
+    "depth_min": 360.0,
+    "east_offset_m": -5.0,
+    "edge_chamfer": 2.007302761077881,
+    "edge_overlap_count": 580,
+    "edge_overlap_ratio": 1.2719298245614035,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "north_offset_m": 5.0,
+    "query_edge_count": 597,
+    "render_edge_count": 456,
+    "render_time_sec": 11.6900538780028,
+    "translation_lon_lat_alt": [
+      114.43680771930727,
+      30.39140502872337,
+      391.462
+    ],
+    "valid_depth_ratio": 0.9998643663194444
+  },
+  "best_by_edge_overlap_ratio": {
+    "alt_offset_m": 0.0,
+    "candidate": "grid",
+    "candidate_key": "grid:E-5.000:N+0.000:A+0.000",
+    "depth_max": 380.0,
+    "depth_min": 360.0,
+    "east_offset_m": -5.0,
+    "edge_chamfer": 2.410712718963623,
+    "edge_overlap_count": 602,
+    "edge_overlap_ratio": 1.4333333333333333,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "north_offset_m": 0.0,
+    "query_edge_count": 597,
+    "render_edge_count": 420,
+    "render_time_sec": 11.936676943005295,
+    "translation_lon_lat_alt": [
+      114.43680889685692,
+      30.39135995367542,
+      391.462
+    ],
+    "valid_depth_ratio": 0.9998372395833334
+  },
+  "candidate_count": 91,
+  "config_path": "configs/caiwangcun_domdsm_16x9.yaml",
+  "east_values_m": [
+    -25.0,
+    -20.0,
+    -15.0,
+    -10.0,
+    -5.0,
+    0.0
+  ],
+  "grid_candidate_count": 90,
+  "image_size": {
+    "height": 144,
+    "width": 256
+  },
+  "north_values_m": [
+    -10.0,
+    -5.0,
+    0.0,
+    5.0,
+    10.0
+  ],
+  "output_dir": "docs/experiments/dom_dsm_prepare/yawfix_translation_grid_results_local_256",
+  "pose_file_path": "data_caiwangcun/query/poses/exif_test_16x9_yawfix.txt",
+  "query_image_path": "data_caiwangcun/query/images/exif_test_16x9/0000.jpg",
+  "raster_crs": "EPSG:32650",
+  "refined_translation_initial_rotation_metrics": {
+    "alt_offset_m": 4.097176893904816,
+    "candidate": "refined_translation_initial_rotation",
+    "candidate_key": "refined_translation_initial_rotation:E-13.208:N-2.105:A+4.097",
+    "depth_max": 390.0,
+    "depth_min": 370.0,
+    "east_offset_m": -13.207827881269623,
+    "edge_chamfer": 4.707603931427002,
+    "edge_overlap_count": 221,
+    "edge_overlap_ratio": 0.7015873015873015,
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "north_offset_m": -2.10516388528049,
+    "query_edge_count": 597,
+    "render_edge_count": 315,
+    "render_time_sec": 13.477519731997745,
+    "translation_lon_lat_alt": [
+      114.43672403988498,
+      30.391339299808664,
+      395.5591768939048
+    ],
+    "valid_depth_ratio": 0.9981282552083334
+  },
+  "refined_translation_offset_m": {
+    "alt_offset_m": 4.097176893904816,
+    "east_offset_m": -13.207827881269623,
+    "north_offset_m": -2.10516388528049,
+    "translation_lon_lat_alt": [
+      114.43672403988498,
+      30.391339299808664,
+      395.5591768939048
+    ]
+  },
+  "top_by_edge_chamfer": [
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.007302761077881,
+      "edge_overlap_count": 580,
+      "edge_overlap_ratio": 1.2719298245614035,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 456,
+      "render_time_sec": 11.6900538780028,
+      "translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998643663194444
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.1305344104766846,
+      "edge_overlap_count": 553,
+      "edge_overlap_ratio": 1.1943844492440605,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 463,
+      "render_time_sec": 11.907937273994321,
+      "translation_lon_lat_alt": [
+        114.43675572454302,
+        30.39140400787629,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9995930989583334
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.222156047821045,
+      "edge_overlap_count": 504,
+      "edge_overlap_ratio": 1.3808219178082193,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 365,
+      "render_time_sec": 12.877135758986697,
+      "translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        396.462
+      ],
+      "valid_depth_ratio": 0.99951171875
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+0.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.410712718963623,
+      "edge_overlap_count": 602,
+      "edge_overlap_ratio": 1.4333333333333333,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 420,
+      "render_time_sec": 11.936676943005295,
+      "translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998372395833334
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+10.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.4969358444213867,
+      "edge_overlap_count": 523,
+      "edge_overlap_ratio": 1.0275049115913557,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 10.0,
+      "query_edge_count": 597,
+      "render_edge_count": 509,
+      "render_time_sec": 12.004996064002626,
+      "translation_lon_lat_alt": [
+        114.43675454696687,
+        30.39144908292206,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9995930989583334
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+0.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.637378692626953,
+      "edge_overlap_count": 310,
+      "edge_overlap_ratio": 0.824468085106383,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 376,
+      "render_time_sec": 12.961660492990632,
+      "translation_lon_lat_alt": [
+        114.4367569021165,
+        30.39135893283017,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9988064236111112
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+0.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.721198558807373,
+      "edge_overlap_count": 423,
+      "edge_overlap_ratio": 1.2120343839541547,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 349,
+      "render_time_sec": 12.86951867400785,
+      "translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        396.462
+      ],
+      "valid_depth_ratio": 0.99951171875
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-15.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -15.0,
+      "edge_chamfer": 2.8321175575256348,
+      "edge_overlap_count": 399,
+      "edge_overlap_ratio": 0.822680412371134,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 485,
+      "render_time_sec": 12.891672715981258,
+      "translation_lon_lat_alt": [
+        114.43670372978144,
+        30.39140298700854,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9990234375
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 2.875324249267578,
+      "edge_overlap_count": 450,
+      "edge_overlap_ratio": 0.9846827133479212,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 457,
+      "render_time_sec": 11.846283266000682,
+      "translation_lon_lat_alt": [
+        114.43685971407416,
+        30.391406049549783,
+        391.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.877854108810425,
+      "edge_overlap_count": 370,
+      "edge_overlap_ratio": 1.1011904761904763,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 336,
+      "render_time_sec": 10.762161227001343,
+      "translation_lon_lat_alt": [
+        114.43675572454302,
+        30.39140400787629,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9997829861111112
+    }
+  ],
+  "top_by_edge_overlap_ratio": [
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+0.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.410712718963623,
+      "edge_overlap_count": 602,
+      "edge_overlap_ratio": 1.4333333333333333,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 420,
+      "render_time_sec": 11.936676943005295,
+      "translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998372395833334
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.222156047821045,
+      "edge_overlap_count": 504,
+      "edge_overlap_ratio": 1.3808219178082193,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 365,
+      "render_time_sec": 12.877135758986697,
+      "translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        396.462
+      ],
+      "valid_depth_ratio": 0.99951171875
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.007302761077881,
+      "edge_overlap_count": 580,
+      "edge_overlap_ratio": 1.2719298245614035,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 456,
+      "render_time_sec": 11.6900538780028,
+      "translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998643663194444
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+0.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 4.664336681365967,
+      "edge_overlap_count": 411,
+      "edge_overlap_ratio": 1.2607361963190185,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 326,
+      "render_time_sec": 10.986282005993417,
+      "translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+0.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 2.721198558807373,
+      "edge_overlap_count": 423,
+      "edge_overlap_ratio": 1.2120343839541547,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 0.0,
+      "query_edge_count": 597,
+      "render_edge_count": 349,
+      "render_time_sec": 12.86951867400785,
+      "translation_lon_lat_alt": [
+        114.43680889685692,
+        30.39135995367542,
+        396.462
+      ],
+      "valid_depth_ratio": 0.99951171875
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.1305344104766846,
+      "edge_overlap_count": 553,
+      "edge_overlap_ratio": 1.1943844492440605,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 463,
+      "render_time_sec": 11.907937273994321,
+      "translation_lon_lat_alt": [
+        114.43675572454302,
+        30.39140400787629,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9995930989583334
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N+5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 3.2729263305664062,
+      "edge_overlap_count": 392,
+      "edge_overlap_ratio": 1.1495601173020529,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 341,
+      "render_time_sec": 10.993611830985174,
+      "translation_lon_lat_alt": [
+        114.43680771930727,
+        30.39140502872337,
+        386.462
+      ],
+      "valid_depth_ratio": 1.0
+    },
+    {
+      "alt_offset_m": 0.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-5.000:N-5.000:A+0.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -5.0,
+      "edge_chamfer": 3.8930773735046387,
+      "edge_overlap_count": 503,
+      "edge_overlap_ratio": 1.1405895691609977,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": -5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 441,
+      "render_time_sec": 11.853878791996976,
+      "translation_lon_lat_alt": [
+        114.43681007440392,
+        30.391314878627114,
+        391.462
+      ],
+      "valid_depth_ratio": 0.9998914930555556
+    },
+    {
+      "alt_offset_m": 5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E+0.000:N+5.000:A+5.000",
+      "depth_max": 390.0,
+      "depth_min": 370.0,
+      "east_offset_m": 0.0,
+      "edge_chamfer": 3.450986385345459,
+      "edge_overlap_count": 395,
+      "edge_overlap_ratio": 1.1253561253561253,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 351,
+      "render_time_sec": 13.24148771300679,
+      "translation_lon_lat_alt": [
+        114.43685971407416,
+        30.391406049549783,
+        396.462
+      ],
+      "valid_depth_ratio": 0.9999186197916666
+    },
+    {
+      "alt_offset_m": -5.0,
+      "candidate": "grid",
+      "candidate_key": "grid:E-10.000:N+5.000:A-5.000",
+      "depth_max": 380.0,
+      "depth_min": 360.0,
+      "east_offset_m": -10.0,
+      "edge_chamfer": 2.877854108810425,
+      "edge_overlap_count": 370,
+      "edge_overlap_ratio": 1.1011904761904763,
+      "euler_pitch_roll_yaw": [
+        0.0,
+        180.0,
+        29.2
+      ],
+      "north_offset_m": 5.0,
+      "query_edge_count": 597,
+      "render_edge_count": 336,
+      "render_time_sec": 10.762161227001343,
+      "translation_lon_lat_alt": [
+        114.43675572454302,
+        30.39140400787629,
+        386.462
+      ],
+      "valid_depth_ratio": 0.9997829861111112
+    }
+  ]
+}

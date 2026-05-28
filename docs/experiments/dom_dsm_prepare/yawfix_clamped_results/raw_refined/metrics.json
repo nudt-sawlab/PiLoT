@@ -1,0 +1,23 @@
+{
+  "depth_max": 390.0,
+  "depth_min": 360.0,
+  "description": "Use the raw pose returned by localizer.run_query().",
+  "edge_chamfer": 9.99929428100586,
+  "edge_overlap_count": 507,
+  "edge_overlap_ratio": 0.31866750471401634,
+  "euler_pitch_roll_yaw": [
+    179.99995341015875,
+    -0.0001110565307272474,
+    -144.79992977988016
+  ],
+  "query_edge_count": 2132,
+  "render_edge_count": 1591,
+  "render_time_sec": 116.99833130836487,
+  "strategy": "raw_refined",
+  "translation_lon_lat_alt": [
+    114.43672403989947,
+    30.39133929980722,
+    395.55917405802757
+  ],
+  "valid_depth_ratio": 0.9988064236111112
+}

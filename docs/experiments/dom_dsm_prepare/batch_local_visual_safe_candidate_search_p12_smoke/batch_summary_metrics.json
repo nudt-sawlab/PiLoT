@@ -1,0 +1,135 @@
+{
+  "batch_statistics": {
+    "feature_top10_contains_visual_top1_rate": 1.0,
+    "feature_top1_matches_visual_top1_rate": null,
+    "feature_top1_safe_rate": 0.0,
+    "feature_top5_contains_visual_top1_rate": 0.0,
+    "mean_chamfer_improvement": 0.27999210357666016,
+    "mean_overlap_improvement": 0.18372555518727207,
+    "mean_spearman_unweighted_vs_chamfer": 0.1333333333333333,
+    "mean_spearman_unweighted_vs_overlap": -0.5166666666666666,
+    "mean_spearman_weighted_vs_chamfer_by_mode": {
+      "uniform": 0.1333333333333333
+    },
+    "mean_spearman_weighted_vs_overlap_by_mode": {
+      "uniform": -0.5166666666666666
+    },
+    "median_chamfer_improvement": 0.27999210357666016,
+    "median_overlap_improvement": 0.18372555518727207,
+    "non_initial_accept_rate": 1.0,
+    "num_both_improved": 1,
+    "num_chamfer_improved": 1,
+    "num_images_processed": 1,
+    "num_overlap_improved": 1,
+    "regression_rate": 0.0,
+    "strict_gate_accept_rate": 1.0,
+    "weighted_feature_top1_safe_rate_by_mode": {
+      "uniform": 1.0
+    },
+    "weighted_feature_top5_contains_visual_top1_rate_by_mode": {
+      "uniform": null
+    }
+  },
+  "candidate_generation": {
+    "coarse_east_offsets": [
+      0.0
+    ],
+    "coarse_north_offsets": [
+      0.0
+    ],
+    "enable_alt_refine": false,
+    "include_known_seeds_for_debug": false,
+    "include_raw_refined": false,
+    "topk_visual_for_yaw": 0,
+    "weight_modes": [
+      "uniform"
+    ],
+    "yaw_refine_offsets": [
+      0.0
+    ]
+  },
+  "config": "configs/caiwangcun_domdsm_16x9.yaml",
+  "experiment": "P12 batch local visual-safe candidate search",
+  "failed_images": [],
+  "interpretation": {
+    "conclusion": "Case C: Batch evidence is insufficient for generalization under the current fixed policy.",
+    "does_any_structure_weight_help_feature_ranking": false,
+    "does_batch_local_search_generalize": false,
+    "does_batch_show_systematic_offset": false,
+    "does_feature_scorer_generalize": false,
+    "recommended_next_step": "Inspect metric stability, query/pose quality, and search range before pipeline integration.",
+    "systematic_offset_hypothesis": "most common selected east/north offset (0.0, 0.0) count 1/1"
+  },
+  "num_images_failed": 0,
+  "num_images_processed": 1,
+  "num_images_requested": 1,
+  "offset_distribution": {
+    "mean_selected_alt_offset": 0.0,
+    "mean_selected_east_offset": 0.0,
+    "mean_selected_north_offset": 0.0,
+    "mean_selected_yaw_offset": -1.0,
+    "median_selected_alt_offset": 0.0,
+    "median_selected_east_offset": 0.0,
+    "median_selected_north_offset": 0.0,
+    "median_selected_yaw_offset": -1.0,
+    "most_common_selected_offset": {
+      "count": 1,
+      "east": 0.0,
+      "north": 0.0
+    },
+    "selected_alt_offsets": [
+      0.0
+    ],
+    "selected_east_offsets": [
+      0.0
+    ],
+    "selected_north_offsets": [
+      0.0
+    ],
+    "selected_yaw_offsets": [
+      -1.0
+    ],
+    "std_selected_alt_offset": 0.0,
+    "std_selected_east_offset": 0.0,
+    "std_selected_north_offset": 0.0,
+    "std_selected_yaw_offset": 0.0
+  },
+  "p12_success": false,
+  "per_image": [
+    {
+      "best_weight_mode_by_rank_alignment": "uniform",
+      "chamfer_improvement": 0.27999210357666016,
+      "feature_top10_contains_visual_top1": true,
+      "feature_top1_candidate": "alt_minus_1m",
+      "feature_top1_passes_strict_gate": false,
+      "feature_top5_contains_visual_top1": false,
+      "image": "0000.jpg",
+      "initial_chamfer": 9.630294799804688,
+      "initial_overlap": 0.5285714285714286,
+      "num_candidates": 9,
+      "num_strict_pass": 3,
+      "overlap_improvement": 0.18372555518727207,
+      "safe_output_worse_than_initial": false,
+      "selected_candidate": "yaw_minus_1deg",
+      "selected_chamfer": 9.350302696228027,
+      "selected_offset_alt_m": 0.0,
+      "selected_offset_east_m": 0.0,
+      "selected_offset_north_m": 0.0,
+      "selected_overlap": 0.7122969837587007,
+      "selected_yaw_offset_deg": -1.0,
+      "spearman_unweighted_vs_chamfer": 0.1333333333333333,
+      "spearman_unweighted_vs_overlap": -0.5166666666666666,
+      "spearman_weighted_vs_chamfer_by_mode": {
+        "uniform": 0.1333333333333333
+      },
+      "spearman_weighted_vs_overlap_by_mode": {
+        "uniform": -0.5166666666666666
+      },
+      "strict_gate_accepts_non_initial": true
+    }
+  ],
+  "pose_file": "data_caiwangcun/query/poses/exif_test_yawfix.txt",
+  "query_dir": "data_caiwangcun/query/images/exif_test",
+  "skipped_missing_pose": [],
+  "width": 256
+}

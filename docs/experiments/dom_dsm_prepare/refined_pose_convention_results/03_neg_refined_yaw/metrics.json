@@ -1,0 +1,23 @@
+{
+  "candidate": "03_neg_refined_yaw",
+  "depth_max": 400.0,
+  "depth_min": 360.0,
+  "description": "Use refined pitch/roll, but negate refined yaw.",
+  "edge_chamfer": 34.51394271850586,
+  "edge_overlap_count": 260,
+  "edge_overlap_ratio": 0.12357414448669202,
+  "euler_pitch_roll_yaw": [
+    179.99995341015037,
+    -0.0001110565401035226,
+    144.79992977987283
+  ],
+  "query_edge_count": 2104,
+  "render_edge_count": 3038,
+  "render_time_sec": 132.34407286599162,
+  "translation_lon_lat_alt": [
+    114.43672403988498,
+    30.391339299808664,
+    395.5591768939048
+  ],
+  "valid_depth_ratio": 0.998291015625
+}

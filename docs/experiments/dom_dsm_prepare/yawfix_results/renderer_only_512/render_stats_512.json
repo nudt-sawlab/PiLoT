@@ -1,0 +1,28 @@
+{
+  "valid_depth_ratio": 1.0,
+  "depth_min": 358.0,
+  "depth_max": 380.0,
+  "render_time_sec": 711.122470161994,
+  "render_params": {
+    "near_m": 300.0,
+    "far_m": 500.0,
+    "ray_step_m": 2.0
+  },
+  "pose": {
+    "translation_lon_lat_alt": [
+      114.4368608916,
+      30.3913609745,
+      391.462
+    ],
+    "euler_pitch_roll_yaw": [
+      0.0,
+      180.0,
+      29.2
+    ],
+    "source_pose_format": "image_name lon lat alt roll pitch yaw"
+  },
+  "image_size": {
+    "width": 512,
+    "height": 288
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "PiLoT 实验结果上传"
+  short_description: "整理 PiLoT 实验产物并安全推送到 GitHub。"
+  default_prompt: "使用这个 skill 收集 PiLoT 实验新增的脚本、配置、文档和轻量结果文件，允许精确上传小型 outputs 结果，排除大资产后提交到当前分支、推送并在 GitHub 上复核。"
