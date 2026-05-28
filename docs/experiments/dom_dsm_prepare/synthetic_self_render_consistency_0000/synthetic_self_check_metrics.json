@@ -1,0 +1,248 @@
+{
+  "K_xml": [
+    [
+      3722.256453,
+      0.0,
+      2650.555218
+    ],
+    [
+      0.0,
+      3722.3867365357787,
+      1961.222555
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "all_checks_passed": true,
+  "backend_used": "gpu_mesh",
+  "camera_center_lon_lat_alt": [
+    114.43686036628351,
+    30.391363472409957,
+    391.3168246040077
+  ],
+  "camera_center_xml_srs": [
+    541984.8573536231,
+    3363579.2646625345,
+    391.3168246040077
+  ],
+  "checks": {
+    "pipeline_adapter_check": {
+      "metadata": {
+        "backend_requested": "gpu_mesh",
+        "backend_used": "gpu_mesh",
+        "debug_texture_mode": "none",
+        "depth_convention": "camera_z_m",
+        "depth_max_m": 378.95562744140625,
+        "depth_median_m": 366.4324645996094,
+        "depth_min_m": 355.35528564453125,
+        "dsm_window": [
+          48,
+          2950,
+          4798,
+          4798
+        ],
+        "fallback_reason": null,
+        "output_y_flip": true,
+        "render_time_ms": 26845.96178299999,
+        "texture_v_flip": false,
+        "triangle_count": 2751030,
+        "valid_depth_ratio": 0.9963799234764225,
+        "vertex_count": 1442401
+      },
+      "metrics": {
+        "depth_mae_m": 0.0,
+        "depth_max_m": 0.0,
+        "depth_p50_m": 0.0,
+        "depth_p95_m": 0.0,
+        "depth_signed_mean_m": 0.0,
+        "edge_chamfer": 0.0,
+        "edge_overlap_count": 88972,
+        "edge_overlap_ratio": 1.0,
+        "height": 3956,
+        "query_edge_count": 88972,
+        "render_edge_count": 88972,
+        "rgb_mae": 0.0,
+        "rgb_max": 0.0,
+        "rgb_p50": 0.0,
+        "rgb_p95": 0.0,
+        "same_shape": true,
+        "valid_a_ratio": 0.9963799234764225,
+        "valid_b_ratio": 0.9963799234764225,
+        "valid_intersection_ratio": 0.9963799234764225,
+        "valid_iou": 1.0,
+        "valid_union_ratio": 0.9963799234764225,
+        "width": 5280
+      },
+      "passed": true,
+      "render_time_sec": 27.01693642699999
+    },
+    "repeat_gpu_same_call": {
+      "metadata_a": {
+        "backend_requested": "gpu_mesh",
+        "backend_used": "gpu_mesh",
+        "debug_texture_mode": "none",
+        "depth_convention": "camera_z_m",
+        "depth_max_m": 378.95562744140625,
+        "depth_median_m": 366.4324645996094,
+        "depth_min_m": 355.35528564453125,
+        "dsm_window": [
+          48,
+          2950,
+          4798,
+          4798
+        ],
+        "fallback_reason": null,
+        "output_y_flip": true,
+        "render_time_ms": 14976.276971000005,
+        "texture_v_flip": false,
+        "triangle_count": 2751030,
+        "valid_depth_ratio": 0.9963799234764225,
+        "vertex_count": 1442401
+      },
+      "metadata_b": {
+        "backend_requested": "gpu_mesh",
+        "backend_used": "gpu_mesh",
+        "debug_texture_mode": "none",
+        "depth_convention": "camera_z_m",
+        "depth_max_m": 378.95562744140625,
+        "depth_median_m": 366.4324645996094,
+        "depth_min_m": 355.35528564453125,
+        "dsm_window": [
+          48,
+          2950,
+          4798,
+          4798
+        ],
+        "fallback_reason": null,
+        "output_y_flip": true,
+        "render_time_ms": 1861.5366060000015,
+        "texture_v_flip": false,
+        "triangle_count": 2751030,
+        "valid_depth_ratio": 0.9963799234764225,
+        "vertex_count": 1442401
+      },
+      "metrics": {
+        "depth_mae_m": 0.0,
+        "depth_max_m": 0.0,
+        "depth_p50_m": 0.0,
+        "depth_p95_m": 0.0,
+        "depth_signed_mean_m": 0.0,
+        "edge_chamfer": 0.0,
+        "edge_overlap_count": 88972,
+        "edge_overlap_ratio": 1.0,
+        "height": 3956,
+        "query_edge_count": 88972,
+        "render_edge_count": 88972,
+        "rgb_mae": 0.0,
+        "rgb_max": 0.0,
+        "rgb_p50": 0.0,
+        "rgb_p95": 0.0,
+        "same_shape": true,
+        "valid_a_ratio": 0.9963799234764225,
+        "valid_b_ratio": 0.9963799234764225,
+        "valid_intersection_ratio": 0.9963799234764225,
+        "valid_iou": 1.0,
+        "valid_union_ratio": 0.9963799234764225,
+        "width": 5280
+      },
+      "passed": true,
+      "render_time_sec_a": 15.147815597000005,
+      "render_time_sec_b": 2.028529636000002
+    },
+    "saved_synthetic_roundtrip": {
+      "metrics": {
+        "depth_mae_m": 0.0,
+        "depth_max_m": 0.0,
+        "depth_p50_m": 0.0,
+        "depth_p95_m": 0.0,
+        "depth_signed_mean_m": 0.0,
+        "edge_chamfer": 0.0,
+        "edge_overlap_count": 88972,
+        "edge_overlap_ratio": 1.0,
+        "height": 3956,
+        "query_edge_count": 88972,
+        "render_edge_count": 88972,
+        "rgb_mae": 0.0,
+        "rgb_max": 0.0,
+        "rgb_p50": 0.0,
+        "rgb_p95": 0.0,
+        "same_shape": true,
+        "valid_a_ratio": 0.9963799234764225,
+        "valid_b_ratio": 0.9963799234764225,
+        "valid_intersection_ratio": 0.9963799234764225,
+        "valid_iou": 1.0,
+        "valid_union_ratio": 0.9963799234764225,
+        "width": 5280
+      },
+      "passed": true,
+      "synthetic_query_resized": false
+    }
+  },
+  "conclusion": "synthetic self-check passed; continue attributing real query-render error to real imaging differences, DOM phase, texture, or metric reliability",
+  "config": "configs/caiwangcun_domdsm.yaml",
+  "experiment": "Synthetic self render consistency",
+  "fallback_reason": null,
+  "image_sizes": {
+    "pipeline_adapter_render": [
+      5280,
+      3956
+    ],
+    "render_repeat": [
+      5280,
+      3956
+    ],
+    "synthetic_query": [
+      5280,
+      3956
+    ],
+    "synthetic_roundtrip": [
+      5280,
+      3956
+    ]
+  },
+  "intrinsics": {
+    "aspect": 0.999965,
+    "cx": 2650.555218,
+    "cy": 1961.222555,
+    "distortion": {
+      "k1": -0.101571,
+      "k2": -0.019639,
+      "k3": 0.0,
+      "p1": -0.000217,
+      "p2": 0.000239
+    },
+    "focal": 3722.256453,
+    "fx": 3722.256453,
+    "fy": 3722.3867365357787,
+    "fy_rule": "fy = focal / aspect",
+    "height": 3956,
+    "photogroup_index": 1,
+    "skew": 0.0,
+    "width": 5280
+  },
+  "output_dir": "docs/experiments/dom_dsm_prepare/synthetic_self_render_consistency_0000",
+  "photo_id": "7",
+  "render_camera": [
+    5280,
+    3956,
+    2650.555218,
+    1961.222555,
+    3722.256453,
+    3722.3867365357787
+  ],
+  "render_ray_rotation": "R_camera_to_world = R_xml.T",
+  "synthetic_query_resized": false,
+  "visual_edge_metrics": {
+    "edge_chamfer": 0.0,
+    "edge_overlap_count": 88972,
+    "edge_overlap_ratio": 1.0,
+    "query_edge_count": 88972,
+    "render_edge_count": 88972
+  },
+  "xml": "data_caiwangcun/CaiWangCun.xml",
+  "xml_image_path": "//192.168.2.45/e/2025GS-test-data/202510/1094\u5f20/DJI_202510311347_009_\u65b0\u5efa\u9762\u72b6\u822a\u7ebf1/DJI_20251031135226_0007_V.JPG",
+  "xml_srs": "EPSG:4547"
+}
