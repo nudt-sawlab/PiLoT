@@ -1,0 +1,110 @@
+# @package _global_
+type: train
+
+# Copy to train_Aero_seq_pilot_fusion_crop_512.local.yaml and set your paths.
+save_dir: ${work_dir}/workspace/train_Aero_seq_pilot_fusion
+# resume: ${work_dir}/workspace/train_Aero_seq_pilot_fusion/logs-<timestamp>
+
+data:
+  name: base_loader
+  dataset_dir: /path/to/your/dataset
+  sub_dataset_dir: ['Mapscape']
+
+  resize_by: min
+  resize: 512
+  crop: 512
+  optimal_crop: false
+  skip_frame: 1
+  change_background: false
+  change_background_thres: 0.5
+  skip_template_view: 6
+  get_top_k_template_views: 5
+  img_aug: true
+  grayscale: false
+  num_samples: 500
+  mul: 0.001
+
+  num_init_pose: 1
+  num_ref: 1
+  with_ref: false
+  with_mask: false
+  with_depth: false
+  min_jump: 1
+  max_jump: 3
+  num_frames: 2
+  train_num_per_slice: 20
+  val_num_per_slice: 10
+  sample_vertex_num: 500
+  min_visib_fract: 0.6
+  min_px_count_visib: 600
+  val_offset: true
+  train_offset: true
+  min_offset_angle: 5.0
+  max_offset_angle: 15.0
+  min_offset_translation: 0.0005
+  max_offset_translation: 0.0015
+  train_batch_size_per_gpu: 8
+  val_batch_size_per_gpu: 8
+  workers_per_gpu: 4
+  seed: 1
+  use_balanced_sampler: true
+  shuffle_training: false
+
+# load_model: ${work_dir}/workspace/train_Aero_seq_pilot_fusion/logs-<timestamp>/model_last.ckpt
+
+models:
+  name: PiLoT
+  scales: [2, 2, 1, 1, 1, 0, 0, 0, 0]
+  constraints: [1, 1, 1, 1, 1, 1, 1, 1, 1]
+  success_thresh: 3
+  normalize_features: true
+  normalize_cost: false
+  train_score: false
+  with_refine: false
+  train_GAT: false
+  cost_fn: scaled_barron(0, 0.1)
+  multi_optimizer: false
+  optimizer:
+    name: learned_optimizer
+    lambda_: 0.01
+    tikhonov_matrix: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+    damping:
+      type: constant
+      log_range: [-6, 5]
+    trainable: false
+  extractor:
+    name: backbone_unet_fusion
+    num_output_layer: 3
+    output_dim: [32, 32, 32]
+    encoder: mobileone_s0
+    encoder_depth: 3
+    decoder: UnetDecoder
+    decoder_channels: [128, 64, 32]
+    align_data_to_pretrain: false
+    pretrained_weights: imagenet
+    train_mask: false
+    normalize_key: false
+    train_box: false
+    compute_uncertainty: true
+    trainable: true
+
+trainer:
+  total_epochs: 30
+  val_intervals: 1
+  val_visualize: true
+  optimizer:
+    name: Adam
+    lr: 1e-3
+    lr_scaling: [[100, ['dampingnet.const']]]
+    weight_decay: 0.0
+  lr_schedule:
+    name: StepLR
+    step_size: 5
+    gamma: 0.25
+  log:
+    interval: 2
+  seed: 0
+  dataset_callback_fn: sample_new_items
+
+device:
+  gpu_ids: [0]

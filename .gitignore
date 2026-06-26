@@ -39,3 +39,9 @@ Thumbs.db
 
 # Outputs
 outputs/
+workspace/
+
+# Local training configs
+PiLoT-Train/**/*.local.yaml
+PiLoT-Train/.history/
+PiLoT-Train/.hydra/

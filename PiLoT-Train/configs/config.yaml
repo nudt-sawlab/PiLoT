@@ -1,0 +1,12 @@
+# @package _global_
+
+work_dir: ${hydra:runtime.cwd}
+data_dir: ${work_dir}/data
+print_config: True
+
+hydra:
+    run:
+        dir: ${work_dir}
+
+disable_lightning_logs: True
+
