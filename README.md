@@ -11,6 +11,14 @@
 
 > **3DGS backend note:** Paper experiments used 3D Tiles with a proprietary renderer. This release provides two **3D Gaussian Splatting** map backends in one codebase — both run in the same `pilot` conda environment.
 
+## 📌 TODO
+
+- [x] Inference code (3DGS rendering backend)
+- [x] Demo data & pretrained model
+- [x] Training data
+- [x] Training code
+- [x] Improved pose refiner with spatio-temporal constraints (more robust)
+
 ## Agent Quick Start
 
 Using an AI coding assistant (Cursor, Claude Code, Codex, etc.)? Open this repo and try:
