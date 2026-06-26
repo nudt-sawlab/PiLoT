@@ -12,6 +12,7 @@ from .tracker import BaseTracker
 from ..pixlib.geometry import Pose, Camera
 from ..pixlib.datasets.view import read_image
 from ..utils.transform import kf_predictor, pixloc_to_osg, move_inputs_to_cuda
+from ..utils.citygs.pose_convert import c2w_colmap_to_euler_trans
 from ..utils.get_depth import zero_pad
 
 logger = logging.getLogger(__name__)
@@ -22,9 +23,13 @@ def orthogonalize_rotation_batch(R: torch.Tensor) -> torch.Tensor:
     return U @ Vh
 
 def build_world_c2w_batch(T_batch: Pose, lever_arm: Optional[torch.Tensor], 
-                         scale_factor: float, origin: torch.Tensor) -> torch.Tensor:
+                         scale_factor: float, origin: torch.Tensor,
+                         flip_yz: bool = True) -> torch.Tensor:
     """
     Convert a batch of w2c Poses to c2w tensors in the world/ECEF coordinate system.
+
+    `flip_yz` must mirror the convention used when building the LM-space poses in
+    sample_3d_points: True for the OSG/ECEF path, False for normalized/COLMAP.
     """
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     dtype = torch.float64
@@ -49,7 +54,8 @@ def build_world_c2w_batch(T_batch: Pose, lever_arm: Optional[torch.Tensor],
 
     T = torch.eye(4, device=device, dtype=dtype).unsqueeze(0).repeat(batch_size, 1, 1)
     T[:, :3, :3] = r_c2w
-    T[:, :3, 1:3] *= -1  # Coordinate convention adjustment
+    if flip_yz:
+        T[:, :3, 1:3] *= -1  # OSG/ECEF coordinate convention adjustment
     T[:, :3, 3] = t_c2w + origin
 
     return T
@@ -85,6 +91,10 @@ class BaseRefiner:
             oc.create(self.base_default_config),
             oc.create(self.default_config),
             oc.create(conf))
+        # Temporal cost across consecutive query frames.
+        self.use_temporal = bool(self.conf.get('use_temporal', False))
+        self.last_feature_query = None
+        self.last_last_feature_query = None
 
     def refine_query_pose(self, qname: str, qcamera: Camera, ref_camera: Camera, render_frame: torch.Tensor, 
                           T_query_initial: Pose, T_render: Pose, points_3d_ecef: torch.Tensor, dd=None,
@@ -117,7 +127,13 @@ class BaseRefiner:
         ret = self.refine_pose_using_features(features_q, scales_q, qcamera, T_query_initial, 
                                               ref_camera, T_render, features_ref, scales_ref, 
                                               p3d=points_3d_ecef)
-        
+
+        # Roll the temporal feature buffer (uses the frame two steps back).
+        if self.use_temporal:
+            if self.last_feature_query is not None:
+                self.last_last_feature_query = self.last_feature_query
+            self.last_feature_query = [f.detach().clone() for f in features_q]
+
         if not ret['success']:
             logger.info(f"Optimization failed for query {qname}")
             return ret
@@ -128,7 +144,8 @@ class BaseRefiner:
         fail_list = ret['fail_list']
         
         # Candidate validation based on thresholds
-        candidates_c2w = build_world_c2w_batch(candidates_w2c, dd, scale_mul, origin)
+        flip_yz = refine_conf.get('coordinate_system', 'ecef') != 'normalized'
+        candidates_c2w = build_world_c2w_batch(candidates_w2c, dd, scale_mul, origin, flip_yz=flip_yz)
         
         # Find best index among non-failed candidates
         valid = ~fail_list
@@ -144,7 +161,11 @@ class BaseRefiner:
         
         # Result conversion to world frame
         t_c2w_final = candidates_c2w[final_idx].cpu().numpy()
-        euler, trans, _, _ = pixloc_to_osg(t_c2w_final)
+        if refine_conf.get("coordinate_system") == "normalized":
+            # build_world already recovers COLMAP c2w (preprocess flip is cancelled)
+            euler, trans = c2w_colmap_to_euler_trans(t_c2w_final)
+        else:
+            euler, trans, _, _ = pixloc_to_osg(t_c2w_final)
 
         return {
             **ret,
@@ -152,7 +173,7 @@ class BaseRefiner:
             'diff_R': rot_err.item(),
             'diff_t': trans_err.item(),
             'euler_angles': euler,
-            'translation': trans
+            'translation': trans,
         }
 
     def refine_pose_using_features(self, features_q, scales_q, qcamera, T_init, 
@@ -160,7 +181,20 @@ class BaseRefiner:
         """Iterative optimization across multiple feature scales."""
         features_q = [f.to(self.device) for f in features_q]
         features_ref = [f.to(self.device) for f in features_ref]
-        
+
+        # Previous query frame (two steps back) as the temporal reference.
+        features_last_query = None
+        weights_last_query = None
+        if (self.use_temporal
+                and self.last_last_feature_query is not None
+                and self.conf.compute_uncertainty
+                and self.conf.normalize_descriptors):
+            last_fq = [f.to(self.device) for f in self.last_last_feature_query]
+            weights_last_query = [f[-1:] for f in last_fq]
+            features_last_query = [
+                torch.nn.functional.normalize(f[:-1], dim=0) for f in last_fq
+            ]
+
         weights_q, weights_ref = None, None
         if self.conf.compute_uncertainty:
             weights_q = [f[-1:] for f in features_q]
@@ -174,7 +208,7 @@ class BaseRefiner:
         T_curr = T_init
         T_kf = T_init[0]
         
-        for level in reversed(range(len(features_q))):
+        for idx, level in enumerate(reversed(range(len(features_q)))):
             f_q, f_ref = features_q[level], features_ref[level]
             qcam_lvl = qcamera.scale(scales_q[level])
             rcam_lvl = rcamera.scale(scales_ref[level])
@@ -185,6 +219,13 @@ class BaseRefiner:
             if isinstance(opt, (list, tuple)):
                 opt = opt[self.conf.layer_indices[level]] if self.conf.layer_indices else opt[level]
 
+            # Apply the temporal term only at the coarsest level, where the
+            # full candidate set is still alive and gets filtered.
+            last_F, last_c = None, None
+            if features_last_query is not None and idx == 0:
+                last_F = features_last_query[level]
+                last_c = weights_last_query[level]
+
             n_iters = {0: 4, 1: 3, 2: 2}.get(level, 2)
             
             T_opt, fail, loss = opt.run(p3d, f_ref, f_q, T_curr.to(f_q), 
@@ -192,6 +233,8 @@ class BaseRefiner:
                                         T_render.to(f_q),
                                         rcam_lvl.to_tensor().to(f_q),
                                         W_ref_query=w_ref_q,
+                                        last_F_query=last_F,
+                                        last_c_query=last_c,
                                         prior=self.prior,
                                         T_kf=T_kf.to(f_q),
                                         num_iters=n_iters)            

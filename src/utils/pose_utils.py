@@ -2,8 +2,13 @@
 from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
+from scipy.spatial.transform import Rotation as R
 
 from pixloc.pixlib.geometry import Pose
+from pixloc.utils.citygs.pose_convert import (
+    euler_trans_to_colmap_c2w,
+    read_render2loc_pose_txt,
+)
 from pixloc.utils.transform import WGS84_to_ECEF, euler_angles_to_matrix_ECEF
 
 
@@ -63,6 +68,75 @@ def load_pose_dict(
 
             entry: Dict[str, Any] = {"T_w2c_4x4": T_c2w.copy()}
 
+            T_c2w[:3, 1] = -T_c2w[:3, 1]
+            T_c2w[:3, 2] = -T_c2w[:3, 2]
+            if origin is not None:
+                T_c2w[:3, 3] -= origin
+
+            T_w2c = np.eye(4)
+            T_w2c[:3, :3] = T_c2w[:3, :3].T
+            T_w2c[:3, 3] = -T_c2w[:3, :3].T @ T_c2w[:3, 3]
+
+            entry["euler"] = euler
+            entry["trans"] = trans
+            entry["T_w2c"] = Pose.from_Rt(T_w2c[:3, :3], T_w2c[:3, 3]).to_flat()
+            pose_dict[name] = entry
+    return pose_dict
+
+
+def load_initial_pose_normalized(
+    gt_pose_path: str,
+    init_pose_txt: Optional[str] = None,
+    init_pose_frame: int = 0,
+    init_c2w_npy: Optional[str] = None,
+    init_frame_idx: int = 0,
+) -> Tuple[List[float], List[float], np.ndarray]:
+    """Load the initial pose in normalized CityGaussian model coordinates."""
+    if init_pose_txt:
+        _, euler, trans, _ = read_render2loc_pose_txt(init_pose_txt, init_pose_frame)
+        origin = np.asarray(trans, dtype=np.float64)
+        return euler, trans, origin
+
+    if init_c2w_npy:
+        c2w_all = np.load(init_c2w_npy)
+        c2w = np.asarray(c2w_all[init_frame_idx], dtype=np.float64)
+        trans = c2w[:3, 3].tolist()
+        euler = R.from_matrix(c2w[:3, :3]).as_euler("xyz", degrees=True).tolist()
+        origin = np.asarray(trans, dtype=np.float64)
+        return euler, trans, origin
+
+    with open(gt_pose_path, "r", encoding="utf-8") as f:
+        for line in f:
+            parts = line.strip().split()
+            if parts:
+                trans = list(map(float, parts[1:4]))
+                euler = list(map(float, parts[4:7]))
+                origin = np.asarray(trans, dtype=np.float64)
+                return euler, trans, origin
+    raise ValueError(f"No valid pose found in {gt_pose_path}")
+
+
+def load_pose_dict_normalized(
+    pose_file: str,
+    origin: Optional[np.ndarray] = None,
+) -> Dict[str, Dict[str, Any]]:
+    """Load normalized model poses: name x y z euler_x euler_y euler_z [...]."""
+    pose_dict: Dict[str, Dict[str, Any]] = {}
+    origin = np.zeros(3) if origin is None else np.asarray(origin, dtype=np.float64)
+
+    with open(pose_file, "r", encoding="utf-8") as f:
+        for line in f:
+            parts = line.strip().split()
+            if not parts:
+                continue
+            trans = list(map(float, parts[1:4]))
+            euler = list(map(float, parts[4:7]))
+            name = parts[0] if "_" in parts[0] else parts[0][:-4] + "_0.png"
+
+            T_c2w = euler_trans_to_colmap_c2w(trans, euler)
+            entry: Dict[str, Any] = {"T_w2c_4x4": T_c2w.copy()}
+
+            T_c2w = T_c2w.copy()
             T_c2w[:3, 1] = -T_c2w[:3, 1]
             T_c2w[:3, 2] = -T_c2w[:3, 2]
             if origin is not None:

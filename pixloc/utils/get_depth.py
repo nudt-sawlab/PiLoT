@@ -73,7 +73,7 @@ def read_valid_depth(
     Returns:
         (interpolated_depth, valid_indices).
     """
-    depth_t = torch.tensor(depth).to(device)
+    depth_t = torch.as_tensor(depth, device=device, dtype=torch.float32)
     mkpts_f = mkpts.float().to(device)
     mkpts_rc = mkpts_f[:, [1, 0]].to(device)
     depth_interp, _, valid = interpolate_depth_grid(mkpts_rc, depth_t)
@@ -131,20 +131,29 @@ def preprocess_pose_for_pixloc(
     camera: Camera,
     pose: torch.Tensor,
     device: str = "cuda",
+    flip_yz: bool = True,
 ) -> Tuple[Camera, torch.Tensor]:
-    """Flip Y/Z axes of pose for PixLoc convention.
+    """Optionally flip Y/Z axes of pose for the OSG/ECEF PixLoc convention.
+
+    The Y/Z column flip is only required for the OSG renderer (y-up world).
+    CityGaussian renders in the native COLMAP convention (z-forward, y-down),
+    which already matches PixLoc's pinhole camera, so for the normalized path
+    `flip_yz` must be False — flipping there mirrors the back-projected geometry
+    and inverts roll/yaw/x/y corrections once ref and query have a baseline.
 
     Args:
         camera: Camera intrinsics.
         pose: [4, 4] or [N, 4, 4] pose matrix.
         device: Computation device.
+        flip_yz: Whether to negate the Y and Z columns.
 
     Returns:
         (camera, modified_pose).
     """
     pose = pose.to(device)
-    pose[..., 0:3, 1] *= -1
-    pose[..., 0:3, 2] *= -1
+    if flip_yz:
+        pose[..., 0:3, 1] *= -1
+        pose[..., 0:3, 2] *= -1
     return camera, pose
 
 
@@ -320,6 +329,26 @@ def _euler_to_rotation_batch(
     return rot_enu_in_ecef.unsqueeze(0) @ R_local
 
 
+def _euler_to_matrix_model_batch(
+    euler_angles: torch.Tensor,
+    translation: torch.Tensor,
+    device: str = "cuda",
+) -> torch.Tensor:
+    """Batch Euler angles + model-space translations to 4x4 c2w matrices."""
+    mats = []
+    for i in range(euler_angles.shape[0]):
+        rot = R.from_euler(
+            "xyz", euler_angles[i].detach().cpu().numpy(), degrees=True
+        ).as_matrix()
+        mats.append(torch.tensor(rot, device=device, dtype=torch.float32))
+    R_batch = torch.stack(mats, dim=0)
+    N = R_batch.shape[0]
+    T = torch.eye(4, device=device).unsqueeze(0).repeat(N, 1, 1)
+    T[:, :3, :3] = R_batch
+    T[:, :3, 3] = translation
+    return T
+
+
 def _euler_to_matrix_ecef_batch(
     euler_angles: torch.Tensor,
     translation: torch.Tensor,
@@ -365,12 +394,42 @@ def generate_rotation_grid(
         [N, 3] tensor of [pitch, roll, yaw] angles.
     """
     pitch_vals = torch.tensor(
-        [9, 7, 5, 3, 1, -1, -3, -5, -7, -9], device=device
+        [9, 7, 5, 3, 1, 0, -1, -3, -5, -7, -9], device=device
     )
     yaw_vals = torch.tensor(
-        [9, 7, 5, 3, 1, -1, -3, -5, -7, -9], device=device
+        [9, 7, 5, 3, 1, 0, -1, -3, -5, -7, -9], device=device
     )
     roll_vals = torch.tensor([0], device=device)
+
+    P, Y, R_grid = torch.meshgrid(
+        pitch_vals, yaw_vals, roll_vals, indexing="ij"
+    )
+    N = P.numel()
+    pitch = P.reshape(N) + base_pitch
+    roll = R_grid.reshape(N) + base_roll
+    yaw = Y.reshape(N) + base_yaw
+    return torch.stack((pitch, roll, yaw), dim=1)
+
+
+def generate_rotation_grid_normalized(
+    base_pitch: float,
+    base_roll: float,
+    base_yaw: float,
+    device: str = "cuda",
+) -> torch.Tensor:
+    """Tight rotation grid for normalized-model sequential tracking.
+
+    7 pitch x 7 yaw x 3 roll = 147 candidates. Roll is included because it has
+    no other search dimension and drifts unconstrained otherwise.
+    """
+    dtype = torch.float32
+    pitch_vals = torch.tensor(
+        [0, -0.5, 0.5, -1, 1, -2, 2], device=device, dtype=dtype
+    )
+    yaw_vals = torch.tensor(
+        [0, -0.5, 0.5, -1, 1, -2, 2], device=device, dtype=dtype
+    )
+    roll_vals = torch.tensor([0], device=device, dtype=dtype)
 
     P, Y, R_grid = torch.meshgrid(
         pitch_vals, yaw_vals, roll_vals, indexing="ij"
@@ -425,7 +484,7 @@ def generate_translation_grid(
     step_z: float,
     device: str = "cuda",
 ) -> torch.Tensor:
-    """Generate a 3D translation grid (excluding zero offset).
+    """Generate a 3D translation grid around ``base_trans`` (includes zero offset).
 
     Args:
         base_trans: [3] base translation.
@@ -441,10 +500,11 @@ def generate_translation_grid(
 
     def _create_range(max_val, step):
         if max_val == 0 or step <= 0:
-            return torch.tensor([], device=device)
+            return torch.tensor([0.0], device=device)
         neg = torch.arange(-max_val, 0, step, device=device)
+        zero = torch.tensor([0.0], device=device)
         pos = torch.arange(step, max_val + step, step, device=device)
-        return torch.cat([neg, pos])
+        return torch.cat([neg, zero, pos])
 
     range_x = _create_range(max_x, step_x) + bx
     range_y = _create_range(max_y, step_y) + by
@@ -469,6 +529,8 @@ def sample_3d_points(
     device: str = "cuda",
     mul: Optional[float] = None,
     is_init_frame: bool = True,
+    trust_prior: bool = False,
+    coordinate_system: str = "ecef",
 ) -> Tuple[torch.Tensor, Pose, Pose, torch.Tensor]:
     """Sample 3D points from depth and generate initial pose candidates.
 
@@ -489,36 +551,77 @@ def sample_3d_points(
         device: Computation device.
         mul: Optional coordinate scaling factor.
         is_init_frame: If True, generates broader search grid.
+        trust_prior: If True, use the exact query pose as the only candidate.
 
     Returns:
         (points_3d, render_pose, candidate_poses, center_offset).
     """
+    dtype = torch.float32
+    T_c2w = T_c2w.to(device=device, dtype=dtype)
+    if origin is not None:
+        origin = origin.to(device=device, dtype=dtype)
+    if torch.is_tensor(mkpts_r):
+        mkpts_r = mkpts_r.to(device=device, dtype=dtype)
+
+    normalized = coordinate_system == "normalized"
+
     # --- Generate rotation candidates ---
-    if is_init_frame:
+    if trust_prior:
+        euler_grid = torch.tensor(
+            [query_euler_angles], device=device, dtype=torch.float32
+        )
+        trans_grid = torch.tensor(
+            [query_translation], device=device, dtype=torch.float32
+        )
+    elif is_init_frame:
         euler_grid = generate_yaw_rotation_grid(
             base_pitch=query_euler_angles[0],
             base_roll=query_euler_angles[1],
             base_yaw=query_euler_angles[2],
         )
-        trans_ecef = WGS84_to_ECEF(query_translation)
-        trans_grid = generate_translation_grid(
-            base_trans=trans_ecef,
-            max_x=10, step_x=5,
-            max_y=10, step_y=5,
-            max_z=0, step_z=1,
-            device=euler_grid.device,
-        )
+        if normalized:
+            trans_base = torch.tensor(
+                query_translation, device=device, dtype=torch.float32
+            )
+            trans_grid = generate_translation_grid(
+                base_trans=trans_base,
+                max_x=2, step_x=1,
+                max_y=2, step_y=1,
+                max_z=0, step_z=1,
+                device=euler_grid.device,
+            )
+        else:
+            trans_ecef = WGS84_to_ECEF(query_translation)
+            trans_grid = generate_translation_grid(
+                base_trans=trans_ecef,
+                max_x=10, step_x=5,
+                max_y=10, step_y=5,
+                max_z=0, step_z=1,
+                device=euler_grid.device,
+            )
     else:
-        euler_grid = generate_rotation_grid(
-            base_pitch=query_euler_angles[0],
-            base_roll=query_euler_angles[1],
-            base_yaw=query_euler_angles[2],
-        )
-        trans_ecef = WGS84_to_ECEF(query_translation)
-        trans_ecef = torch.tensor(
-            trans_ecef, device=device, dtype=torch.float32
-        )
-        trans_grid = trans_ecef.reshape(1, 3)
+        if normalized:
+            # 7x7 pitch-yaw rotation seeds (roll fixed); translation is NOT
+            # scattered — single base point. Total candidates = 49.
+            euler_grid = generate_rotation_grid_normalized(
+                base_pitch=query_euler_angles[0],
+                base_roll=query_euler_angles[1],
+                base_yaw=query_euler_angles[2],
+            )
+            trans_grid = torch.tensor(
+                [query_translation], device=device, dtype=torch.float32
+            )
+        else:
+            euler_grid = generate_rotation_grid(
+                base_pitch=query_euler_angles[0],
+                base_roll=query_euler_angles[1],
+                base_yaw=query_euler_angles[2],
+            )
+            trans_base = torch.tensor(
+                WGS84_to_ECEF(query_translation),
+                device=device, dtype=torch.float32,
+            )
+            trans_grid = trans_base.reshape(1, 3)
 
     # --- Cartesian product of rotations x translations ---
     M = trans_grid.shape[0]
@@ -526,25 +629,35 @@ def sample_3d_points(
     euler_expanded = euler_grid.repeat_interleave(M, dim=0)
     trans_expanded = trans_grid.repeat(N, 1)
 
-    query_T_c2w = _euler_to_matrix_ecef_batch(
-        euler_expanded, trans_expanded, query_translation
-    )
-    query_T_c2w[:, :3, 1] *= -1
-    query_T_c2w[:, :3, 2] *= -1
+    # COLMAP/normalized renders already match PixLoc's pinhole convention; only
+    # the OSG/ECEF path needs the Y/Z axis flip (see preprocess_pose_for_pixloc).
+    flip_yz = not normalized
+
+    if normalized:
+        query_T_c2w = _euler_to_matrix_model_batch(
+            euler_expanded, trans_expanded, device=device
+        )
+    else:
+        query_T_c2w = _euler_to_matrix_ecef_batch(
+            euler_expanded, trans_expanded, query_translation
+        )
+    if flip_yz:
+        query_T_c2w[:, :3, 1] *= -1
+        query_T_c2w[:, :3, 2] *= -1
 
     # --- Preprocess render pose ---
     render_cam, render_T = preprocess_pose_for_pixloc(
-        copy.deepcopy(camera), copy.deepcopy(T_c2w)
+        copy.deepcopy(camera), copy.deepcopy(T_c2w), flip_yz=flip_yz
     )
     cx, cy = render_cam.c
     fx, fy = render_cam.f
     render_K = torch.tensor(
-        [[fx, 0, cx], [0, fy, cy], [0, 0, 1]], device=device
+        [[fx, 0, cx], [0, fy, cy], [0, 0, 1]], device=device, dtype=dtype
     )
     K_inv = render_K.inverse()
 
-    render_T = torch.tensor(render_T, device=device)
-    mkpts_r = torch.tensor(mkpts_r, device=device)
+    render_T = render_T.to(device=device, dtype=dtype)
+    mkpts_r = mkpts_r.to(device=device, dtype=dtype)
 
     # --- Back-project to 3D ---
     depth_vals, valid = read_valid_depth(mkpts_r, depth=depth_mat, device=device)
@@ -574,15 +687,19 @@ def sample_3d_points(
     ).inv()
 
     # --- Center normalization ---
-    pts_max = points_3d_local.max(dim=0)[0]
-    pts_min = points_3d_local.min(dim=0)[0]
-    dd = pts_min + (pts_max - pts_min) / 2
-    points_3d_centered = points_3d_local - dd
+    if points_3d_local.numel() == 0:
+        dd = torch.zeros(3, device=device, dtype=dtype)
+        points_3d_centered = points_3d_local
+    else:
+        pts_max = points_3d_local.max(dim=0)[0]
+        pts_min = points_3d_local.min(dim=0)[0]
+        dd = (pts_min + (pts_max - pts_min) / 2).to(dtype=dtype)
+        points_3d_centered = points_3d_local - dd
 
-    tt = T_render.t + T_render.R @ dd
-    T_render = Pose.from_Rt(T_render.R, tt)
+        tt = T_render.t + T_render.R @ dd
+        T_render = Pose.from_Rt(T_render.R, tt)
 
-    tt = T_query.t + T_query.R @ dd
-    T_query = Pose.from_Rt(T_query.R, tt)
+        tt = T_query.t + T_query.R @ dd
+        T_query = Pose.from_Rt(T_query.R, tt)
 
     return points_3d_centered, T_render, T_query, dd

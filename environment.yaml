@@ -1,4 +1,6 @@
 name: pilot
+# Standalone env (Feicuiwan-friendly). For both SMBU + Feicuiwan demos, prefer
+# building ``pilot`` from CityGaussian's environment.yml — see docs/install.md.
 channels:
   - defaults
 dependencies:

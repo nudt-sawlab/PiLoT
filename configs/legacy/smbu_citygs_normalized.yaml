@@ -1,0 +1,110 @@
+render_config:
+  type: "citygs"
+  coordinate_system: "normalized"
+  render_camera: [960, 540, 480, 270, 868, 868]
+  citygs:
+    citygs_root: "/home/choya/Documents/code/CityGaussian"
+    checkpoint: "/home/choya/Documents/code/CityGaussian/3dgs_model/SMBU/checkpoints/epoch=60-step=30000.ckpt"
+    data_path: "/home/choya/Documents/code/CityGaussian/3dgs_model/SMBU"
+    sparse_subdir: "sparse/sparse/0"
+    down_sample_factor: 3.4175
+    coordinate_system: "normalized"
+    # 与 query 0_0.png 对齐：用 fx868 GT 第 0 帧作先验（init_pose_txt 优先于 init_c2w_npy）
+    init_pose_txt: "/mnt/sda/MapScape/query/estimation/result_images/Render2loc/smbu_seq1_3dgs_fx868.txt"
+    init_pose_frame: 0
+    # map_scan 轨迹仅用于地标扫描，帧号与 smbu_seq1 不对应
+    # init_pose_txt: "/home/choya/Documents/code/CityGaussian/SMBU/renders_map_scan/poses/pilot_poses.txt"
+    init_c2w_npy: "/home/choya/Documents/code/CityGaussian/3dgs_model/SMBU/renders_map_scan/poses/topdown_c2w.npy"
+    init_frame_idx: 0
+  # frame 0 from smbu_seq1_3dgs_fx868.txt (matches 0_0.png)
+  init_rot: [73.70141101125306, 0.006372290178700057, 147.94607339944355]
+  init_trans: [-2.472183076709024, -6.551210367578361, 0.21583654951171902]
+  outputs: "outputs/smbu_seq1_citygs"
+
+default_confs:
+  from_render_test:
+    checkpoint: "data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt"
+    refinement:
+      num_dbs: 3
+      multiscale: [4, 1]
+      point_selection: "all"
+      normalize_descriptors: true
+      average_observations: false
+      do_pose_approximation: true
+      # Temporal cost: align the current 3D points against the query frame two
+      # steps back, keeping the pose consistent across frames (esp. yaw turns).
+      use_temporal: true
+    optimizer:
+      ratio: 2
+      num_iters: 3
+      pad: 1
+      lambda_: 0.01
+      verbose: false
+      loss_fn: scaled_barron(0, 0.1)
+      no_conditions: true
+      jacobi_scaling: false
+      sqrt_diag_damping: false
+      name: learned_optimizer
+      bound_confidence: true
+      learned_damping: true
+      damping:
+        type: constant
+    init_target_offset: null
+    success_thresh: 3
+    name: two_view_refiner
+    normalize_features: true
+    duplicate_optimizer_per_scale: true
+    features:
+      conf:
+    scales: [1, 2, 4]
+    extractor:
+      name: unet_fusion
+      num_output_layer: 3
+      output_dim: [32, 32, 32]
+      encoder: mobileone_s0
+      encoder_depth: 3
+      decoder: UnetDecoder
+      decoder_channels: [128, 64, 32]
+      align_data_to_pretrain: false
+      pretrained_weights: "imagenet"
+      train_mask: false
+      normalize_key: false
+      train_box: false
+      compute_uncertainty: true
+      trainable: true
+
+  cam_query:
+    max_size: 512
+    model: "PINHOLE"
+    width: 960
+    height: 540
+    params: [868, 868, 480, 270]
+    distortion: [0, 0, 0, 0, 0]
+
+  enable_target_indicator: false
+  enable_visualization: true
+
+  dataset_path: "/mnt/sda/MapScape/query"
+  sequence_name: "smbu_seq1"
+  dataset_name: "smbu_seq1"
+  output_name: "smbu_seq1_citygs"
+  gt_pose_path: "/mnt/sda/MapScape/query/estimation/result_images/Render2loc/smbu_seq1_3dgs_fx868.txt"
+  use_kf: false
+  # Sequential tracking: scatter 7x7 pitch-yaw rotation seeds per frame (xyz not
+  # scattered). Frame 0 still uses the single init prior via init_pose_txt.
+  trust_prior_sequential: false
+  padding: true
+  refine:
+    origin: [-2.472183076709024, -6.551210367578361, 0.21583654951171902]
+    dis_thes: 30
+    R_thes: 30
+    mul: 0.001
+    coordinate_system: "normalized"
+    # Scene has large black background (sky/holes) whose Gaussians emit depth
+    # overlapping the foreground range; drop those pixels from 3D sampling.
+    black_bg_thresh: 10
+    # Query is a distorted drone frame, render is pinhole: only the center
+    # aligns. Trim 12% from each side when sampling 3D points.
+    edge_mask_ratio: 0.12
+    num_samples: 500
+  num_init_pose: 64

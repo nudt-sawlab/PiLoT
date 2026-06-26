@@ -7,8 +7,14 @@ logger = logging.getLogger(__name__)
 
 if version.parse(torch.__version__) >= version.parse('1.9'):
     cholesky = torch.linalg.cholesky
+
+    def cholesky_solve(b, L):
+        return torch.linalg.cholesky_solve(b, L)
 else:
     cholesky = torch.cholesky
+
+    def cholesky_solve(b, L):
+        return torch.cholesky_solve(b, L)
 
 def optimizer_step(B: torch.Tensor, A: torch.Tensor, lambda_=0, mask = None):
         tikhonov_matrix = torch.diag(torch.tensor([0.1, 0.1, 0.1, 0.1, 0.1, 0.1], dtype=torch.float32)).cuda()
@@ -40,7 +46,7 @@ def optimizer_step(B: torch.Tensor, A: torch.Tensor, lambda_=0, mask = None):
             else:
                 raise
         else:
-            delta = torch.cholesky_solve(B_, U)[..., 0]
+            delta = cholesky_solve(B_, U)[..., 0]
 
         return delta.to(A.device)
 

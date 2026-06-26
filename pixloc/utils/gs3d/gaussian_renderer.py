@@ -55,25 +55,46 @@ def render(viewpoint_camera, pc, pipe, bg_color, scaling_modifier=1.0):
     scales = pc.get_scaling
     rotations = pc.get_rotation
     shs = pc.get_features
-    semantic_feature = pc.get_semantic_feature
 
-    rendered_image, feature_map, radii, depth = rasterizer(
+    rendered_image, radii = rasterizer(
         means3D=means3D,
         means2D=means2D,
         shs=shs,
         colors_precomp=None,
-        semantic_feature=semantic_feature,
         opacities=opacity,
         scales=scales,
         rotations=rotations,
         cov3D_precomp=None,
     )
 
+    # The stock rasterizer returns only (color, radii). Depth is obtained with
+    # a second pass that uses each gaussian's camera-space z as a precomputed
+    # colour, so the alpha-blended output is the expected depth per pixel.
+    means3D_hom = torch.cat(
+        [means3D, torch.ones_like(means3D[:, :1])], dim=1
+    )
+    z_view = (means3D_hom @ viewpoint_camera.world_view_transform)[:, 2:3]
+    depth_color = z_view.repeat(1, 3).contiguous()
+    depth_settings = raster_settings._replace(
+        bg=torch.zeros_like(bg_color)
+    )
+    depth_rasterizer = GaussianRasterizer(raster_settings=depth_settings)
+    depth_image, _ = depth_rasterizer(
+        means3D=means3D,
+        means2D=means2D,
+        shs=None,
+        colors_precomp=depth_color,
+        opacities=opacity,
+        scales=scales,
+        rotations=rotations,
+        cov3D_precomp=None,
+    )
+    depth = depth_image[:1]
+
     return {
         "render": rendered_image,
         "viewspace_points": screenspace_points,
         "visibility_filter": radii > 0,
         "radii": radii,
-        "feature_map": feature_map,
         "depth": depth,
     }

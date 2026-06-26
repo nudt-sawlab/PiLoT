@@ -1,0 +1,103 @@
+render_config:
+  type: "citygs"
+  coordinate_system: "normalized"
+  render_camera: [960, 540, 480, 270, 868, 868]
+  citygs:
+    citygs_root: "/home/choya/Documents/code/CityGaussian"
+    checkpoint: "/home/choya/Documents/code/CityGaussian/3dgs_model/SMBU/checkpoints/epoch=60-step=30000.ckpt"
+    data_path: "/home/choya/Documents/code/CityGaussian/3dgs_model/SMBU"
+    sparse_subdir: "sparse/sparse/0"
+    down_sample_factor: 3.4175
+    coordinate_system: "normalized"
+    init_pose_frame: 0
+  # frame 0 from ref_targetloc.txt
+  init_rot: [73.7910406960459, 0.018297190629338864, 147.71742394251746]
+  init_trans: [-3.782031986560746, -5.7937982475316, 0.20686441022387547]
+  outputs: "outputs/smbu_seq2_citygs"
+
+default_confs:
+  from_render_test:
+    checkpoint: "data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt"
+    refinement:
+      num_dbs: 3
+      multiscale: [4, 1]
+      point_selection: "all"
+      normalize_descriptors: true
+      average_observations: false
+      do_pose_approximation: true
+      # Temporal cost: align the current 3D points against the query frame two
+      # steps back, keeping the pose consistent across frames (esp. yaw turns).
+      use_temporal: true
+    optimizer:
+      ratio: 2
+      num_iters: 3
+      pad: 1
+      lambda_: 0.01
+      verbose: false
+      loss_fn: scaled_barron(0, 0.1)
+      no_conditions: true
+      jacobi_scaling: false
+      sqrt_diag_damping: false
+      name: learned_optimizer
+      bound_confidence: true
+      learned_damping: true
+      damping:
+        type: constant
+    init_target_offset: null
+    success_thresh: 3
+    name: two_view_refiner
+    normalize_features: true
+    duplicate_optimizer_per_scale: true
+    features:
+      conf:
+    scales: [1, 2, 4]
+    extractor:
+      name: unet_fusion
+      num_output_layer: 3
+      output_dim: [32, 32, 32]
+      encoder: mobileone_s0
+      encoder_depth: 3
+      decoder: UnetDecoder
+      decoder_channels: [128, 64, 32]
+      align_data_to_pretrain: false
+      pretrained_weights: "imagenet"
+      train_mask: false
+      normalize_key: false
+      train_box: false
+      compute_uncertainty: true
+      trainable: true
+
+  cam_query:
+    max_size: 512
+    model: "PINHOLE"
+    width: 960
+    height: 540
+    params: [868, 868, 480, 270]
+    distortion: [0, 0, 0, 0, 0]
+
+  enable_target_indicator: false
+  enable_visualization: true
+
+  dataset_path: "data_demo/query"
+  sequence_name: "smbu_seq2"
+  dataset_name: "smbu_seq2"
+  output_name: "smbu_seq2_citygs"
+  gt_pose_path: "data_demo/query/poses/smbu_seq2.txt"
+  use_kf: false
+  # Scatter 7x7 pitch-yaw rotation seeds per frame (xyz not scattered).
+  # Frame 0 still uses the single init prior via init_pose_txt.
+  trust_prior_sequential: false
+  padding: true
+  refine:
+    origin: [-3.782031986560746, -5.7937982475316, 0.20686441022387547]
+    dis_thes: 30
+    R_thes: 30
+    mul: 0.001
+    coordinate_system: "normalized"
+    # Drop near-black background pixels from 3D sampling.
+    black_bg_thresh: 10
+    # Query is a distorted drone frame, render is pinhole: only the center
+    # aligns. Trim 12% from each side when sampling 3D points.
+    edge_mask_ratio: 0.12
+    num_samples: 500
+  num_init_pose: 64

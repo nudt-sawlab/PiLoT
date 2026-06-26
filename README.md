@@ -1,255 +1,174 @@
 # PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization
 [![License](https://img.shields.io/badge/license-Saw%20Lab-003399.svg)](LICENSE)
-<!-- [![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/pytorch-2.4%2Bcu124-orange.svg)](https://pytorch.org/) -->
+
 [Website](https://nudt-sawlab.github.io/PiLoT/) | [arXiv](https://arxiv.org/abs/2603.20778) | [Dataset](https://huggingface.co/datasets/choyaa/PiLoT-data)
 
-**PiLoT** is a a unified framework that tackles UAV-based ego and target geo-localization. Our system takes a live video frame and a geo-referenced 3D map as input, and outputs 1) the **UAV 6-DoF pose**, visualized by the tight alignment in the AR overlays (bottom row), and 2) the **3D geo-coordinates** of any target pixel, as shown in the dynamic target tracking example (left, filmstrip view). 
-<!-- This repository contains the official implementation of our CVPR 2026 paper. -->
+**PiLoT** is a unified framework for UAV ego-localization and target geo-localization from a live frame and a geo-referenced 3D map.
+
 <p align="center">
   <img src="assets/teaser.png" width="95%" alt="PiLoT Overview Teaser">
 </p>
 
-## 📌 TODO
+> **3DGS backend note:** Paper experiments used 3D Tiles with a proprietary renderer. This release provides two **3D Gaussian Splatting** map backends in one codebase — both run in the same `pilot` conda environment.
 
-- [x] Inference code (3DGS rendering backend)
-- [x] Demo data & pretrained model
-- [x] Training data 
-- [ ] Training code
-- [ ] Larger-area test scenes
-## 🚀 Installation
+## Agent Quick Start
 
-### Step 1: Clone the Repository
+Using an AI coding assistant (Cursor, Claude Code, Codex, etc.)? Open this repo and try:
 
-```bash
-git clone https://github.com/Choyaa/PiLoT.git
-cd PiLoT
+| Goal | Prompt | Guide |
+|------|--------|-------|
+| **Install** | *"Read AGENTS.md and install PiLoT"* | [AGENTS.md](AGENTS.md) |
+| **Run SMBU demo** | *"Download data and run SMBU seq2 with visualization"* | [AGENTS.md](AGENTS.md) · [docs/demos/smbu.md](docs/demos/smbu.md) |
+| **Run Feicuiwan demo** | *"Run the Feicuiwan 3DGS demo"* | [AGENTS.md](AGENTS.md) · [docs/demos/feicuiwan.md](docs/demos/feicuiwan.md) |
+| **Own data** | *"Read docs/custom_data.md and help me prepare my sequence"* | [docs/custom_data.md](docs/custom_data.md) |
+| **Custom renderer** | *"Read docs/render_backends.md and add a Blender/OSG renderer"* | [docs/render_backends.md](docs/render_backends.md) |
+
+## Two demo cases (same env, same entry point)
+
+| Case | Scene | Renderer | Coordinates | Data |
+|------|-------|----------|-------------|------|
+| **1. SMBU** | Campus UAV seq2 | CityGaussian checkpoint | normalized `x y z` | `data_demo/` |
+| **2. Feicuiwan** | Jadebay partial area | vanilla 3DGS PLY | ECEF `lon lat alt` | `data_demo/` |
+
+```
+PiLoT (main.py + learned optimizer)
+    ├── citygs  → SMBU          configs/demos/smbu_seq2.yaml
+    └── 3dgs    → Feicuiwan     configs/demos/feicuiwan.yaml
 ```
 
-### Step 2: Create Conda Environment
+Details: [docs/coordinate_systems.md](docs/coordinate_systems.md)
+
+## Installation
+
+Full steps: **[docs/install.md](docs/install.md)**
+
+Summary — one conda env named **`pilot`**, based on CityGaussian's `gspl` stack:
 
 ```bash
-conda env create -f environment.yaml
+git clone https://github.com/Choyaa/PiLoT.git && cd PiLoT
+git clone https://github.com/DekuLiuTesla/CityGaussian.git third_party/CityGaussian
+
+cd third_party/CityGaussian
+conda env create -f environment.yml -n pilot
 conda activate pilot
-```
+cd ../..
 
+pip install -r requirements.txt
+cd DirectAbsoluteCostCuda && CUDA_HOME=/usr/local/cuda python setup_build.py install && cd ..
 
-### Step 3: Install CUDA Extensions
-
-Pre-built binaries are provided for Python 3.8 / 3.9 / 3.10 (Linux x86_64):
-
-```bash
-cd DirectAbsoluteCostCuda
-pip install .
-cd ..
-```
-### Step 4: Install 3DGS Dependencies
-
-```bash
-pip install plyfile pyproj
+# For Feicuiwan (vanilla PLY renderer):
 pip install git+https://github.com/graphdeco-inria/diff-gaussian-rasterization.git
 pip install git+https://github.com/graphdeco-inria/gaussian-splatting.git#subdirectory=submodules/simple-knn
 ```
 
-<!-- ### Step 4: Build 3D Tiles Renderer (Optional)
+## Download data
 
-If you need to use the OpenSceneGraph-based 3D tiles renderer:
-
-```bash
-cd 3DTilesRender
-mkdir build && cd build
-cmake .. -DBUILD_AS_PYTHON_MODULE=ON
-make -j$(nproc)
-cd ../..
-``` -->
-
-## 🚀 Quick Start: 3DGS Demo
-
-> **Note on rendering backend**: The experiments in our paper use **3D Tiles** models with a proprietary renderer. Due to licensing restrictions on the renderer, we provide a **3DGS** backend here instead. The demo scene covers a partial area of Jadebay, reconstructed from data in [ThermalGS / TSDN](https://github.com/porcofly/ThermalGS-and-TSDN-Dataset). We plan to release a larger Jadebay model and additional query sequences in the future.
-
-### 1. Download Demo Data
-
-Download the 3DGS demo data and pretrained model:
-
-- [Google Drive](https://drive.google.com/file/d/17rCLllEqofPjhZ-3tix1NyElViOgPdKo/view?usp=sharing)
-- [Baidu Netdisk](https://pan.baidu.com/s/1LJA28jwnQm5ahRONGyTowg?pwd=uwqa)
-
-Extract `data_demo` to the repository root:
-
-```
-data_demo/
-├── Jadebay_3dgs_model/                  # 3DGS Gaussian model (single PLY)
-│   └── point_cloud.ply
-├── pretrained_model/
-│   └── model@mapscape@512@Fourier.ckpt   # PiLoT feature / refiner checkpoint
-└── query/
-    ├── images/
-    │   └── 3dgs_test/                   # same name as --name
-    │       ├── 0_0.png
-    │       └── ...
-    └── poses/
-        └── 3dgs_test.txt                # image_name lon lat alt roll pitch yaw
-```
-### 3. Run the Demo
+From the repo root ([PiLoT-data](https://huggingface.co/datasets/choyaa/PiLoT-data) on Hugging Face):
 
 ```bash
-python main.py \
-    --config configs/feicuiwan_3dgs.yaml \
-    --name 3dgs_test
-
-# With visualization (saved renders + overlay mp4):
-python main.py --config configs/feicuiwan_3dgs.yaml --name 3dgs_test --viz
+pip install huggingface_hub
+./scripts/download_data_demo.sh              # all (~15GB)
+# ./scripts/download_data_demo.sh smbu       # SMBU only (~10GB)
+# ./scripts/download_data_demo.sh feicuiwan  # Feicuiwan only (~4.5GB)
 ```
 
-Optional flags:
+Unpacks to `./data_demo/`. Details: [data_demo/README.md](data_demo/README.md).
 
-- `--viz` / `--no-viz` — override YAML `enable_visualization`. **`--viz`** is slower (saves images). **`outputs/`**: estimated poses; with **`--viz`**, also per-frame renders + `visualization.mp4`. 
-
-The initial pose is read from the first line of `data_demo/query/poses/<name>.txt` (e.g. `3dgs_test.txt`). You can also use `run_feicuiwan.sh`, which reads the same pose file — set `--config` to `configs/feicuiwan_3dgs.yaml` in the script.
-
----
-
-## 📦 Dataset Preparation
-
-### Dataset Structure
-
-Organize your dataset in the following structure:
-
-```
-dataset_root/
-├── images/
-│   └── sequence_name/
-│       ├── 0000.png
-│       ├── 0001.png
-│       └── ...
-├── poses/
-│   └── sequence_name.txt
-├── bbox/
-│   └── sequence_name/
-│       └── sequence_name_xy.txt
-└── target_RTK/
-    └── sequence_name_RTK.txt
-```
-
-### Pose File Format
-
-The pose file (`sequence_name.txt`) should contain one pose per line:
-
-```
-image_name lon lat alt roll pitch yaw
-0000.png 114.2604 22.2078 38.8901 0.0 25.0 314.9993
-0001.png 114.2605 22.2079 38.8902 0.1 25.1 315.0000
-...
-```
-
-### Target Points File Format
-
-The target points file (`sequence_name_xy.txt`) should contain:
-
-```
-image_name x y
-0000.png 1920.0 1080.0
-0001.png 1920.0 1080.0
-...
-```
-
-### Download Datasets
-
-For evaluation datasets, please refer to the specific dataset documentation. Example datasets include:
-
-- Custom UAV sequences
-- Large-scale urban scenes
-- Synthetic datasets
-
-## 🎮 Usage
-
-### Basic Usage
-
-Run localization on a sequence:
+## Run
 
 ```bash
-./run_feicuiwan.sh
+conda activate pilot
 ```
 
-### Command Line Arguments
+### Case 1: SMBU
 
 ```bash
-python main.py \
-    --config CONFIG_FILE          # Path to configuration file
-    --name DATASET_NAME           # Dataset name override
-    --init_euler "[p, r, y]"      # Initial Euler angles (optional)
-    --init_trans "[x, y, z]"      # Initial translation (optional)
+./scripts/run_smbu_seq2.sh
+./scripts/run_smbu_seq2.sh --viz          # save renders + video
 ```
 
-<!-- ### Example Scripts
+Root wrapper: `./run_smbu_seq2_citygs.sh`
 
-We provide example scripts for different scenarios:
+More: [docs/demos/smbu.md](docs/demos/smbu.md)
+
+### Case 2: Feicuiwan
 
 ```bash
-# Run on Feicuiwan dataset
-bash run_feicuiwan.sh
-
-# Run on Google dataset
-bash run_google.sh
-
-# Run on UAV scenes
-bash run_uavscenes.sh
+./scripts/run_feicuiwan.sh
+./scripts/run_feicuiwan.sh 3dgs_test --viz
 ```
 
-### Evaluation
+Root wrapper: `./run_feicuiwan_3dgs.sh`
 
-After running localization, evaluation metrics are automatically computed:
+More: [docs/demos/feicuiwan.md](docs/demos/feicuiwan.md)
 
-- **Position Error**: Translation error in meters (XYZ)
-- **Orientation Error**: Rotation error in degrees (Euler angles)
+### Direct Python
 
-Results are saved in the `outputs/` directory. -->
-
-## ⚙️ Configuration
-
-Configuration files are located in `configs/`. Each configuration file contains:
-
-### Render Configuration
-
-```yaml
-render_config:
-  model_path: "http://localhost:8078/Scene/Production_6.json"
-  render_camera: [width, height, cx, cy, fx, fy]
-  max_size:960/512 # render width
-  width: 3840  # query width
-  height: 2160 # query height
-  params: [2700.0, 2700.0, 1915.7, 1075.1] # query [fx, fy, cx, cy]
-  distortion: [0.0046, 0.1294, 0, 0.0012, -0.2037] # uery distortion
-  dataset_path: "data_demo/query"
+```bash
+python main.py -c configs/demos/smbu_seq2.yaml
+python main.py -c configs/demos/feicuiwan.yaml --name 3dgs_test
 ```
 
-### Localization Configuration
-```yaml
-default_confs:
-  cam_query:
-    max_size: render width  
-    width: w
-    height: h
-    params: [fx, fy, cx, cy]
-    distortion: [k1, k2, p1, p2, k3]
-  dataset_path: "/path/to/dataset"
-  dataset_name: "sequence_name"
-  num_init_pose: 64  # seeds
-  padding: true
+Outputs: `outputs/<output_name>.txt` (+ images with `--viz`).
+
+## Your own data
+
+Prepare query images, a pose file, and a 3D map that matches one of the render backends. Copy a demo config and point paths at your sequence.
+
+Full checklist: **[docs/custom_data.md](docs/custom_data.md)**
+
+Minimal layout:
+
+```
+data_demo/query/images/<seq>/   # 0_0.png, 1_0.png, ...
+data_demo/query/poses/<seq>.txt
+data_demo/<your_map>/           # CityGaussian ckpt or 3DGS PLY
 ```
 
-<!-- ## 🔬 Training (Optional)
+```bash
+python main.py -c configs/demos/my_seq.yaml --name <seq>
+```
 
-<!-- To train your own models: -->
+## Pluggable render backends
 
-<!-- ```bash
-python -m pixloc.pixlib.train experiment_name \
-    --conf pixloc/pixlib/configs/train_pixloc_megadepth.yaml
-``` -->
+The render worker in `main.py` is backend-agnostic: it only needs `(color, depth)` per pose. Built-in types: `citygs`, `3dgs`, `osg`. You can add **Blender**, **Unreal**, mesh rasterizers, or other map servers by implementing the same `render(trans, euler)` interface.
 
-## 📝 Citation
+How to extend: **[docs/render_backends.md](docs/render_backends.md)**
 
-If you use PiLoT in your research, please cite:
+## Pose file formats
+
+| Case | Columns |
+|------|---------|
+| SMBU | `image_name x y z pitch roll yaw` |
+| Feicuiwan | `image_name lon lat alt roll pitch yaw` |
+
+## Configuration
+
+- Official demos: `configs/demos/`
+- Legacy / internal: `configs/legacy/`
+- Paths support env vars: `${CITYGAUSSIAN_ROOT:-third_party/CityGaussian}`, `${SMBU_MODEL_DIR:-data_demo/smbu_model}`
+
+| Key | SMBU | Feicuiwan |
+|-----|------|-----------|
+| `render_config.type` | `citygs` | `3dgs` |
+| `coordinate_system` | `normalized` | `ecef` |
+| `trust_prior_sequential` | `false` (7×7 yaw/pitch seeds) | `false` |
+
+## Project layout
+
+```
+PiLoT/
+├── main.py
+├── configs/demos/          # smbu_seq2, feicuiwan
+├── scripts/                # run_smbu_seq2.sh, run_feicuiwan.sh
+├── data_demo/              # all demo data (download from Hugging Face)
+├── third_party/CityGaussian/
+├── pixloc/                 # localization core
+└── docs/                   # install, custom data, render backends, demos
+```
+```
+
+## Citation
 
 ```bibtex
 @inproceedings{cheng2026pilot,
@@ -260,7 +179,6 @@ If you use PiLoT in your research, please cite:
 }
 ```
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- Data sources and platform supported by [Google Earth](https://earth.google.com/web/) and [Cesium for Unreal](https://cesium.com/platform/cesium-for-unreal/).
-
+Data sources and platform supported by [Google Earth](https://earth.google.com/web/) and [Cesium for Unreal](https://cesium.com/platform/cesium-for-unreal/).

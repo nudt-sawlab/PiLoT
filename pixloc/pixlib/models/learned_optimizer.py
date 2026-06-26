@@ -59,6 +59,7 @@ class LearnedOptimizer(BaseOptimizer):
         ),
         feature_dim=None,
         num_filter_pose=32,
+        ratio_last=0.5,
         # deprecated entries
         lambda_=0.,
         learned_damping=True,
@@ -69,6 +70,7 @@ class LearnedOptimizer(BaseOptimizer):
         assert conf.learned_damping
         self.ratio = conf.ratio
         self.num_filter_pose = conf.num_filter_pose
+        self.ratio_last = conf.get('ratio_last', 0.5)
         self.fn = direct_abs_cost_cuda.residual_jacobian_batch_quat_cuda
         self.optimizer_cuda = direct_abs_cost_cuda.optimizer_step_cuda
         super()._init(conf)
@@ -150,6 +152,25 @@ class LearnedOptimizer(BaseOptimizer):
         overall_losses = []
         ratio = self.ratio
 
+        # Temporal cost: treat the previous query frame as an extra reference
+        # view of the same 3D points, so the pose stays consistent across
+        # frames instead of latching onto per-frame appearance.
+        inputs_last = None
+        if last_F_query is not None:
+            last_c_query = last_c_query.unsqueeze(0)
+            last_F_query = last_F_query.unsqueeze(0)
+            inputs_last = {
+                "pose_data_q": T_flat.unsqueeze(0).clone(),
+                "f_r": last_F_query.clone(),
+                "pose_data_r": T_render.unsqueeze(0).clone(),
+                "cam_data_r": ref_camera.unsqueeze(0).clone(),
+                "f_q": F_query.clone(),
+                "cam_data_q": qcamera.unsqueeze(0).clone(),
+                "p3D": p3D.unsqueeze(0).contiguous().clone(),
+                "c_ref": last_c_query.clone(),
+                "c_query": c_query.clone()
+                }
+
         inputs = {
             "pose_data_q": T_flat.unsqueeze(0).clone(),
             "f_r": F_ref.clone(),
@@ -198,7 +219,30 @@ class LearnedOptimizer(BaseOptimizer):
 
                 g += g_prior
                 H += H_prior
-            
+
+            if inputs_last is not None:
+                logger.debug('Using last frame features')
+                g1, H1, w_loss1, cost1 = self.fn(
+                    inputs_last['pose_data_q'],
+                    inputs_last['f_r'],
+                    inputs_last['pose_data_r'],
+                    inputs_last['cam_data_r'],
+                    inputs_last['f_q'],
+                    inputs_last['cam_data_q'],
+                    inputs_last['p3D'],
+                    inputs_last['c_ref'],
+                    inputs_last['c_query']
+                )
+                g1, H1, w_loss1, cost1 = [
+                    x.squeeze(0) if x.shape[0] == 1 else x
+                    for x in [g1, H1, w_loss1, cost1]
+                ]
+                ratio_last = self.ratio_last
+                g += ratio_last * g1
+                H += ratio_last * H1
+                w_loss = w_loss + ratio_last * w_loss1
+                cost = cost + ratio_last * cost1
+
             g = g.unsqueeze(-1)
             failed = failed 
             
@@ -211,6 +255,8 @@ class LearnedOptimizer(BaseOptimizer):
             T = T @ T_delta
             T_flat = T.to_flat()
             inputs["pose_data_q"]= T_flat.unsqueeze(0).contiguous().clone()
+            if inputs_last is not None:
+                inputs_last["pose_data_q"] = inputs["pose_data_q"]
            
             overall_losses.append(w_loss)
             
@@ -223,6 +269,9 @@ class LearnedOptimizer(BaseOptimizer):
             cost = cost[topk_indices]
             inputs["pose_data_q"] =  T_flat.unsqueeze(0).contiguous().clone()
             inputs["cam_data_q"] = qcamera.unsqueeze(0).clone()
+            if inputs_last is not None:
+                inputs_last["pose_data_q"] = T_flat.unsqueeze(0).contiguous().clone()
+                inputs_last["cam_data_q"] = qcamera.unsqueeze(0).clone()
             total_cost_loss = w_loss[topk_indices]
         else:
             total_cost_loss = w_loss

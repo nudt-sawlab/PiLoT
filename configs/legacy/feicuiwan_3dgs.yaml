@@ -1,13 +1,17 @@
+# Feicuiwan / Jadebay demo — vanilla 3DGS PLY renderer (ECEF / WGS84 poses).
+# Config layout matches configs/smbu_citygs_normalized.yaml; only render backend
+# and coordinate_system differ.
 render_config:
   type: "3dgs"
+  coordinate_system: "ecef"
   gs3d:
     ply_path: "data_demo/Jadebay_3dgs_model/point_cloud.ply"
     sh_degree: 3
     white_background: false
-    cgcs_offset: [401448, 3131258, 0]  # CGCS2000 Origin
-  init_rot: [0,0,0]
-  init_trans: [0,0,0]
-  outputs: "outputs/citystars"
+    cgcs_offset: [401448, 3131258, 0]  # CGCS2000 origin for Jadebay model
+  init_rot: [0, 0, 0]
+  init_trans: [0, 0, 0]
+  outputs: "outputs/feicuiwan_3dgs"
 
 default_confs:
   from_render_test:
@@ -61,28 +65,26 @@ default_confs:
   cam_query:
     max_size: 512
     model: "PINHOLE"
-    # width: 1920
-    # height: 1080
-    # params: [1350.0, 1350.0, 957.85, 537.55]
-    # distortion: [0, 0, 0, 0, 0]
-
     width: 3840
     height: 2160
     params: [2700.0, 2700.0, 1915.7, 1075.1]
-    distortion: [0.0046, 0.1294, 0, 0.0012, -0.2037] # k6
+    distortion: [0.0046, 0.1294, 0, 0.0012, -0.2037]
 
-
-  enable_target_indicator: false  # true=ego and target localizaition, false=only ego localization
-  enable_visualization: false      # save rendered images and generate PIP video (query + render overlay)
+  enable_target_indicator: false
+  enable_visualization: false
 
   dataset_path: "data_demo/query"
-  dataset_name: ""
-  output_name: ""
+  sequence_name: "3dgs_test"
+  dataset_name: "3dgs_test"
+  output_name: "3dgs_test"
+  gt_pose_path: "data_demo/query/poses/3dgs_test.txt"
   use_kf: false
-  padding: True
+  trust_prior_sequential: false
+  padding: true
   refine:
     origin: [0, 0, 0]
     dis_thes: 30
     R_thes: 30
     mul: 0.001
+    coordinate_system: "ecef"
   num_init_pose: 64

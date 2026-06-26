@@ -1,0 +1,89 @@
+# Case 3: Feicuiwan / Jadebay — vanilla 3DGS PLY renderer, ECEF / WGS84 poses.
+# Self-contained in data_demo/ (no CityGaussian required).
+render_config:
+  type: "3dgs"
+  coordinate_system: "ecef"
+  gs3d:
+    ply_path: "data_demo/3dgs_model/point_cloud.ply"
+    sh_degree: 3
+    white_background: false
+    cgcs_offset: [401448, 3131258, 0]
+  init_rot: [0, 0, 0]
+  init_trans: [0, 0, 0]
+  outputs: "outputs/feicuiwan"
+
+default_confs:
+  from_render_test:
+    checkpoint: "data_demo/pretrained_model/model@mapscape@512@Fourier.ckpt"
+    refinement:
+      num_dbs: 3
+      multiscale: [4, 1]
+      point_selection: "all"
+      normalize_descriptors: true
+      average_observations: false
+      do_pose_approximation: true
+    optimizer:
+      ratio: 2
+      num_iters: 3
+      pad: 1
+      lambda_: 0.01
+      verbose: false
+      loss_fn: scaled_barron(0, 0.1)
+      no_conditions: true
+      jacobi_scaling: false
+      sqrt_diag_damping: false
+      name: learned_optimizer
+      bound_confidence: true
+      learned_damping: true
+      damping:
+        type: constant
+    init_target_offset: null
+    success_thresh: 3
+    name: two_view_refiner
+    normalize_features: true
+    duplicate_optimizer_per_scale: true
+    features:
+      conf:
+    scales: [1, 2, 4]
+    extractor:
+      name: unet_fusion
+      num_output_layer: 3
+      output_dim: [32, 32, 32]
+      encoder: mobileone_s0
+      encoder_depth: 3
+      decoder: UnetDecoder
+      decoder_channels: [128, 64, 32]
+      align_data_to_pretrain: false
+      pretrained_weights: "imagenet"
+      train_mask: false
+      normalize_key: false
+      train_box: false
+      compute_uncertainty: true
+      trainable: true
+
+  cam_query:
+    max_size: 512
+    model: "PINHOLE"
+    width: 3840
+    height: 2160
+    params: [2700.0, 2700.0, 1915.7, 1075.1]
+    distortion: [0.0046, 0.1294, 0, 0.0012, -0.2037]
+
+  enable_target_indicator: false
+  enable_visualization: false
+
+  dataset_path: "data_demo/query"
+  sequence_name: "3dgs_test"
+  dataset_name: "3dgs_test"
+  output_name: "3dgs_test"
+  gt_pose_path: "data_demo/query/poses/3dgs_test.txt"
+  use_kf: false
+  trust_prior_sequential: false
+  padding: true
+  refine:
+    origin: [0, 0, 0]
+    dis_thes: 30
+    R_thes: 30
+    mul: 0.001
+    coordinate_system: "ecef"
+  num_init_pose: 64
