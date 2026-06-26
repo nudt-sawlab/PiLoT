@@ -215,44 +215,6 @@ class PiLoT(BaseModel):
 
         return -grad.unsqueeze(-1), Hess, cost.mean(dim=-1)
     @torch.no_grad()
-    def visualize_gt_aero(self, data, name = None):
-        """Visualize GT query-reference correspondences for Aero data."""
-        gt_body2view_pose = data['gt_body2view_poses']
-
-        vertex_in_body = data['aligned_vertex']
-        camera_q = data['cameras']
-        image = data['images']
-        camera_ref = data['cameras_ref']
-
-        gt_body2view_poses_ref = data['gt_body2view_poses_ref']
-
-
-        p3d_query_gt = gt_body2view_pose.transform(vertex_in_body)
-        p2d_gt, visible_2d = camera_q.view2image(p3d_query_gt)
-        p2d_gt = p2d_gt.squeeze(0).cpu().numpy()
-
-        p3d_ref = gt_body2view_poses_ref.transform(vertex_in_body)
-        p2d_ref, visible_2d_ref = camera_ref.view2image(p3d_ref)
-        data['prob_optimizing_result_images'] = []
-        B = 0
-        if name is not None:
-            B = data['output_name'].index(name)
-        if len(p2d_gt.shape) == 2:
-            p2d_gt = np.expand_dims(p2d_gt,axis=0)
-
-        img = data['images'][B].cpu().numpy()
-        img_ref = data['images_ref'][B].cpu().numpy()
-        save_path = '/home/ps/Documents/liuxy24/Single_Trainer/verify'
-        num = 30
-        indices = np.random.choice(len(p2d_gt[B]), size=num, replace=False)
-
-        display_images3 = visualize_points_on_images(img, img_ref, 
-                    p2d_gt[B, indices],
-                    p2d_ref[B, indices],
-                    save_path = save_path, extra = 'gt')
-        combined_img = cv2.vconcat([display_images3])
-        data['vis_gt_imlg']= combined_img
-    @torch.no_grad()
     def visualize_aero(self, data, name = None):
         """Visualize init/optimized/GT correspondences for Aero sequence."""
         init_pose = data['d_init_body2view_pose']
@@ -292,7 +254,7 @@ class PiLoT(BaseModel):
 
         img = data['images'][B].cpu().numpy()
         img_ref = data['images_ref'][B].cpu().numpy()
-        save_path = '/home/ps/Documents/liuxy24/Single_Trainer/PiLoT-Train/models/deep_ac_plus_fusion_detection_aero.py/verify'
+        save_path = 'verify'
         num = 30
         indices = np.random.choice(len(p2d[B]), size=num, replace=False)
         
@@ -469,7 +431,7 @@ class PiLoT(BaseModel):
             err = masked_mean(err, gt_valid, -1)
             err = err.view(batch_size, -1).clamp(max=self.conf.clamp_error)
             data['err_reprojection'].append(err)
-        self.visualize_aero(data)
+        # self.visualize_aero(data)
 
         return data
 
