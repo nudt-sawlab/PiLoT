@@ -16,7 +16,7 @@
 - [x] Inference code (3DGS rendering backend)
 - [x] Demo data & pretrained model
 - [x] Training data
-- [x] Training code
+- [x] Training code (train branch)
 - [x] Improved pose refiner with spatio-temporal constraints (more robust)
 
 ## Agent Quick Start
